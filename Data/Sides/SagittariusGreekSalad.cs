@@ -1,5 +1,5 @@
 ﻿/*
- * GeminiStuffedGrapeLeaves.cs
+ * SagittariusGreekSalad.cs
  * Author: Alisha C.
  */
 
@@ -16,27 +16,26 @@ using System.Threading.Tasks;
 namespace GyroScope.Data.Sides
 {
     /// <summary>
-    /// Declares a class for the side GeminiStuffedGrapeLeaves
+    /// Declares a class for the side SagittariusGreekSalad
     /// </summary>
-    public class GeminiStuffedGrapeLeaves
+    public class SagittariusGreekSalad
     {
         /// <summary>
-        /// How large a serving of stuffed grape leaves is
+        /// How large a serving of Greek Salad is
         /// </summary>
         public Size Size { get; set; }
 
         /// <summary>
-        /// Price of stuffed grape leaves
-        /// (1.50 for S, 2.00 for M, 2.50 for L)
+        /// Price of Greek Salad
+        /// (2.00 for S, 2.50 for M, 3.00 for L)
         /// </summary>
         public decimal Price { get; set; }
 
         /// <summary>
-        /// Calorie of stuffed grape leaves 
-        /// (360 for S, 540 for M, 720 for L)
+        /// Calorie of Greek Salad
+        /// (180 for S, 270 for M, 360 for L)
         /// </summary>
         public uint Calories { get; }
 
     }
 }
-
