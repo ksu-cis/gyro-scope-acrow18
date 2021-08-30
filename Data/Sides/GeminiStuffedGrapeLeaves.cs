@@ -1,5 +1,5 @@
 ﻿/*
- * AresFries.cs
+ * GeminiStuffedGrapeLeaves.cs
  * Author: Alisha C.
  */
 
@@ -16,26 +16,27 @@ using System.Threading.Tasks;
 namespace GyroScope.Data.Sides
 {
     /// <summary>
-    /// Declares a class for the side AresFries
+    /// Declares a class for the side GeminiStuffedGrapeLeaves
     /// </summary>
-    public class AresFries
+    public class GeminiStuffedGrapeLeaves
     {
         /// <summary>
-        /// How large a serving of fries is
+        /// How large a serving of stuffed grape leaves is
         /// </summary>
         public Size Size { get; set; }
 
         /// <summary>
-        /// Price of fries
+        /// Price of stuffed grape leaves
         /// (1.50 for S, 2.00 for M, 2,50 for L)
         /// </summary>
         public decimal Price { get; set; }
 
         /// <summary>
-        /// Calorie of fries 
-        /// (304 for S, 456 for M, 608 for L)
+        /// Calorie of stuffed grape leaves 
+        /// (360 for S, 540 for M, 720 for L)
         /// </summary>
         public uint Calories { get; }
 
     }
 }
+
