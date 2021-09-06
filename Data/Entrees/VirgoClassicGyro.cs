@@ -138,9 +138,9 @@ namespace GyroScope.Data.Entrees
                     }
                 }
 
-                if (Meat != DonerMeat.Lamb) 
+                if (Meat != DonerMeat.Pork) 
                 {
-                    yield return "Hold " + Meat;
+                    yield return "Use " + Meat;
                 }
             } 
         }
