@@ -72,21 +72,45 @@ namespace GyroScope.Data.Entrees
                 {
                     calorieSum += 262;
                 }
-                else if (Tomato != false) 
+
+                if (Tomato != false) 
                 {
                     calorieSum += 30;
                 }
-                else if (Onion != false)
+
+                if (Onion != false)
                 {
                     calorieSum += 30;
                 }
-                else if (Lettuce != false)
+                
+                if (Lettuce != false)
                 {
                     calorieSum += 54;
                 }
-                else if (Tzatziki != false)
+
+                if (Tzatziki != false)
                 {
                     calorieSum += 30;
+                }
+
+                if (Meat == DonerMeat.Pork)
+                {
+                    calorieSum += 187;
+                }
+
+                if (Meat == DonerMeat.Lamb)
+                {
+                    calorieSum += 151;
+                }
+
+                if (Meat == DonerMeat.Chicken)
+                {
+                    calorieSum += 113;
+                }
+
+                if (Meat == DonerMeat.Beef) 
+                {
+                    calorieSum += 181;
                 }
 
                 return calorieSum;
