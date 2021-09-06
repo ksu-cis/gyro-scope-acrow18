@@ -1,5 +1,5 @@
 ﻿/*
- * AresFries.cs
+ * AriesFries.cs
  * Author: Alisha C.
  */
 
@@ -18,7 +18,7 @@ namespace GyroScope.Data.Sides
     /// <summary>
     /// Declares a class for the side AresFries
     /// </summary>
-    public class AresFries
+    public class AriesFries
     {
         /// <summary>
         /// How large a serving of fries is
