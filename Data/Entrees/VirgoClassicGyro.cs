@@ -19,7 +19,7 @@ namespace GyroScope.Data.Entrees
     /// <summary>
     /// Virgo Classic Gyro
     /// </summary>
-    public class VirgoClassicGyro<T>
+    public class VirgoClassicGyro
     {
         /// <summary>
         /// What kind of meat this Gyro is prepared with
