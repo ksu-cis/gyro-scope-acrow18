@@ -1,9 +1,15 @@
-﻿using System;
+﻿/*
+ * AquariusIce.cs
+ * Modified: Alisha C.
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using GyroScope.Data.Enums;
+using GyroScope.Data.Sides;
 
 namespace GyroScope.Data.Treats
 {
