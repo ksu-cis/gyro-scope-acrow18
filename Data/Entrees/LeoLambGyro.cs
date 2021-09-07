@@ -23,7 +23,7 @@ namespace GyroScope.Data.Entrees
         /// <summary>
         /// What kind of meat this Gyro is prepared with
         /// </summary>
-        DonerMeat Meat { get; set; } = DonerMeat.Lamb;
+        public DonerMeat Meat { get; set; } = DonerMeat.Lamb;
 
         /// <summary>
         /// Gyro should be served with a pita bread wrap
@@ -129,16 +129,17 @@ namespace GyroScope.Data.Entrees
         /// <summary>
         /// List of the bool properties
         /// </summary>
-        public List<bool> listOfBools = new List<bool> { Pita, Tomato, Onion, Eggplant, Lettuce, MintChutney };
-        public List<string> listOfBoolsAsStrings = new List<string> { "Pita", "Tomato", "Onion", "Eggplant", "Lettuce", "Mint Chutney" };
+        private List<string> listOfBoolsAsStrings = new List<string> { "Pita", "Tomato", "Onion", "Eggplant", "Lettuce", "Mint Chutney" };
 
         /// <summary>
         /// Special Instructions
         /// </summary>
-        IEnumerable<string> SpecialInstructions
+        public IEnumerable<string> SpecialInstructions
         {
             get
             {
+                List<bool> listOfBools = new List<bool> { Pita, Tomato, Onion, Eggplant, Lettuce, MintChutney };
+
                 for (int i = 0; i < listOfBools.Count; i++)
                 {
                     if (listOfBools[i] == false)

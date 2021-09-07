@@ -20,9 +20,13 @@ namespace GyroScope.Data.Treats
     {
         /// <summary>
         /// The size of this Aquarius Ice
-        /// \
         /// </summary>
         public Size Size { get; set; }
+
+        /// <summary>
+        /// Name of aquarius ice
+        /// </summary>
+        public String Name { get { return $"{ Size} {Flavor} Aquarius Ice"; } }
 
         /// <summary>
         /// The flavor of this Aquarius Ice
