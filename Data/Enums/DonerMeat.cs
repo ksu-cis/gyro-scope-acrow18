@@ -15,7 +15,7 @@ using System.Threading.Tasks;
 namespace GyroScope.Data.Enums
 {
     /// <summary>
-    /// Type of meat
+    /// Doner Meat
     /// </summary>
     public enum DonerMeat
     {
@@ -38,5 +38,6 @@ namespace GyroScope.Data.Enums
         /// Lamb
         /// </summary>
         Lamb,
+
     }
 }
