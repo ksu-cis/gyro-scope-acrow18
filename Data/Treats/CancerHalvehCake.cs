@@ -28,9 +28,13 @@ namespace GyroScope.Data.Treats
         public override uint Calories => 272;
 
         /// <summary>
-        /// Null references
+        /// Size of Halveh Cake
         /// </summary>
         public override Size Size { get; set; } = 0;
+        
+        /// <summary>
+        /// Name of Halveh Cake
+        /// </summary>
         public override string Name { get; } = "";
     }
 }

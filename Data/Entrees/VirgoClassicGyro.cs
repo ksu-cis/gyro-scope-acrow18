@@ -74,7 +74,7 @@ namespace GyroScope.Data.Entrees
         /// <summary>
         /// Price of Gyro
         /// </summary>
-        public decimal Price { get; } = 5.50M;
+        public override decimal Price { get; } = 5.50M;
 
         /// <summary>
         /// used to sum calories
@@ -84,7 +84,7 @@ namespace GyroScope.Data.Entrees
         /// <summary>
         /// Calories for this gyro
         /// </summary>
-        public uint Calories 
+        public override uint Calories 
         {
             get 
             {
@@ -142,7 +142,7 @@ namespace GyroScope.Data.Entrees
         /// <summary>
         /// Special Instructions
         /// </summary>
-        public IEnumerable<string> SpecialInstructions
+        public override IEnumerable<string> SpecialInstructions
         {
             get
             {

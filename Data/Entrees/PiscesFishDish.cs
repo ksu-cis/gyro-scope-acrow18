@@ -29,6 +29,9 @@ namespace GyroScope.Data.Entrees
         /// </summary>
         public uint Calories { get; } = 726;
 
-        IEnumerable<string> SpecialInstructions { get; } = null;
+        /// <summary>
+        /// Special instructions
+        /// </summary>
+        public IEnumerable<string> SpecialInstructions { get; } = null;
     }
 }

@@ -3,6 +3,7 @@
  * Author: Alisha C.
  */
 
+using GyroScope.Data.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,37 +15,56 @@ namespace GyroScope.Data.Drinks
     /// <summary>
     /// Capricorn Mountain Tea
     /// </summary>
-    public class CapricornMountainTea
+    public class CapricornMountainTea : Drink
     {
         /// <summary>
         /// Price of Capricorn Mountain Tea
         /// </summary>
-        public decimal Price { get; set; } = 2.50M;
+        public override decimal Price { get; set; } = 2.50M;
 
         /// <summary>
         /// Calories of Capricorn Mountain Tea
         /// </summary>
-        public uint Calories = 0;
+        public override uint Calories 
+        { 
+            get 
+            {
+                if (Honey == true)
+                {
+                    return 64;
+                }
+
+                else 
+                {
+                    return 0;
+                }
+            }
+        }
 
         /// <summary>
         /// Determines if Capricorn Mountain Tea has honey.
         /// </summary>
-        public bool Honey { get; set; } = false;
+        public override bool Honey { get; set; } = false;
 
         /// <summary>
-        /// Checks if Honey was added
+        /// Flavor
         /// </summary>
-        public uint IsHoney
-        {
-            get
-            {
-                if (Honey == true) 
-                {
-                    return Calories = 64;
-                }
+        public override LibraLibationFlavor Flavor { get; set; }
 
-                return Calories;
-            }
-        }
+        /// <summary>
+        /// Sparkling
+        /// </summary>
+        public override bool Sparkling { get; set; }
+
+        /// <summary>
+        /// Name
+        /// </summary>
+        public override string Name { get; } = "";
+
+        /// <summary>
+        /// Calorie
+        /// </summary>
+        public uint Calorie = 0;
+
     }
 }

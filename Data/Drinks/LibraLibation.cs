@@ -18,17 +18,22 @@ namespace GyroScope.Data.Drinks
     /// <summary>
     /// Libra Libation
     /// </summary>
-    public class LibraLibation
+    public class LibraLibation : Drink
     {
         /// <summary>
         /// Determines flavor of Libra Libation
         /// </summary>
-        public LibraLibationFlavor Flavor { get; set; }
+        public override LibraLibationFlavor Flavor { get; set; }
 
         /// <summary>
         /// Determines if its Sparkling or not
         /// </summary>
-        public bool Sparkling { get; set; } = true;
+        public override bool Sparkling { get; set; } = true;
+
+        /// <summary>
+        /// Honey
+        /// </summary>
+        public override bool Honey { get; set; } = false;
 
         /// <summary>
         /// Calorie of Libra Libation
@@ -38,7 +43,7 @@ namespace GyroScope.Data.Drinks
         /// <summary>
         /// Calories of Libra Libation
         /// </summary>
-        public uint Calories 
+        public override uint Calories 
         { 
             get 
             {
@@ -69,12 +74,12 @@ namespace GyroScope.Data.Drinks
         /// <summary>
         /// Price of Libra Libation
         /// </summary>
-        public decimal Price { get; set; } = 1.00M;
+        public override decimal Price { get; set; } = 1.00M;
 
         /// <summary>
         /// Greek Soda
         /// </summary>
-        public String Name
+        public override String Name
         {
             get
             {
@@ -88,6 +93,5 @@ namespace GyroScope.Data.Drinks
                 }
             }
         }
-        
     }
 }

@@ -69,5 +69,20 @@ namespace GyroScope.Data.Entrees
         /// Gyro should be served with Tzatziki sauce
         /// </summary>
         public abstract bool Tzatziki { get; set; }
+
+        /// <summary>
+        /// Price of Gyro
+        /// </summary>
+        public abstract decimal Price { get; }
+
+        /// <summary>
+        /// Calories of Gyro
+        /// </summary>
+        public abstract uint Calories { get; }
+
+        /// <summary>
+        /// Special instructions
+        /// </summary>
+        public abstract IEnumerable<string> SpecialInstructions { get; }
     }
 }
