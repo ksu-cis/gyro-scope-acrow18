@@ -3,6 +3,7 @@
  * Author: Alisha C.
  */
 
+using GyroScope.Data.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,6 +20,34 @@ namespace GyroScope.Data.Entrees
     /// </summary>
     public abstract class Gyro
     {
+        /// <summary>
+        /// What kind of meat this Gyro is prepared with
+        /// </summary>
+        public abstract DonerMeat Meat { get; set; }
 
+        /// <summary>
+        /// Gyro should be served with a pita bread wrap
+        /// </summary>
+        public abstract bool Pita { get; set;  }
+
+        /// <summary>
+        /// Gyro should be served with peppers
+        /// </summary>
+        public abstract bool Peppers { get; set; }
+
+        /// <summary>
+        /// Gyro should be served with onion
+        /// </summary>
+        public abstract bool Onion { get; set; }
+
+        /// <summary>
+        /// Gyro should be served with Lettuce
+        /// </summary>
+        public abstract bool Lettuce { get; set; }
+
+        /// <summary>
+        /// Gyro should be served with Wing sauce
+        /// </summary>
+        public abstract bool WingSauce { get; set; }
     }
 }

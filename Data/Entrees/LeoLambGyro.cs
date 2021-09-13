@@ -137,6 +137,7 @@ namespace GyroScope.Data.Entrees
             {
                 List<bool> listOfBools = new List<bool> { Pita, Tomato, Onion, Eggplant, Lettuce, MintChutney };
                 List<string> listOfBoolsAsStrings = new List<string> { "Pita", "Tomato", "Onion", "Eggplant", "Lettuce", "Mint Chutney" };
+                //add another list of ingredients to add.
 
                 for (int i = 0; i < listOfBools.Count; i++)
                 {
