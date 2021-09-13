@@ -19,37 +19,57 @@ namespace GyroScope.Data.Entrees
     /// <summary>
     /// Virgo Classic Gyro
     /// </summary>
-    public class VirgoClassicGyro<T>
+    public class VirgoClassicGyro : Gyro
     {
         /// <summary>
         /// What kind of meat this Gyro is prepared with
         /// </summary>
-        public DonerMeat Meat { get; set; } = DonerMeat.Pork;
+        public override DonerMeat Meat { get; set; } = DonerMeat.Pork;
 
         /// <summary>
         /// Gyro should be served with a pita bread wrap
         /// </summary>
-        public static bool Pita { get; set; } = true;
+        public override bool Pita { get; set; } = true;
 
         /// <summary>
         /// Gyro should be served with tomato
         /// </summary>
-        public static bool Tomato { get; set; } = true;
+        public override bool Tomato { get; set; } = true;
 
         /// <summary>
         /// Gyro should be served with onion
         /// </summary>
-        public static bool Onion { get; set; } = true;
+        public override bool Onion { get; set; } = true;
 
         /// <summary>
         /// Gyro should be served with Lettuce
         /// </summary>
-        public static bool Lettuce { get; set; } = true;
+        public override bool Lettuce { get; set; } = true;
 
         /// <summary>
         /// Gyro should be served with Tzatziki sauce
         /// </summary>
-        public static bool Tzatziki { get; set; } = true;
+        public override bool Tzatziki { get; set; } = true;
+
+        /// <summary>
+        /// Gyro should be served with Peppers
+        /// </summary>
+        public override bool Peppers { get; set; } = false;
+
+        /// <summary>
+        /// Gyro should be served with Wing sauce
+        /// </summary>
+        public override bool WingSauce { get; set; } = false;
+
+        /// <summary>
+        /// Gyro should be served with Eggplant
+        /// </summary>
+        public override bool Eggplant { get; set; } = false;
+
+        /// <summary>
+        /// Gyro should be served with MintChutney
+        /// </summary>
+        public override bool MintChutney { get; set; } = false;
 
         /// <summary>
         /// Price of Gyro
@@ -122,27 +142,39 @@ namespace GyroScope.Data.Entrees
         /// <summary>
         /// Special Instructions
         /// </summary>
-        public IEnumerable<string> SpecialInstructions 
+        public IEnumerable<string> SpecialInstructions
         {
-            get 
+            get
             {
                 List<bool> listOfBools = new List<bool> { Pita, Tomato, Onion, Lettuce, Tzatziki };
                 List<string> listOfBoolsAsStrings = new List<string> { "Pita", "Tomato", "Onion", "Lettuce", "Tzatziki" };
 
-                for (int i = 0; i < listOfBools.Count; i++) 
+                //add another list of ingredients to add.
+                List<bool> listOfBoolsToAdd = new List<bool> { Peppers, WingSauce, Eggplant, MintChutney };
+                List<string> listOfBoolsToAddAsStrings = new List<string> { "Peppers", "WingSauce", "Eggplant", "MintChutney" };
+
+                for (int i = 0; i < listOfBools.Count; i++)
                 {
-                    if (listOfBools[i] == false) 
+                    if (listOfBools[i] == false)
                     {
                         yield return "Hold " + listOfBoolsAsStrings[i];
                     }
                 }
 
-                if (Meat != DonerMeat.Pork) 
+                //used to add extra ingredients
+                for (int i = 0; i < listOfBoolsToAdd.Count; i++)
                 {
-                    yield return "Use " + Meat;
-                }
-            } 
-        }
+                    if (listOfBoolsToAdd[i] == true)
+                    {
+                        yield return "Add " + listOfBoolsToAddAsStrings[i];
+                    }
 
+                    if (Meat != DonerMeat.Pork)
+                    {
+                        yield return "Use " + Meat;
+                    }
+                }
+            }
+        }
     }
 }
