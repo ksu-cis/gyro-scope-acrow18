@@ -126,11 +126,8 @@ namespace GyroScope.Data.Entrees
             }
         }
 
-        /// <summary>
-        /// List of the bool properties
-        /// </summary>
-        private List<string> listOfBoolsAsStrings = new List<string> { "Pita", "Tomato", "Onion", "Eggplant", "Lettuce", "Mint Chutney" };
-
+        
+        
         /// <summary>
         /// Special Instructions
         /// </summary>
@@ -139,6 +136,7 @@ namespace GyroScope.Data.Entrees
             get
             {
                 List<bool> listOfBools = new List<bool> { Pita, Tomato, Onion, Eggplant, Lettuce, MintChutney };
+                List<string> listOfBoolsAsStrings = new List<string> { "Pita", "Tomato", "Onion", "Eggplant", "Lettuce", "Mint Chutney" };
 
                 for (int i = 0; i < listOfBools.Count; i++)
                 {
