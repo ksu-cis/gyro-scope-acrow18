@@ -28,7 +28,7 @@ namespace GyroScope.Data.Entrees
         /// <summary>
         /// Gyro should be served with a pita bread wrap
         /// </summary>
-        public abstract bool Pita { get; set;  }
+        public abstract bool Pita { get; set; }
 
         /// <summary>
         /// Gyro should be served with peppers
@@ -49,5 +49,25 @@ namespace GyroScope.Data.Entrees
         /// Gyro should be served with Wing sauce
         /// </summary>
         public abstract bool WingSauce { get; set; }
+
+        /// <summary>
+        /// Gyro should be served with Tomato
+        /// </summary>
+        public abstract bool Tomato { get; set; }
+
+        /// <summary>
+        /// Gyro should be served with Eggplant
+        /// </summary>
+        public abstract bool Eggplant { get; set; }
+
+        /// <summary>
+        /// Gyro should be served with Mint chutney
+        /// </summary>
+        public abstract bool MintChutney { get; set; }
+
+        /// <summary>
+        /// Gyro should be served with Tzatziki sauce
+        /// </summary>
+        public abstract bool Tzatziki { get; set; }
     }
 }

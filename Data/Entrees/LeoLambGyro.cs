@@ -18,42 +18,57 @@ namespace GyroScope.Data.Entrees
     /// <summary>
     /// Leo Lamb Gyro
     /// </summary>
-    public class LeoLambGyro
+    public class LeoLambGyro : Gyro
     {
         /// <summary>
         /// What kind of meat this Gyro is prepared with
         /// </summary>
-        public DonerMeat Meat { get; set; } = DonerMeat.Lamb;
+        public override DonerMeat Meat { get; set; } = DonerMeat.Lamb;
 
         /// <summary>
         /// Gyro should be served with a pita bread wrap
         /// </summary>
-        public static bool Pita { get; set; } = true;
+        public override bool Pita { get; set; } = true;
 
         /// <summary>
         /// Gyro should be served with Tomato
         /// </summary>
-        public static bool Tomato { get; set; } = true;
+        public override bool Tomato { get; set; } = true;
 
         /// <summary>
         /// Gyro should be served with onion
         /// </summary>
-        public static bool Onion { get; set; } = true;
+        public override bool Onion { get; set; } = true;
 
         /// <summary>
         /// Gyro should be served with Eggplant
         /// </summary>
-        public static bool Eggplant { get; set; } = true;
+        public override bool Eggplant { get; set; } = true;
 
         /// <summary>
         /// Gyro should be served with Lettuce
         /// </summary>
-        public static bool Lettuce { get; set; } = true;
+        public override bool Lettuce { get; set; } = true;
 
         /// <summary>
         /// Gyro should be served with Mint chutney
         /// </summary>
-        public static bool MintChutney { get; set; } = true;
+        public override bool MintChutney { get; set; } = true;
+
+        /// <summary>
+        /// Gyro should be served with Peppers
+        /// </summary>
+        public override bool Peppers { get; set; } = false;
+
+        /// <summary>
+        /// Gyro should be served with Wing Sauce
+        /// </summary>
+        public override bool WingSauce { get; set; } = false;
+
+        /// <summary>
+        /// Gyro should be served with Tzatziki
+        /// </summary>
+        public override bool Tzatziki { get; set; } = false;
 
         /// <summary>
         /// Price of Gyro
@@ -137,7 +152,10 @@ namespace GyroScope.Data.Entrees
             {
                 List<bool> listOfBools = new List<bool> { Pita, Tomato, Onion, Eggplant, Lettuce, MintChutney };
                 List<string> listOfBoolsAsStrings = new List<string> { "Pita", "Tomato", "Onion", "Eggplant", "Lettuce", "Mint Chutney" };
+                
                 //add another list of ingredients to add.
+                List<bool> listOfBoolsToAdd = new List<bool> {Peppers, WingSauce, Tzatziki};
+                List<string> listOfBoolsToAddAsStrings = new List<string> { "Peppers", "WingSauce", "Tzatziki"};
 
                 for (int i = 0; i < listOfBools.Count; i++)
                 {
@@ -147,11 +165,21 @@ namespace GyroScope.Data.Entrees
                     }
                 }
 
+                //used to add extra ingredients
+                for (int i = 0; i < listOfBoolsToAdd.Count; i++)
+                {
+                    if (listOfBoolsToAdd[i] == true)
+                    {
+                        yield return "Add " + listOfBoolsToAddAsStrings[i];
+                    }
+                }
+
                 if (Meat != DonerMeat.Lamb)
                 {
                     yield return "Use " + Meat;
                 }
             }
         }
+
     }
 }
