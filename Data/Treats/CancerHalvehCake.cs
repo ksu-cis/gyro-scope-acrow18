@@ -3,6 +3,7 @@
  * Author: Alisha C.
  */
 
+using GyroScope.Data.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,5 +26,11 @@ namespace GyroScope.Data.Treats
         /// Calories of Cancer Halveh Cake
         /// </summary>
         public override uint Calories => 272;
+
+        /// <summary>
+        /// Null references
+        /// </summary>
+        public override Size Size { get; set; } = 0;
+        public override string Name { get; } = "";
     }
 }

@@ -30,5 +30,21 @@ namespace GyroScope.Data.Drinks
         /// Determines if Capricorn Mountain Tea has honey.
         /// </summary>
         public bool Honey { get; set; } = false;
+
+        /// <summary>
+        /// Checks if Honey was added
+        /// </summary>
+        public uint IsHoney
+        {
+            get
+            {
+                if (Honey == true) 
+                {
+                    return Calories = 64;
+                }
+
+                return Calories;
+            }
+        }
     }
 }
