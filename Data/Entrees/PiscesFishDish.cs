@@ -17,21 +17,21 @@ namespace GyroScope.Data.Entrees
     /// <summary>
     /// Pisces Fish Dish
     /// </summary>
-    public class PiscesFishDish
+    public class PiscesFishDish : Entree
     {
         /// <summary>
         /// Price of Dish
         /// </summary>
-        public decimal Price { get; } = 5.99M;
+        public override decimal Price { get; } = 5.99M;
 
         /// <summary>
         /// Calorie of dish
         /// </summary>
-        public uint Calories { get; } = 726;
+        public override uint Calories { get; } = 726;
 
         /// <summary>
         /// Special instructions
         /// </summary>
-        public IEnumerable<string> SpecialInstructions { get; } = null;
+        public override IEnumerable<string> SpecialInstructions { get; } = null;
     }
 }

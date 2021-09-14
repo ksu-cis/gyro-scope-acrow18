@@ -18,7 +18,7 @@ namespace GyroScope.Data.Entrees
     /// <summary>
     /// A base class for all Gyros sold at GyroScope
     /// </summary>
-    public abstract class Gyro
+    public abstract class Gyro : Entree
     {
         /// <summary>
         /// What kind of meat this Gyro is prepared with
@@ -70,19 +70,5 @@ namespace GyroScope.Data.Entrees
         /// </summary>
         public abstract bool Tzatziki { get; set; }
 
-        /// <summary>
-        /// Price of Gyro
-        /// </summary>
-        public abstract decimal Price { get; }
-
-        /// <summary>
-        /// Calories of Gyro
-        /// </summary>
-        public abstract uint Calories { get; }
-
-        /// <summary>
-        /// Special instructions
-        /// </summary>
-        public abstract IEnumerable<string> SpecialInstructions { get; }
     }
 }
