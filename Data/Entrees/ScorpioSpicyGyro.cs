@@ -18,42 +18,62 @@ namespace GyroScope.Data.Entrees
     /// <summary>
     /// Scorpio Spicy Gyro
     /// </summary>
-    public class ScorpioSpicyGyro
+    public class ScorpioSpicyGyro : Gyro
     {
         /// <summary>
         /// What kind of meat this Gyro is prepared with
         /// </summary>
-        public DonerMeat Meat { get; set; } = DonerMeat.Chicken;
+        public override DonerMeat Meat { get; set; } = DonerMeat.Chicken;
 
         /// <summary>
         /// Gyro should be served with a pita bread wrap
         /// </summary>
-        public static bool Pita { get; set; } = true;
+        public override bool Pita { get; set; } = true;
 
         /// <summary>
         /// Gyro should be served with peppers
         /// </summary>
-        public static bool Peppers { get; set; } = true;
+        public override bool Peppers { get; set; } = true;
 
         /// <summary>
         /// Gyro should be served with onion
         /// </summary>
-        public static bool Onion { get; set; } = true;
+        public override bool Onion { get; set; } = true;
 
         /// <summary>
         /// Gyro should be served with Lettuce
         /// </summary>
-        public static bool Lettuce { get; set; } = true;
+        public override bool Lettuce { get; set; } = true;
 
         /// <summary>
         /// Gyro should be served with Wing sauce
         /// </summary>
-        public static bool WingSauce { get; set; } = true;
+        public override bool WingSauce { get; set; } = true;
+
+        /// <summary>
+        /// Gyro should be served with Tomato
+        /// </summary>
+        public override bool Tomato { get; set; } = false;
+
+        /// <summary>
+        /// Gyro should be served with Eggplant
+        /// </summary>
+        public override bool Eggplant { get; set; } = false;
+
+        /// <summary>
+        /// Gyro should be served with Mint chutney
+        /// </summary>
+        public override bool MintChutney { get; set; } = false;
+
+        /// <summary>
+        /// Gyro should be served with Tzatziki
+        /// </summary>
+        public override bool Tzatziki { get; set; } = false;
 
         /// <summary>
         /// Price of Gyro
         /// </summary>
-        public decimal Price { get; } = 6.20M;
+        public override decimal Price { get; } = 6.20M;
 
         /// <summary>
         /// used to sum calories
@@ -63,7 +83,7 @@ namespace GyroScope.Data.Entrees
         /// <summary>
         /// Calories for this gyro
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get
             {
@@ -116,25 +136,36 @@ namespace GyroScope.Data.Entrees
             }
         }
 
-        /// <summary>
-        /// List of the bool properties
-        /// </summary>
-        private List<string> listOfBoolsAsStrings = new List<string> { "Pita", "Peppers", "Onion", "Lettuce", "Wing Sauce" };
-
+        
         /// <summary>
         /// Special Instructions
         /// </summary>
-        public IEnumerable<string> SpecialInstructions
+        public override IEnumerable<string> SpecialInstructions
         {
             get
             {
                 List<bool> listOfBools = new List<bool> { Pita, Peppers, Onion, Lettuce, WingSauce };
+                List<string> listOfBoolsAsStrings = new List<string> { "Pita", "Peppers", "Onion", "Lettuce", "Wing Sauce" };
+
+                //add another list of ingredients to add.
+                List<bool> listOfBoolsToAdd = new List<bool> { Tomato, Eggplant, MintChutney, Tzatziki };
+                List<string> listOfBoolsToAddAsStrings = new List<string> { "Tomato", "Eggplant", "MintChutney", "Tzatziki" };
+
 
                 for (int i = 0; i < listOfBools.Count; i++)
                 {
                     if (listOfBools[i] == false)
                     {
                         yield return "Hold " + listOfBoolsAsStrings[i];
+                    }
+                }
+
+                //used to add extra ingredients
+                for (int i = 0; i < listOfBoolsToAdd.Count; i++)
+                {
+                    if (listOfBoolsToAdd[i] == true)
+                    {
+                        yield return "Add " + listOfBoolsToAddAsStrings[i];
                     }
                 }
 
@@ -145,5 +176,6 @@ namespace GyroScope.Data.Entrees
             }
         }
 
+        
     }
 }
