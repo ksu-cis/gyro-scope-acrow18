@@ -70,5 +70,20 @@ namespace GyroScope.Data.Entrees
         /// </summary>
         public abstract bool Tzatziki { get; set; }
 
+        /// <summary>
+        /// Price of Entree
+        /// </summary>
+        public override abstract decimal Price { get; }
+
+        /// <summary>
+        /// Calories of Entree
+        /// </summary>
+        public override abstract uint Calories { get; }
+
+        /// <summary>
+        /// Special instructions
+        /// </summary>
+        public override abstract IEnumerable<string> SpecialInstructions { get; }
+
     }
 }
