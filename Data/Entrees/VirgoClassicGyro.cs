@@ -168,11 +168,11 @@ namespace GyroScope.Data.Entrees
                     {
                         yield return "Add " + listOfBoolsToAddAsStrings[i];
                     }
+                }
 
-                    if (Meat != DonerMeat.Pork)
-                    {
-                        yield return "Use " + Meat;
-                    }
+                if (Meat != DonerMeat.Pork)
+                {
+                    yield return "Use " + Meat;
                 }
             }
         }

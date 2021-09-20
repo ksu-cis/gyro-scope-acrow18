@@ -44,10 +44,16 @@ namespace GyroScope.DataTests
             Assert.Equal(5.50M, VirgoClassicGyro.Price);
         }
 
-        
+
         [Theory]
-        [InlineData(DonerMeat.Pork, true)]
-        //add test cases
+        [InlineData(DonerMeat.Pork, true, true, false, false, true, true, true, false, false, 593U)]
+        [InlineData(DonerMeat.Lamb, true, true, false, false, true, true, true, false, false, 557U)]
+        [InlineData(DonerMeat.Chicken, true, true, false, false, true, true, true, false, false, 519U)] 
+        [InlineData(DonerMeat.Beef, true, true, false, false, true, true, true, false, false, 587U)]
+        [InlineData(DonerMeat.Pork, false, false, false, false, false, false, false, false, false, 187U)] 
+        [InlineData(DonerMeat.Pork, false, true, false, false, true, true, true, false, false, 331U)]
+        [InlineData(DonerMeat.Pork, false, false, false, false, true, true, true, false, false, 301U)]
+        [InlineData(DonerMeat.Pork, false, false, false, false, false, true, true, false, false, 271U)]
         /// <summary>
         /// Checks calories based on ingridents
         /// </summary>
@@ -66,13 +72,28 @@ namespace GyroScope.DataTests
         {
             var VirgoClassicGyro = new VirgoClassicGyro();
             VirgoClassicGyro.Meat = meat;
-            //set boolean properties
             VirgoClassicGyro.Pita = pita;
+            VirgoClassicGyro.Tomato = tomato;
+            VirgoClassicGyro.Peppers = peppers;
+            VirgoClassicGyro.Eggplant = eggplant;
+            VirgoClassicGyro.Onion = onion;
+            VirgoClassicGyro.Lettuce = lettuce;
+            VirgoClassicGyro.Tzatziki = tzatziki;
+            VirgoClassicGyro.WingSauce = wingSauce;
+            VirgoClassicGyro.MintChutney = mintChutney;
             Assert.Equal(calories, VirgoClassicGyro.Calories);
         }
 
 
         [Theory]
+        [InlineData(DonerMeat.Pork, true, true, false, false, true, true, true, false, false, new String[] { })]
+        [InlineData(DonerMeat.Lamb, true, true, false, false, true, true, true, false, false, new String[] { "Use Lamb" })]
+        [InlineData(DonerMeat.Chicken, true, true, false, false, true, true, true, false, false, new String[] { "Use Chicken" })]
+        [InlineData(DonerMeat.Beef, true, true, false, false, true, true, true, false, false, new String[] { "Use Beef" })]
+        [InlineData(DonerMeat.Pork, false, true, false, false, true, true, true, false, false, new String[] { "Hold Pita" })] //pass
+        [InlineData(DonerMeat.Pork, true, false, false, false, true, true, true, false, false, new String[] { "Hold Tomato" })]
+        [InlineData(DonerMeat.Pork, true, true, true, false, true, true, true, false, false, new String[] { "Add Peppers" })] //pass
+        [InlineData(DonerMeat.Pork, true, true, false, true, true, true, true, false, false, new String[] { "Add Eggplant" })] //pass
         //Last entry of new InlineData new String[]{"Add Peppers"};
         /// <summary>
         /// Special instructions of gyro
@@ -88,11 +109,20 @@ namespace GyroScope.DataTests
         /// <param name="wingSauce">WingSauce</param>
         /// <param name="mintChutney">MintChutney</param>
         /// <param name="expected">Expected special instructions</param>
-        public void SpecialInstructionsShouldReflectIngredients(DonerMeat meat, bool pita, bool tomato, bool peppers, bool eggplant, bool onion, bool lettuce, bool tzatziki, bool wingSauce, bool mintChutney, string[] expected) 
+        public void SpecialInstructionsShouldReflectIngredients(DonerMeat meat, bool pita, bool tomato, bool peppers, bool eggplant, bool onion, bool lettuce, bool tzatziki, bool wingSauce, bool mintChutney, string[] expected)
         {
-            //copy calories
-            
-        }
-        
+            var VirgoClassicGyro = new VirgoClassicGyro();
+            VirgoClassicGyro.Meat = meat;
+            VirgoClassicGyro.Pita = pita;
+            VirgoClassicGyro.Tomato = tomato;
+            VirgoClassicGyro.Peppers = peppers;
+            VirgoClassicGyro.Eggplant = eggplant;
+            VirgoClassicGyro.Onion = onion;
+            VirgoClassicGyro.Lettuce = lettuce;
+            VirgoClassicGyro.Tzatziki = tzatziki;
+            VirgoClassicGyro.WingSauce = wingSauce;
+            VirgoClassicGyro.MintChutney = mintChutney;
+            Assert.Equal(expected, VirgoClassicGyro.SpecialInstructions);
+        }   
     }
 }
