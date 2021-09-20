@@ -11,9 +11,9 @@ using GyroScope.Data.Entrees;
 namespace GyroScope.DataTests
 {
     /// <summary>
-    /// Unit tests for VirgoClassicGyro
+    /// Unit tests for SpicyScorpioGyroTests
     /// </summary>
-    public class LeoLambGyroTests
+    public class SpicyScorpioGyroTests
     {
         /// <summary>
         /// Checks default ingridents
@@ -21,17 +21,16 @@ namespace GyroScope.DataTests
         [Fact]
         public void DefaultIngredientsShouldBeCorrect()
         {
-            var LeoLambGyro = new LeoLambGyro();
-            Assert.Equal(DonerMeat.Lamb, LeoLambGyro.Meat);
-            Assert.True(LeoLambGyro.Pita);
-            Assert.True(LeoLambGyro.Tomato);
-            Assert.True(LeoLambGyro.Onion);
-            Assert.True(LeoLambGyro.Eggplant);
-            Assert.True(LeoLambGyro.Lettuce);
-            Assert.True(LeoLambGyro.MintChutney);
-            Assert.False(LeoLambGyro.Peppers);
-            Assert.False(LeoLambGyro.WingSauce);
-            Assert.False(LeoLambGyro.Tzatziki);
+            var SpicyScorpioGyro = new ScorpioSpicyGyro();
+            Assert.Equal(DonerMeat.Chicken, SpicyScorpioGyro.Meat);
+            Assert.True(SpicyScorpioGyro.Pita);
+            Assert.True(SpicyScorpioGyro.Peppers);
+            Assert.True(SpicyScorpioGyro.Onion);
+            Assert.True(SpicyScorpioGyro.Lettuce);
+            Assert.True(SpicyScorpioGyro.WingSauce);
+            Assert.False(SpicyScorpioGyro.MintChutney);
+            Assert.False(SpicyScorpioGyro.Eggplant);
+            Assert.False(SpicyScorpioGyro.Tzatziki);
         }
 
         /// <summary>
@@ -40,8 +39,8 @@ namespace GyroScope.DataTests
         [Fact]
         public void PriceShouldBeCorrect()
         {
-            var LeoLambGyro = new LeoLambGyro();
-            Assert.Equal(5.75M, LeoLambGyro.Price);
+            var SpicyScorpioGyro = new ScorpioSpicyGyro();
+            Assert.Equal(6.20M, SpicyScorpioGyro.Price);
         }
 
         /*

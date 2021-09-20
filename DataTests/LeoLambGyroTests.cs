@@ -1,5 +1,5 @@
 /*
-* LeoLambGyro.cs
+* LeoLambGyroTests.cs
 * Author: Alisha C.
 */
 
@@ -11,7 +11,7 @@ using GyroScope.Data.Entrees;
 namespace GyroScope.DataTests
 {
     /// <summary>
-    /// Unit tests for VirgoClassicGyro
+    /// Unit tests for LeoLambGyroTests
     /// </summary>
     public class LeoLambGyroTests
     {
