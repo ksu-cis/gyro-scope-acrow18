@@ -44,9 +44,10 @@ namespace GyroScope.DataTests
             Assert.Equal(5.50M, VirgoClassicGyro.Price);
         }
 
-        /*
+        
         [Theory]
-        [InlineData(DonerMeat.Pork, )]
+        [InlineData(DonerMeat.Pork, true)]
+        //add test cases
         /// <summary>
         /// Checks calories based on ingridents
         /// </summary>
@@ -64,11 +65,15 @@ namespace GyroScope.DataTests
         public void CaloriesShouldBeCorrect(DonerMeat meat, bool pita, bool tomato, bool peppers, bool eggplant, bool onion, bool lettuce, bool tzatziki, bool wingSauce, bool mintChutney, uint calories)
         {
             var VirgoClassicGyro = new VirgoClassicGyro();
-            Assert.Equal(meat, 187);
+            VirgoClassicGyro.Meat = meat;
+            //set boolean properties
+            VirgoClassicGyro.Pita = pita;
+            Assert.Equal(calories, VirgoClassicGyro.Calories);
         }
 
 
-
+        [Theory]
+        //Last entry of new InlineData new String[]{"Add Peppers"};
         /// <summary>
         /// Special instructions of gyro
         /// </summary>
@@ -85,8 +90,9 @@ namespace GyroScope.DataTests
         /// <param name="expected">Expected special instructions</param>
         public void SpecialInstructionsShouldReflectIngredients(DonerMeat meat, bool pita, bool tomato, bool peppers, bool eggplant, bool onion, bool lettuce, bool tzatziki, bool wingSauce, bool mintChutney, string[] expected) 
         {
-
+            //copy calories
+            
         }
-        */
+        
     }
 }
