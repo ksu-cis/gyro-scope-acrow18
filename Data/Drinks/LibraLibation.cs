@@ -23,17 +23,17 @@ namespace GyroScope.Data.Drinks
         /// <summary>
         /// Determines flavor of Libra Libation
         /// </summary>
-        public override LibraLibationFlavor Flavor { get; set; }
+        public LibraLibationFlavor Flavor { get; set; }
 
         /// <summary>
         /// Determines if its Sparkling or not
         /// </summary>
-        public override bool Sparkling { get; set; } = true;
+        public bool Sparkling { get; set; } = true;
 
         /// <summary>
         /// Honey
         /// </summary>
-        public override bool Honey { get; set; } = false;
+        public bool Honey { get; set; } = false;
 
         /// <summary>
         /// Calorie of Libra Libation
