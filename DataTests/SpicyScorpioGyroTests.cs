@@ -31,6 +31,7 @@ namespace GyroScope.DataTests
             Assert.False(SpicyScorpioGyro.MintChutney);
             Assert.False(SpicyScorpioGyro.Eggplant);
             Assert.False(SpicyScorpioGyro.Tzatziki);
+            Assert.False(SpicyScorpioGyro.Tomato);
         }
 
         /// <summary>
@@ -43,9 +44,16 @@ namespace GyroScope.DataTests
             Assert.Equal(6.20M, SpicyScorpioGyro.Price);
         }
 
-        /*
+
         [Theory]
-        [InlineData(DonerMeat.Pork, )]
+        [InlineData(DonerMeat.Chicken, true, false, true, false, true, true, false, true, false, 507U)]
+        [InlineData(DonerMeat.Pork, true, false, true, false, true, true, false, true, false, 581U)]
+        [InlineData(DonerMeat.Lamb, true, false, true, false, true, true, false, true, false, 545U)]
+        [InlineData(DonerMeat.Beef, true, false, true, false, true, true, false, true, false, 575U)]
+        [InlineData(DonerMeat.Chicken, false, false, false, false, false, false, false, false, false, 113U)]
+        [InlineData(DonerMeat.Chicken, true, false, false, false, false, false, false, false, false, 375U)]
+        [InlineData(DonerMeat.Chicken, true, true, false, false, false, false, false, false, false, 405U)]
+        [InlineData(DonerMeat.Chicken, true, true, true, false, false, false, false, false, false, 438U)]
         /// <summary>
         /// Checks calories based on ingridents
         /// </summary>
@@ -62,12 +70,29 @@ namespace GyroScope.DataTests
         /// <param name="calories">Calories</param>
         public void CaloriesShouldBeCorrect(DonerMeat meat, bool pita, bool tomato, bool peppers, bool eggplant, bool onion, bool lettuce, bool tzatziki, bool wingSauce, bool mintChutney, uint calories)
         {
-            var VirgoClassicGyro = new VirgoClassicGyro();
-            Assert.Equal(meat, 187);
+            var SpicyScorpioGyro = new ScorpioSpicyGyro();
+            SpicyScorpioGyro.Meat = meat;
+            SpicyScorpioGyro.Pita = pita;
+            SpicyScorpioGyro.Tomato = tomato;
+            SpicyScorpioGyro.Peppers = peppers;
+            SpicyScorpioGyro.Eggplant = eggplant;
+            SpicyScorpioGyro.Onion = onion;
+            SpicyScorpioGyro.Lettuce = lettuce;
+            SpicyScorpioGyro.Tzatziki = tzatziki;
+            SpicyScorpioGyro.WingSauce = wingSauce;
+            SpicyScorpioGyro.MintChutney = mintChutney;
+            Assert.Equal(calories, SpicyScorpioGyro.Calories);
         }
 
-
-
+        [Theory]
+        [InlineData(DonerMeat.Chicken, true, false, true, false, true, true, false, true, false, new String[] { })]
+        [InlineData(DonerMeat.Pork, true, false, true, false, true, true, false, true, false, new String[] { "Use Pork" })]
+        [InlineData(DonerMeat.Lamb, true, false, true, false, true, true, false, true, false, new String[] { "Use Lamb" })]
+        [InlineData(DonerMeat.Beef, true, false, true, false, true, true, false, true, false, new String[] { "Use Beef" })]
+        [InlineData(DonerMeat.Chicken, false, false, true, false, true, true, false, true, false, new String[] { "Hold Pita" })]
+        [InlineData(DonerMeat.Chicken, true, false, false, false, true, true, false, true, false, new String[] { "Hold Peppers" })]
+        [InlineData(DonerMeat.Chicken, true, true, true, false, true, true, false, true, false, new String[] { "Add Tomato"})]
+        [InlineData(DonerMeat.Chicken, true, false, true, true, true, true, false, true, false, new String[] { "Add Eggplant"})]
         /// <summary>
         /// Special instructions of gyro
         /// </summary>
@@ -84,8 +109,19 @@ namespace GyroScope.DataTests
         /// <param name="expected">Expected special instructions</param>
         public void SpecialInstructionsShouldReflectIngredients(DonerMeat meat, bool pita, bool tomato, bool peppers, bool eggplant, bool onion, bool lettuce, bool tzatziki, bool wingSauce, bool mintChutney, string[] expected) 
         {
-
+            var SpicyScorpioGyro = new ScorpioSpicyGyro();
+            SpicyScorpioGyro.Meat = meat;
+            SpicyScorpioGyro.Pita = pita;
+            SpicyScorpioGyro.Tomato = tomato;
+            SpicyScorpioGyro.Peppers = peppers;
+            SpicyScorpioGyro.Eggplant = eggplant;
+            SpicyScorpioGyro.Onion = onion;
+            SpicyScorpioGyro.Lettuce = lettuce;
+            SpicyScorpioGyro.Tzatziki = tzatziki;
+            SpicyScorpioGyro.WingSauce = wingSauce;
+            SpicyScorpioGyro.MintChutney = mintChutney;
+            Assert.Equal(expected, SpicyScorpioGyro.SpecialInstructions);
         }
-        */
+        
     }
 }

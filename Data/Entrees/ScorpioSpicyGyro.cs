@@ -92,6 +92,11 @@ namespace GyroScope.Data.Entrees
                     calorieSum += 262;
                 }
 
+                if (Tomato != false)
+                {
+                    calorieSum += 30;
+                }
+
                 if (Peppers != false)
                 {
                     calorieSum += 33;

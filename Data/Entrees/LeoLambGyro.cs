@@ -117,6 +117,16 @@ namespace GyroScope.Data.Entrees
                     calorieSum += 10;
                 }
 
+                if (WingSauce != false)
+                {
+                    calorieSum += 15;
+                }
+
+                if (Tzatziki != false)
+                {
+                    calorieSum += 30;
+                }
+
                 if (Meat == DonerMeat.Pork)
                 {
                     calorieSum += 187;
