@@ -13,7 +13,7 @@ namespace GyroScope.DataTests
     /// <summary>
     /// Unit tests for SpicyScorpioGyroTests
     /// </summary>
-    public class SpicyScorpioGyroTests
+    public class ScorpioSpicyGyroTests
     {
         /// <summary>
         /// Checks default ingridents

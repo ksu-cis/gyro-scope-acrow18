@@ -13,7 +13,7 @@ namespace GyroScope.DataTests
     /// <summary>
     /// Unit tests for Aries Fries
     /// </summary>
-    public class AriesFriesTest
+    public class AriesFriesTests
     {
         /// <summary>
         /// Checks default Size
