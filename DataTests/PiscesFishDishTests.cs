@@ -21,8 +21,8 @@ namespace GyroScope.DataTests
         [Fact]
         public void PriceShouldBeCorrect()
         {
-            var PiscesFishDish = new PiscesFishDish();
-            Assert.Equal(5.99M, PiscesFishDish.Price);
+            var piscesFishDish = new PiscesFishDish();
+            Assert.Equal(5.99M, piscesFishDish.Price);
         }
 
         /// <summary>
@@ -31,8 +31,8 @@ namespace GyroScope.DataTests
         [Fact]
         public void CaloriesShouldBeCorrect() 
         {
-            var PiscesFishDish = new PiscesFishDish();
-            Assert.Equal(726U, PiscesFishDish.Calories); //not sure if this is correct
+            var piscesFishDish = new PiscesFishDish();
+            Assert.Equal(726U, piscesFishDish.Calories); //not sure if this is correct
         }
 
         /// <summary>
@@ -41,8 +41,8 @@ namespace GyroScope.DataTests
         [Fact]
         public void SpecialInstructionsShouldBeEmpty() 
         {
-            var PiscesFishDish = new PiscesFishDish();
-            Assert.Null(PiscesFishDish.SpecialInstructions);
+            var piscesFishDish = new PiscesFishDish();
+            Assert.Null(piscesFishDish.SpecialInstructions);
         }
     }
 }

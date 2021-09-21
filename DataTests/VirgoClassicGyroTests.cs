@@ -21,17 +21,17 @@ namespace GyroScope.DataTests
         [Fact]
         public void DefaultIngredientsShouldBeCorrect()
         {
-            var VirgoClassicGyro = new VirgoClassicGyro();
-            Assert.Equal(DonerMeat.Pork, VirgoClassicGyro.Meat);
-            Assert.True(VirgoClassicGyro.Pita);
-            Assert.True(VirgoClassicGyro.Tomato);
-            Assert.True(VirgoClassicGyro.Onion);
-            Assert.True(VirgoClassicGyro.Lettuce);
-            Assert.True(VirgoClassicGyro.Tzatziki);
-            Assert.False(VirgoClassicGyro.Peppers);
-            Assert.False(VirgoClassicGyro.WingSauce);
-            Assert.False(VirgoClassicGyro.Eggplant);
-            Assert.False(VirgoClassicGyro.MintChutney);
+            var virgoClassicGyro = new VirgoClassicGyro();
+            Assert.Equal(DonerMeat.Pork, virgoClassicGyro.Meat);
+            Assert.True(virgoClassicGyro.Pita);
+            Assert.True(virgoClassicGyro.Tomato);
+            Assert.True(virgoClassicGyro.Onion);
+            Assert.True(virgoClassicGyro.Lettuce);
+            Assert.True(virgoClassicGyro.Tzatziki);
+            Assert.False(virgoClassicGyro.Peppers);
+            Assert.False(virgoClassicGyro.WingSauce);
+            Assert.False(virgoClassicGyro.Eggplant);
+            Assert.False(virgoClassicGyro.MintChutney);
         }
 
         /// <summary>
@@ -40,20 +40,12 @@ namespace GyroScope.DataTests
         [Fact]
         public void PriceShouldBeCorrect()
         {
-            var VirgoClassicGyro = new VirgoClassicGyro();
-            Assert.Equal(5.50M, VirgoClassicGyro.Price);
+            var virgoClassicGyro = new VirgoClassicGyro();
+            Assert.Equal(5.50M, virgoClassicGyro.Price);
         }
 
 
-        [Theory]
-        [InlineData(DonerMeat.Pork, true, true, false, false, true, true, true, false, false, 593U)]
-        [InlineData(DonerMeat.Lamb, true, true, false, false, true, true, true, false, false, 557U)]
-        [InlineData(DonerMeat.Chicken, true, true, false, false, true, true, true, false, false, 519U)] 
-        [InlineData(DonerMeat.Beef, true, true, false, false, true, true, true, false, false, 587U)]
-        [InlineData(DonerMeat.Pork, false, false, false, false, false, false, false, false, false, 187U)] 
-        [InlineData(DonerMeat.Pork, false, true, false, false, true, true, true, false, false, 331U)]
-        [InlineData(DonerMeat.Pork, false, false, false, false, true, true, true, false, false, 301U)]
-        [InlineData(DonerMeat.Pork, false, false, false, false, false, true, true, false, false, 271U)]
+
         /// <summary>
         /// Checks calories based on ingridents
         /// </summary>
@@ -68,33 +60,34 @@ namespace GyroScope.DataTests
         /// <param name="wingSauce">WingSauce</param>
         /// <param name="mintChutney">MintChutney</param>
         /// <param name="calories">Calories</param>
+        [Theory]
+        [InlineData(DonerMeat.Pork, true, true, false, false, true, true, true, false, false, 593U)]
+        [InlineData(DonerMeat.Lamb, true, true, false, false, true, true, true, false, false, 557U)]
+        [InlineData(DonerMeat.Chicken, true, true, false, false, true, true, true, false, false, 519U)]
+        [InlineData(DonerMeat.Beef, true, true, false, false, true, true, true, false, false, 587U)]
+        [InlineData(DonerMeat.Pork, false, false, false, false, false, false, false, false, false, 187U)]
+        [InlineData(DonerMeat.Pork, false, true, false, false, true, true, true, false, false, 331U)]
+        [InlineData(DonerMeat.Pork, false, false, false, false, true, true, true, false, false, 301U)]
+        [InlineData(DonerMeat.Pork, false, false, false, false, false, true, true, false, false, 271U)]
         public void CaloriesShouldBeCorrect(DonerMeat meat, bool pita, bool tomato, bool peppers, bool eggplant, bool onion, bool lettuce, bool tzatziki, bool wingSauce, bool mintChutney, uint calories)
         {
-            var VirgoClassicGyro = new VirgoClassicGyro();
-            VirgoClassicGyro.Meat = meat;
-            VirgoClassicGyro.Pita = pita;
-            VirgoClassicGyro.Tomato = tomato;
-            VirgoClassicGyro.Peppers = peppers;
-            VirgoClassicGyro.Eggplant = eggplant;
-            VirgoClassicGyro.Onion = onion;
-            VirgoClassicGyro.Lettuce = lettuce;
-            VirgoClassicGyro.Tzatziki = tzatziki;
-            VirgoClassicGyro.WingSauce = wingSauce;
-            VirgoClassicGyro.MintChutney = mintChutney;
-            Assert.Equal(calories, VirgoClassicGyro.Calories);
+            var virgoClassicGyro = new VirgoClassicGyro();
+            virgoClassicGyro.Meat = meat;
+            virgoClassicGyro.Pita = pita;
+            virgoClassicGyro.Tomato = tomato;
+            virgoClassicGyro.Peppers = peppers;
+            virgoClassicGyro.Eggplant = eggplant;
+            virgoClassicGyro.Onion = onion;
+            virgoClassicGyro.Lettuce = lettuce;
+            virgoClassicGyro.Tzatziki = tzatziki;
+            virgoClassicGyro.WingSauce = wingSauce;
+            virgoClassicGyro.MintChutney = mintChutney;
+            Assert.Equal(calories, virgoClassicGyro.Calories);
         }
 
 
-        [Theory]
-        [InlineData(DonerMeat.Pork, true, true, false, false, true, true, true, false, false, new String[] { })]
-        [InlineData(DonerMeat.Lamb, true, true, false, false, true, true, true, false, false, new String[] { "Use Lamb" })]
-        [InlineData(DonerMeat.Chicken, true, true, false, false, true, true, true, false, false, new String[] { "Use Chicken" })]
-        [InlineData(DonerMeat.Beef, true, true, false, false, true, true, true, false, false, new String[] { "Use Beef" })]
-        [InlineData(DonerMeat.Pork, false, true, false, false, true, true, true, false, false, new String[] { "Hold Pita" })] //pass
-        [InlineData(DonerMeat.Pork, true, false, false, false, true, true, true, false, false, new String[] { "Hold Tomato" })]
-        [InlineData(DonerMeat.Pork, true, true, true, false, true, true, true, false, false, new String[] { "Add Peppers" })] //pass
-        [InlineData(DonerMeat.Pork, true, true, false, true, true, true, true, false, false, new String[] { "Add Eggplant" })] //pass
-        //Last entry of new InlineData new String[]{"Add Peppers"};
+
+        
         /// <summary>
         /// Special instructions of gyro
         /// </summary>
@@ -109,20 +102,29 @@ namespace GyroScope.DataTests
         /// <param name="wingSauce">WingSauce</param>
         /// <param name="mintChutney">MintChutney</param>
         /// <param name="expected">Expected special instructions</param>
+        [Theory]
+        [InlineData(DonerMeat.Pork, true, true, false, false, true, true, true, false, false, new String[] { })]
+        [InlineData(DonerMeat.Lamb, true, true, false, false, true, true, true, false, false, new String[] { "Use Lamb" })]
+        [InlineData(DonerMeat.Chicken, true, true, false, false, true, true, true, false, false, new String[] { "Use Chicken" })]
+        [InlineData(DonerMeat.Beef, true, true, false, false, true, true, true, false, false, new String[] { "Use Beef" })]
+        [InlineData(DonerMeat.Pork, false, true, false, false, true, true, true, false, false, new String[] { "Hold Pita" })] 
+        [InlineData(DonerMeat.Pork, true, false, false, false, true, true, true, false, false, new String[] { "Hold Tomato" })]
+        [InlineData(DonerMeat.Pork, true, true, true, false, true, true, true, false, false, new String[] { "Add Peppers" })] 
+        [InlineData(DonerMeat.Pork, true, true, false, true, true, true, true, false, false, new String[] { "Add Eggplant" })] 
         public void SpecialInstructionsShouldReflectIngredients(DonerMeat meat, bool pita, bool tomato, bool peppers, bool eggplant, bool onion, bool lettuce, bool tzatziki, bool wingSauce, bool mintChutney, string[] expected)
         {
-            var VirgoClassicGyro = new VirgoClassicGyro();
-            VirgoClassicGyro.Meat = meat;
-            VirgoClassicGyro.Pita = pita;
-            VirgoClassicGyro.Tomato = tomato;
-            VirgoClassicGyro.Peppers = peppers;
-            VirgoClassicGyro.Eggplant = eggplant;
-            VirgoClassicGyro.Onion = onion;
-            VirgoClassicGyro.Lettuce = lettuce;
-            VirgoClassicGyro.Tzatziki = tzatziki;
-            VirgoClassicGyro.WingSauce = wingSauce;
-            VirgoClassicGyro.MintChutney = mintChutney;
-            Assert.Equal(expected, VirgoClassicGyro.SpecialInstructions);
+            var virgoClassicGyro = new VirgoClassicGyro();
+            virgoClassicGyro.Meat = meat;
+            virgoClassicGyro.Pita = pita;
+            virgoClassicGyro.Tomato = tomato;
+            virgoClassicGyro.Peppers = peppers;
+            virgoClassicGyro.Eggplant = eggplant;
+            virgoClassicGyro.Onion = onion;
+            virgoClassicGyro.Lettuce = lettuce;
+            virgoClassicGyro.Tzatziki = tzatziki;
+            virgoClassicGyro.WingSauce = wingSauce;
+            virgoClassicGyro.MintChutney = mintChutney;
+            Assert.Equal(expected, virgoClassicGyro.SpecialInstructions);
         }   
     }
 }
