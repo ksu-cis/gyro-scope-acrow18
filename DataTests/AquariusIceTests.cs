@@ -67,6 +67,10 @@ namespace GyroScope.DataTests
 
         }
 
+        /// <summary>
+        /// Should be able to set size of aquarius ice
+        /// </summary>
+        /// <param name="size">Size of aquarius ice</param>
         [Theory]
         [InlineData(Size.Small)]
         [InlineData(Size.Medium)]
