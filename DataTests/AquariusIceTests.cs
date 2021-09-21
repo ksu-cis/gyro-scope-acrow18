@@ -77,6 +77,12 @@ namespace GyroScope.DataTests
             Assert.Equal(size, ice.Size);
         }
 
+        /// <summary>
+        /// Aquarius Ice should have right name for size and flavor
+        /// </summary>
+        /// <param name="size">Size</param>
+        /// <param name="flavor">Flavor</param>
+        /// <param name="name">Name</param>
         [Theory]
         [InlineData(Size.Small, AquariusIceFlavor.BlueRaspberry, "Small BlueRaspberry Aquarius Ice")]
         [InlineData(Size.Small, AquariusIceFlavor.Lemon, "Small Lemon Aquarius Ice")]
