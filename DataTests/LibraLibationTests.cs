@@ -97,8 +97,8 @@ namespace GyroScope.DataTests
         /// <summary>
         /// Libra Libation should have right name for flavor and sparkling
         /// </summary>
-        /// <param name="size">Size</param>
-        /// <param name="sparkling">Flavor</param>
+        /// <param name="flavor">Flavor</param>
+        /// <param name="sparkling">Sparkling</param>
         /// <param name="name">Name</param>
         [Theory]
         [InlineData(LibraLibationFlavor.Biral, true, "Sparkling Biral Libra Libation")]
