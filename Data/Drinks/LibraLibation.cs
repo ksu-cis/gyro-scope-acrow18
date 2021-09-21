@@ -62,7 +62,7 @@ namespace GyroScope.Data.Drinks
                     Calorie = 120;
                 }
 
-                if (Flavor == LibraLibationFlavor.Orangeade)
+                if (Flavor == LibraLibationFlavor.PinkLemonada)
                 {
                     Calorie = 41;
                 }

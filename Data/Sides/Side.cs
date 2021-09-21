@@ -25,7 +25,7 @@ namespace GyroScope.Data.Sides
         /// <summary>
         /// Price of side
         /// </summary>
-        public abstract decimal Price { get; set; }
+        public abstract decimal Price { get; }
 
         /// <summary>
         /// Calorie of side 

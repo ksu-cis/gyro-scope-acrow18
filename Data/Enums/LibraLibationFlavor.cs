@@ -34,7 +34,7 @@ namespace GyroScope.Data.Enums
         /// <summary>
         /// PinkLemonade
         /// </summary>
-        PinkLemonade,
+        PinkLemonada,
 
     }
 }
