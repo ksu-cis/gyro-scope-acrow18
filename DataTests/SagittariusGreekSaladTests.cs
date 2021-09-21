@@ -26,9 +26,9 @@ namespace GyroScope.DataTests
         }
 
         /// <summary>
-        /// Checks that the <paramref name="Size"/> can be set
+        /// Checks that the <paramref name="size"/> can be set
         /// </summary>
-        /// <param name="Size">The Size to use</param>
+        /// <param name="size">The Size to use</param>
         [Theory]
         [InlineData(Size.Small)]
         [InlineData(Size.Medium)]
