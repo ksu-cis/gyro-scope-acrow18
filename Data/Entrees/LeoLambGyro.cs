@@ -20,7 +20,9 @@ namespace GyroScope.Data.Entrees
     /// </summary>
     public class LeoLambGyro : Gyro
     {
-
+        /// <summary>
+        /// LeoLambGyro
+        /// </summary>
         public LeoLambGyro() 
         {
             Meat = DonerMeat.Lamb;

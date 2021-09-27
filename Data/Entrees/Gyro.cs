@@ -23,7 +23,7 @@ namespace GyroScope.Data.Entrees
         /// <summary>
         /// What kind of meat this Gyro is prepared with
         /// </summary>
-        public abstract DonerMeat Meat { get; set; }
+        public DonerMeat Meat { get; set; }
 
         /// <summary>
         /// Gyro should be served with a pita bread wrap
