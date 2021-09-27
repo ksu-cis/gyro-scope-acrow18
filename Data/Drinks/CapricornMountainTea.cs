@@ -46,15 +46,5 @@ namespace GyroScope.Data.Drinks
         /// </summary>
         public bool Honey { get; set; } = false;
 
-        /// <summary>
-        /// Flavor
-        /// </summary>
-        public LibraLibationFlavor Flavor { get; set; }
-
-        /// <summary>
-        /// Sparkling
-        /// </summary>
-        public bool Sparkling { get; set; }
-
     }
 }

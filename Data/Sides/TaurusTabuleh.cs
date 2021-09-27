@@ -21,16 +21,6 @@ namespace GyroScope.Data.Sides
     public class TaurusTabuleh : Side
     {
         /// <summary>
-        /// How large a serving of Taurus Tabuleh is
-        /// </summary>
-        public override Size Size { get; set; }
-
-        /// <summary>
-        /// Price of Tabuleh
-        /// </summary>
-        public decimal price = 0;
-
-        /// <summary>
         /// Price of fries
         /// (1.50 for S, 2.00 for M, 2,50 for L)
         /// </summary>
@@ -40,27 +30,23 @@ namespace GyroScope.Data.Sides
             {
                 if (Size == Size.Small)
                 {
-                    price = 1.50M;
+                    return 1.50M;
                 }
 
                 if (Size == Size.Medium)
                 {
-                    price = 2.00M;
+                    return 2.00M;
                 }
 
                 if (Size == Size.Large)
                 {
-                    price = 2.50M;
+                    return 2.50M;
                 }
 
-                return price;
+                throw new InvalidOperationException("Unknown size: " + Size);
             }
         }
 
-        /// <summary>
-        /// Calories of Tabuleh
-        /// </summary>
-        public uint calories = 0;
 
         /// <summary>
         /// Calorie of fries 
@@ -72,20 +58,20 @@ namespace GyroScope.Data.Sides
             {
                 if (Size == Size.Small)
                 {
-                    calories = 124;
+                    return 124;
                 }
 
                 if (Size == Size.Medium)
                 {
-                    calories = 186;
+                    return 186;
                 }
 
                 if (Size == Size.Large)
                 {
-                    calories = 248;
+                    return 248;
                 }
 
-                return calories;
+                throw new InvalidOperationException("Unknown size: " + Size);
             }
         }
 

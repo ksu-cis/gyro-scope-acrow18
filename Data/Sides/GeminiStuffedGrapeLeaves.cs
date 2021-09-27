@@ -21,16 +21,6 @@ namespace GyroScope.Data.Sides
     public class GeminiStuffedGrapeLeaves : Side
     {
         /// <summary>
-        /// How large a serving of stuffed grape leaves is
-        /// </summary>
-        public override Size Size { get; set; }
-
-        /// <summary>
-        /// Price of stuffed grape leaves
-        /// </summary>
-        public decimal price = 0;
-
-        /// <summary>
         /// Price of stuffed grape leaves
         /// (1.50 for S, 2.00 for M, 2.50 for L)
         /// </summary>
@@ -40,28 +30,23 @@ namespace GyroScope.Data.Sides
             {
                 if (Size == Size.Small)
                 {
-                    price = 1.50M;
+                    return 1.50M;
                 }
 
                 if (Size == Size.Medium)
                 {
-                    price = 2.00M;
+                    return 2.00M;
                 }
 
                 if (Size == Size.Large)
                 {
-                    price = 2.50M;
+                    return 2.50M;
                 }
 
-                return price;
+                throw new InvalidOperationException("Unknown size: " + Size);
             }
         }
 
-
-        /// <summary>
-        /// Calories of stuffed grape leaves
-        /// </summary>
-        public uint calories = 0;
 
         /// <summary>
         /// Calorie of stuffed grape leaves 
@@ -73,20 +58,20 @@ namespace GyroScope.Data.Sides
             {
                 if (Size == Size.Small)
                 {
-                    calories = 360;
+                    return 360;
                 }
 
                 if (Size == Size.Medium)
                 {
-                    calories = 540;
+                    return 540;
                 }
 
                 if (Size == Size.Large)
                 {
-                    calories = 720;
+                    return 720;
                 }
 
-                return calories;
+                throw new InvalidOperationException("Unknown size: " + Size);
             }
         }
 

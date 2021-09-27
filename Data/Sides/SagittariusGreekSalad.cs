@@ -20,16 +20,6 @@ namespace GyroScope.Data.Sides
     /// </summary>
     public class SagittariusGreekSalad : Side
     {
-        /// <summary>
-        /// How large a serving of Greek Salad is
-        /// </summary>
-        public override Size Size { get; set; }
-
-
-        /// <summary>
-        /// Price of greek salad 
-        /// </summary>
-        public decimal price = 0;
 
         /// <summary>
         /// Price of Greek Salad
@@ -41,20 +31,20 @@ namespace GyroScope.Data.Sides
             {
                 if (Size == Size.Small)
                 {
-                    price = 2.00M;
+                    return 2.00M;
                 }
 
                 if (Size == Size.Medium)
                 {
-                    price = 2.50M;
+                    return 2.50M;
                 }
 
                 if (Size == Size.Large)
                 {
-                    price = 3.00M;
+                    return 3.00M;
                 }
 
-                return price;
+                throw new InvalidOperationException("Unknown size: " + Size);
             }
         }
 
@@ -73,20 +63,20 @@ namespace GyroScope.Data.Sides
             {
                 if (Size == Size.Small)
                 {
-                    calories = 180;
+                    return 180;
                 }
 
                 if (Size == Size.Medium)
                 {
-                    calories = 270;
+                    return 270;
                 }
 
                 if (Size == Size.Large)
                 {
-                    calories = 360;
+                   return 360;
                 }
 
-                return calories;
+                throw new InvalidOperationException("Unknown size: " + Size);
             }
 
         }

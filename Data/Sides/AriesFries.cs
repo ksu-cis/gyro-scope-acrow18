@@ -21,16 +21,6 @@ namespace GyroScope.Data.Sides
     public class AriesFries : Side
     {
         /// <summary>
-        /// How large a serving of fries is
-        /// </summary>
-        public override Size Size { get; set; }
-
-        /// <summary>
-        /// Price of fries 
-        /// </summary>
-        public decimal price = 0;
-
-        /// <summary>
         /// Price of fries
         /// (1.50 for S, 2.00 for M, 2,50 for L)
         /// </summary>
@@ -40,27 +30,22 @@ namespace GyroScope.Data.Sides
             {   
                 if (Size == Size.Small)
                 {
-                    price = 1.50M;
+                    return 1.50M;
                 }
 
                 if (Size == Size.Medium)
                 {
-                    price = 2.00M;
+                     return 2.00M;
                 }
 
                 if (Size == Size.Large)
                 {
-                    price = 2.50M;
+                    return 2.50M;
                 }
 
-                return price;
+                throw new InvalidOperationException("Unknown size: " + Size);
             }
         }
-
-        /// <summary>
-        /// Calories of fries
-        /// </summary>
-        public uint calories = 0;
 
         /// <summary>
         /// Calorie of fries 
@@ -72,20 +57,20 @@ namespace GyroScope.Data.Sides
             { 
                 if (Size == Size.Small) 
                 {
-                    calories = 304;
+                    return 304;
                 }
 
                 if (Size == Size.Medium)
                 {
-                    calories = 456;
+                    return 456;
                 }
 
                 if (Size == Size.Large)
                 {
-                    calories = 608;
+                    return 608;
                 }
 
-                return calories;
+                throw new InvalidOperationException("Unknown size: " + Size);
             }
         }
 

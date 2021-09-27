@@ -20,25 +20,18 @@ namespace GyroScope.Data.Entrees
     /// </summary>
     public class LeoLambGyro : Gyro
     {
-        /// <summary>
-        /// What kind of meat this Gyro is prepared with
-        /// </summary>
-        public override DonerMeat Meat { get; set; } = DonerMeat.Lamb;
 
-        /// <summary>
-        /// Gyro should be served with a pita bread wrap
-        /// </summary>
-        public override bool Pita { get; set; } = true;
+        public LeoLambGyro() 
+        {
+            Meat = DonerMeat.Lamb;
+            Pita = true;
+            Tomato = true;
+            Onion = true;
+        }
 
-        /// <summary>
-        /// Gyro should be served with Tomato
-        /// </summary>
-        public override bool Tomato { get; set; } = true;
-
-        /// <summary>
-        /// Gyro should be served with onion
-        /// </summary>
-        public override bool Onion { get; set; } = true;
+        /*
+         * Add rest of properties to constructor
+         */
 
         /// <summary>
         /// Gyro should be served with Eggplant
@@ -80,79 +73,7 @@ namespace GyroScope.Data.Entrees
         /// </summary>
         public uint calorieSum = 0;
 
-        /// <summary>
-        /// Calories for this gyro
-        /// </summary>
-        public override uint Calories
-        {
-            get
-            {
-                if (Pita != false)
-                {
-                    calorieSum += 262;
-                }
-
-                if (Tomato != false)
-                {
-                    calorieSum += 30;
-                }
-
-                if (Onion != false)
-                {
-                    calorieSum += 30;
-                }
-
-                if (Eggplant != false)
-                {
-                    calorieSum += 47;
-                }
-
-                if (Lettuce != false)
-                {
-                    calorieSum += 54;
-                }
-
-                if (MintChutney != false) 
-                {
-                    calorieSum += 10;
-                }
-
-                if (WingSauce != false)
-                {
-                    calorieSum += 15;
-                }
-
-                if (Tzatziki != false)
-                {
-                    calorieSum += 30;
-                }
-
-                if (Meat == DonerMeat.Pork)
-                {
-                    calorieSum += 187;
-                }
-
-                if (Meat == DonerMeat.Lamb)
-                {
-                    calorieSum += 151;
-                }
-
-                if (Meat == DonerMeat.Chicken)
-                {
-                    calorieSum += 113;
-                }
-
-                if (Meat == DonerMeat.Beef)
-                {
-                    calorieSum += 181;
-                }
-
-                return calorieSum;
-            }
-        }
-
-        
-        
+         
         /// <summary>
         /// Special Instructions
         /// </summary>

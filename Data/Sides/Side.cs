@@ -20,7 +20,7 @@ namespace GyroScope.Data.Sides
         /// <summary>
         /// How large a serving of side
         /// </summary>
-        public abstract Size Size { get; set; }
+        public Size Size { get; set; }
 
         /// <summary>
         /// Price of side

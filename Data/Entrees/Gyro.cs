@@ -28,47 +28,47 @@ namespace GyroScope.Data.Entrees
         /// <summary>
         /// Gyro should be served with a pita bread wrap
         /// </summary>
-        public abstract bool Pita { get; set; }
+        public bool Pita { get; set; }
 
         /// <summary>
         /// Gyro should be served with peppers
         /// </summary>
-        public abstract bool Peppers { get; set; }
+        public bool Peppers { get; set; }
 
         /// <summary>
         /// Gyro should be served with onion
         /// </summary>
-        public abstract bool Onion { get; set; }
+        public bool Onion { get; set; }
 
         /// <summary>
         /// Gyro should be served with Lettuce
         /// </summary>
-        public abstract bool Lettuce { get; set; }
+        public bool Lettuce { get; set; }
 
         /// <summary>
         /// Gyro should be served with Wing sauce
         /// </summary>
-        public abstract bool WingSauce { get; set; }
+        public bool WingSauce { get; set; }
 
         /// <summary>
         /// Gyro should be served with Tomato
         /// </summary>
-        public abstract bool Tomato { get; set; }
+        public bool Tomato { get; set; }
 
         /// <summary>
         /// Gyro should be served with Eggplant
         /// </summary>
-        public abstract bool Eggplant { get; set; }
+        public bool Eggplant { get; set; }
 
         /// <summary>
         /// Gyro should be served with Mint chutney
         /// </summary>
-        public abstract bool MintChutney { get; set; }
+        public bool MintChutney { get; set; }
 
         /// <summary>
         /// Gyro should be served with Tzatziki sauce
         /// </summary>
-        public abstract bool Tzatziki { get; set; }
+        public bool Tzatziki { get; set; }
 
         /// <summary>
         /// Price of Entree
@@ -76,9 +76,76 @@ namespace GyroScope.Data.Entrees
         public override abstract decimal Price { get; }
 
         /// <summary>
-        /// Calories of Entree
+        /// Calories for this gyro
         /// </summary>
-        public override abstract uint Calories { get; }
+        public override uint Calories
+        {
+            get
+            {
+                uint calorieSum = 0;
+                if (Pita != false)
+                {
+                    calorieSum += 262;
+                }
+
+                if (Tomato != false)
+                {
+                    calorieSum += 30;
+                }
+
+                if (Onion != false)
+                {
+                    calorieSum += 30;
+                }
+
+                if (Eggplant != false)
+                {
+                    calorieSum += 47;
+                }
+
+                if (Lettuce != false)
+                {
+                    calorieSum += 54;
+                }
+
+                if (MintChutney != false)
+                {
+                    calorieSum += 10;
+                }
+
+                if (WingSauce != false)
+                {
+                    calorieSum += 15;
+                }
+
+                if (Tzatziki != false)
+                {
+                    calorieSum += 30;
+                }
+
+                if (Meat == DonerMeat.Pork)
+                {
+                    calorieSum += 187;
+                }
+
+                if (Meat == DonerMeat.Lamb)
+                {
+                    calorieSum += 151;
+                }
+
+                if (Meat == DonerMeat.Chicken)
+                {
+                    calorieSum += 113;
+                }
+
+                if (Meat == DonerMeat.Beef)
+                {
+                    calorieSum += 181;
+                }
+
+                return calorieSum;
+            }
+        }
 
         /// <summary>
         /// Special instructions
