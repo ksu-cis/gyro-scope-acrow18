@@ -27,41 +27,13 @@ namespace GyroScope.Data.Entrees
             Pita = true;
             Tomato = true;
             Onion = true;
+            Eggplant = true;
+            Lettuce = true;
+            MintChutney = true;
+            Peppers = false;
+            WingSauce = true;
+            Tzatziki = false;
         }
-
-        /*
-         * Add rest of properties to constructor
-         */
-
-        /// <summary>
-        /// Gyro should be served with Eggplant
-        /// </summary>
-        public override bool Eggplant { get; set; } = true;
-
-        /// <summary>
-        /// Gyro should be served with Lettuce
-        /// </summary>
-        public override bool Lettuce { get; set; } = true;
-
-        /// <summary>
-        /// Gyro should be served with Mint chutney
-        /// </summary>
-        public override bool MintChutney { get; set; } = true;
-
-        /// <summary>
-        /// Gyro should be served with Peppers
-        /// </summary>
-        public override bool Peppers { get; set; } = false;
-
-        /// <summary>
-        /// Gyro should be served with Wing Sauce
-        /// </summary>
-        public override bool WingSauce { get; set; } = false;
-
-        /// <summary>
-        /// Gyro should be served with Tzatziki
-        /// </summary>
-        public override bool Tzatziki { get; set; } = false;
 
         /// <summary>
         /// Price of Gyro
