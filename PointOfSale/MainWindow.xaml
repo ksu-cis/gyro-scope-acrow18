@@ -8,7 +8,7 @@
         Title="MainWindow" Height="1080" Width="1920">
     <Grid>
         <Button Content="Cancel Order" FontSize="30" Margin="121,871,1474,93" Width="325" Height="100"/>
-        <Button Content="Select Items" FontSize="30" Margin="527,871,1068,93" Width="325" Height="100"/>
+        <Button Content="Select Items" FontSize="30" Margin="527,871,1068,93" Width="325" Height="100" IsEnabled="False"/>
         <Button Content="Complete Order" FontSize="30" Margin="922,871,673,93" Width="325" Height="100"/>
     </Grid>
 </Window>
