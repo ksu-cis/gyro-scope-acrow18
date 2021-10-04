@@ -7,8 +7,19 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="1080" Width="1920">
     <Grid>
-        <Button Content="Cancel Order" FontSize="30" Margin="121,871,1474,93" Width="325" Height="100"/>
-        <Button Content="Select Items" FontSize="30" Margin="527,871,1068,93" Width="325" Height="100" IsEnabled="False"/>
-        <Button Content="Complete Order" FontSize="30" Margin="922,871,673,93" Width="325" Height="100"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="853*"/>
+            <RowDefinition Height="211*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="400*"/>
+            <ColumnDefinition Width="400*"/>
+            <ColumnDefinition Width="400*"/>
+            <ColumnDefinition Width="631*"/>
+        </Grid.ColumnDefinitions>
+        <Button Content="Cancel Order" FontSize="30" Grid.Column="0" Grid.Row="1"/>
+        <Button Content="Select Items" FontSize="30" IsEnabled="False" Grid.Column="1" Grid.Row="1" />
+        <Button Content="Complete Order" FontSize="30" Grid.Column="2" Grid.Row="1"/>
+        <!-- Merge columns and rows with ColumnSpan and RowSpan for adding controls -->
     </Grid>
 </Window>
