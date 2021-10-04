@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace PointOfSale
 {
     /// <summary>
-    /// Interaction logic for ItemCustomizationControl.xaml
+    /// Interaction logic for GyroCustomizationControl.xaml
     /// </summary>
-    public partial class ItemCustomizationControl : UserControl
+    public partial class GyroCustomizationControl : UserControl
     {
-        public ItemCustomizationControl()
+        public GyroCustomizationControl()
         {
             InitializeComponent();
         }
