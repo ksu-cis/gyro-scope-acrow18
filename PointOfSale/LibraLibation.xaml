@@ -34,6 +34,7 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
+        <Label Content="Libra Libation" FontSize="25" Grid.ColumnSpan="2" Grid.RowSpan="2" HorizontalAlignment="Left" Margin="320,0,0,0"/>
         <Label Content ="Flavors" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" FontSize="40"/>
         <RadioButton Content="Orangeade" FontSize="10" Grid.Column="0" Grid.Row="1" Margin="50,25,10,10"/>
         <RadioButton Content="Sour Cherry" FontSize="10" Grid.Column="0" Grid.Row="2" Margin="50,25,10,10"/>

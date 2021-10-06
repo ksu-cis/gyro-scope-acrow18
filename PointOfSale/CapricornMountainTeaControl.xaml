@@ -20,6 +20,7 @@
             <RowDefinition Height="17*"/>
             <RowDefinition Height="33*"/>
         </Grid.RowDefinitions>
+        <Label Content ="Capricorn Mountain Tea" HorizontalAlignment="Right"></Label>
         <Label Content ="Additives" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" FontSize="40"/>
         <CheckBox Content="Honey" Grid.Row="1" Grid.Column="0" Margin="140,30,10,10"/>
     </Grid>
