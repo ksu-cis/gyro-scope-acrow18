@@ -116,6 +116,36 @@ namespace GyroScope.DataTests
             Assert.Equal(name, ice.Name);
         }
 
+        [Fact]
+        public void ShouldImplementINotifyPropertyChanged() 
+        {
+            var ice = new AquariusIce();
+            Assert.IsAssignableFrom<System.ComponentModel.INotifyPropertyChanged>(ice);
+        }
 
+        [Theory]
+        [InlineData(Size.Large, "Size")]
+        [InlineData(Size.Medium, "Size")]
+        [InlineData(Size.Small, "Size")]
+        [InlineData(Size.Small, "Price")]
+        [InlineData(Size.Medium, "Price")]
+        [InlineData(Size.Large, "Price")]
+        public void ShouldNotifyOfPropertyChangedWhenSizeChanges(Size size, string propertyName) 
+        {
+
+            var ice = new AquariusIce();
+
+            //A quick hack to avoid not changing size when setting to default size
+            if (size == Size.Small) 
+            {
+                ice.Size = Size.Medium;
+            }
+
+            
+            Assert.PropertyChanged(ice, propertyName, () =>
+            {
+                ice.Size = size;
+            });
+        }
     }
 }

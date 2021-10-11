@@ -33,7 +33,7 @@ namespace GyroScope.Data.Entrees
             Lettuce = true;
             MintChutney = true;
             Peppers = false;
-            WingSauce = true;
+            WingSauce = false;
             Tzatziki = false;
         }
 

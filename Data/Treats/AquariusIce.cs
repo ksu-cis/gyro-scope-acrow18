@@ -10,18 +10,37 @@ using System.Text;
 using System.Threading.Tasks;
 using GyroScope.Data.Enums;
 using GyroScope.Data.Sides;
+using System.ComponentModel;
 
 namespace GyroScope.Data.Treats
 {
     /// <summary>
     /// A class representing "Aquarius Ice" - an itialian iced soda
     /// </summary>
-    public class AquariusIce : Treat
+    public class AquariusIce : Treat, INotifyPropertyChanged
     {
+        /// <summary>
+        /// backing field for size
+        /// </summary>
+        public Size _size = Size.Small;
+
         /// <summary>
         /// The size of this Aquarius Ice
         /// </summary>
-        public override Size Size { get; set; }
+        public override Size Size
+        {
+            get => _size;
+            set
+            {
+                if (_size != value)
+                {
+                    _size = value;
+                    OnPropertyChanged(nameof(this.Size));
+                    OnPropertyChanged(nameof(this.Flavor));
+                    OnPropertyChanged(nameof(this.Name));
+                }
+            }
+        }
 
 
         ///<summary>
@@ -30,9 +49,27 @@ namespace GyroScope.Data.Treats
         public override String Name { get { return $"{ Size} {Flavor} Aquarius Ice"; } }
 
         /// <summary>
+        /// backing field for flavor
+        /// </summary>
+        public AquariusIceFlavor _flavor = AquariusIceFlavor.Lemon;
+
+        /// <summary>
         /// The flavor of this Aquarius Ice
         /// </summary>
-        public AquariusIceFlavor Flavor { get; set; }
+        public AquariusIceFlavor Flavor 
+        {
+            get => _flavor;
+            set
+            {
+                if (_flavor != value)
+                {
+                    _flavor = value;
+                    OnPropertyChanged(nameof(this.Flavor));
+                    OnPropertyChanged(nameof(this.Calories));
+                    OnPropertyChanged(nameof(this.Name));
+                }
+            }
+        }
 
         /// <summary>
         /// The calories of this Aquarius Ice
