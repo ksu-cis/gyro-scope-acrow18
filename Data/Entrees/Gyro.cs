@@ -123,6 +123,11 @@ namespace GyroScope.Data.Entrees
                     calorieSum += 30;
                 }
 
+                if (Peppers != false)
+                {
+                    calorieSum += 33;
+                }
+
                 if (Meat == DonerMeat.Pork)
                 {
                     calorieSum += 187;

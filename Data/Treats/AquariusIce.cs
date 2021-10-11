@@ -38,6 +38,8 @@ namespace GyroScope.Data.Treats
                     OnPropertyChanged(nameof(this.Size));
                     OnPropertyChanged(nameof(this.Flavor));
                     OnPropertyChanged(nameof(this.Name));
+                    OnPropertyChanged(nameof(this.Price));
+
                 }
             }
         }
