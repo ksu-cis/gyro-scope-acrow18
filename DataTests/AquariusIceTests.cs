@@ -129,8 +129,8 @@ namespace GyroScope.DataTests
         /// <summary>
         /// Notifies of property change when size is changed
         /// </summary>
-        /// <param name="size"></param>
-        /// <param name="propertyName"></param>
+        /// <param name="size">Size of aquarius ice</param>
+        /// <param name="propertyName">Name of property</param>
         [Theory]
         [InlineData(Size.Large, "Size")]
         [InlineData(Size.Medium, "Size")]

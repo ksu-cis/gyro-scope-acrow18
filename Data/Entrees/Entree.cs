@@ -5,6 +5,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,8 +18,10 @@ namespace GyroScope.Data.Entrees
     /// <summary>
     /// Entree base class
     /// </summary>
-    public abstract class Entree
+    public abstract class Entree : INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+
         /// <summary>
         /// Price of Entree
         /// </summary>
@@ -33,5 +36,14 @@ namespace GyroScope.Data.Entrees
         /// Special instructions
         /// </summary>
         public abstract IEnumerable<string> SpecialInstructions { get; }
+
+        /// <summary>
+        /// Used to trigger a property changed event
+        /// </summary>
+        /// <param name="propertyName">The name of property that is changing</param>
+        protected void OnPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
     }
 }
