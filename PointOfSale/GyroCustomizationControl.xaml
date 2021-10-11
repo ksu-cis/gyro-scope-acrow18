@@ -39,8 +39,7 @@
         </Grid.RowDefinitions>
         <Label Content="Customize _____ Gyro" FontSize="50" Grid.ColumnSpan="3" HorizontalAlignment="Center"/>
         <Label Content="Doner Meat" FontSize="25" Grid.Row ="1" Grid.Column="0" Margin="25,5,10,10"/>
-        <RadioButton Content="Beef" Name="beefButton" FontSize="15" Grid.Row ="1" Grid.Column="0" Margin="25,70,10,10">
-        </RadioButton>
+        <RadioButton Content="Beef" Name="beefButton" FontSize="15" Grid.Row ="1" Grid.Column="0" Margin="25,70,10,10"/>
         <RadioButton Content="Pork" Name="porkButton" FontSize="15" Grid.Row ="2" Grid.Column="0" Margin="25,70,10,10"/>
         <RadioButton Content="Chicken" Name="chickenButton" FontSize="15" Grid.Row ="3" Grid.Column="0" Margin="25,70,10,10"/>
         <RadioButton Content="Lamb" Name="lambButton" FontSize="15" Grid.Row ="4" Grid.Column="0" Margin="25,70,10,10"/>
