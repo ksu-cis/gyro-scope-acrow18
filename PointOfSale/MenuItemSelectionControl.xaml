@@ -21,24 +21,24 @@
             <RowDefinition Height="110*"/>
         </Grid.RowDefinitions>
         <Label Content ="Entrees" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" FontSize="25"/>
-        <Button Content="Virgo Classic Gyro" FontSize ="30" Grid.Column="0" Grid.Row="1"/>
-        <Button Content="Leo Lamb Gyro" FontSize ="30" Grid.Column="0" Grid.Row="2"/>
-        <Button Content="Scorpio Spicy Gyro" FontSize ="30" Grid.Column="0" Grid.Row="3"/>
-        <Button Content="Pisces Fish Dish" FontSize ="30" Grid.Column="0" Grid.Row="4"/>
+        <Button Content="Virgo Classic Gyro" Name="virgoClassicButton" FontSize ="30" Grid.Column="0" Grid.Row="1"/>
+        <Button Content="Leo Lamb Gyro" Name="leoLambButton" FontSize ="30" Grid.Column="0" Grid.Row="2"/>
+        <Button Content="Scorpio Spicy Gyro" Name="scorpioSpicyButton" FontSize ="30" Grid.Column="0" Grid.Row="3"/>
+        <Button Content="Pisces Fish Dish" Name="piscesFishButton" FontSize ="30" Grid.Column="0" Grid.Row="4"/>
 
         <Label Content ="Sides" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" FontSize="25"/>
-        <Button Content="Taurus Tabouleh" FontSize ="30" Grid.Column="1" Grid.Row="1"/>
-        <Button Content="Gemini Stuffed Grape Leaves" FontSize ="25" Grid.Column="1" Grid.Row="2"/>
-        <Button Content="Sagittarius Greek Salad" FontSize ="30" Grid.Column="1" Grid.Row="3"/>
-        <Button Content="Aries Fries" FontSize ="30" Grid.Column="1" Grid.Row="4"/>
+        <Button Content="Taurus Tabouleh" Name="taurusTaboulehButton" FontSize ="30" Grid.Column="1" Grid.Row="1"/>
+        <Button Content="Gemini Stuffed Grape Leaves" Name="grapeStuffedButton" FontSize ="25" Grid.Column="1" Grid.Row="2"/>
+        <Button Content="Sagittarius Greek Salad" Name="greekSaladButton" FontSize ="30" Grid.Column="1" Grid.Row="3"/>
+        <Button Content="Aries Fries" Name="ariesFriesButton" FontSize ="30" Grid.Column="1" Grid.Row="4"/>
 
         <Label Content ="Drinks" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Center" FontSize="25"/>
-        <Button Content="Libra Libation" FontSize ="30" Grid.Column="2" Grid.Row="1"/>
-        <Button Content="Capricorn Mountain Tea" FontSize ="30" Grid.Column="2" Grid.Row="2"/>
+        <Button Content="Libra Libation" Name="libraLibationButton" FontSize ="30" Grid.Column="2" Grid.Row="1"/>
+        <Button Content="Capricorn Mountain Tea" Name="capricornMountainButton" FontSize ="30" Grid.Column="2" Grid.Row="2"/>
         
         <Label Content ="Treats" Grid.Row="3" Grid.Column="2" HorizontalAlignment="Center" FontSize="25" Margin="0,30,0,0"/>
-        <Button Content="Aquarius Ice" FontSize ="30" Grid.Column="2" Grid.Row="4"/>
-        <Button Content="Cancer Halva Cake" FontSize ="30" Grid.Column="2" Grid.Row="5"/>
+        <Button Content="Aquarius Ice" Name="aquariusIceButton" FontSize ="30" Grid.Column="2" Grid.Row="4"/>
+        <Button Content="Cancer Halva Cake" Name="cancerHalvaButton" FontSize ="30" Grid.Column="2" Grid.Row="5"/>
         
     </Grid>
 </UserControl>
