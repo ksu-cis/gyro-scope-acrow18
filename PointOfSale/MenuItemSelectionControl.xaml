@@ -6,6 +6,7 @@
              xmlns:local="clr-namespace:PointOfSale"
              mc:Ignorable="d" 
              d:DesignHeight="650" d:DesignWidth="1000">
+<Border>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -39,6 +40,6 @@
         <Label Content ="Treats" Grid.Row="3" Grid.Column="2" HorizontalAlignment="Center" FontSize="25" Margin="0,30,0,0"/>
         <Button Content="Aquarius Ice" Name="aquariusIceButton" FontSize ="30" Grid.Column="2" Grid.Row="4"/>
         <Button Content="Cancer Halva Cake" Name="cancerHalvaButton" FontSize ="30" Grid.Column="2" Grid.Row="5"/>
-        
     </Grid>
+</Border>
 </UserControl>
