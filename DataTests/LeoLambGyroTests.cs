@@ -139,8 +139,8 @@ namespace GyroScope.DataTests
         /// <summary>
         /// Notifies of property change when meat is changed
         /// </summary>
-        /// <param name="size"></param>
-        /// <param name="propertyName"></param>
+        /// <param name="meat">Meat used in Gyro</param>
+        /// <param name="propertyName">Name of property</param>
         [Theory]
         [InlineData(DonerMeat.Beef, "Calories")]
         [InlineData(DonerMeat.Chicken, "Calories")]

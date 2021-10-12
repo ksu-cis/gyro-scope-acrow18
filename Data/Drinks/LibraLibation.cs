@@ -62,12 +62,27 @@ namespace GyroScope.Data.Drinks
 
                 }
             }
-        } 
+        }
 
         /// <summary>
-        /// Honey
+        /// backing field for honey
         /// </summary>
-        public bool Honey { get; set; } = false;
+        public bool _honey = false;
+
+        /// <summary>
+        /// Determines if Capricorn Mountain Tea has honey.
+        /// </summary>
+        public bool Honey
+        {
+            get => _honey;
+            set
+            {
+                if (_honey != value)
+                {
+                    _honey = value;
+                }
+            }
+        }
 
         /// <summary>
         /// Calorie of Libra Libation
@@ -106,9 +121,24 @@ namespace GyroScope.Data.Drinks
         }
 
         /// <summary>
+        /// backing field for price
+        /// </summary>
+        public decimal _price;
+
+        /// <summary>
         /// Price of Libra Libation
         /// </summary>
-        public override decimal Price { get; set; } = 1.00M;
+        public override decimal Price
+        {
+            get => _price;
+            set
+            {
+                if (_price != value)
+                {
+                    _price = value;
+                }
+            }
+        }
 
         /// <summary>
         /// Greek Soda
@@ -126,6 +156,15 @@ namespace GyroScope.Data.Drinks
                     return $"Sparkling {Flavor} Libra Libation";
                 }
             }
+        }
+
+        /// <summary>
+        /// Overridden ToString
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            return Name;
         }
     }
 }

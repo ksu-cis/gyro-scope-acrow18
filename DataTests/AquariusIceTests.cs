@@ -162,6 +162,11 @@ namespace GyroScope.DataTests
             });
         }
 
+        /// <summary>
+        /// Notifies of property change when flavor is changed
+        /// </summary>
+        /// <param name="flavor">Flavor of Aquarius ice</param>
+        /// <param name="propertyName">Name of property</param>
         [Theory]
         [InlineData(AquariusIceFlavor.BlueRaspberry, "Flavor")]
         [InlineData(AquariusIceFlavor.Lemon, "Flavor")]
