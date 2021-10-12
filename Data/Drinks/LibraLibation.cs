@@ -161,7 +161,7 @@ namespace GyroScope.Data.Drinks
         /// <summary>
         /// Overridden ToString
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Descriptive name</returns>
         public override string ToString()
         {
             return Name;

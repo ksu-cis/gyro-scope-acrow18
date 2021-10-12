@@ -17,6 +17,9 @@ namespace GyroScope.Data.Drinks
     /// </summary>
     public class CapricornMountainTea : Drink
     {
+        /// <summary>
+        /// backing field for price
+        /// </summary>
         public decimal _price;
 
         /// <summary>
