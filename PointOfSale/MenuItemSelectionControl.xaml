@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:PointOfSale"
              mc:Ignorable="d" 
              d:DesignHeight="650" d:DesignWidth="1000">
-<Border>
+<Border Name="menuSelectionControl">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
