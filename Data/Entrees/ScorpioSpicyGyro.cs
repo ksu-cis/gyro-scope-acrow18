@@ -81,6 +81,15 @@ namespace GyroScope.Data.Entrees
             }
         }
 
-        
+
+        /// <summary>
+        /// Overridden ToString
+        /// </summary>
+        /// <returns>Descriptive name</returns>
+        public override string ToString()
+        {
+            return "Scorpio Spicy Gyro";
+        }
+
     }
 }
