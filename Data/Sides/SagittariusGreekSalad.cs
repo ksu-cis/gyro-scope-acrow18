@@ -6,6 +6,7 @@
 using GyroScope.Data.Enums;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,8 +19,31 @@ namespace GyroScope.Data.Sides
     /// <summary>
     /// Declares a class for the side SagittariusGreekSalad
     /// </summary>
-    public class SagittariusGreekSalad : Side
+    public class SagittariusGreekSalad : Side, INotifyPropertyChanged
     {
+        /// <summary>
+        /// backing field for size
+        /// </summary>
+        public Size _size = Size.Small;
+
+        /// <summary>
+        /// The size of this SaggitariusGreekSalad
+        /// </summary>
+        public override Size Size
+        {
+            get => _size;
+            set
+            {
+                if (_size != value)
+                {
+                    _size = value;
+                    OnPropertyChanged(nameof(this.Size));
+                    OnPropertyChanged(nameof(this.Price));
+                    OnPropertyChanged(nameof(this.Calories));
+
+                }
+            }
+        }
 
         /// <summary>
         /// Price of Greek Salad

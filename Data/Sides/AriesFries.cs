@@ -6,6 +6,7 @@
 using GyroScope.Data.Enums;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,8 +19,33 @@ namespace GyroScope.Data.Sides
     /// <summary>
     /// Declares a class for the side AresFries
     /// </summary>
-    public class AriesFries : Side
+    public class AriesFries : Side, INotifyPropertyChanged
     {
+
+        /// <summary>
+        /// backing field for size
+        /// </summary>
+        public Size _size = Size.Small;
+
+        /// <summary>
+        /// The size of this Aries Fries
+        /// </summary>
+        public override Size Size
+        {
+            get => _size;
+            set
+            {
+                if (_size != value)
+                {
+                    _size = value;
+                    OnPropertyChanged(nameof(this.Size));
+                    OnPropertyChanged(nameof(this.Price));
+                    OnPropertyChanged(nameof(this.Calories));
+
+                }
+            }
+        }
+
         /// <summary>
         /// Price of fries
         /// (1.50 for S, 2.00 for M, 2,50 for L)

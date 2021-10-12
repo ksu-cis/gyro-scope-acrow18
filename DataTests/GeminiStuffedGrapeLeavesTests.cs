@@ -72,6 +72,47 @@ namespace GyroScope.DataTests
             Assert.Equal(calories, geminiStuffedGrapeLeaves.Calories);
         }
 
+        /// <summary>
+        /// Checks if INotifyPropertyChanged is implemented
+        /// </summary>
+        [Fact]
+        public void ShouldImplementINotifyPropertyChanged()
+        {
+            var geminiStuffedGrapeLeaves = new GeminiStuffedGrapeLeaves();
+            Assert.IsAssignableFrom<System.ComponentModel.INotifyPropertyChanged>(geminiStuffedGrapeLeaves);
+        }
 
+        /// <summary>
+        /// Notifies of property change when size is changed
+        /// </summary>
+        /// <param name="size">Size of Gemini Stuffed Grape Leaves</param>
+        /// <param name="propertyName">Name of property</param>
+        [Theory]
+        [InlineData(Size.Large, "Size")]
+        [InlineData(Size.Medium, "Size")]
+        [InlineData(Size.Small, "Size")]
+        [InlineData(Size.Large, "Price")]
+        [InlineData(Size.Medium, "Price")]
+        [InlineData(Size.Small, "Price")]
+        [InlineData(Size.Large, "Calories")]
+        [InlineData(Size.Medium, "Calories")]
+        [InlineData(Size.Small, "Calories")]
+        public void ShouldNotifyOfPropertyChangedWhenSizeChanges(Size size, string propertyName)
+        {
+
+            var geminiStuffedGrapeLeaves = new GeminiStuffedGrapeLeaves();
+
+            //A quick hack to avoid not changing size when setting to default size
+            if (size == Size.Small)
+            {
+                geminiStuffedGrapeLeaves.Size = Size.Medium;
+            }
+
+
+            Assert.PropertyChanged(geminiStuffedGrapeLeaves, propertyName, () =>
+            {
+                geminiStuffedGrapeLeaves.Size = size;
+            });
+        }
     }
 }
