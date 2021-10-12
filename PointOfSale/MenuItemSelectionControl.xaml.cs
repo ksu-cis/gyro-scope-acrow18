@@ -26,22 +26,33 @@ namespace PointOfSale
         }
 
         /// <summary>
-        /// Event in button being clicked
+        /// Name of item from button click
         /// </summary>
-        void ButtonClicked(object sender, RoutedEventArgs e) 
+        /// <param name="sender"></param>
+        /// <returns></returns>
+        public string ItemNameOfButtonClicked(object sender) 
         {
-            if (sender is Button button) 
+            if (sender is Button button)
             {
-
+                return button.Content.ToString();
             }
+
+            else 
+            {
+                throw new InvalidOperationException("Item doesn't exist");
+            }
+            
         }
 
         /// <summary>
-        /// Switches to correct customization menu
+        /// Switches to correct menu item
         /// </summary>
-        /// <param name="name"></param>
-        public void SwitchScreen(string name) 
+        /// <param name="name">Name of menu item</param>
+        /// <param name="sender"></param>
+        public void SwitchScreen(string name, object sender) 
         {
+            name = ItemNameOfButtonClicked(sender);
+
             switch (name) 
             {
                 ///Drinks

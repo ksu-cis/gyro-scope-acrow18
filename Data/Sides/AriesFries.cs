@@ -106,7 +106,7 @@ namespace GyroScope.Data.Sides
         /// <returns>Descriptive name</returns>
         public override string ToString()
         {
-            return "Aries Fries";
+            return $"{ Size} Aries Fries";
         }
 
     }

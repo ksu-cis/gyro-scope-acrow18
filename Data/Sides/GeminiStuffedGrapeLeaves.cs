@@ -106,7 +106,7 @@ namespace GyroScope.Data.Sides
         /// <returns>Descriptive name</returns>
         public override string ToString()
         {
-            return "Gemini Stuffed Grape Leaves";
+           return $"{ Size} Gemini Stuffed Grape Leaves";
         }
 
     }
