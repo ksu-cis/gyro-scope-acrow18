@@ -104,5 +104,14 @@ namespace GyroScope.Data.Sides
             }
 
         }
+
+        /// <summary>
+        /// Overridden ToString
+        /// </summary>
+        /// <returns>Descriptive name</returns>
+        public override string ToString()
+        {
+            return "Sagittarius Greek Salad";
+        }
     }
 }
