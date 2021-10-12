@@ -116,6 +116,83 @@ namespace GyroScope.DataTests
             Assert.Equal(name, ice.Name);
         }
 
+        /// <summary>
+        /// Checks if INotifyPropertyChanged is implemented
+        /// </summary>
+        [Fact]
+        public void ShouldImplementINotifyPropertyChanged() 
+        {
+            var ice = new AquariusIce();
+            Assert.IsAssignableFrom<System.ComponentModel.INotifyPropertyChanged>(ice);
+        }
 
+        /// <summary>
+        /// Notifies of property change when size is changed
+        /// </summary>
+        /// <param name="size">Size of aquarius ice</param>
+        /// <param name="propertyName">Name of property</param>
+        [Theory]
+        [InlineData(Size.Large, "Size")]
+        [InlineData(Size.Medium, "Size")]
+        [InlineData(Size.Small, "Size")]
+        [InlineData(Size.Large, "Price")]
+        [InlineData(Size.Medium, "Price")]
+        [InlineData(Size.Small, "Price")]
+        [InlineData(Size.Large, "Flavor")]
+        [InlineData(Size.Medium, "Flavor")]
+        [InlineData(Size.Small, "Flavor")]
+        [InlineData(Size.Large, "Name")]
+        [InlineData(Size.Medium, "Name")]
+        [InlineData(Size.Small, "Name")]
+        public void ShouldNotifyOfPropertyChangedWhenSizeChanges(Size size, string propertyName) 
+        {
+
+            var ice = new AquariusIce();
+
+            //A quick hack to avoid not changing size when setting to default size
+            if (size == Size.Small) 
+            {
+                ice.Size = Size.Medium;
+            }
+
+            
+            Assert.PropertyChanged(ice, propertyName, () =>
+            {
+                ice.Size = size;
+            });
+        }
+
+        /// <summary>
+        /// Notifies of property change when flavor is changed
+        /// </summary>
+        /// <param name="flavor">Flavor of Aquarius ice</param>
+        /// <param name="propertyName">Name of property</param>
+        [Theory]
+        [InlineData(AquariusIceFlavor.BlueRaspberry, "Flavor")]
+        [InlineData(AquariusIceFlavor.Lemon, "Flavor")]
+        [InlineData(AquariusIceFlavor.Mango, "Flavor")]
+        [InlineData(AquariusIceFlavor.Watermellon, "Name")]
+        [InlineData(AquariusIceFlavor.Strawberry, "Name")]
+        [InlineData(AquariusIceFlavor.Orange, "Name")]
+        [InlineData(AquariusIceFlavor.Lemon, "Name")]
+        [InlineData(AquariusIceFlavor.BlueRaspberry, "Calories")]
+        [InlineData(AquariusIceFlavor.Lemon, "Calories")]
+        [InlineData(AquariusIceFlavor.Mango, "Calories")]
+        public void ShouldNotifyOfPropertyChangeWhenFlavorChanges(AquariusIceFlavor flavor, string propertyName) 
+        {
+            var ice = new AquariusIce();
+
+            //A quick hack to avoid not changing size when setting to default size
+            if (flavor == AquariusIceFlavor.Lemon)
+            {
+                ice.Flavor = AquariusIceFlavor.Orange;
+            }
+
+
+            Assert.PropertyChanged(ice, propertyName, () =>
+            {
+                ice.Flavor = flavor;
+            });
+        }
     }
 }

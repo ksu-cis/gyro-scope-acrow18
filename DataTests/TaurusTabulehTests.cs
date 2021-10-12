@@ -76,5 +76,48 @@ namespace GyroScope.DataTests
 
             Assert.Equal(calories, taurusTabuleh.Calories);
         }
+
+        /// <summary>
+        /// Checks if INotifyPropertyChanged is implemented
+        /// </summary>
+        [Fact]
+        public void ShouldImplementINotifyPropertyChanged()
+        {
+            var taurusTabuleh = new TaurusTabuleh();
+            Assert.IsAssignableFrom<System.ComponentModel.INotifyPropertyChanged>(taurusTabuleh);
+        }
+
+        /// <summary>
+        /// Notifies of property change when size is changed
+        /// </summary>
+        /// <param name="size">Size of Taurus Tabuleh</param>
+        /// <param name="propertyName">Name of property</param>
+        [Theory]
+        [InlineData(Size.Large, "Size")]
+        [InlineData(Size.Medium, "Size")]
+        [InlineData(Size.Small, "Size")]
+        [InlineData(Size.Large, "Price")]
+        [InlineData(Size.Medium, "Price")]
+        [InlineData(Size.Small, "Price")]
+        [InlineData(Size.Large, "Calories")]
+        [InlineData(Size.Medium, "Calories")]
+        [InlineData(Size.Small, "Calories")]
+        public void ShouldNotifyOfPropertyChangedWhenSizeChanges(Size size, string propertyName)
+        {
+
+            var taurusTabuleh = new TaurusTabuleh();
+
+            //A quick hack to avoid not changing size when setting to default size
+            if (size == Size.Small)
+            {
+                taurusTabuleh.Size = Size.Medium;
+            }
+
+
+            Assert.PropertyChanged(taurusTabuleh, propertyName, () =>
+            {
+                taurusTabuleh.Size = size;
+            });
+        }
     }
 }

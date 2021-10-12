@@ -33,7 +33,7 @@ namespace GyroScope.Data.Entrees
             Lettuce = true;
             MintChutney = true;
             Peppers = false;
-            WingSauce = true;
+            WingSauce = false;
             Tzatziki = false;
         }
 
@@ -84,6 +84,15 @@ namespace GyroScope.Data.Entrees
                     yield return "Use " + Meat;
                 }
             }
+        }
+
+        /// <summary>
+        /// Overridden ToString
+        /// </summary>
+        /// <returns>Descriptive name</returns>
+        public override string ToString()
+        {
+            return "Leo Lamb Gyro";
         }
 
     }

@@ -125,6 +125,325 @@ namespace GyroScope.DataTests
             leoLambGyro.MintChutney = mintChutney;
             Assert.Equal(expected, leoLambGyro.SpecialInstructions);
         }
-        
+
+        /// <summary>
+        /// Checks if INotifyPropertyChanged is implemented
+        /// </summary>
+        [Fact]
+        public void ShouldImplementINotifyPropertyChanged()
+        {
+            var leoLambGyro = new LeoLambGyro();
+            Assert.IsAssignableFrom<System.ComponentModel.INotifyPropertyChanged>(leoLambGyro);
+        }
+
+        /// <summary>
+        /// Notifies of property change when meat is changed
+        /// </summary>
+        /// <param name="meat">Meat used in Gyro</param>
+        /// <param name="propertyName">Name of property</param>
+        [Theory]
+        [InlineData(DonerMeat.Beef, "Calories")]
+        [InlineData(DonerMeat.Chicken, "Calories")]
+        [InlineData(DonerMeat.Lamb, "Calories")]
+        [InlineData(DonerMeat.Pork, "Calories")]
+        [InlineData(DonerMeat.Beef, "SpecialInstructions")]
+        [InlineData(DonerMeat.Chicken, "SpecialInstructions")]
+        [InlineData(DonerMeat.Lamb, "SpecialInstructions")]
+        [InlineData(DonerMeat.Pork, "SpecialInstructions")]
+        [InlineData(DonerMeat.Beef, "Meat")]
+        [InlineData(DonerMeat.Chicken, "Meat")]
+        [InlineData(DonerMeat.Lamb, "Meat")]
+        [InlineData(DonerMeat.Pork, "Meat")]
+
+        public void ShouldNotifyOfPropertyChangedWhenMeatChanges(DonerMeat meat, string propertyName)
+        {
+
+            var leoLambGyro = new LeoLambGyro();
+
+            //A quick hack to avoid not changing meat when setting to default meat
+            if (meat == DonerMeat.Lamb)
+            {
+                leoLambGyro.Meat = DonerMeat.Beef;
+            }
+
+
+            Assert.PropertyChanged(leoLambGyro, propertyName, () =>
+            {
+                leoLambGyro.Meat = meat;
+            });
+        }
+
+        /// <summary>
+        /// Notifies of property change when pita is changed
+        /// </summary>
+        /// <param name="pita">Pita</param>
+        /// <param name="propertyName">Name of property</param>
+        [Theory]
+        [InlineData(true, "Calories")]
+        [InlineData(false, "Calories")]
+        [InlineData(true, "SpecialInstructions")]
+        [InlineData(false, "SpecialInstructions")]
+        [InlineData(true, "Pita")]
+        [InlineData(false, "Pita")]
+
+        public void ShouldNotifyOfPropertyChangedWhenPitaChanges(bool pita , string propertyName)
+        {
+
+            var leoLambGyro = new LeoLambGyro();
+
+            //A quick hack to avoid not changing meat when setting to default meat
+            if (pita == true)
+            {
+                leoLambGyro.Pita = false;
+            }
+
+
+            Assert.PropertyChanged(leoLambGyro, propertyName, () =>
+            {
+                leoLambGyro.Pita = pita;
+            });
+        }
+
+        /// <summary>
+        /// Notifies of property change when Tomato is changed
+        /// </summary>
+        /// <param name="tomato">Tomato</param>
+        /// <param name="propertyName">Name of property</param>
+        [Theory]
+        [InlineData(true, "Calories")]
+        [InlineData(false, "Calories")]
+        [InlineData(true, "SpecialInstructions")]
+        [InlineData(false, "SpecialInstructions")]
+        [InlineData(true, "Tomato")]
+        [InlineData(false, "Tomato")]
+        public void ShouldNotifyOfPropertyChangedWhenTomatoChanges(bool tomato, string propertyName)
+        {
+
+            var leoLambGyro = new LeoLambGyro();
+
+            //A quick hack to avoid not changing tomato when setting to default 
+            if (tomato == true)
+            {
+                leoLambGyro.Tomato = false;
+            }
+
+
+            Assert.PropertyChanged(leoLambGyro, propertyName, () =>
+            {
+                leoLambGyro.Tomato = tomato;
+            });
+        }
+
+        /// <summary>
+        /// Notifies of property change when onion is changed
+        /// </summary>
+        /// <param name="onion">Onion</param>
+        /// <param name="propertyName">Name of property</param>
+        [Theory]
+        [InlineData(true, "Calories")]
+        [InlineData(false, "Calories")]
+        [InlineData(true, "SpecialInstructions")]
+        [InlineData(false, "SpecialInstructions")]
+        [InlineData(true, "Onion")]
+        [InlineData(false, "Onion")]
+        public void ShouldNotifyOfPropertyChangedWhenOnionChanges(bool onion, string propertyName)
+        {
+
+            var leoLambGyro = new LeoLambGyro();
+
+            //A quick hack to avoid not changing onion when setting to default
+            if (onion == true)
+            {
+                leoLambGyro.Onion = false;
+            }
+
+
+            Assert.PropertyChanged(leoLambGyro, propertyName, () =>
+            {
+                leoLambGyro.Onion = onion;
+            });
+        }
+
+        /// <summary>
+        /// Notifies of property change when eggplant is changed
+        /// </summary>
+        /// <param name="eggplant">Eggplant</param>
+        /// <param name="propertyName">Name of property</param>
+        [Theory]
+        [InlineData(true, "Calories")]
+        [InlineData(false, "Calories")]
+        [InlineData(true, "SpecialInstructions")]
+        [InlineData(false, "SpecialInstructions")]
+        [InlineData(true, "Eggplant")]
+        [InlineData(false, "Eggplant")]
+        public void ShouldNotifyOfPropertyChangedWhenEggplantChanges(bool eggplant, string propertyName)
+        {
+
+            var leoLambGyro = new LeoLambGyro();
+
+            //A quick hack to avoid not changing eggplant when setting to default
+            if (eggplant == true)
+            {
+                leoLambGyro.Eggplant = false;
+            }
+
+
+            Assert.PropertyChanged(leoLambGyro, propertyName, () =>
+            {
+                leoLambGyro.Eggplant = eggplant;
+            });
+        }
+
+        /// <summary>
+        /// Notifies of property change when lettuce is changed
+        /// </summary>
+        /// <param name="lettuce">Lettuce</param>
+        /// <param name="propertyName">Name of property</param>
+        [Theory]
+        [InlineData(true, "Calories")]
+        [InlineData(false, "Calories")]
+        [InlineData(true, "SpecialInstructions")]
+        [InlineData(false, "SpecialInstructions")]
+        [InlineData(true, "Lettuce")]
+        [InlineData(false, "Lettuce")]
+        public void ShouldNotifyOfPropertyChangedWhenLettuceChanges(bool lettuce, string propertyName)
+        {
+
+            var leoLambGyro = new LeoLambGyro();
+
+            //A quick hack to avoid not changing lettuce when setting to default
+            if (lettuce == true)
+            {
+                leoLambGyro.Lettuce = false;
+            }
+
+
+            Assert.PropertyChanged(leoLambGyro, propertyName, () =>
+            {
+                leoLambGyro.Lettuce = lettuce;
+            });
+        }
+
+        /// <summary>
+        /// Notifies of property change when mint chutney is changed
+        /// </summary>
+        /// <param name="mintChutney">Mint Chutney</param>
+        /// <param name="propertyName">Name of property</param>
+        [Theory]
+        [InlineData(true, "Calories")]
+        [InlineData(false, "Calories")]
+        [InlineData(true, "SpecialInstructions")]
+        [InlineData(false, "SpecialInstructions")]
+        [InlineData(true, "mintChutney")]
+        [InlineData(false, "mintChutney")]
+        public void ShouldNotifyOfPropertyChangedWhenMintChutneyChanges(bool mintChutney, string propertyName)
+        {
+
+            var leoLambGyro = new LeoLambGyro();
+
+            //A quick hack to avoid not changing mintChutney when setting to default
+            if (mintChutney == true)
+            {
+                leoLambGyro.MintChutney = false;
+            }
+
+
+            Assert.PropertyChanged(leoLambGyro, propertyName, () =>
+            {
+                leoLambGyro.MintChutney = mintChutney;
+            });
+        }
+
+        /// <summary>
+        /// Notifies of property change when peppers is changed
+        /// </summary>
+        /// <param name="peppers">peppers</param>
+        /// <param name="propertyName">Name of property</param>
+        [Theory]
+        [InlineData(true, "Calories")]
+        [InlineData(false, "Calories")]
+        [InlineData(true, "SpecialInstructions")]
+        [InlineData(false, "SpecialInstructions")]
+        [InlineData(true, "Peppers")]
+        [InlineData(false, "Peppers")]
+        public void ShouldNotifyOfPropertyChangedWhenPeppersChanges(bool peppers, string propertyName)
+        {
+
+            var leoLambGyro = new LeoLambGyro();
+
+            //A quick hack to avoid not changing mintChutney when setting to default
+            if (peppers == false)
+            {
+                leoLambGyro.Peppers = true;
+            }
+
+
+            Assert.PropertyChanged(leoLambGyro, propertyName, () =>
+            {
+                leoLambGyro.Peppers = peppers;
+            });
+        }
+
+
+        /// <summary>
+        /// Notifies of property change when wing sauce is changed
+        /// </summary>
+        /// <param name="wingSauce">Wing Sauce</param>
+        /// <param name="propertyName">Name of property</param>
+        [Theory]
+        [InlineData(true, "Calories")]
+        [InlineData(false, "Calories")]
+        [InlineData(true, "SpecialInstructions")]
+        [InlineData(false, "SpecialInstructions")]
+        [InlineData(true, "WingSauce")]
+        [InlineData(false, "WingSauce")]
+        public void ShouldNotifyOfPropertyChangedWhenWingSauceChanges(bool wingSauce, string propertyName)
+        {
+
+            var leoLambGyro = new LeoLambGyro();
+
+            //A quick hack to avoid not changing mintChutney when setting to default
+            if (wingSauce == false)
+            {
+                leoLambGyro.WingSauce = true;
+            }
+
+
+            Assert.PropertyChanged(leoLambGyro, propertyName, () =>
+            {
+                leoLambGyro.WingSauce = wingSauce;
+            });
+        }
+
+        /// <summary>
+        /// Notifies of property change when tzatziki is changed
+        /// </summary>
+        /// <param name="tzatziki">tzatziki</param>
+        /// <param name="propertyName">Name of property</param>
+        [Theory]
+        [InlineData(true, "Calories")]
+        [InlineData(false, "Calories")]
+        [InlineData(true, "SpecialInstructions")]
+        [InlineData(false, "SpecialInstructions")]
+        [InlineData(true, "Tzatziki")]
+        [InlineData(false, "Tzatziki")]
+        public void ShouldNotifyOfPropertyChangedWhenTzatzikiChanges(bool tzatziki, string propertyName)
+        {
+
+            var leoLambGyro = new LeoLambGyro();
+
+            //A quick hack to avoid not changing mintChutney when setting to default
+            if (tzatziki == false)
+            {
+                leoLambGyro.Tzatziki = true;
+            }
+
+
+            Assert.PropertyChanged(leoLambGyro, propertyName, () =>
+            {
+                leoLambGyro.Tzatziki = tzatziki;
+            });
+        }
+
     }
 }

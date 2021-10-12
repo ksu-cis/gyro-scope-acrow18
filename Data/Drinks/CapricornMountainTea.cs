@@ -18,9 +18,15 @@ namespace GyroScope.Data.Drinks
     public class CapricornMountainTea : Drink
     {
         /// <summary>
+        /// backing field for price
+        /// </summary>
+        public decimal _price;
+
+        /// <summary>
         /// Price of Capricorn Mountain Tea
         /// </summary>
         public override decimal Price { get; set; } = 2.50M;
+        
 
         /// <summary>
         /// Calories of Capricorn Mountain Tea
@@ -42,9 +48,36 @@ namespace GyroScope.Data.Drinks
         }
 
         /// <summary>
+        /// backing field for honey
+        /// </summary>
+        public bool _honey = false;
+
+        /// <summary>
         /// Determines if Capricorn Mountain Tea has honey.
         /// </summary>
-        public bool Honey { get; set; } = false;
+        public bool Honey
+        {
+            get => _honey;
+            set
+            {
+                if (_honey != value)
+                {
+                    _honey = value;
+                    OnPropertyChanged(nameof(this.Calories));
+                    OnPropertyChanged(nameof(this.Honey));
+
+                }
+            }
+        }
+
+        /// <summary>
+        /// Overridden ToString
+        /// </summary>
+        /// <returns>Descriptive name</returns>
+        public override string ToString()
+        {
+            return "Capricorn Mountain Tea";
+        }
 
     }
 }

@@ -33,5 +33,14 @@ namespace GyroScope.Data.Entrees
         /// Special instructions
         /// </summary>
         public override IEnumerable<string> SpecialInstructions { get; } = null;
+
+        /// <summary>
+        /// Overridden ToString
+        /// </summary>
+        /// <returns>Descriptive name</returns>
+        public override string ToString()
+        {
+            return "Pisces Fish Dish";
+        }
     }
 }

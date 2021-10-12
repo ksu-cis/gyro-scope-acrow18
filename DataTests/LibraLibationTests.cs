@@ -118,5 +118,78 @@ namespace GyroScope.DataTests
             };
             Assert.Equal(name, libraLibation.Name);
         }
+
+        /// <summary>
+        /// Checks if INotifyPropertyChanged is implemented
+        /// </summary>
+        [Fact]
+        public void ShouldImplementINotifyPropertyChanged()
+        {
+            var libraLibation = new LibraLibation();
+            Assert.IsAssignableFrom<System.ComponentModel.INotifyPropertyChanged>(libraLibation);
+        }
+
+        /// <summary>
+        /// Notifies of property change when flavor is changed
+        /// </summary>
+        /// <param name="flavor">Flavor of LibraLibation</param>
+        /// <param name="propertyName">Name of property</param>
+        [Theory]
+        [InlineData(LibraLibationFlavor.Biral, "Calories")]
+        [InlineData(LibraLibationFlavor.Orangeade, "Calories")]
+        [InlineData(LibraLibationFlavor.PinkLemonada, "Calories")]
+        [InlineData(LibraLibationFlavor.SourCherry, "Calories")]
+        [InlineData(LibraLibationFlavor.Biral, "Name")]
+        [InlineData(LibraLibationFlavor.Orangeade, "Name")]
+        [InlineData(LibraLibationFlavor.PinkLemonada, "Name")]
+        [InlineData(LibraLibationFlavor.SourCherry, "Name")]
+        [InlineData(LibraLibationFlavor.Biral, "Flavor")]
+        [InlineData(LibraLibationFlavor.Orangeade, "Flavor")]
+        [InlineData(LibraLibationFlavor.PinkLemonada, "Flavor")]
+        [InlineData(LibraLibationFlavor.SourCherry, "Flavor")]
+        public void ShouldNotifyOfPropertyChangedWhenFlavorChanges(LibraLibationFlavor flavor, string propertyName)
+        {
+
+            var libraLibation = new LibraLibation();
+
+            //A quick hack to avoid not changing size when setting to default size
+            if (flavor == LibraLibationFlavor.Orangeade)
+            {
+                libraLibation.Flavor = LibraLibationFlavor.SourCherry;
+            }
+
+            Assert.PropertyChanged(libraLibation, propertyName, () =>
+            {
+                libraLibation.Flavor = flavor;
+            });
+        }
+
+        /// <summary>
+        /// Notifies of property change when sparkling is changed
+        /// </summary>
+        /// <param name="sparkling">Sparkling</param>
+        /// <param name="propertyName">Name of property</param>
+        [Theory]
+        [InlineData(true, "Name")]
+        [InlineData(false, "Name")]
+        [InlineData(true, "Sparkling")]
+        [InlineData(false, "Sparkling")]
+
+        public void ShouldNotifyOfPropertyChangedWhenSparklingChanges(bool sparkling, string propertyName)
+        {
+
+            var libraLibation = new LibraLibation();
+
+            //A quick hack to avoid not changing sparkling when setting to default
+            if (sparkling == false)
+            {
+                libraLibation.Sparkling = true;
+            }
+
+            Assert.PropertyChanged(libraLibation, propertyName, () =>
+            {
+                libraLibation.Sparkling = sparkling;
+            });
+        }
     }
 }

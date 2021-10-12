@@ -124,6 +124,324 @@ namespace GyroScope.DataTests
             spicyScorpioGyro.MintChutney = mintChutney;
             Assert.Equal(expected, spicyScorpioGyro.SpecialInstructions);
         }
-        
+
+        /// <summary>
+        /// Checks if INotifyPropertyChanged is implemented
+        /// </summary>
+        [Fact]
+        public void ShouldImplementINotifyPropertyChanged()
+        {
+            var scorpioSpicyGyro = new ScorpioSpicyGyro();
+            Assert.IsAssignableFrom<System.ComponentModel.INotifyPropertyChanged>(scorpioSpicyGyro);
+        }
+
+        /// <summary>
+        /// Notifies of property change when meat is changed
+        /// </summary>
+        /// <param name="meat">Meat used in Gyro</param>
+        /// <param name="propertyName">Name of property</param>
+        [Theory]
+        [InlineData(DonerMeat.Beef, "Calories")]
+        [InlineData(DonerMeat.Chicken, "Calories")]
+        [InlineData(DonerMeat.Lamb, "Calories")]
+        [InlineData(DonerMeat.Pork, "Calories")]
+        [InlineData(DonerMeat.Beef, "SpecialInstructions")]
+        [InlineData(DonerMeat.Chicken, "SpecialInstructions")]
+        [InlineData(DonerMeat.Lamb, "SpecialInstructions")]
+        [InlineData(DonerMeat.Pork, "SpecialInstructions")]
+        [InlineData(DonerMeat.Beef, "Meat")]
+        [InlineData(DonerMeat.Chicken, "Meat")]
+        [InlineData(DonerMeat.Lamb, "Meat")]
+        [InlineData(DonerMeat.Pork, "Meat")]
+
+        public void ShouldNotifyOfPropertyChangedWhenMeatChanges(DonerMeat meat, string propertyName)
+        {
+
+            var scorpioSpicyGyro = new ScorpioSpicyGyro();
+
+            //A quick hack to avoid not changing meat when setting to default meat
+            if (meat == DonerMeat.Chicken)
+            {
+                scorpioSpicyGyro.Meat = DonerMeat.Beef;
+            }
+
+
+            Assert.PropertyChanged(scorpioSpicyGyro, propertyName, () =>
+            {
+                scorpioSpicyGyro.Meat = meat;
+            });
+        }
+
+        /// <summary>
+        /// Notifies of property change when pita is changed
+        /// </summary>
+        /// <param name="pita">Pita</param>
+        /// <param name="propertyName">Name of property</param>
+        [Theory]
+        [InlineData(true, "Calories")]
+        [InlineData(false, "Calories")]
+        [InlineData(true, "SpecialInstructions")]
+        [InlineData(false, "SpecialInstructions")]
+        [InlineData(true, "Pita")]
+        [InlineData(false, "Pita")]
+        public void ShouldNotifyOfPropertyChangedWhenPitaChanges(bool pita, string propertyName)
+        {
+
+            var scorpioSpicyGyro = new ScorpioSpicyGyro();
+
+            //A quick hack to avoid not changing meat when setting to default meat
+            if (pita == true)
+            {
+                scorpioSpicyGyro.Pita = false;
+            }
+
+
+            Assert.PropertyChanged(scorpioSpicyGyro, propertyName, () =>
+            {
+                scorpioSpicyGyro.Pita = pita;
+            });
+        }
+
+        /// <summary>
+        /// Notifies of property change when Tomato is changed
+        /// </summary>
+        /// <param name="tomato">Tomato</param>
+        /// <param name="propertyName">Name of property</param>
+        [Theory]
+        [InlineData(true, "Calories")]
+        [InlineData(false, "Calories")]
+        [InlineData(true, "SpecialInstructions")]
+        [InlineData(false, "SpecialInstructions")]
+        [InlineData(true, "Tomato")]
+        [InlineData(false, "Tomato")]
+        public void ShouldNotifyOfPropertyChangedWhenTomatoChanges(bool tomato, string propertyName)
+        {
+
+            var scorpioSpicyGyro = new ScorpioSpicyGyro();
+
+            //A quick hack to avoid not changing tomato when setting to default 
+            if (tomato == false)
+            {
+                scorpioSpicyGyro.Tomato = true;
+            }
+
+
+            Assert.PropertyChanged(scorpioSpicyGyro, propertyName, () =>
+            {
+                scorpioSpicyGyro.Tomato = tomato;
+            });
+        }
+
+        /// <summary>
+        /// Notifies of property change when onion is changed
+        /// </summary>
+        /// <param name="onion">Onion</param>
+        /// <param name="propertyName">Name of property</param>
+        [Theory]
+        [InlineData(true, "Calories")]
+        [InlineData(false, "Calories")]
+        [InlineData(true, "SpecialInstructions")]
+        [InlineData(false, "SpecialInstructions")]
+        [InlineData(true, "Onion")]
+        [InlineData(false, "Onion")]
+        public void ShouldNotifyOfPropertyChangedWhenOnionChanges(bool onion, string propertyName)
+        {
+
+            var scorpioSpicyGyro = new ScorpioSpicyGyro();
+
+            //A quick hack to avoid not changing onion when setting to default
+            if (onion == true)
+            {
+                scorpioSpicyGyro.Onion = false;
+            }
+
+
+            Assert.PropertyChanged(scorpioSpicyGyro, propertyName, () =>
+            {
+                scorpioSpicyGyro.Onion = onion;
+            });
+        }
+
+        /// <summary>
+        /// Notifies of property change when eggplant is changed
+        /// </summary>
+        /// <param name="eggplant">Eggplant</param>
+        /// <param name="propertyName">Name of property</param>
+        [Theory]
+        [InlineData(true, "Calories")]
+        [InlineData(false, "Calories")]
+        [InlineData(true, "SpecialInstructions")]
+        [InlineData(false, "SpecialInstructions")]
+        [InlineData(true, "Eggplant")]
+        [InlineData(false, "Eggplant")]
+        public void ShouldNotifyOfPropertyChangedWhenEggplantChanges(bool eggplant, string propertyName)
+        {
+
+            var scorpioSpicyGyro = new ScorpioSpicyGyro();
+
+            //A quick hack to avoid not changing eggplant when setting to default
+            if (eggplant == false)
+            {
+                scorpioSpicyGyro.Eggplant = true;
+            }
+
+
+            Assert.PropertyChanged(scorpioSpicyGyro, propertyName, () =>
+            {
+                scorpioSpicyGyro.Eggplant = eggplant;
+            });
+        }
+
+        /// <summary>
+        /// Notifies of property change when lettuce is changed
+        /// </summary>
+        /// <param name="lettuce">Lettuce</param>
+        /// <param name="propertyName">Name of property</param>
+        [Theory]
+        [InlineData(true, "Calories")]
+        [InlineData(false, "Calories")]
+        [InlineData(true, "SpecialInstructions")]
+        [InlineData(false, "SpecialInstructions")]
+        [InlineData(true, "Lettuce")]
+        [InlineData(false, "Lettuce")]
+        public void ShouldNotifyOfPropertyChangedWhenLettuceChanges(bool lettuce, string propertyName)
+        {
+
+            var scorpioSpicyGyro = new ScorpioSpicyGyro();
+
+            //A quick hack to avoid not changing lettuce when setting to default
+            if (lettuce == true)
+            {
+                scorpioSpicyGyro.Lettuce = false;
+            }
+
+
+            Assert.PropertyChanged(scorpioSpicyGyro, propertyName, () =>
+            {
+                scorpioSpicyGyro.Lettuce = lettuce;
+            });
+        }
+
+        /// <summary>
+        /// Notifies of property change when mint chutney is changed
+        /// </summary>
+        /// <param name="mintChutney">Mint Chutney</param>
+        /// <param name="propertyName">Name of property</param>
+        [Theory]
+        [InlineData(true, "Calories")]
+        [InlineData(false, "Calories")]
+        [InlineData(true, "SpecialInstructions")]
+        [InlineData(false, "SpecialInstructions")]
+        [InlineData(true, "MintChutney")]
+        [InlineData(false, "MintChutney")]
+        public void ShouldNotifyOfPropertyChangedWhenMintChutneyChanges(bool mintChutney, string propertyName)
+        {
+
+            var scorpioSpicyGyro = new ScorpioSpicyGyro();
+
+            //A quick hack to avoid not changing mintChutney when setting to default
+            if (mintChutney == false)
+            {
+                scorpioSpicyGyro.MintChutney = true;
+            }
+
+
+            Assert.PropertyChanged(scorpioSpicyGyro, propertyName, () =>
+            {
+                scorpioSpicyGyro.MintChutney = mintChutney;
+            });
+        }
+
+        /// <summary>
+        /// Notifies of property change when peppers is changed
+        /// </summary>
+        /// <param name="peppers">peppers</param>
+        /// <param name="propertyName">Name of property</param>
+        [Theory]
+        [InlineData(true, "Calories")]
+        [InlineData(false, "Calories")]
+        [InlineData(true, "SpecialInstructions")]
+        [InlineData(false, "SpecialInstructions")]
+        [InlineData(true, "Peppers")]
+        [InlineData(false, "Peppers")]
+        public void ShouldNotifyOfPropertyChangedWhenPeppersChanges(bool peppers, string propertyName)
+        {
+
+            var scorpioSpicyGyro = new ScorpioSpicyGyro();
+
+            //A quick hack to avoid not changing peppers when setting to default
+            if (peppers == true)
+            {
+                scorpioSpicyGyro.Peppers = false;
+            }
+
+
+            Assert.PropertyChanged(scorpioSpicyGyro, propertyName, () =>
+            {
+                scorpioSpicyGyro.Peppers = peppers;
+            });
+        }
+
+
+        /// <summary>
+        /// Notifies of property change when wing sauce is changed
+        /// </summary>
+        /// <param name="wingSauce">Wing Sauce</param>
+        /// <param name="propertyName">Name of property</param>
+        [Theory]
+        [InlineData(true, "Calories")]
+        [InlineData(false, "Calories")]
+        [InlineData(true, "SpecialInstructions")]
+        [InlineData(false, "SpecialInstructions")]
+        [InlineData(true, "WingSauce")]
+        [InlineData(false, "WingSauce")]
+        public void ShouldNotifyOfPropertyChangedWhenWingSauceChanges(bool wingSauce, string propertyName)
+        {
+
+            var scorpioSpicyGyro = new ScorpioSpicyGyro();
+
+            //A quick hack to avoid not changing wing sauce when setting to default
+            if (wingSauce == true)
+            {
+                scorpioSpicyGyro.WingSauce = false;
+            }
+
+
+            Assert.PropertyChanged(scorpioSpicyGyro, propertyName, () =>
+            {
+                scorpioSpicyGyro.WingSauce = wingSauce;
+            });
+        }
+
+        /// <summary>
+        /// Notifies of property change when tzatziki is changed
+        /// </summary>
+        /// <param name="tzatziki">tzatziki</param>
+        /// <param name="propertyName">Name of property</param>
+        [Theory]
+        [InlineData(true, "Calories")]
+        [InlineData(false, "Calories")]
+        [InlineData(true, "SpecialInstructions")]
+        [InlineData(false, "SpecialInstructions")]
+        [InlineData(true, "Tzatziki")]
+        [InlineData(false, "Tzatziki")]
+        public void ShouldNotifyOfPropertyChangedWhenTzatzikiChanges(bool tzatziki, string propertyName)
+        {
+
+            var scorpioSpicyGyro = new ScorpioSpicyGyro();
+
+            //A quick hack to avoid not changing tzatziki when setting to default
+            if (tzatziki == false)
+            {
+                scorpioSpicyGyro.Tzatziki = true;
+            }
+
+
+            Assert.PropertyChanged(scorpioSpicyGyro, propertyName, () =>
+            {
+                scorpioSpicyGyro.Tzatziki = tzatziki;
+            });
+        }
+
     }
 }

@@ -6,6 +6,7 @@
 using GyroScope.Data.Enums;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,8 +19,32 @@ namespace GyroScope.Data.Sides
     /// <summary>
     /// Declares a class for the side GeminiStuffedGrapeLeaves
     /// </summary>
-    public class GeminiStuffedGrapeLeaves : Side
+    public class GeminiStuffedGrapeLeaves : Side, INotifyPropertyChanged
     {
+        /// <summary>
+        /// backing field for size
+        /// </summary>
+        public Size _size = Size.Small;
+
+        /// <summary>
+        /// The size of this GeminiStuffedGrapeLeaves
+        /// </summary>
+        public override Size Size
+        {
+            get => _size;
+            set
+            {
+                if (_size != value)
+                {
+                    _size = value;
+                    OnPropertyChanged(nameof(this.Size));
+                    OnPropertyChanged(nameof(this.Price));
+                    OnPropertyChanged(nameof(this.Calories));
+
+                }
+            }
+        }
+
         /// <summary>
         /// Price of stuffed grape leaves
         /// (1.50 for S, 2.00 for M, 2.50 for L)
@@ -73,6 +98,15 @@ namespace GyroScope.Data.Sides
 
                 throw new InvalidOperationException("Unknown size: " + Size);
             }
+        }
+
+        /// <summary>
+        /// Overridden ToString
+        /// </summary>
+        /// <returns>Descriptive name</returns>
+        public override string ToString()
+        {
+           return $"{ Size} Gemini Stuffed Grape Leaves";
         }
 
     }

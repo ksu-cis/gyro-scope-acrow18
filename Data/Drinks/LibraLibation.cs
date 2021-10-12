@@ -21,17 +21,57 @@ namespace GyroScope.Data.Drinks
     public class LibraLibation : Drink
     {
         /// <summary>
+        /// backing field for flavor
+        /// </summary>
+        public LibraLibationFlavor _flavor;
+
+        /// <summary>
         /// Determines flavor of Libra Libation
         /// </summary>
-        public LibraLibationFlavor Flavor { get; set; }
+        public LibraLibationFlavor Flavor {
+            get => _flavor;
+            set
+            {
+                if (_flavor != value)
+                {
+                    _flavor = value;
+                    OnPropertyChanged(nameof(this.Flavor));
+                    OnPropertyChanged(nameof(this.Calories));
+                    OnPropertyChanged(nameof(this.Name));
+
+                }
+            }
+        }
+
+        /// <summary>
+        /// backing field for sparkling
+        /// </summary>
+        public bool _sparkling = true;
 
         /// <summary>
         /// Determines if its Sparkling or not
         /// </summary>
-        public bool Sparkling { get; set; } = true;
+        public bool Sparkling {
+            get => _sparkling;
+            set
+            {
+                if (_sparkling != value)
+                {
+                    _sparkling = value;
+                    OnPropertyChanged(nameof(this.Name));
+                    OnPropertyChanged(nameof(this.Sparkling));
+
+                }
+            }
+        }
 
         /// <summary>
-        /// Honey
+        /// backing field for honey
+        /// </summary>
+        public bool _honey;
+
+        /// <summary>
+        /// Determines if LibraLibation has honey.
         /// </summary>
         public bool Honey { get; set; } = false;
 
@@ -72,6 +112,11 @@ namespace GyroScope.Data.Drinks
         }
 
         /// <summary>
+        /// backing field for price
+        /// </summary>
+        public decimal _price;
+
+        /// <summary>
         /// Price of Libra Libation
         /// </summary>
         public override decimal Price { get; set; } = 1.00M;
@@ -92,6 +137,15 @@ namespace GyroScope.Data.Drinks
                     return $"Sparkling {Flavor} Libra Libation";
                 }
             }
+        }
+
+        /// <summary>
+        /// Overridden ToString
+        /// </summary>
+        /// <returns>Descriptive name</returns>
+        public override string ToString()
+        {
+            return Name;
         }
     }
 }
