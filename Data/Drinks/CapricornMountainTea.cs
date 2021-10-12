@@ -42,9 +42,35 @@ namespace GyroScope.Data.Drinks
         }
 
         /// <summary>
+        /// backing field for honey
+        /// </summary>
+        public bool _honey = false;
+
+        /// <summary>
         /// Determines if Capricorn Mountain Tea has honey.
         /// </summary>
-        public bool Honey { get; set; } = false;
+        public bool Honey
+        {
+            get => _honey;
+            set
+            {
+                if (_honey != value)
+                {
+                    _honey = value;
+                    OnPropertyChanged(nameof(this.Calories));
+
+                }
+            }
+        }
+
+        /// <summary>
+        /// Overridden ToString
+        /// </summary>
+        /// <returns>Descriptive name</returns>
+        public override string ToString()
+        {
+            return "Capricorn Mountain Tea";
+        }
 
     }
 }

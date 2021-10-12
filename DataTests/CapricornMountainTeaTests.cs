@@ -48,5 +48,42 @@ namespace GyroScope.DataTests
             };
             Assert.Equal(calories, capricornMountainTea.Calories);
         }
+
+
+        /// <summary>
+        /// Checks if INotifyPropertyChanged is implemented
+        /// </summary>
+        [Fact]
+        public void ShouldImplementINotifyPropertyChanged()
+        {
+            var capricornMountainTea = new CapricornMountainTea();
+            Assert.IsAssignableFrom<System.ComponentModel.INotifyPropertyChanged>(capricornMountainTea);
+        }
+
+        /// <summary>
+        /// Notifies of property change when honey is changed
+        /// </summary>
+        /// <param name="honey">Honey</param>
+        /// <param name="propertyName">Name of property</param>
+        [Theory]
+        [InlineData(true, "Calories")]
+        [InlineData(false, "Calories")]
+        public void ShouldNotifyOfPropertyChangedWhenHoneyChanges(bool honey, string propertyName)
+        {
+
+            var capricornMountainTea = new CapricornMountainTea();
+
+            //A quick hack to avoid not changing honey when set to default 
+            if (honey == false)
+            {
+                capricornMountainTea.Honey = true;
+            }
+
+
+            Assert.PropertyChanged(capricornMountainTea, propertyName, () =>
+            {
+                capricornMountainTea.Honey = honey;
+            });
+        }
     }
 }
