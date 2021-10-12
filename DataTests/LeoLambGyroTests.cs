@@ -150,6 +150,10 @@ namespace GyroScope.DataTests
         [InlineData(DonerMeat.Chicken, "SpecialInstructions")]
         [InlineData(DonerMeat.Lamb, "SpecialInstructions")]
         [InlineData(DonerMeat.Pork, "SpecialInstructions")]
+        [InlineData(DonerMeat.Beef, "Meat")]
+        [InlineData(DonerMeat.Chicken, "Meat")]
+        [InlineData(DonerMeat.Lamb, "Meat")]
+        [InlineData(DonerMeat.Pork, "Meat")]
 
         public void ShouldNotifyOfPropertyChangedWhenMeatChanges(DonerMeat meat, string propertyName)
         {
@@ -179,6 +183,8 @@ namespace GyroScope.DataTests
         [InlineData(false, "Calories")]
         [InlineData(true, "SpecialInstructions")]
         [InlineData(false, "SpecialInstructions")]
+        [InlineData(true, "Pita")]
+        [InlineData(false, "Pita")]
 
         public void ShouldNotifyOfPropertyChangedWhenPitaChanges(bool pita , string propertyName)
         {
@@ -208,7 +214,8 @@ namespace GyroScope.DataTests
         [InlineData(false, "Calories")]
         [InlineData(true, "SpecialInstructions")]
         [InlineData(false, "SpecialInstructions")]
-
+        [InlineData(true, "Tomato")]
+        [InlineData(false, "Tomato")]
         public void ShouldNotifyOfPropertyChangedWhenTomatoChanges(bool tomato, string propertyName)
         {
 
@@ -237,7 +244,8 @@ namespace GyroScope.DataTests
         [InlineData(false, "Calories")]
         [InlineData(true, "SpecialInstructions")]
         [InlineData(false, "SpecialInstructions")]
-
+        [InlineData(true, "Onion")]
+        [InlineData(false, "Onion")]
         public void ShouldNotifyOfPropertyChangedWhenOnionChanges(bool onion, string propertyName)
         {
 
@@ -266,7 +274,8 @@ namespace GyroScope.DataTests
         [InlineData(false, "Calories")]
         [InlineData(true, "SpecialInstructions")]
         [InlineData(false, "SpecialInstructions")]
-
+        [InlineData(true, "Eggplant")]
+        [InlineData(false, "Eggplant")]
         public void ShouldNotifyOfPropertyChangedWhenEggplantChanges(bool eggplant, string propertyName)
         {
 
@@ -295,7 +304,8 @@ namespace GyroScope.DataTests
         [InlineData(false, "Calories")]
         [InlineData(true, "SpecialInstructions")]
         [InlineData(false, "SpecialInstructions")]
-
+        [InlineData(true, "Lettuce")]
+        [InlineData(false, "Lettuce")]
         public void ShouldNotifyOfPropertyChangedWhenLettuceChanges(bool lettuce, string propertyName)
         {
 
@@ -324,7 +334,8 @@ namespace GyroScope.DataTests
         [InlineData(false, "Calories")]
         [InlineData(true, "SpecialInstructions")]
         [InlineData(false, "SpecialInstructions")]
-
+        [InlineData(true, "mintChutney")]
+        [InlineData(false, "mintChutney")]
         public void ShouldNotifyOfPropertyChangedWhenMintChutneyChanges(bool mintChutney, string propertyName)
         {
 
@@ -353,7 +364,8 @@ namespace GyroScope.DataTests
         [InlineData(false, "Calories")]
         [InlineData(true, "SpecialInstructions")]
         [InlineData(false, "SpecialInstructions")]
-
+        [InlineData(true, "Peppers")]
+        [InlineData(false, "Peppers")]
         public void ShouldNotifyOfPropertyChangedWhenPeppersChanges(bool peppers, string propertyName)
         {
 
@@ -383,7 +395,8 @@ namespace GyroScope.DataTests
         [InlineData(false, "Calories")]
         [InlineData(true, "SpecialInstructions")]
         [InlineData(false, "SpecialInstructions")]
-
+        [InlineData(true, "WingSauce")]
+        [InlineData(false, "WingSauce")]
         public void ShouldNotifyOfPropertyChangedWhenWingSauceChanges(bool wingSauce, string propertyName)
         {
 
@@ -412,7 +425,8 @@ namespace GyroScope.DataTests
         [InlineData(false, "Calories")]
         [InlineData(true, "SpecialInstructions")]
         [InlineData(false, "SpecialInstructions")]
-
+        [InlineData(true, "Tzatziki")]
+        [InlineData(false, "Tzatziki")]
         public void ShouldNotifyOfPropertyChangedWhenTzatzikiChanges(bool tzatziki, string propertyName)
         {
 

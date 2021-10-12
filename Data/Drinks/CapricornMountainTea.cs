@@ -25,17 +25,8 @@ namespace GyroScope.Data.Drinks
         /// <summary>
         /// Price of Capricorn Mountain Tea
         /// </summary>
-        public override decimal Price
-        {
-            get => _price;
-            set
-            {
-                if (_price != value)
-                {
-                    _price = value;
-                }
-            }
-        }
+        public override decimal Price { get; set; } = 2.50M;
+        
 
         /// <summary>
         /// Calories of Capricorn Mountain Tea
@@ -73,6 +64,7 @@ namespace GyroScope.Data.Drinks
                 {
                     _honey = value;
                     OnPropertyChanged(nameof(this.Calories));
+                    OnPropertyChanged(nameof(this.Honey));
 
                 }
             }

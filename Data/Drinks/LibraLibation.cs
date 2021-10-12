@@ -46,7 +46,7 @@ namespace GyroScope.Data.Drinks
         /// <summary>
         /// backing field for sparkling
         /// </summary>
-        public bool _sparkling;
+        public bool _sparkling = true;
 
         /// <summary>
         /// Determines if its Sparkling or not
@@ -59,6 +59,7 @@ namespace GyroScope.Data.Drinks
                 {
                     _sparkling = value;
                     OnPropertyChanged(nameof(this.Name));
+                    OnPropertyChanged(nameof(this.Sparkling));
 
                 }
             }
@@ -128,17 +129,7 @@ namespace GyroScope.Data.Drinks
         /// <summary>
         /// Price of Libra Libation
         /// </summary>
-        public override decimal Price
-        {
-            get => _price;
-            set
-            {
-                if (_price != value)
-                {
-                    _price = value;
-                }
-            }
-        }
+        public override decimal Price { get; set; } = 1.00M;
 
         /// <summary>
         /// Greek Soda

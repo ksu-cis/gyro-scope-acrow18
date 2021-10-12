@@ -68,6 +68,8 @@ namespace GyroScope.DataTests
         [Theory]
         [InlineData(true, "Calories")]
         [InlineData(false, "Calories")]
+        [InlineData(true, "Honey")]
+        [InlineData(false, "Honey")]
         public void ShouldNotifyOfPropertyChangedWhenHoneyChanges(bool honey, string propertyName)
         {
 

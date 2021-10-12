@@ -172,6 +172,8 @@ namespace GyroScope.DataTests
         [Theory]
         [InlineData(true, "Name")]
         [InlineData(false, "Name")]
+        [InlineData(true, "Sparkling")]
+        [InlineData(false, "Sparkling")]
 
         public void ShouldNotifyOfPropertyChangedWhenSparklingChanges(bool sparkling, string propertyName)
         {

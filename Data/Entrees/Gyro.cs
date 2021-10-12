@@ -39,6 +39,7 @@ namespace GyroScope.Data.Entrees
                     _meat = value;
                     OnPropertyChanged(nameof(this.Calories));
                     OnPropertyChanged(nameof(this.SpecialInstructions));
+                    OnPropertyChanged(nameof(this.Meat));
 
                 }
             }
@@ -62,6 +63,7 @@ namespace GyroScope.Data.Entrees
                     _pita = value;
                     OnPropertyChanged(nameof(this.Calories));
                     OnPropertyChanged(nameof(this.SpecialInstructions));
+                    OnPropertyChanged(nameof(this.Pita));
 
                 }
             }
@@ -85,6 +87,7 @@ namespace GyroScope.Data.Entrees
                     _peppers = value;
                     OnPropertyChanged(nameof(this.Calories));
                     OnPropertyChanged(nameof(this.SpecialInstructions));
+                    OnPropertyChanged(nameof(this.Peppers));
 
                 }
             }
@@ -108,6 +111,7 @@ namespace GyroScope.Data.Entrees
                     _onion = value;
                     OnPropertyChanged(nameof(this.Calories));
                     OnPropertyChanged(nameof(this.SpecialInstructions));
+                    OnPropertyChanged(nameof(this.Onion));
 
                 }
             }
@@ -131,6 +135,7 @@ namespace GyroScope.Data.Entrees
                     _lettuce = value;
                     OnPropertyChanged(nameof(this.Calories));
                     OnPropertyChanged(nameof(this.SpecialInstructions));
+                    OnPropertyChanged(nameof(this.Lettuce));
 
                 }
             }
@@ -154,6 +159,7 @@ namespace GyroScope.Data.Entrees
                     _wingSauce = value;
                     OnPropertyChanged(nameof(this.Calories));
                     OnPropertyChanged(nameof(this.SpecialInstructions));
+                    OnPropertyChanged(nameof(this.WingSauce));
 
                 }
             }
@@ -176,7 +182,7 @@ namespace GyroScope.Data.Entrees
                     _tomato = value;
                     OnPropertyChanged(nameof(this.Calories));
                     OnPropertyChanged(nameof(this.SpecialInstructions));
-
+                    OnPropertyChanged(nameof(this.Tomato));
                 }
             }
         }
@@ -198,7 +204,7 @@ namespace GyroScope.Data.Entrees
                     _eggplant = value;
                     OnPropertyChanged(nameof(this.Calories));
                     OnPropertyChanged(nameof(this.SpecialInstructions));
-
+                    OnPropertyChanged(nameof(this.Eggplant));
                 }
             }
         }
@@ -220,7 +226,7 @@ namespace GyroScope.Data.Entrees
                     _mintChutney = value;
                     OnPropertyChanged(nameof(this.Calories));
                     OnPropertyChanged(nameof(this.SpecialInstructions));
-
+                    OnPropertyChanged(nameof(this.MintChutney));
                 }
             }
         }
@@ -242,7 +248,7 @@ namespace GyroScope.Data.Entrees
                     _tzatziki = value;
                     OnPropertyChanged(nameof(this.Calories));
                     OnPropertyChanged(nameof(this.SpecialInstructions));
-
+                    OnPropertyChanged(nameof(this.Tzatziki));
                 }
             }
         }
