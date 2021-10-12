@@ -68,22 +68,12 @@ namespace GyroScope.Data.Drinks
         /// <summary>
         /// backing field for honey
         /// </summary>
-        public bool _honey = false;
+        public bool _honey;
 
         /// <summary>
-        /// Determines if Capricorn Mountain Tea has honey.
+        /// Determines if LibraLibation has honey.
         /// </summary>
-        public bool Honey
-        {
-            get => _honey;
-            set
-            {
-                if (_honey != value)
-                {
-                    _honey = value;
-                }
-            }
-        }
+        public bool Honey { get; set; } = false;
 
         /// <summary>
         /// Calorie of Libra Libation
