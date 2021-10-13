@@ -40,30 +40,30 @@
     </UserControl.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="180*"/>
-            <ColumnDefinition Width="180*"/>
-            <ColumnDefinition Width="180*"/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="120*"/>
-            <RowDefinition Height="120*"/>
-            <RowDefinition Height="120*"/>
-            <RowDefinition Height="120*"/>
-            <RowDefinition Height="120*"/>
-            <RowDefinition Height="120*"/>
-            <RowDefinition Height="120*"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="5*"/>
         </Grid.RowDefinitions>
         <Label Content="Customize _____ Gyro" FontSize="50" Grid.ColumnSpan="3" HorizontalAlignment="Center"/>
         <Label Content="Doner Meat" FontSize="25" Grid.Row ="1" Grid.Column="0"/>
-        <ListBox Grid.ColumnSpan="2" Grid.RowSpan="3" Grid.Row="1" ItemsSource="{Binding Source = {StaticResource meats}}" SelectedItem="{Binding Path=Meat}"/>
+        <ListBox Grid.ColumnSpan="2" Grid.RowSpan="3" Grid.Row="2" ItemsSource="{Binding Source = {StaticResource meats}}" SelectedItem="{Binding Path=Meat}" Background="Transparent" BorderBrush="Transparent"/>
         <CheckBox Content="Pita" IsChecked="{Binding Path=Pita}" Name="pitaButton" FontSize="15" Grid.Row ="1" Grid.Column="1"/>
         <CheckBox Content="Tomato" IsChecked="{Binding Path=Tomato}" Name="tomatoButton" FontSize="15" Grid.Row ="2" Grid.Column="1"/>
-        <CheckBox Content="Peppers" IsChecked="{Binding Path=Peppers}" Name="peppersButton" FontSize="15" Grid.Row ="3" Grid.Column="1" Margin="25,70,10,10"/>
-        <CheckBox Content="Onion"  IsChecked="{Binding Path=Onion}" Name="onionButton" FontSize="15" Grid.Row ="4" Grid.Column="1" Margin="25,70,10,10"/>
-        <CheckBox Content="Lettuce" IsChecked="{Binding Path=Lettuce}" Name="lettuceButton" FontSize="15" Grid.Row ="5" Grid.Column="1" Margin="25,70,10,10"/>
-        <CheckBox Content="Eggplant" IsChecked="{Binding Path=Eggplant}" Name="eggplantButton" FontSize="15" Grid.Row ="6" Grid.Column="1" Margin="25,70,10,10"/>
-        <CheckBox Content="Tzatziki" IsChecked="{Binding Path=Tzatziki}" Name="tzatzikiButton" FontSize="15" Grid.Row ="1" Grid.Column="2" Margin="25,70,10,10"/>
-        <CheckBox Content="Mint Chutney" IsChecked="{Binding Path=MintChutney}" Name="mintChutneyButton" FontSize="15" Grid.Row ="2" Grid.Column="2" Margin="25,70,10,10"/>
-        <CheckBox Content="Wing Sauce" IsChecked="{Binding Path=WingSauce}" Name="wingSauceButton" FontSize="15" Grid.Row ="3" Grid.Column="2" Margin="25,70,10,10"/>
+        <CheckBox Content="Peppers" IsChecked="{Binding Path=Peppers}" Name="peppersButton" FontSize="15" Grid.Row ="3" Grid.Column="1"/>
+        <CheckBox Content="Onion"  IsChecked="{Binding Path=Onion}" Name="onionButton" FontSize="15" Grid.Row ="4" Grid.Column="1"/>
+        <CheckBox Content="Lettuce" IsChecked="{Binding Path=Lettuce}" Name="lettuceButton" FontSize="15" Grid.Row ="5" Grid.Column="1"/>
+        <CheckBox Content="Eggplant" IsChecked="{Binding Path=Eggplant}" Name="eggplantButton" FontSize="15" Grid.Row ="6" Grid.Column="1"/>
+        <CheckBox Content="Tzatziki" IsChecked="{Binding Path=Tzatziki}" Name="tzatzikiButton" FontSize="15" Grid.Row ="1" Grid.Column="2"/>
+        <CheckBox Content="Mint Chutney" IsChecked="{Binding Path=MintChutney}" Name="mintChutneyButton" FontSize="15" Grid.Row ="2" Grid.Column="2"/>
+        <CheckBox Content="Wing Sauce" IsChecked="{Binding Path=WingSauce}" Name="wingSauceButton" FontSize="15" Grid.Row ="3" Grid.Column="2"/>
     </Grid>
 </UserControl>

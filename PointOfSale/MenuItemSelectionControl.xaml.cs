@@ -55,6 +55,7 @@ namespace PointOfSale
         /// <param name="sender">Sender</param>
         public void SwitchScreen(string name) 
         {
+            ///not a var because vars need to be set to something
             dynamic customization;
 
             switch (name) 
@@ -97,7 +98,7 @@ namespace PointOfSale
                 break;
 
                 case "Pisces Fish Dish":
-                    customization = new GyroCustomizationControl();
+                    customization = new PiscesFishDishControl();
                     menuSelectionControl.Child = customization;
                     PiscesFishDish piscesFishDish = new PiscesFishDish();
                     customization.DataContext = piscesFishDish;

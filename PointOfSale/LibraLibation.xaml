@@ -3,11 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
+             xmlns:enums ="clr-namespace:GyroScope.Data.Enums;assembly=GyroScope.Data"
              xmlns:local="clr-namespace:PointOfSale"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Resources>
-        <Style TargetType="RadioButton">
+        <Style TargetType="ListBox">
             <Setter Property="RenderTransform">
                 <Setter.Value>
                     <ScaleTransform CenterX="0" CenterY="0" ScaleX="2" ScaleY="2"/>
@@ -21,6 +23,20 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        <Style TargetType="{x:Type ListBoxItem}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <RadioButton Margin ="0,0,0,25"  Content="{TemplateBinding ContentPresenter.Content}" IsChecked="{Binding Path=IsSelected, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <ObjectDataProvider ObjectType="system:Enum" MethodName="GetValues" x:Key="flavors">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="enums:LibraLibationFlavor"></x:Type>
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
     </UserControl.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
@@ -34,15 +50,12 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Label Content="Libra Libation" FontSize="25" Grid.ColumnSpan="2" Grid.RowSpan="2" HorizontalAlignment="Left" Margin="320,0,0,0"/>
-        <Label Content ="Flavors" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" FontSize="40"/>
-        <RadioButton Content="Orangeade" FontSize="10" Grid.Column="0" Grid.Row="1" Margin="50,25,10,10"/>
-        <RadioButton Content="Sour Cherry" FontSize="10" Grid.Column="0" Grid.Row="2" Margin="50,25,10,10"/>
-        <RadioButton Content="Biral" FontSize="10" Grid.Column="0" Grid.Row="3" Margin="50,25,10,10"/>
-        <RadioButton Content="Pink Lemonada" FontSize="10" Grid.Column="0" Grid.Row="4" Margin="50,25,10,10"/>
+        <Label Content="Libra Libation" FontSize="50" Grid.ColumnSpan="2" Grid.RowSpan="2" HorizontalAlignment="Center"/>
+        <Label Content ="Flavors" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" FontSize="40"/>
+        <ListBox Grid.ColumnSpan="1" Grid.RowSpan="4" Grid.Row="2" ItemsSource="{Binding Source = {StaticResource flavors}}" SelectedItem="{Binding Path=Flavors}" Background="Transparent" BorderBrush="Transparent"/>
 
-        <Label Content ="Additives" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" FontSize="40"/>
-        <CheckBox Content="Sparkling" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center"/>
-        <CheckBox Content="Honey" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Center"/>
+        <Label Content ="Additives" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" FontSize="40"/>
+        <CheckBox Content="Sparkling" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <CheckBox Content="Honey" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
     </Grid>
 </UserControl>

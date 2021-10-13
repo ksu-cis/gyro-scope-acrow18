@@ -8,15 +8,15 @@
         Title="MainWindow" Height="1080" Width="1920">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="100*"/>
-            <RowDefinition Height="853*"/>
-            <RowDefinition Height="211*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="400*"/>
-            <ColumnDefinition Width="400*"/>
-            <ColumnDefinition Width="400*"/>
-            <ColumnDefinition Width="631*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
         <Label Content="GyroScope Point of Sale" FontSize="40" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3" Margin="30,0,0,0"/>
         <Button Name="cancelOrder" Content="Cancel Order" FontSize="30" Grid.Column="0" Grid.Row="2"/>
