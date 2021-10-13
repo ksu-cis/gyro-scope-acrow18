@@ -16,12 +16,16 @@
         </Style>
     </UserControl.Resources>
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="127*"/>
+            <ColumnDefinition Width="73*"/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="17*"/>
             <RowDefinition Height="33*"/>
         </Grid.RowDefinitions>
-        <Label Content ="Capricorn Mountain Tea" HorizontalAlignment="Right"></Label>
-        <Label Content ="Additives" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" FontSize="40"/>
-        <CheckBox Content="Honey" Grid.Row="1" Grid.Column="0" Margin="140,30,10,10"/>
+        <Label Content ="Capricorn Mountain Tea" HorizontalAlignment="Left" Width="137" Grid.Row="0" Grid.Column="1"></Label>
+        <Label Content ="Additives" HorizontalAlignment="Center" FontSize="40" Width="174" Grid.Column="0" Grid.Row="0"/>
+        <CheckBox Content="Honey" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
     </Grid>
 </UserControl>
