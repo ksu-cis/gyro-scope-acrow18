@@ -12,6 +12,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using GyroScope.Data.Drinks;
+using GyroScope.Data.Entrees;
+using GyroScope.Data.Treats;
+using GyroScope.Data.Sides;
 
 namespace PointOfSale
 {
@@ -28,8 +32,8 @@ namespace PointOfSale
         /// <summary>
         /// Name of item from button click
         /// </summary>
-        /// <param name="sender"></param>
-        /// <returns></returns>
+        /// <param name="sender">Sender</param>
+        /// <returns>Content on button</returns>
         public string ItemNameOfButtonClicked(object sender) 
         {
             if (sender is Button button)
@@ -48,64 +52,114 @@ namespace PointOfSale
         /// Switches to correct menu item
         /// </summary>
         /// <param name="name">Name of menu item</param>
-        /// <param name="sender"></param>
-        public void SwitchScreen(string name, object sender) 
+        /// <param name="sender">Sender</param>
+        public void SwitchScreen(string name) 
         {
-            name = ItemNameOfButtonClicked(sender);
+            dynamic customization;
 
             switch (name) 
             {
                 ///Drinks
                 case "Capricorn Mountain Tea":
-                    menuSelectionControl.Child = new CapricornMountainTeaControl();
+                    customization = new CapricornMountainTeaControl();
+                    menuSelectionControl.Child = customization;
+                    CapricornMountainTea capricornMountainTea = new CapricornMountainTea();
+                    customization.DataContext = capricornMountainTea; 
                 break;
 
                 case "Libra Libation":
-                    menuSelectionControl.Child = new LibraLibation();
+                    customization = new LibraLibation();
+                    menuSelectionControl.Child = customization;
+                    LibraLibation libraLibation = new LibraLibation();
+                    customization.DataContext = libraLibation;
                 break;
 
                 ///Entrees
                 case "Virgo Classic Gyro":
-                    menuSelectionControl.Child = new GyroCustomizationControl();
+                    customization = new GyroCustomizationControl();
+                    menuSelectionControl.Child = customization;
+                    VirgoClassicGyro virgoClassicGyro = new VirgoClassicGyro();
+                    customization.DataContext = virgoClassicGyro;
                 break;
 
                 case "Leo Lamb Gyro":
-                    menuSelectionControl.Child = new GyroCustomizationControl();
+                    customization = new GyroCustomizationControl();
+                    menuSelectionControl.Child = customization;
+                    LeoLambGyro leoLambGyro = new LeoLambGyro();
+                    customization.DataContext = leoLambGyro;
                 break;
 
                 case "Scorpio Spicy Gyro":
-                    menuSelectionControl.Child = new GyroCustomizationControl();
+                    customization = new GyroCustomizationControl();
+                    menuSelectionControl.Child = customization;
+                    ScorpioSpicyGyro scorpioSpicyGyro = new ScorpioSpicyGyro();
+                    customization.DataContext = scorpioSpicyGyro;
                 break;
 
                 case "Pisces Fish Dish":
-                    menuSelectionControl.Child = new PiscesFishDishControl();
+                    customization = new GyroCustomizationControl();
+                    menuSelectionControl.Child = customization;
+                    PiscesFishDish piscesFishDish = new PiscesFishDish();
+                    customization.DataContext = piscesFishDish;
                 break;
 
                 ///Sides
                 case "Aries Fries":
-                    menuSelectionControl.Child = new SidesControl();
+                    customization = new SidesControl();
+                    menuSelectionControl.Child = customization;
+                    AriesFries ariesFries = new AriesFries();
+                    customization.DataContext = ariesFries;
                 break;
 
                 case "Gemini Stuffed Grape Leaves":
-                    menuSelectionControl.Child = new SidesControl();
+                    customization = new SidesControl();
+                    menuSelectionControl.Child = customization;
+                    GeminiStuffedGrapeLeaves geminiStuffedGrapeLeaves = new GeminiStuffedGrapeLeaves();
+                    customization.DataContext = geminiStuffedGrapeLeaves;
                 break;
 
                 case "Sagittarius Greek Salad":
-                    menuSelectionControl.Child = new SidesControl();
+                    customization = new SidesControl();
+                    menuSelectionControl.Child = customization;
+                    SagittariusGreekSalad sagittariusGreekSalad = new SagittariusGreekSalad();
+                    customization.DataContext = sagittariusGreekSalad;
                 break;
 
                 case "Taurus Tabuleh":
-                    menuSelectionControl.Child = new SidesControl();
+                    customization = new SidesControl();
+                    menuSelectionControl.Child = customization;
+                    TaurusTabuleh taurusTabuleh = new TaurusTabuleh();
+                    customization.DataContext = taurusTabuleh;
                 break;
 
                 ///Treats
                 case "Aquarius Ice":
-                    menuSelectionControl.Child = new AquariusIceControl();
+                    customization = new AquariusIceControl();
+                    menuSelectionControl.Child = customization;
+                    AquariusIce aquariusIce = new AquariusIce();
+                    customization.DataContext = aquariusIce;
                 break;
 
                 case "Cancer Halva Cake":
-                    menuSelectionControl.Child = new CancerHalvaCakeControl();
+                    customization = new CancerHalvaCakeControl();
+                    menuSelectionControl.Child = customization;
+                    CancerHalvaCake cancerHalvaCake = new CancerHalvaCake();
+                    customization.DataContext = cancerHalvaCake;
                 break;
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender">Sender</param>
+        /// <param name="e">e</param>
+        private void menuSelectionControl_Click(object sender, RoutedEventArgs e)
+        {
+            if (e.OriginalSource is Button button)
+            {
+                SwitchScreen(button.Content.ToString());
+                e.Handled = true;
             }
         }
     }

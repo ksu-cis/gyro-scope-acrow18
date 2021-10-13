@@ -39,5 +39,15 @@ namespace PointOfSale
                 }
             }
         }
+
+        /// <summary>
+        /// Starts new menu item control 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void selectItems_Click(object sender, RoutedEventArgs e)
+        {
+            newMenuItem.Child = new MenuItemSelectionControl();
+        }
     }
 }
