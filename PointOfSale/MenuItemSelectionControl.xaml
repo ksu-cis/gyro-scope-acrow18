@@ -14,12 +14,12 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="50*"/>
-            <RowDefinition Height="110*"/>
-            <RowDefinition Height="110*"/>
-            <RowDefinition Height="110*"/>
-            <RowDefinition Height="110*"/>
-            <RowDefinition Height="110*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="4*"/>
         </Grid.RowDefinitions>
         <Label Content ="Entrees" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" FontSize="25"/>
         <Button Content="Virgo Classic Gyro" Name="virgoClassicButton" FontSize ="30" Grid.Column="0" Grid.Row="1"/>
