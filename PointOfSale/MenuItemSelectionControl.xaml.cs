@@ -150,7 +150,7 @@ namespace PointOfSale
         }
 
         /// <summary>
-        /// 
+        /// Used to switch screens
         /// </summary>
         /// <param name="sender">Sender</param>
         /// <param name="e">e</param>
