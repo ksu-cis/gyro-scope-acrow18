@@ -73,12 +73,24 @@ namespace GyroScope.Data.Drinks
         /// <summary>
         /// Determines if LibraLibation has honey.
         /// </summary>
-        public bool Honey { get; set; } = false;
+        public bool Honey 
+        {
+            get => _honey;
+            set
+            {
+                if (_honey != value)
+                {
+                    _honey = value;
+                    OnPropertyChanged(nameof(this.Honey));
+
+                }
+            }
+        }
 
         /// <summary>
         /// Calorie of Libra Libation
         /// </summary>
-        public uint Calorie;
+        public uint _calorie;
 
         /// <summary>
         /// Calories of Libra Libation
@@ -89,25 +101,25 @@ namespace GyroScope.Data.Drinks
             {
                 if (Flavor == LibraLibationFlavor.Orangeade) 
                 {
-                    Calorie = 180;
+                    _calorie = 180;
                 }
 
                 if (Flavor == LibraLibationFlavor.SourCherry)
                 {
-                    Calorie = 100;
+                    _calorie = 100;
                 }
 
                 if (Flavor == LibraLibationFlavor.Biral)
                 {
-                    Calorie = 120;
+                    _calorie = 120;
                 }
 
                 if (Flavor == LibraLibationFlavor.PinkLemonada)
                 {
-                    Calorie = 41;
+                    _calorie = 41;
                 }
 
-                return Calorie;
+                return _calorie;
             } 
         }
 
@@ -119,7 +131,18 @@ namespace GyroScope.Data.Drinks
         /// <summary>
         /// Price of Libra Libation
         /// </summary>
-        public override decimal Price { get; set; } = 1.00M;
+        public override decimal Price {
+            get => _price;
+            set
+            {
+                if (_price != value)
+                {
+                    _price = value;
+                    OnPropertyChanged(nameof(this.Price));
+
+                }
+            }
+        }
 
         /// <summary>
         /// Greek Soda

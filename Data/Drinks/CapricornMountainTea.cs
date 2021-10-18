@@ -25,7 +25,19 @@ namespace GyroScope.Data.Drinks
         /// <summary>
         /// Price of Capricorn Mountain Tea
         /// </summary>
-        public override decimal Price { get; set; } = 2.50M;
+        public override decimal Price 
+        {
+            get => _price;
+            set
+            {
+                if (_price != value)
+                {
+                    _price = value;
+                    OnPropertyChanged(nameof(this.Price));
+
+                }
+            }
+        }
         
 
         /// <summary>
