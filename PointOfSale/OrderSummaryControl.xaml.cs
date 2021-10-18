@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GyroScope.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,21 @@ namespace PointOfSale
         public OrderSummaryControl()
         {
             InitializeComponent();
+        }
+
+        /// <summary>
+        /// Changes label of Order summary
+        /// </summary>
+        public void ChangeLabels() 
+        {
+            Order<IMenuItem> order = new Order<IMenuItem>();
+            orderNumber.Content = order.Number;
+            dateOfOrderPlaced.Content = order.PlacedAt;
+            subtotalLabel.Content = order.Subtotal;
+            taxLabel.Content = order.Tax;
+            totalLabel.Content = order.Total;
+
+
         }
     }
 }
