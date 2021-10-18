@@ -32,11 +32,11 @@ namespace PointOfSale
         public void ChangeLabels() 
         {
             Order<IMenuItem> order = new Order<IMenuItem>();
-            orderNumber.Content = order.Number;
+            orderNumber.Content = "Order #" + $"{order.Number}";
             dateOfOrderPlaced.Content = order.PlacedAt;
-            subtotalLabel.Content = order.Subtotal;
-            taxLabel.Content = order.Tax;
-            totalLabel.Content = order.Total;
+            subtotalLabel.Content = "$ " + $"{order.Subtotal}";
+            taxLabel.Content = "$ " + $"{order.Tax}";
+            totalLabel.Content = "$ " + $"{order.Total}";
 
 
         }
