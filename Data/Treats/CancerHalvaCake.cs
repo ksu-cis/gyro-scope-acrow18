@@ -33,7 +33,7 @@ namespace GyroScope.Data.Treats
         public Size _size = 0;
 
         /// <summary>
-        /// The size of this Aquarius Ice
+        /// The size of this Cancer Halva cake
         /// </summary>
         public override Size Size
         {
@@ -43,6 +43,7 @@ namespace GyroScope.Data.Treats
                 if (_size != value)
                 {
                     _size = value;
+                    OnPropertyChanged(nameof(this.Size));
                 }
             }
         }

@@ -28,7 +28,7 @@ namespace PointOfSale
         /// <summary>
         /// Event handler for "Cancel Order" click.
         /// </summary>
-        /// <param name="sender"></param>
+        /// <param name="sender">Sender</param>
         void CancelOrderClick(object sender) 
         {
             if (sender is Button button) 
@@ -38,6 +38,16 @@ namespace PointOfSale
                     menuItem = new MenuItemSelectionControl();
                 }
             }
+        }
+
+        /// <summary>
+        /// Starts new menu item control 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void SelectItems_Click(object sender, RoutedEventArgs e)
+        {
+            newMenuItem.Child = new MenuItemSelectionControl();
         }
     }
 }

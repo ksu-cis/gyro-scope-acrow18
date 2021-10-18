@@ -7,6 +7,11 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <TextBlock Text="Pisces Fish Dish" FontSize="40"/>
+        <Grid.RowDefinitions>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="7*"/>
+            </Grid.RowDefinitions>
+            <TextBlock Text="Pisces Fish Dish" FontSize="40" HorizontalAlignment="Center"/>
+            <TextBlock Text="No customization available" FontSize="40" HorizontalAlignment="Center" Grid.Row="1" Width="476"/>
     </Grid>
 </UserControl>

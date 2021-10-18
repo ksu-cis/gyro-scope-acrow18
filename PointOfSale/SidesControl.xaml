@@ -3,46 +3,42 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
+             xmlns:enums ="clr-namespace:GyroScope.Data.Enums;assembly=GyroScope.Data"
              xmlns:local="clr-namespace:PointOfSale"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Resources>
-        <Style TargetType="RadioButton">
+        <Style TargetType="ListBox">
             <Setter Property="RenderTransform">
                 <Setter.Value>
-                    <ScaleTransform CenterX="0" CenterY="0" ScaleX="2" ScaleY="2"/>
+                    <ScaleTransform CenterX="0" CenterY="0" ScaleX="3" ScaleY="3"/>
                 </Setter.Value>
             </Setter>
         </Style>
-        <Style TargetType="CheckBox">
-            <Setter Property="RenderTransform">
+        <Style TargetType="{x:Type ListBoxItem}">
+            <Setter Property="Template">
                 <Setter.Value>
-                    <ScaleTransform CenterX="0" CenterY="0" ScaleX="2" ScaleY="2"/>
+                    <ControlTemplate>
+                        <RadioButton Margin ="0,0,0,25"  Content="{TemplateBinding ContentPresenter.Content}" IsChecked="{Binding Path=IsSelected, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}"/>
+                    </ControlTemplate>
                 </Setter.Value>
             </Setter>
         </Style>
+        <ObjectDataProvider ObjectType="system:Enum" MethodName="GetValues" x:Key="size">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="enums:Size"></x:Type>
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
     </UserControl.Resources>
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
-            <RowDefinition/>
         </Grid.RowDefinitions>
-        <Label Content ="Sides" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" FontSize="50" Margin="0,15,0,0"/>
-        <RadioButton Content="Taurus Tabouleh" FontSize="10" Grid.Column="0" Grid.Row="1" Margin="50,35,10,10"/>
-        <RadioButton Content="Gemini Stuffed Grape Leaves" FontSize="10" Grid.Column="0" Grid.Row="2" Margin="50,35,10,10"/>
-        <RadioButton Content="Sagittarius Greek Salad" FontSize="10" Grid.Column="0" Grid.Row="3" Margin="50,35,10,10"/>
-        <RadioButton Content="Aries Fries" FontSize="10" Grid.Column="0" Grid.Row="4" Margin="50,35,10,10"/>
-
-        <Label Content ="Size" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" FontSize="50" Margin="0,15,0,0"/>
-        <CheckBox Content="Small" Grid.Row="1" Grid.Column="1" Margin="140,45,10,10"/>
-        <CheckBox Content="Medium" Grid.Row="2" Grid.Column="1" Margin="140,45,10,10"/>
-        <CheckBox Content="Large" Grid.Row="3" Grid.Column="1" Margin="140,45,10,10"/>
+        <Label Content ="Size" Grid.Row="0" Grid.Column="1" FontSize="50" HorizontalAlignment="Center"/>
+        <ListBox Grid.ColumnSpan="1" Grid.RowSpan="3" Grid.Row="1" ItemsSource="{Binding Source = {StaticResource size}}" SelectedItem="{Binding Path= Size}" Background="Transparent" BorderBrush="Transparent" HorizontalAlignment="Center"/>
     </Grid>
 </UserControl>
