@@ -50,7 +50,7 @@ namespace GyroScope.Data
         /// <summary>
         /// Used to trigger a collection changed removed event
         /// </summary>
-        protected void OnCollectionChangedRemove(IMenuItem menuItem, int index)
+        protected void OnCollectionChangedRemove(int index)
         {
             CollectionChanged?.Invoke(this, new NotifyCollectionChangedEventArgs((NotifyCollectionChangedAction)CollectionChangeAction.Remove, index));
         }
@@ -77,11 +77,11 @@ namespace GyroScope.Data
         /// <summary>
         /// Removes a Menu item
         /// </summary>
-        /// <param name="menuItem">Menu item to remove</param>
+        /// <param name="index">Index of menu item to remove</param>
         public void Remove(IMenuItem menuItem, int index)
         {
             menuItemList.Remove(menuItem);
-            OnCollectionChangedRemove(menuItem, index);
+            OnCollectionChangedRemove(index);
             OnPropertyChanged(nameof(this.Subtotal));
             OnPropertyChanged(nameof(this.Tax));
             OnPropertyChanged(nameof(this.Total));
@@ -223,7 +223,7 @@ namespace GyroScope.Data
         /// <summary>
         /// Not implemented
         /// </summary>
-        /// <returns>nothing</returns>
+        /// <returns>not implemented exception</returns>
         public IEnumerator GetEnumerator()
         {
             throw new NotImplementedException();
