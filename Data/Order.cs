@@ -140,17 +140,27 @@ namespace GyroScope.Data
             }
         }
 
-        //backing field of Calories
-        public int _sumOfCalories;
+
+        /// <summary>
+        /// backing field for calories
+        /// </summary>
+        public uint _calories;
 
         /// <summary>
         /// Calories
         /// </summary>
-        public int Calories
+        public uint Calories
         {
             get 
             {
-                
+                uint _sumOfCalories = 0;
+                foreach (IMenuItem menuItem in menuItemList) 
+                {
+                    _calories = menuItem.Calories;
+                    _sumOfCalories = _calories++;
+                }
+
+
                 return _sumOfCalories;
             }
         }
@@ -182,8 +192,8 @@ namespace GyroScope.Data
         /// <summary>
         /// Data and time the order was placed
         /// </summary>
-        public DateTimeKind PlacedAt;
-
+        public DateTime PlacedAt;
+        
         /// <summary>
         /// Gets count of items in Menu Item List
         /// </summary>
