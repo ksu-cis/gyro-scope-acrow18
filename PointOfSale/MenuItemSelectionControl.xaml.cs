@@ -63,14 +63,14 @@ namespace PointOfSale
                 ///Drinks
                 case "Capricorn Mountain Tea":
                     customization = new CapricornMountainTeaControl();
-                    menuSelectionControl.Child = customization;
+                    MenuSelectionControl.Child = customization;
                     CapricornMountainTea capricornMountainTea = new CapricornMountainTea();
                     customization.DataContext = capricornMountainTea; 
                 break;
 
                 case "Libra Libation":
                     customization = new LibraLibation();
-                    menuSelectionControl.Child = customization;
+                    MenuSelectionControl.Child = customization;
                     LibraLibation libraLibation = new LibraLibation();
                     customization.DataContext = libraLibation;
                 break;
@@ -78,28 +78,28 @@ namespace PointOfSale
                 ///Entrees
                 case "Virgo Classic Gyro":
                     customization = new GyroCustomizationControl();
-                    menuSelectionControl.Child = customization;
+                    MenuSelectionControl.Child = customization;
                     VirgoClassicGyro virgoClassicGyro = new VirgoClassicGyro();
                     customization.DataContext = virgoClassicGyro;
                 break;
 
                 case "Leo Lamb Gyro":
                     customization = new GyroCustomizationControl();
-                    menuSelectionControl.Child = customization;
+                    MenuSelectionControl.Child = customization;
                     LeoLambGyro leoLambGyro = new LeoLambGyro();
                     customization.DataContext = leoLambGyro;
                 break;
 
                 case "Scorpio Spicy Gyro":
                     customization = new GyroCustomizationControl();
-                    menuSelectionControl.Child = customization;
+                    MenuSelectionControl.Child = customization;
                     ScorpioSpicyGyro scorpioSpicyGyro = new ScorpioSpicyGyro();
                     customization.DataContext = scorpioSpicyGyro;
                 break;
 
                 case "Pisces Fish Dish":
                     customization = new PiscesFishDishControl();
-                    menuSelectionControl.Child = customization;
+                    MenuSelectionControl.Child = customization;
                     PiscesFishDish piscesFishDish = new PiscesFishDish();
                     customization.DataContext = piscesFishDish;
                 break;
@@ -107,28 +107,28 @@ namespace PointOfSale
                 ///Sides
                 case "Aries Fries":
                     customization = new SidesControl();
-                    menuSelectionControl.Child = customization;
+                    MenuSelectionControl.Child = customization;
                     AriesFries ariesFries = new AriesFries();
                     customization.DataContext = ariesFries;
                 break;
 
                 case "Gemini Stuffed Grape Leaves":
                     customization = new SidesControl();
-                    menuSelectionControl.Child = customization;
+                    MenuSelectionControl.Child = customization;
                     GeminiStuffedGrapeLeaves geminiStuffedGrapeLeaves = new GeminiStuffedGrapeLeaves();
                     customization.DataContext = geminiStuffedGrapeLeaves;
                 break;
 
                 case "Sagittarius Greek Salad":
                     customization = new SidesControl();
-                    menuSelectionControl.Child = customization;
+                    MenuSelectionControl.Child = customization;
                     SagittariusGreekSalad sagittariusGreekSalad = new SagittariusGreekSalad();
                     customization.DataContext = sagittariusGreekSalad;
                 break;
 
                 case "Taurus Tabuleh":
                     customization = new SidesControl();
-                    menuSelectionControl.Child = customization;
+                    MenuSelectionControl.Child = customization;
                     TaurusTabuleh taurusTabuleh = new TaurusTabuleh();
                     customization.DataContext = taurusTabuleh;
                 break;
@@ -136,14 +136,14 @@ namespace PointOfSale
                 ///Treats
                 case "Aquarius Ice":
                     customization = new AquariusIceControl();
-                    menuSelectionControl.Child = customization;
+                    MenuSelectionControl.Child = customization;
                     AquariusIce aquariusIce = new AquariusIce();
                     customization.DataContext = aquariusIce;
                 break;
 
                 case "Cancer Halva Cake":
                     customization = new CancerHalvaCakeControl();
-                    menuSelectionControl.Child = customization;
+                    MenuSelectionControl.Child = customization;
                     CancerHalvaCake cancerHalvaCake = new CancerHalvaCake();
                     customization.DataContext = cancerHalvaCake;
                 break;
@@ -155,7 +155,7 @@ namespace PointOfSale
         /// </summary>
         /// <param name="sender">Sender</param>
         /// <param name="e">e</param>
-        private void menuSelectionControl_Click(object sender, RoutedEventArgs e)
+        private void MenuSelectionControl_Click(object sender, RoutedEventArgs e)
         {
             if (e.OriginalSource is Button button)
             {
