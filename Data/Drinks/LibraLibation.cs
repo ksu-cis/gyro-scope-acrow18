@@ -18,7 +18,7 @@ namespace GyroScope.Data.Drinks
     /// <summary>
     /// Libra Libation
     /// </summary>
-    public class LibraLibation : Drink
+    public class LibraLibation : Drink, IMenuItem
     {
         /// <summary>
         /// backing field for flavor
@@ -126,22 +126,14 @@ namespace GyroScope.Data.Drinks
         /// <summary>
         /// backing field for price
         /// </summary>
-        public decimal _price;
+        public decimal _price = 1.00M;
 
         /// <summary>
         /// Price of Libra Libation
         /// </summary>
-        public override decimal Price {
+        public override decimal Price 
+        {
             get => _price;
-            set
-            {
-                if (_price != value)
-                {
-                    _price = value;
-                    OnPropertyChanged(nameof(this.Price));
-
-                }
-            }
         }
 
         /// <summary>
@@ -170,5 +162,10 @@ namespace GyroScope.Data.Drinks
         {
             return Name;
         }
+
+        /// <summary>
+        /// Not implemented
+        /// </summary>
+        public override IEnumerable<string> SpecialInstructions => throw new NotImplementedException();
     }
 }

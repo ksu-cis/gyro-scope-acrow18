@@ -15,12 +15,12 @@ namespace GyroScope.Data.Drinks
     /// <summary>
     /// Capricorn Mountain Tea
     /// </summary>
-    public class CapricornMountainTea : Drink
+    public class CapricornMountainTea : Drink, IMenuItem
     {
         /// <summary>
         /// backing field for price
         /// </summary>
-        public decimal _price;
+        public decimal _price = 3.00M;
 
         /// <summary>
         /// Price of Capricorn Mountain Tea
@@ -28,15 +28,6 @@ namespace GyroScope.Data.Drinks
         public override decimal Price 
         {
             get => _price;
-            set
-            {
-                if (_price != value)
-                {
-                    _price = value;
-                    OnPropertyChanged(nameof(this.Price));
-
-                }
-            }
         }
         
 
@@ -90,6 +81,11 @@ namespace GyroScope.Data.Drinks
         {
             return "Capricorn Mountain Tea";
         }
+
+        /// <summary>
+        /// Not implemented 
+        /// </summary>
+        public override IEnumerable<string> SpecialInstructions => throw new NotImplementedException();
 
     }
 }
