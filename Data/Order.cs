@@ -96,7 +96,7 @@ namespace GyroScope.Data
 
 
         /// <summary>
-        /// backing field for tax
+        /// backing field for Tax
         /// </summary>
         public decimal _tax;
 
@@ -105,12 +105,16 @@ namespace GyroScope.Data
         /// </summary>
         public decimal Tax
         {
-            get => _tax;
+            get 
+            {
+                _tax = Subtotal * SaleTaxRate;
+                return _tax;
+            }
         }
 
 
         /// <summary>
-        /// backing field for subtotal
+        /// backing field for Subtotal
         /// </summary>
         public decimal _subtotal;
 
@@ -126,6 +130,9 @@ namespace GyroScope.Data
             }
         }
 
+        /// <summary>
+        /// backing field for Total
+        /// </summary>
         public decimal _total;
 
         /// <summary>
@@ -142,7 +149,7 @@ namespace GyroScope.Data
 
 
         /// <summary>
-        /// backing field for calories
+        /// backing field for Calories
         /// </summary>
         public uint _calories;
 
