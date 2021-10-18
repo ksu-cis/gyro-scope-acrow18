@@ -50,9 +50,9 @@ namespace GyroScope.Data
         /// <summary>
         /// Used to trigger a collection changed removed event
         /// </summary>
-        protected void OnCollectionChangedRemove(IMenuItem menuItem)
+        protected void OnCollectionChangedRemove(IMenuItem menuItem, int index)
         {
-            CollectionChanged?.Invoke(this, new NotifyCollectionChangedEventArgs((NotifyCollectionChangedAction)CollectionChangeAction.Remove, menuItemList.IndexOf(menuItem)));
+            CollectionChanged?.Invoke(this, new NotifyCollectionChangedEventArgs((NotifyCollectionChangedAction)CollectionChangeAction.Remove, index));
         }
 
         /// <summary>
@@ -78,10 +78,10 @@ namespace GyroScope.Data
         /// Removes a Menu item
         /// </summary>
         /// <param name="menuItem">Menu item to remove</param>
-        public void Remove(IMenuItem menuItem)
+        public void Remove(IMenuItem menuItem, int index)
         {
             menuItemList.Remove(menuItem);
-            OnCollectionChangedRemove(menuItem);
+            OnCollectionChangedRemove(menuItem, index);
             OnPropertyChanged(nameof(this.Subtotal));
             OnPropertyChanged(nameof(this.Tax));
             OnPropertyChanged(nameof(this.Total));
@@ -190,15 +190,30 @@ namespace GyroScope.Data
         public int Count => menuItemList.Count;
 
 
+        /// <summary>
+        /// Not implemented
+        /// </summary>
         public bool IsSynchronized => throw new NotImplementedException();
 
+        /// <summary>
+        /// Not implemented
+        /// </summary>
         public object SyncRoot => throw new NotImplementedException();
 
+        /// <summary>
+        /// Not implemented
+        /// </summary>
+        /// <param name="array">Array</param>
+        /// <param name="index">Index</param>
         public void CopyTo(Array array, int index)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Not implemented
+        /// </summary>
+        /// <returns>nothing</returns>
         public IEnumerator GetEnumerator()
         {
             throw new NotImplementedException();
