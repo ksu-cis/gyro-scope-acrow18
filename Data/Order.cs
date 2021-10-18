@@ -42,17 +42,17 @@ namespace GyroScope.Data
         /// <summary>
         /// Used to trigger a collection changed add event
         /// </summary>
-        protected void OnCollectionChangedAdd() 
+        protected void OnCollectionChangedAdd(IMenuItem menuItem) 
         {
-            CollectionChanged?.Invoke(this, new NotifyCollectionChangedEventArgs((NotifyCollectionChangedAction)CollectionChangeAction.Add, menuItemList));
+            CollectionChanged?.Invoke(this, new NotifyCollectionChangedEventArgs((NotifyCollectionChangedAction)CollectionChangeAction.Add, menuItem));
         }
 
         /// <summary>
         /// Used to trigger a collection changed removed event
         /// </summary>
-        protected void OnCollectionChangedRemove()
+        protected void OnCollectionChangedRemove(IMenuItem menuItem)
         {
-            CollectionChanged?.Invoke(this, new NotifyCollectionChangedEventArgs((NotifyCollectionChangedAction)CollectionChangeAction.Remove, menuItemList));
+            CollectionChanged?.Invoke(this, new NotifyCollectionChangedEventArgs((NotifyCollectionChangedAction)CollectionChangeAction.Remove, menuItemList.IndexOf(menuItem)));
         }
 
         /// <summary>
@@ -67,7 +67,7 @@ namespace GyroScope.Data
         public void Add(IMenuItem menuItem)
         {
             menuItemList.Add(menuItem);
-            OnCollectionChangedAdd();
+            OnCollectionChangedAdd(menuItem);
             OnPropertyChanged(nameof(this.Subtotal));
             OnPropertyChanged(nameof(this.Tax));
             OnPropertyChanged(nameof(this.Total));
@@ -81,7 +81,7 @@ namespace GyroScope.Data
         public void Remove(IMenuItem menuItem)
         {
             menuItemList.Remove(menuItem);
-            OnCollectionChangedRemove();
+            OnCollectionChangedRemove(menuItem);
             OnPropertyChanged(nameof(this.Subtotal));
             OnPropertyChanged(nameof(this.Tax));
             OnPropertyChanged(nameof(this.Total));
