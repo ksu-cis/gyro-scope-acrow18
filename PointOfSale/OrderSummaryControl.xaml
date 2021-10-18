@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:PointOfSale"
              mc:Ignorable="d" 
              d:DesignHeight="700" d:DesignWidth="400">
-<Border Name="OrderSummaryControl" ButtonBase.Click="OrderSummaryControl_Click">
+<Border Name="OrderSummaryControl">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="140*"/>
@@ -14,7 +14,7 @@
             <RowDefinition Height="200*"/>
         </Grid.RowDefinitions>
 
-        <Label Name ="orderNumber" Content="Order #___" FontSize="30" HorizontalAlignment="Center" Grid.Row="0"/>
+        <Label Name ="orderNumber" FontSize="30" HorizontalAlignment="Center" Grid.Row="0"/>
         <Label Name ="dateOfOrderPlaced" Content="__/__/__" FontSize="30" HorizontalAlignment="Center" Grid.Row= "0" Margin="0,50,0,0" />
         <ListView Grid.Row="1"/>
         <Label Name="subtotalLabel" Content="Subtotal $____" FontSize="30" HorizontalAlignment="Center" Grid.Row="2"/>

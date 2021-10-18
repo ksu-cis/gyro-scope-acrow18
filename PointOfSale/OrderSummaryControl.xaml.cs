@@ -37,18 +37,7 @@ namespace PointOfSale
             subtotalLabel.Content = "$ " + $"{order.Subtotal}";
             taxLabel.Content = "$ " + $"{order.Tax}";
             totalLabel.Content = "$ " + $"{order.Total}";
-
-
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void OrderSummaryControl_Click(object sender, RoutedEventArgs e)
-        {
-            ChangeLabels();
-        }
     }
 }
