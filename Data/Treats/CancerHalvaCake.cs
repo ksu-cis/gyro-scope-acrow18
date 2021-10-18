@@ -28,24 +28,11 @@ namespace GyroScope.Data.Treats
         public override uint Calories => 272;
 
         /// <summary>
-        /// backing field for size
-        /// </summary>
-        public Size _size = 0;
-
-        /// <summary>
-        /// The size of this Cancer Halva cake
+        /// Cancer Halva doesn't have a size
         /// </summary>
         public override Size Size
         {
-            get => _size;
-            set
-            {
-                if (_size != value)
-                {
-                    _size = value;
-                    OnPropertyChanged(nameof(this.Size));
-                }
-            }
+            get => throw new NotImplementedException(); set => throw new NotImplementedException();
         }
 
         /// <summary>
