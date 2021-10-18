@@ -19,7 +19,7 @@ namespace GyroScope.Data.Entrees
     /// <summary>
     /// Virgo Classic Gyro
     /// </summary>
-    public class VirgoClassicGyro : Gyro
+    public class VirgoClassicGyro : Gyro, IMenuItem
     {
 
         public VirgoClassicGyro()

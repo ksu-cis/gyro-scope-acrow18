@@ -19,7 +19,7 @@ namespace GyroScope.Data.Sides
     /// <summary>
     /// Declares a class for the side Taurus Tabuleh
     /// </summary>
-    public class TaurusTabuleh : Side, INotifyPropertyChanged
+    public class TaurusTabuleh : Side, IMenuItem, INotifyPropertyChanged
     {
         /// <summary>
         /// backing field for size

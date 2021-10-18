@@ -19,7 +19,7 @@ namespace GyroScope.Data.Sides
     /// <summary>
     /// Declares a class for the side AresFries
     /// </summary>
-    public class AriesFries : Side, INotifyPropertyChanged
+    public class AriesFries : Side, IMenuItem, INotifyPropertyChanged
     {
 
         /// <summary>

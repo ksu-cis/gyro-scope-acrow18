@@ -16,7 +16,7 @@ namespace GyroScope.Data.Sides
     /// <summary>
     /// A base class for all sides sold at GyroScope
     /// </summary>
-    public abstract class Side : INotifyPropertyChanged
+    public abstract class Side : IMenuItem, INotifyPropertyChanged
     {
 
         /// <summary>
@@ -47,5 +47,10 @@ namespace GyroScope.Data.Sides
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
+        /// <summary>
+        /// Not implemented
+        /// </summary>
+        public IEnumerable<string> SpecialInstructions => throw new NotImplementedException();
     }
 }

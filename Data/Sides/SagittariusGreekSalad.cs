@@ -19,7 +19,7 @@ namespace GyroScope.Data.Sides
     /// <summary>
     /// Declares a class for the side SagittariusGreekSalad
     /// </summary>
-    public class SagittariusGreekSalad : Side, INotifyPropertyChanged
+    public class SagittariusGreekSalad : Side, IMenuItem, INotifyPropertyChanged
     {
         /// <summary>
         /// backing field for size

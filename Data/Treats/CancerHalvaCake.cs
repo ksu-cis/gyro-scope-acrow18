@@ -15,7 +15,7 @@ namespace GyroScope.Data.Treats
     /// <summary>
     /// Cancer Halveh Cake
     /// </summary>
-    public class CancerHalvaCake : Treat
+    public class CancerHalvaCake : Treat, IMenuItem
     {
         /// <summary>
         /// Price of Cancer Halveh Cake
@@ -61,5 +61,7 @@ namespace GyroScope.Data.Treats
         {
             return "Cancer Halva Cake";
         }
+
+        
     }
 }

@@ -19,7 +19,7 @@ namespace GyroScope.Data.Sides
     /// <summary>
     /// Declares a class for the side GeminiStuffedGrapeLeaves
     /// </summary>
-    public class GeminiStuffedGrapeLeaves : Side, INotifyPropertyChanged
+    public class GeminiStuffedGrapeLeaves : Side, IMenuItem, INotifyPropertyChanged
     {
         /// <summary>
         /// backing field for size

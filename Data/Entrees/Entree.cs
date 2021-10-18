@@ -18,7 +18,7 @@ namespace GyroScope.Data.Entrees
     /// <summary>
     /// Entree base class
     /// </summary>
-    public abstract class Entree : INotifyPropertyChanged
+    public abstract class Entree : IMenuItem, INotifyPropertyChanged
     {
         /// <summary>
         /// Event handler for changing properties

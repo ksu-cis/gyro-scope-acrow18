@@ -17,7 +17,7 @@ namespace GyroScope.Data.Entrees
     /// <summary>
     /// Pisces Fish Dish
     /// </summary>
-    public class PiscesFishDish : Entree
+    public class PiscesFishDish : Entree, IMenuItem
     {
         /// <summary>
         /// Price of Dish

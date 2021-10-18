@@ -18,7 +18,7 @@ namespace GyroScope.Data.Entrees
     /// <summary>
     /// Scorpio Spicy Gyro
     /// </summary>
-    public class ScorpioSpicyGyro : Gyro
+    public class ScorpioSpicyGyro : Gyro, IMenuItem
     {
 
         public ScorpioSpicyGyro()
