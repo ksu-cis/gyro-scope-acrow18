@@ -6,6 +6,7 @@
              xmlns:local="clr-namespace:PointOfSale"
              mc:Ignorable="d" 
              d:DesignHeight="700" d:DesignWidth="400">
+<Border Name="OrderSummaryControl" ButtonBase.Click="OrderSummaryControl_Click">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="140*"/>
@@ -21,4 +22,5 @@
         <Label Name="taxLabel" Content="Tax $____" FontSize="30" HorizontalAlignment="Center" Grid.Row="2" Margin="75,45,10,10"/>
         <Label Name="totalLabel" Content="Total $____" FontSize="30" HorizontalAlignment="Center" Grid.Row="2"  Margin="55,90,10,10"/>
     </Grid>
+</Border>
 </UserControl>
