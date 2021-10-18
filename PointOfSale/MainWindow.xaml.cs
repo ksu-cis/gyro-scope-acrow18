@@ -25,20 +25,7 @@ namespace PointOfSale
             InitializeComponent();
         }
 
-        /// <summary>
-        /// Event handler for "Cancel Order" click.
-        /// </summary>
-        /// <param name="sender">Sender</param>
-        private void CancelOrder_Click(object sender) 
-        {
-            if (sender is Button button) 
-            {
-                if (button.Content.ToString() == "Cancel Order") 
-                {
-                    menuItem = new MenuItemSelectionControl();
-                }
-            }
-        }
+        
 
         /// <summary>
         /// Starts new menu item control 
@@ -48,6 +35,22 @@ namespace PointOfSale
         private void SelectItems_Click(object sender, RoutedEventArgs e)
         {
             newMenuItem.Child = new MenuItemSelectionControl();
+        }
+
+        /// <summary>
+        /// Event handler for "Cancel order" click.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void cancelOrder_Click_1(object sender, RoutedEventArgs e)
+        {
+            if (sender is Button button)
+            {
+                if (button.Content.ToString() == "Cancel Order")
+                {
+                    menuItem = new MenuItemSelectionControl();
+                }
+            }
         }
     }
 }
