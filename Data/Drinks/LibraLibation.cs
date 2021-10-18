@@ -28,7 +28,8 @@ namespace GyroScope.Data.Drinks
         /// <summary>
         /// Determines flavor of Libra Libation
         /// </summary>
-        public LibraLibationFlavor Flavor {
+        public LibraLibationFlavor Flavor 
+        {
             get => _flavor;
             set
             {
@@ -51,7 +52,8 @@ namespace GyroScope.Data.Drinks
         /// <summary>
         /// Determines if its Sparkling or not
         /// </summary>
-        public bool Sparkling {
+        public bool Sparkling 
+        {
             get => _sparkling;
             set
             {

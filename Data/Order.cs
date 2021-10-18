@@ -40,6 +40,14 @@ namespace GyroScope.Data
         }
 
         /// <summary>
+        /// Used to trigger a collection changed event
+        /// </summary>
+        protected void OnCollectionChanged() 
+        {
+            CollectionChanged?.Invoke(this, new CollectionChangeEventArgs(CollectionChangeAction.Add, menuItemList));
+        }
+
+        /// <summary>
         /// Collections of menu items
         /// </summary>
         List<IMenuItem> menuItemList = new List<IMenuItem>();
@@ -51,6 +59,10 @@ namespace GyroScope.Data
         public void Add(IMenuItem menuItem)
         {
             menuItemList.Add(menuItem);
+            OnPropertyChanged(nameof(this.Subtotal));
+            OnPropertyChanged(nameof(this.Tax));
+            OnPropertyChanged(nameof(this.Total));
+            OnPropertyChanged(nameof(this.Calories));
         }
 
         /// <summary>
@@ -114,6 +126,21 @@ namespace GyroScope.Data
             }
         }
 
+        //backing field of Calories
+        public int _sumOfCalories;
+
+        /// <summary>
+        /// Calories
+        /// </summary>
+        public int Calories
+        {
+            get 
+            {
+                
+                return _sumOfCalories;
+            }
+        }
+
         /// <summary>
         /// backing field for Number
         /// </summary>
@@ -143,11 +170,11 @@ namespace GyroScope.Data
         /// </summary>
         public DateTimeKind PlacedAt;
 
-        
         /// <summary>
         /// Gets count of items in Menu Item List
         /// </summary>
         public int Count => menuItemList.Count;
+
 
         public bool IsSynchronized => throw new NotImplementedException();
 
