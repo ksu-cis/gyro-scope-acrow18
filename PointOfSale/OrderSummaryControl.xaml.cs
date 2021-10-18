@@ -34,9 +34,9 @@ namespace PointOfSale
             Order<IMenuItem> order = new Order<IMenuItem>();
             orderNumber.Content = "Order #" + $"{order.Number}";
             dateOfOrderPlaced.Content = order.PlacedAt;
-            subtotalLabel.Content = "$ " + $"{order.Subtotal}";
-            taxLabel.Content = "$ " + $"{order.Tax}";
-            totalLabel.Content = "$ " + $"{order.Total}";
+            subtotalLabel.Content = "Subtotal: $ " + $"{order.Subtotal}";
+            taxLabel.Content = "Tax: $ " + $"{order.Tax}";
+            totalLabel.Content = "Total: $ " + $"{order.Total}";
         }
 
     }
