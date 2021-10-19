@@ -20,7 +20,7 @@ namespace GyroScope.Data.Drinks
         /// <summary>
         /// backing field for price
         /// </summary>
-        public decimal _price;
+        public decimal _price = 2.50M;
 
         /// <summary>
         /// Price of Capricorn Mountain Tea

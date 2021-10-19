@@ -126,7 +126,7 @@ namespace GyroScope.Data.Drinks
         /// <summary>
         /// backing field for price
         /// </summary>
-        public decimal _price;
+        public decimal _price = 1.00M;
 
         /// <summary>
         /// Price of Libra Libation
