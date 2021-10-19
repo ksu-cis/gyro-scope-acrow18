@@ -26,59 +26,24 @@ namespace PointOfSale
         public OrderSummaryControl()
         {
             InitializeComponent();
-            //CollectionChanged += CollectionChangedListener;
         }
 
         /// <summary>
-        /// Changes label of Order summary
+        /// Accessor for data context 
         /// </summary>
-        public void ChangeLabels() 
-        {
-            Order<IMenuItem> order = new Order<IMenuItem>();
-            orderNumber.Content = "Order #" + $"{order.Number}";
-            dateOfOrderPlaced.Content = order.PlacedAt;
-            subtotalLabel.Content = "Subtotal: $ " + $"{order.Subtotal}";
-            taxLabel.Content = "Tax: $ " + $"{order.Tax}";
-            totalLabel.Content = "Total: $ " + $"{order.Total}";
-        }
+        public Order<IMenuItem> dataContextAccessor => (Order<IMenuItem>)DataContext;
 
-        /*
-        void CollectionChangedListener(object sender, NotifyCollectionChangedEventArgs e)
+        /// <summary>
+        /// Removes item from order
+        /// </summary>
+        /// <param name="sender">Sender</param>
+        /// <param name="e">e</param>
+        private void RemoveItemClick(object sender, RoutedEventArgs e, int index) 
         {
-            OnPropertyChanged(new PropertyChangedEventArgs("Total"));
-            OnPropertyChanged(new PropertyChangedEventArgs("Subtotal"));
-            OnPropertyChanged(new PropertyChangedEventArgs("Tax"));
-            OnPropertyChanged(new PropertyChangedEventArgs("PlacedDate"));
-            OnPropertyChanged(new PropertyChangedEventArgs("Number"));
-
-            switch (e.Action)
+            if (sender is Button button) 
             {
-                case NotifyCollectionChangedAction.Add:
-                    foreach (Order<IMenuItem> item in e.NewItems)
-                    {
-                        item.PropertyChanged += CollectionItemChangedListener;
-                    }
-                    break;
-                case NotifyCollectionChangedAction.Remove:
-                    foreach (Order<IMenuItem> item in e.OldItems)
-                    {
-                        item.PropertyChanged -= CollectionItemChangedListener;
-                    }
-                    break;
-                case NotifyCollectionChangedAction.Reset:
-                    throw new NotImplementedException("NotifyCollectionChangedAction.Reset not supported");
+                dataContextAccessor.Remove((IMenuItem)button.DataContext, index);
             }
         }
-        void CollectionItemChangedListener(object sender, PropertyChangedEventArgs e)
-        {
-            if (e.PropertyName == "Complete")
-            {
-                OnPropertyChanged(new PropertyChangedEventArgs("CompleteCount"));
-                OnPropertyChanged(new PropertyChangedEventArgs("ImcompleteCount"));
-                OnPropertyChanged(new PropertyChangedEventArgs("IncompleteCount"));
-            }
-        }
-        */
-
     }
 }
