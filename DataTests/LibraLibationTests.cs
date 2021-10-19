@@ -181,9 +181,9 @@ namespace GyroScope.DataTests
             var libraLibation = new LibraLibation();
 
             //A quick hack to avoid not changing sparkling when setting to default
-            if (sparkling == false)
+            if (sparkling == true)
             {
-                libraLibation.Sparkling = true;
+                libraLibation.Sparkling = false;
             }
 
             Assert.PropertyChanged(libraLibation, propertyName, () =>
