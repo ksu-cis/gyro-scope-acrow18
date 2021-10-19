@@ -40,14 +40,13 @@ namespace GyroScope.DataTests
             Assert.Equal(NotifyCollectionChangedAction.Add, args.Action);
             Assert.Equal(order, args.NewItems[0]);
             Assert.Equal(1, args.NewItems.Count);
-            Assert.Null(args.OldItems);
         }
 
         /// <summary>
         /// Notifies of collection changed on add
         /// </summary>
         [Fact]
-        public void ShouldNotifyOfCollectionChangedORemove()
+        public void ShouldNotifyOfCollectionChangedOnRemove()
         {
             var order = new Order<IMenuItem>();
             NotifyCollectionChangedEventArgs args = null;
@@ -89,6 +88,62 @@ namespace GyroScope.DataTests
         {
             var order = new Order<IMenuItem>();
             Assert.IsAssignableFrom<System.ComponentModel.INotifyPropertyChanged>(order);
+        }
+
+        /// <summary>
+        /// Notifies of total changing when adding an item
+        /// </summary>
+        [Fact]
+        public void ShouldNotifyofTotalChangingOnAdd()
+        {
+            var order = new Order<IMenuItem>();
+            var leoLambGyro = new LeoLambGyro();
+            Assert.PropertyChanged(order, "Total", () =>
+            {
+                order.Add(leoLambGyro);
+            });
+        }
+
+        /// <summary>
+        /// Notifies of Subtotal changing when adding an item
+        /// </summary>
+        [Fact]
+        public void ShouldNotifyofSubtotalChangingOnAdd()
+        {
+            var order = new Order<IMenuItem>();
+            var leoLambGyro = new LeoLambGyro();
+            Assert.PropertyChanged(order, "Subtotal", () =>
+            {
+                order.Add(leoLambGyro);
+            });
+        }
+
+        /// <summary>
+        /// Notifies of Tax changing when adding an item
+        /// </summary>
+        [Fact]
+        public void ShouldNotifyofTaxChangingOnAdd()
+        {
+            var order = new Order<IMenuItem>();
+            var leoLambGyro = new LeoLambGyro();
+            Assert.PropertyChanged(order, "Tax", () =>
+            {
+                order.Add(leoLambGyro);
+            });
+        }
+
+        /// <summary>
+        /// Notifies of calories changing when adding an item
+        /// </summary>
+        [Fact]
+        public void ShouldNotifyofCaloriesChangingOnAdd()
+        {
+            var order = new Order<IMenuItem>();
+            var leoLambGyro = new LeoLambGyro();
+            Assert.PropertyChanged(order, "Calories", () =>
+            {
+                order.Add(leoLambGyro);
+            });
         }
     }
 }
