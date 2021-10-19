@@ -50,9 +50,9 @@ namespace GyroScope.Data
         /// <summary>
         /// Used to trigger a collection changed removed event
         /// </summary>
-        protected void OnCollectionChangedRemove(int index)
+        protected void OnCollectionChangedRemove(IMenuItem menuItem, int index)
         {
-            CollectionChanged?.Invoke(this, new NotifyCollectionChangedEventArgs((NotifyCollectionChangedAction)CollectionChangeAction.Remove, index));
+            CollectionChanged?.Invoke(this, new NotifyCollectionChangedEventArgs((NotifyCollectionChangedAction)CollectionChangeAction.Remove, menuItem, index));
         }
 
         /// <summary>
@@ -81,7 +81,7 @@ namespace GyroScope.Data
         public void Remove(IMenuItem menuItem, int index)
         {
             menuItemList.Remove(menuItem);
-            OnCollectionChangedRemove(index);
+            OnCollectionChangedRemove(menuItem, index);
             OnPropertyChanged(nameof(this.Subtotal));
             OnPropertyChanged(nameof(this.Tax));
             OnPropertyChanged(nameof(this.Total));

@@ -69,6 +69,7 @@ namespace GyroScope.DataTests
             Assert.NotNull(args);
             Assert.Equal(NotifyCollectionChangedAction.Remove, args.Action);
             Assert.Equal(order, args.NewItems[0]);
+            Assert.Equal(order, args.NewItems[1]);
             Assert.Equal(1, args.NewItems.Count);
             Assert.Null(args.OldItems);
         }
