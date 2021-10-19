@@ -38,7 +38,7 @@ namespace GyroScope.DataTests
             order.Add(leoLambGyro);
             Assert.NotNull(args);
             Assert.Equal(NotifyCollectionChangedAction.Add, args.Action);
-            Assert.Equal(order, args.NewItems[0]);
+            Assert.Equal(leoLambGyro, args.NewItems[0]);
             Assert.Equal(1, args.NewItems.Count);
             Assert.Null(args.OldItems);
         }
