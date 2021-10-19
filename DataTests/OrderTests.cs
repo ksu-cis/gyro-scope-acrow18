@@ -149,5 +149,65 @@ namespace GyroScope.DataTests
                 order.Add(leoLambGyro);
             });
         }
+
+        /// <summary>
+        /// Notifies of total changing when removing an item
+        /// </summary>
+        [Fact]
+        public void ShouldNotifyofTotalChangingOnRemove()
+        {
+            var order = new Order<IMenuItem>();
+            var leoLambGyro = new LeoLambGyro();
+            order.Add(leoLambGyro);
+            Assert.PropertyChanged(order, "Total", () =>
+            {
+                order.Remove(leoLambGyro, 0);
+            });
+        }
+
+        /// <summary>
+        /// Notifies of total changing when removing an item
+        /// </summary>
+        [Fact]
+        public void ShouldNotifyofSubtotalChangingOnRemove()
+        {
+            var order = new Order<IMenuItem>();
+            var leoLambGyro = new LeoLambGyro();
+            order.Add(leoLambGyro);
+            Assert.PropertyChanged(order, "Subtotal", () =>
+            {
+                order.Remove(leoLambGyro, 0);
+            });
+        }
+
+        /// <summary>
+        /// Notifies of total changing when removing an item
+        /// </summary>
+        [Fact]
+        public void ShouldNotifyofTaxChangingOnRemove()
+        {
+            var order = new Order<IMenuItem>();
+            var leoLambGyro = new LeoLambGyro();
+            order.Add(leoLambGyro);
+            Assert.PropertyChanged(order, "Tax", () =>
+            {
+                order.Remove(leoLambGyro, 0);
+            });
+        }
+
+        /// <summary>
+        /// Notifies of total changing when removing an item
+        /// </summary>
+        [Fact]
+        public void ShouldNotifyofCaloriesChangingOnRemove()
+        {
+            var order = new Order<IMenuItem>();
+            var leoLambGyro = new LeoLambGyro();
+            order.Add(leoLambGyro);
+            Assert.PropertyChanged(order, "Calories", () =>
+            {
+                order.Remove(leoLambGyro, 0);
+            });
+        }
     }
 }
