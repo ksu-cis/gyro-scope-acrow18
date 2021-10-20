@@ -102,6 +102,9 @@ namespace GyroScope.DataTests
         [InlineData(Size.Large, "Calories")]
         [InlineData(Size.Medium, "Calories")]
         [InlineData(Size.Small, "Calories")]
+        [InlineData(Size.Large, "Name")]
+        [InlineData(Size.Medium, "Name")]
+        [InlineData(Size.Small, "Name")]
         public void ShouldNotifyOfPropertyChangedWhenSizeChanges(Size size, string propertyName)
         {
 

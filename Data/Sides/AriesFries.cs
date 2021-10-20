@@ -41,6 +41,7 @@ namespace GyroScope.Data.Sides
                     OnPropertyChanged(nameof(this.Size));
                     OnPropertyChanged(nameof(this.Price));
                     OnPropertyChanged(nameof(this.Calories));
+                    OnPropertyChanged(nameof(this.Name));
 
                 }
             }

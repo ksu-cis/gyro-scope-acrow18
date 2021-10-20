@@ -92,7 +92,7 @@ namespace GyroScope.Data.Drinks
         /// <summary>
         /// Calorie of Libra Libation
         /// </summary>
-        public uint _calorie;
+        public uint _calories;
 
         /// <summary>
         /// Calories of Libra Libation
@@ -103,25 +103,25 @@ namespace GyroScope.Data.Drinks
             {
                 if (Flavor == LibraLibationFlavor.Orangeade) 
                 {
-                    _calorie = 180;
+                    _calories = 180;
                 }
 
                 if (Flavor == LibraLibationFlavor.SourCherry)
                 {
-                    _calorie = 100;
+                    _calories = 100;
                 }
 
                 if (Flavor == LibraLibationFlavor.Biral)
                 {
-                    _calorie = 120;
+                    _calories = 120;
                 }
 
                 if (Flavor == LibraLibationFlavor.PinkLemonada)
                 {
-                    _calorie = 41;
+                    _calories = 41;
                 }
 
-                return _calorie;
+                return _calories;
             } 
         }
 
