@@ -164,15 +164,15 @@ namespace GyroScope.Data
         {
             get 
             {
-                uint _sumOfCalories = 0;
+                uint sumOfCalories = 0;
                 foreach (IMenuItem menuItem in menuItemList) 
                 {
                     _calories = menuItem.Calories;
-                    _sumOfCalories = _calories++;
+                    sumOfCalories = _calories++;
                 }
 
 
-                return _sumOfCalories;
+                return sumOfCalories;
             }
         }
 
@@ -188,17 +188,17 @@ namespace GyroScope.Data
         {
             get
             {
-               _number = nextOrderNumber;
+               _number = NextOrderNumber;
                 return _number;
             }
 
-            set => nextOrderNumber++;
+            set => NextOrderNumber++;
         }
 
         /// <summary>
         /// Ensures uniqueness of order number
         /// </summary>
-        private static int nextOrderNumber { get; set; } = 1;
+        private static int NextOrderNumber { get; set; } = 1;
 
         /// <summary>
         /// Data and time the order was placed
