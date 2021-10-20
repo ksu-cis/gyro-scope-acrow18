@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace PointOfSale
 {
     /// <summary>
-    /// Interaction logic for LibraLibation.xaml
+    /// Interaction logic for LibraLibationControl.xaml
     /// </summary>
-    public partial class LibraLibation : UserControl
+    public partial class LibraLibationControl : UserControl
     {
-        public LibraLibation()
+        public LibraLibationControl()
         {
             InitializeComponent();
         }

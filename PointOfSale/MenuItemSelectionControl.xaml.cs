@@ -69,7 +69,7 @@ namespace PointOfSale
                 break;
 
                 case "Libra Libation":
-                    customization = new LibraLibation();
+                    customization = new LibraLibationControl();
                     MenuSelectionControl.Child = customization;
                     LibraLibation libraLibation = new LibraLibation();
                     customization.DataContext = libraLibation;
