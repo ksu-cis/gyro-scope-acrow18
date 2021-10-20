@@ -42,6 +42,7 @@ namespace GyroScope.Data
         /// <summary>
         /// Used to trigger a collection changed add event
         /// </summary>
+        /// <param name="menuItem">Menu item to add</param>
         protected void OnCollectionChangedAdd(IMenuItem menuItem) 
         {
             CollectionChanged?.Invoke(this, new NotifyCollectionChangedEventArgs((NotifyCollectionChangedAction)CollectionChangeAction.Add, menuItem));
@@ -50,6 +51,8 @@ namespace GyroScope.Data
         /// <summary>
         /// Used to trigger a collection changed removed event
         /// </summary>
+        /// <param name="menuItem">Menu item to remove</param>
+        /// <param name="index">Index of menu item to remove</param>
         protected void OnCollectionChangedRemove(IMenuItem menuItem, int index)
         {
             CollectionChanged?.Invoke(this, new NotifyCollectionChangedEventArgs((NotifyCollectionChangedAction)CollectionChangeAction.Remove, menuItem, index));
@@ -77,6 +80,7 @@ namespace GyroScope.Data
         /// <summary>
         /// Removes a Menu item
         /// </summary>
+        /// <param name="menuItem">Menu item to remove</param>
         /// <param name="index">Index of menu item to remove</param>
         public void Remove(IMenuItem menuItem, int index)
         {

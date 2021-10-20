@@ -21,18 +21,19 @@ namespace PointOfSale
         /// <summary>
         /// Accessor for data context 
         /// </summary>
-        public Order<IMenuItem> _dataContextAccessor => (Order<IMenuItem>)DataContext;
+        public Order<IMenuItem> DataContextAccessor => (Order<IMenuItem>)DataContext;
 
         /// <summary>
         /// Removes item from order
         /// </summary>
         /// <param name="sender">Sender</param>
         /// <param name="e">e</param>
+        /// <param name="index">index of item to remove</param>
         private void RemoveItemClick(object sender, RoutedEventArgs e, int index) 
         {
             if (sender is Button button) 
             {
-                _dataContextAccessor.Remove((IMenuItem)button.DataContext, index);
+                DataContextAccessor.Remove((IMenuItem)button.DataContext, index);
             }
         }
 
