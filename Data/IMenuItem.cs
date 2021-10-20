@@ -29,5 +29,10 @@ namespace GyroScope.Data
         /// special instructions for preparing the menu item
         /// </summary>
         public IEnumerable<string> SpecialInstructions { get; }
+
+        /// <summary>
+        /// Name of menu item
+        /// </summary>
+        public String Name { get; }
     }
 }

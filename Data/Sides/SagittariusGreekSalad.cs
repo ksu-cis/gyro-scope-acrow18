@@ -106,12 +106,22 @@ namespace GyroScope.Data.Sides
         }
 
         /// <summary>
+        /// backing field for name
+        /// </summary>
+        public string _name;
+
+        /// <summary>
         /// Overridden ToString
         /// </summary>
         /// <returns>Descriptive name</returns>
         public override string ToString()
         {
-            return $"{ Size} Sagittarius Greek Salad";
+            return _name = $"{ Size} Sagittarius Greek Salad";
         }
+
+        /// <summary>
+        /// Same name as ToString
+        /// </summary>
+        public override string Name { get => _name; }
     }
 }

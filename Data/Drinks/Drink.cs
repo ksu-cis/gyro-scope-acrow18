@@ -28,6 +28,11 @@ namespace GyroScope.Data.Drinks
         public abstract IEnumerable<string> SpecialInstructions { get; }
 
         /// <summary>
+        /// Name of drink
+        /// </summary>
+        public abstract string Name { get; }
+
+        /// <summary>
         /// Event handler for changing properties
         /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;

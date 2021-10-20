@@ -41,6 +41,11 @@ namespace GyroScope.Data.Entrees
         public abstract IEnumerable<string> SpecialInstructions { get; }
 
         /// <summary>
+        /// Name of Entree
+        /// </summary>
+        public abstract string Name { get; }
+
+        /// <summary>
         /// Used to trigger a property changed event
         /// </summary>
         /// <param name="propertyName">The name of property that is changing</param>

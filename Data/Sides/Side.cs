@@ -40,6 +40,11 @@ namespace GyroScope.Data.Sides
         public abstract uint Calories { get; }
 
         /// <summary>
+        /// Name of Side
+        /// </summary>
+        public abstract string Name { get; }
+
+        /// <summary>
         /// Used to trigger a property changed event
         /// </summary>
         /// <param name="propertyName">The name of property that is changing</param>

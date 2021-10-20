@@ -141,7 +141,7 @@ namespace GyroScope.Data.Drinks
         /// <summary>
         /// Greek Soda
         /// </summary>
-        public String Name
+        public override string Name
         {
             get
             {

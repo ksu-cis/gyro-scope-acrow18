@@ -74,13 +74,24 @@ namespace GyroScope.Data.Drinks
         }
 
         /// <summary>
+        /// backing field for name
+        /// </summary>
+        public String _name = "Capricorn Mountain Tea";
+
+        /// <summary>
         /// Overridden ToString
         /// </summary>
         /// <returns>Descriptive name</returns>
         public override string ToString()
         {
-            return "Capricorn Mountain Tea";
+            return _name;
         }
+
+
+        /// <summary>
+        /// Same name as ToString
+        /// </summary>
+        public override string Name { get => _name; }
 
         /// <summary>
         /// Not implemented 

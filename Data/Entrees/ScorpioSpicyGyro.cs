@@ -81,6 +81,10 @@ namespace GyroScope.Data.Entrees
             }
         }
 
+        /// <summary>
+        /// backing field for name
+        /// </summary>
+        public string _name = "Scorpio Spicy Gyro";
 
         /// <summary>
         /// Overridden ToString
@@ -88,8 +92,13 @@ namespace GyroScope.Data.Entrees
         /// <returns>Descriptive name</returns>
         public override string ToString()
         {
-            return "Scorpio Spicy Gyro";
+            return _name;
         }
+
+        /// <summary>
+        /// Same name as ToString
+        /// </summary>
+        public override string Name { get => _name; }
 
     }
 }

@@ -82,12 +82,22 @@ namespace GyroScope.Data.Entrees
         }
 
         /// <summary>
+        /// backing field for name
+        /// </summary>
+        public string _name = "Virgo Classic Gyro";
+
+        /// <summary>
         /// Overridden ToString
         /// </summary>
         /// <returns>Descriptive name</returns>
         public override string ToString()
         {
-            return "Virgo Classic Gyro";
+            return _name;
         }
+
+        /// <summary>
+        /// Same name as ToString
+        /// </summary>
+        public override string Name { get => _name; }
     }
 }
