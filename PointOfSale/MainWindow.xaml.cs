@@ -42,7 +42,7 @@ namespace PointOfSale
         /// </summary>
         /// <param name="sender">sender</param>
         /// <param name="e">e</param>
-        private void CancelOrder_Click(object sender, RoutedEventArgs e)
+        private void cancelOrder_Click_1(object sender, RoutedEventArgs e)
         {
             if (sender is Button button)
             {
