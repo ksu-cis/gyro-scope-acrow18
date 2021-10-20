@@ -19,7 +19,7 @@ namespace GyroScope.Data.Entrees
     /// <summary>
     /// A base class for all Gyros sold at GyroScope
     /// </summary>
-    public abstract class Gyro : Entree, INotifyPropertyChanged
+    public abstract class Gyro : Entree, IMenuItem, INotifyPropertyChanged
     {
         /// <summary>
         /// backing field for meat

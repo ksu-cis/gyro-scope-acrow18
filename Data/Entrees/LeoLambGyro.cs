@@ -18,7 +18,7 @@ namespace GyroScope.Data.Entrees
     /// <summary>
     /// Leo Lamb Gyro
     /// </summary>
-    public class LeoLambGyro : Gyro
+    public class LeoLambGyro : Gyro, IMenuItem
     {
         /// <summary>
         /// LeoLambGyro
@@ -41,12 +41,6 @@ namespace GyroScope.Data.Entrees
         /// Price of Gyro
         /// </summary>
         public override decimal Price { get; } = 5.75M;
-
-        /// <summary>
-        /// used to sum calories
-        /// </summary>
-        public uint calorieSum = 0;
-
          
         /// <summary>
         /// Special Instructions
@@ -87,13 +81,23 @@ namespace GyroScope.Data.Entrees
         }
 
         /// <summary>
+        /// backing field for name
+        /// </summary>
+        public String _name = "Leo Lamb Gyro";
+
+        /// <summary>
         /// Overridden ToString
         /// </summary>
         /// <returns>Descriptive name</returns>
         public override string ToString()
         {
-            return "Leo Lamb Gyro";
+            return _name;
         }
+
+        /// <summary>
+        /// Same name as ToString
+        /// </summary>
+        public override string Name { get => _name; }
 
     }
 }

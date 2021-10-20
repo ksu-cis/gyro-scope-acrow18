@@ -19,7 +19,7 @@ namespace GyroScope.Data.Sides
     /// <summary>
     /// Declares a class for the side SagittariusGreekSalad
     /// </summary>
-    public class SagittariusGreekSalad : Side, INotifyPropertyChanged
+    public class SagittariusGreekSalad : Side, IMenuItem, INotifyPropertyChanged
     {
         /// <summary>
         /// backing field for size
@@ -40,6 +40,7 @@ namespace GyroScope.Data.Sides
                     OnPropertyChanged(nameof(this.Size));
                     OnPropertyChanged(nameof(this.Price));
                     OnPropertyChanged(nameof(this.Calories));
+                    OnPropertyChanged(nameof(this.Name));
 
                 }
             }
@@ -106,12 +107,22 @@ namespace GyroScope.Data.Sides
         }
 
         /// <summary>
+        /// backing field for name
+        /// </summary>
+        public string _name;
+
+        /// <summary>
         /// Overridden ToString
         /// </summary>
         /// <returns>Descriptive name</returns>
         public override string ToString()
         {
-            return $"{ Size} Sagittarius Greek Salad";
+            return _name = $"{ Size} Sagittarius Greek Salad";
         }
+
+        /// <summary>
+        /// Same name as ToString
+        /// </summary>
+        public override string Name { get => _name; }
     }
 }

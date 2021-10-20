@@ -15,7 +15,7 @@ namespace GyroScope.Data.Treats
     /// <summary>
     /// Cancer Halveh Cake
     /// </summary>
-    public class CancerHalvaCake : Treat
+    public class CancerHalvaCake : Treat, IMenuItem
     {
         /// <summary>
         /// Price of Cancer Halveh Cake
@@ -28,24 +28,11 @@ namespace GyroScope.Data.Treats
         public override uint Calories => 272;
 
         /// <summary>
-        /// backing field for size
-        /// </summary>
-        public Size _size = 0;
-
-        /// <summary>
-        /// The size of this Cancer Halva cake
+        /// Cancer Halva doesn't have a size
         /// </summary>
         public override Size Size
         {
-            get => _size;
-            set
-            {
-                if (_size != value)
-                {
-                    _size = value;
-                    OnPropertyChanged(nameof(this.Size));
-                }
-            }
+            get => throw new NotImplementedException(); set => throw new NotImplementedException();
         }
 
         /// <summary>
@@ -61,5 +48,7 @@ namespace GyroScope.Data.Treats
         {
             return "Cancer Halva Cake";
         }
+
+        
     }
 }

@@ -6,6 +6,7 @@
              xmlns:local="clr-namespace:PointOfSale"
              mc:Ignorable="d" 
              d:DesignHeight="700" d:DesignWidth="400">
+<Border Name="OrderControl">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="140*"/>
@@ -13,12 +14,13 @@
             <RowDefinition Height="200*"/>
         </Grid.RowDefinitions>
 
-        <Label Content="Order #___" FontSize="30" HorizontalAlignment="Center" Grid.Row="0"/>
-        <Label Content="__/__/__" FontSize="30" HorizontalAlignment="Center" Grid.Row= "0" Margin="0,50,0,0" />
-        <ListView Grid.Row="1"/>
-        <!-- Add placeholder for subtotal, tax and total -->
-        <Label Content="Subtotal $____" FontSize="30" HorizontalAlignment="Center" Grid.Row="2"/>
-        <Label Content="Tax $____" FontSize="30" HorizontalAlignment="Center" Grid.Row="2" Margin="75,45,10,10"/>
-        <Label Content="Total $____" FontSize="30" HorizontalAlignment="Center" Grid.Row="2"  Margin="55,90,10,10"/>
+        <Label Name ="orderNumber" Content="{Binding Path= Number, StringFormat=Order #{0}}" FontSize="30" HorizontalAlignment="Center" Grid.Row="0"/>
+        <Label Name ="dateOfOrderPlaced" Content="{Binding Path= PlacedAt}" FontSize="30" HorizontalAlignment="Center" Grid.Row= "0" Margin="0,50,0,0" />
+        <ListView  Name="orderList" Grid.Row="1"/>
+        <Label Name="subtotalLabel" Content="{Binding Path= Subtotal, StringFormat=Total {0;c}}" FontSize="30" HorizontalAlignment="Center" Grid.Row="2"/>
+        <Label Name="taxLabel" Content="{Binding Path= Tax, StringFormat=Total {0;c}}" FontSize="30" HorizontalAlignment="Center" Grid.Row="2" Margin="75,45,10,10"/>
+        <Label Name="totalLabel" Content="{Binding Path= Total, StringFormat=Total {0;c}}" FontSize="30" HorizontalAlignment="Center" Grid.Row="2"  Margin="55,90,10,10"/>
+        
     </Grid>
+</Border>
 </UserControl>

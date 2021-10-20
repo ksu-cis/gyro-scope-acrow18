@@ -19,7 +19,7 @@ namespace GyroScope.Data.Sides
     /// <summary>
     /// Declares a class for the side AresFries
     /// </summary>
-    public class AriesFries : Side, INotifyPropertyChanged
+    public class AriesFries : Side, IMenuItem, INotifyPropertyChanged
     {
 
         /// <summary>
@@ -41,6 +41,7 @@ namespace GyroScope.Data.Sides
                     OnPropertyChanged(nameof(this.Size));
                     OnPropertyChanged(nameof(this.Price));
                     OnPropertyChanged(nameof(this.Calories));
+                    OnPropertyChanged(nameof(this.Name));
 
                 }
             }
@@ -101,13 +102,23 @@ namespace GyroScope.Data.Sides
         }
 
         /// <summary>
+        /// backing field for name
+        /// </summary>
+        public string _name;
+
+        /// <summary>
         /// Overridden ToString
         /// </summary>
         /// <returns>Descriptive name</returns>
         public override string ToString()
         {
-            return $"{ Size} Aries Fries";
+            return _name = $"{ Size} Aries Fries";
         }
+
+        /// <summary>
+        /// Same name as ToString
+        /// </summary>
+        public override string Name { get => _name; }
 
     }
 }

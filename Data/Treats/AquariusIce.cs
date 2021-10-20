@@ -17,7 +17,7 @@ namespace GyroScope.Data.Treats
     /// <summary>
     /// A class representing "Aquarius Ice" - an itialian iced soda
     /// </summary>
-    public class AquariusIce : Treat, INotifyPropertyChanged
+    public class AquariusIce : Treat, IMenuItem, INotifyPropertyChanged
     {
         /// <summary>
         /// backing field for size

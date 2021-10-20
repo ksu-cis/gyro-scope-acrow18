@@ -18,7 +18,7 @@ namespace GyroScope.Data.Entrees
     /// <summary>
     /// Entree base class
     /// </summary>
-    public abstract class Entree : INotifyPropertyChanged
+    public abstract class Entree : IMenuItem, INotifyPropertyChanged
     {
         /// <summary>
         /// Event handler for changing properties
@@ -39,6 +39,11 @@ namespace GyroScope.Data.Entrees
         /// Special instructions
         /// </summary>
         public abstract IEnumerable<string> SpecialInstructions { get; }
+
+        /// <summary>
+        /// Name of Entree
+        /// </summary>
+        public abstract string Name { get; }
 
         /// <summary>
         /// Used to trigger a property changed event

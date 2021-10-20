@@ -17,7 +17,7 @@ namespace GyroScope.Data.Entrees
     /// <summary>
     /// Pisces Fish Dish
     /// </summary>
-    public class PiscesFishDish : Entree
+    public class PiscesFishDish : Entree, IMenuItem
     {
         /// <summary>
         /// Price of Dish
@@ -35,12 +35,22 @@ namespace GyroScope.Data.Entrees
         public override IEnumerable<string> SpecialInstructions { get; } = null;
 
         /// <summary>
+        /// backing field for name
+        /// </summary>
+        public string _name = "Pisces Fish Dish";
+
+        /// <summary>
         /// Overridden ToString
         /// </summary>
         /// <returns>Descriptive name</returns>
         public override string ToString()
         {
-            return "Pisces Fish Dish";
+            return _name;
         }
+
+        /// <summary>
+        /// Same name as ToString
+        /// </summary>
+        public override string Name { get => _name; }
     }
 }

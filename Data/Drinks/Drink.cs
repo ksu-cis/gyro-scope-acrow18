@@ -10,8 +10,27 @@ namespace GyroScope.Data.Drinks
     /// <summary>
     /// A base class for all Drinks sold at GyroScope
     /// </summary>
-    public abstract class Drink : INotifyPropertyChanged
+    public abstract class Drink : IMenuItem, INotifyPropertyChanged
     {
+        /// <summary>
+        /// Price of drink
+        /// </summary>
+        public abstract decimal Price { get; }
+
+        /// <summary>
+        /// Calories of drink
+        /// </summary>
+        public abstract uint Calories { get; }
+
+        /// <summary>
+        /// Special instructions
+        /// </summary>
+        public abstract IEnumerable<string> SpecialInstructions { get; }
+
+        /// <summary>
+        /// Name of drink
+        /// </summary>
+        public abstract string Name { get; }
 
         /// <summary>
         /// Event handler for changing properties
@@ -26,16 +45,5 @@ namespace GyroScope.Data.Drinks
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
-
-        /// <summary>
-        /// Price of drink
-        /// </summary>
-        public abstract decimal Price { get; set; }
-
-        /// <summary>
-        /// Calories of Capricorn Mountain Tea
-        /// </summary>
-        public abstract uint Calories { get; }
-
     }
 }
