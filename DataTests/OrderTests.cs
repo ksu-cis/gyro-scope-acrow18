@@ -26,21 +26,7 @@ namespace GyroScope.DataTests
         [Fact]
         public void ShouldNotifyOfCollectionChangedOnAdd()
         {
-            var order = new Order<IMenuItem>();
-            NotifyCollectionChangedEventArgs args = null;
-
-            order.CollectionChanged += (sender, e) =>
-            {
-                args = e;
-            };
-
-            var leoLambGyro = new LeoLambGyro();
-            order.Add(leoLambGyro);
-            Assert.NotNull(args);
-            Assert.Equal(NotifyCollectionChangedAction.Add, args.Action);
-            Assert.Equal(leoLambGyro, args.NewItems[0]);
-            Assert.Equal(1, args.NewItems.Count);
-            Assert.Null(args.OldItems);
+            
         }
 
         /// <summary>

@@ -29,7 +29,7 @@ namespace PointOfSale
         /// <param name="sender">Sender</param>
         /// <param name="e">e</param>
         /// <param name="index">index of item to remove</param>
-        private void RemoveItemClick(object sender, RoutedEventArgs e, int index) 
+        private void RemoveItem_Click(object sender, RoutedEventArgs e, int index) 
         {
             if (sender is Button button) 
             {
