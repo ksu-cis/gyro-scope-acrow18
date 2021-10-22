@@ -6,6 +6,7 @@
 using GyroScope.Data.Enums;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,7 +19,7 @@ namespace GyroScope.Data.Entrees
     /// <summary>
     /// Scorpio Spicy Gyro
     /// </summary>
-    public class ScorpioSpicyGyro : Gyro, IMenuItem
+    public class ScorpioSpicyGyro : Gyro, IMenuItem, INotifyPropertyChanged
     {
 
         public ScorpioSpicyGyro()
