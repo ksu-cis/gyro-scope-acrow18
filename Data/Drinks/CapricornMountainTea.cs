@@ -6,6 +6,7 @@
 using GyroScope.Data.Enums;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,7 +16,7 @@ namespace GyroScope.Data.Drinks
     /// <summary>
     /// Capricorn Mountain Tea
     /// </summary>
-    public class CapricornMountainTea : Drink, IMenuItem
+    public class CapricornMountainTea : Drink, IMenuItem, INotifyPropertyChanged
     {
         /// <summary>
         /// backing field for price

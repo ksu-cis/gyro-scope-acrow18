@@ -6,6 +6,7 @@
 using GyroScope.Data.Enums;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,7 +19,7 @@ namespace GyroScope.Data.Drinks
     /// <summary>
     /// Libra Libation
     /// </summary>
-    public class LibraLibation : Drink, IMenuItem
+    public class LibraLibation : Drink, IMenuItem, INotifyPropertyChanged
     {
         /// <summary>
         /// backing field for flavor

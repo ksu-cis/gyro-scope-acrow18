@@ -92,11 +92,15 @@ namespace GyroScope.Data
             OnPropertyChanged(nameof(this.Calories));
         }
 
+        /// <summary>
+        /// backing field for sales tax rate
+        /// </summary>
+        public decimal _salesTaxRate = 0.09M;
 
         /// <summary>
         /// Rate of sales tax
         /// </summary>
-        public decimal SaleTaxRate { get; set; } = 0.09M;
+        public decimal SaleTaxRate { get => _salesTaxRate; }
 
 
         /// <summary>
@@ -200,10 +204,16 @@ namespace GyroScope.Data
         /// </summary>
         private static int NextOrderNumber { get; set; } = 1;
 
+
+        /// <summary>
+        /// backing field for PlacedAt
+        /// </summary>
+        public DateTime _placedAt = DateTime.Now;
+
         /// <summary>
         /// Data and time the order was placed
         /// </summary>
-        public DateTime PlacedAt;
+        public DateTime PlacedAt { get => _placedAt; }
         
         /// <summary>
         /// Gets count of items in Menu Item List
