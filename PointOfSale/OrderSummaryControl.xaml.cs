@@ -29,11 +29,11 @@ namespace PointOfSale
         /// <param name="sender">Sender</param>
         /// <param name="e">e</param>
         /// <param name="index">index of item to remove</param>
-        private void RemoveItem_Click(object sender, RoutedEventArgs e, int index) 
+        private void RemoveItem_Click(object sender, RoutedEventArgs e) 
         {
             if (sender is Button button) 
             {
-                DataContextAccessor.Remove((IMenuItem)button.DataContext, index);
+                DataContextAccessor.Remove((IMenuItem)button.DataContext);
             }
         }
 

@@ -26,7 +26,21 @@ namespace GyroScope.DataTests
         [Fact]
         public void ShouldNotifyOfCollectionChangedOnAdd()
         {
-            
+            var order = new Order();
+            NotifyCollectionChangedEventArgs args = null;
+
+            order.CollectionChanged += (sender, e) =>
+            {
+                args = e;
+            };
+
+            var leoGyro = new LeoLambGyro();
+            order.Add(leoGyro);
+            Assert.NotNull(args);
+            Assert.Equal(NotifyCollectionChangedAction.Add, args.Action);
+            Assert.Equal(leoGyro, args.NewItems[0]);
+            Assert.Equal(1, args.NewItems.Count);
+            Assert.Null(args.OldItems);
         }
 
         /// <summary>
@@ -35,7 +49,7 @@ namespace GyroScope.DataTests
         [Fact]
         public void ShouldNotifyOfCollectionChangedOnRemove()
         {
-            var order = new Order<IMenuItem>();
+            var order = new Order();
             NotifyCollectionChangedEventArgs args = null;
 
             order.CollectionChanged += (sender, e) =>
@@ -66,7 +80,7 @@ namespace GyroScope.DataTests
         [Fact]
         public void ShouldImplementINotifyCollectionChanged()
         {
-            var order = new Order<IMenuItem>();
+            var order = new Order();
             Assert.IsAssignableFrom<System.Collections.Specialized.INotifyCollectionChanged>(order);
         }
 
@@ -76,7 +90,7 @@ namespace GyroScope.DataTests
         [Fact]
         public void ShouldImplementINotifyPropertyChanged()
         {
-            var order = new Order<IMenuItem>();
+            var order = new Order();
             Assert.IsAssignableFrom<System.ComponentModel.INotifyPropertyChanged>(order);
         }
 
@@ -86,7 +100,7 @@ namespace GyroScope.DataTests
         [Fact]
         public void ShouldNotifyofTotalChangingOnAdd()
         {
-            var order = new Order<IMenuItem>();
+            var order = new Order();
             var leoLambGyro = new LeoLambGyro();
             Assert.PropertyChanged(order, "Total", () =>
             {
@@ -100,7 +114,7 @@ namespace GyroScope.DataTests
         [Fact]
         public void ShouldNotifyofSubtotalChangingOnAdd()
         {
-            var order = new Order<IMenuItem>();
+            var order = new Order();
             var leoLambGyro = new LeoLambGyro();
             Assert.PropertyChanged(order, "Subtotal", () =>
             {
@@ -114,7 +128,7 @@ namespace GyroScope.DataTests
         [Fact]
         public void ShouldNotifyofTaxChangingOnAdd()
         {
-            var order = new Order<IMenuItem>();
+            var order = new Order();
             var leoLambGyro = new LeoLambGyro();
             Assert.PropertyChanged(order, "Tax", () =>
             {
@@ -128,7 +142,7 @@ namespace GyroScope.DataTests
         [Fact]
         public void ShouldNotifyofCaloriesChangingOnAdd()
         {
-            var order = new Order<IMenuItem>();
+            var order = new Order();
             var leoLambGyro = new LeoLambGyro();
             Assert.PropertyChanged(order, "Calories", () =>
             {
@@ -142,12 +156,12 @@ namespace GyroScope.DataTests
         [Fact]
         public void ShouldNotifyofTotalChangingOnRemove()
         {
-            var order = new Order<IMenuItem>();
+            var order = new Order();
             var leoLambGyro = new LeoLambGyro();
             order.Add(leoLambGyro);
             Assert.PropertyChanged(order, "Total", () =>
             {
-                order.Remove(leoLambGyro, 0);
+                order.Remove(leoLambGyro);
             });
         }
 
@@ -157,12 +171,12 @@ namespace GyroScope.DataTests
         [Fact]
         public void ShouldNotifyofSubtotalChangingOnRemove()
         {
-            var order = new Order<IMenuItem>();
+            var order = new Order();
             var leoLambGyro = new LeoLambGyro();
             order.Add(leoLambGyro);
             Assert.PropertyChanged(order, "Subtotal", () =>
             {
-                order.Remove(leoLambGyro, 0);
+                order.Remove(leoLambGyro);
             });
         }
 
@@ -172,12 +186,12 @@ namespace GyroScope.DataTests
         [Fact]
         public void ShouldNotifyofTaxChangingOnRemove()
         {
-            var order = new Order<IMenuItem>();
+            var order = new Order();
             var leoLambGyro = new LeoLambGyro();
             order.Add(leoLambGyro);
             Assert.PropertyChanged(order, "Tax", () =>
             {
-                order.Remove(leoLambGyro, 0);
+                order.Remove(leoLambGyro);
             });
         }
 
@@ -187,12 +201,12 @@ namespace GyroScope.DataTests
         [Fact]
         public void ShouldNotifyofCaloriesChangingOnRemove()
         {
-            var order = new Order<IMenuItem>();
+            var order = new Order();
             var leoLambGyro = new LeoLambGyro();
             order.Add(leoLambGyro);
             Assert.PropertyChanged(order, "Calories", () =>
             {
-                order.Remove(leoLambGyro, 0);
+                order.Remove(leoLambGyro);
             });
         }
     }

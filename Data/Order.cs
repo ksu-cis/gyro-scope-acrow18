@@ -18,7 +18,7 @@ namespace GyroScope.Data
     /// Represents an order
     /// </summary>
     /// <typeparam name="IMenuItems">Collection of IMenuItems</typeparam>
-    public class Order<IMenuItems> : ICollection, INotifyCollectionChanged, INotifyPropertyChanged
+    public class Order : IMenuItem, ICollection<IMenuItem>, INotifyCollectionChanged, INotifyPropertyChanged
     {
         /// <summary>
         /// Event handler for changing properties
@@ -26,7 +26,7 @@ namespace GyroScope.Data
         public event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>
-        /// Event handlerfor changing collections
+        /// Event handler for changing collections
         /// </summary>
         public event NotifyCollectionChangedEventHandler CollectionChanged;
 
@@ -40,22 +40,32 @@ namespace GyroScope.Data
         }
 
         /// <summary>
-        /// Used to trigger a collection changed add event
+        /// Used to trigger a collection changed event
         /// </summary>
-        /// <param name="menuItem">Menu item to add</param>
-        protected void OnCollectionChangedAdd(IMenuItem menuItem) 
+        /// <param name="e">Name of collection that is changing</param>
+        protected virtual void OnCollectionChanged(NotifyCollectionChangedEventArgs e) 
         {
-            CollectionChanged?.Invoke(this, new NotifyCollectionChangedEventArgs((NotifyCollectionChangedAction)CollectionChangeAction.Add, menuItem));
+            this.CollectionChanged(this, e);
         }
 
+
         /// <summary>
-        /// Used to trigger a collection changed removed event
+        /// Helper method for the notify property changed event.
         /// </summary>
-        /// <param name="menuItem">Menu item to remove</param>
-        /// <param name="index">Index of menu item to remove</param>
-        protected void OnCollectionChangedRemove(IMenuItem menuItem, int index)
+        /// <param name="sender">The object.</param>
+        /// <param name="e">The event.</param>
+        protected virtual void HelperPropertyChanged(object sender, PropertyChangedEventArgs e)
         {
-            CollectionChanged?.Invoke(this, new NotifyCollectionChangedEventArgs((NotifyCollectionChangedAction)CollectionChangeAction.Remove, menuItem, index));
+            if (e.PropertyName.Equals("Price"))
+            {
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Tax"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Total"));
+            }
+            if (e.PropertyName.Equals("Calories"))
+            {
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
+            }
         }
 
         /// <summary>
@@ -70,26 +80,39 @@ namespace GyroScope.Data
         public void Add(IMenuItem menuItem)
         {
             menuItemList.Add(menuItem);
-            OnCollectionChangedAdd(menuItem);
+            OnCollectionChanged(new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Add, menuItem));
+            ((INotifyPropertyChanged)menuItem).PropertyChanged += HelperPropertyChanged;
             OnPropertyChanged(nameof(this.Subtotal));
             OnPropertyChanged(nameof(this.Tax));
             OnPropertyChanged(nameof(this.Total));
             OnPropertyChanged(nameof(this.Calories));
         }
 
+        
         /// <summary>
-        /// Removes a Menu item
+        /// Removes the item
         /// </summary>
-        /// <param name="menuItem">Menu item to remove</param>
-        /// <param name="index">Index of menu item to remove</param>
-        public void Remove(IMenuItem menuItem, int index)
+        /// <param name="menuItem">Item to be removed</param>
+        /// <returns>True if the item is in the list false if not</returns>
+        public bool Remove(IMenuItem menuItem)
         {
-            menuItemList.Remove(menuItem);
-            OnCollectionChangedRemove(menuItem, index);
-            OnPropertyChanged(nameof(this.Subtotal));
-            OnPropertyChanged(nameof(this.Tax));
-            OnPropertyChanged(nameof(this.Total));
-            OnPropertyChanged(nameof(this.Calories));
+            if (menuItemList.Contains(menuItem))
+            {
+                int index = menuItemList.IndexOf(menuItem);
+                menuItemList.Remove(menuItem);
+                OnCollectionChanged(new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Remove, menuItem, index));
+                ((INotifyPropertyChanged)menuItem).PropertyChanged += HelperPropertyChanged;
+                OnPropertyChanged(nameof(this.Subtotal));
+                OnPropertyChanged(nameof(this.Tax));
+                OnPropertyChanged(nameof(this.Total));
+                OnPropertyChanged(nameof(this.Calories));
+                return true;
+            }
+
+            else 
+            { 
+                return false;
+            }
         }
 
         /// <summary>
@@ -222,32 +245,58 @@ namespace GyroScope.Data
 
 
         /// <summary>
-        /// Not implemented
+        /// IsSynchronized property (Not used)
         /// </summary>
-        public bool IsSynchronized => throw new NotImplementedException();
+        public bool IsSynchronized { get; }
 
         /// <summary>
-        /// Not implemented
+        /// Sync root property (Not used)
         /// </summary>
-        public object SyncRoot => throw new NotImplementedException();
+        public object SyncRoot { get; }
+
 
         /// <summary>
-        /// Not implemented
+        /// Checks to see if them menu item list contains the item
         /// </summary>
-        /// <param name="array">Array</param>
-        /// <param name="index">Index</param>
-        public void CopyTo(Array array, int index)
+        /// <param name="item">The item.</param>
+        /// <returns>
+        /// Returns true if contains, otherwise false.
+        /// </returns>
+        public bool Contains(IMenuItem item)
         {
-            throw new NotImplementedException();
+            return menuItemList.Contains(item);
+        }
+
+
+        /// <summary>
+        /// Copies the data of the menu item array
+        /// </summary>
+        /// <param name="menuItemArray">Array</param>
+        /// <param name="index">Index</param>
+        public void CopyTo(IMenuItem[] menuItemArray, int index)
+        {
+            menuItemList.CopyTo(menuItemArray, index);
+        }
+
+
+        /// <summary>
+        /// Gets the enumerator.
+        /// </summary>
+        /// <returns>
+        /// Returns the enumerator.
+        /// </returns>
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return menuItemList.GetEnumerator();
         }
 
         /// <summary>
-        /// Not implemented
+        /// Enumerator for IMenuItem (Not used)
         /// </summary>
         /// <returns>not implemented exception</returns>
-        public IEnumerator GetEnumerator()
+        public IEnumerator<IMenuItem> GetEnumerator()
         {
-            throw new NotImplementedException();
+            return menuItemList.GetEnumerator();
         }
 
     }
