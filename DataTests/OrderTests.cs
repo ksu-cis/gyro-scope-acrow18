@@ -44,7 +44,7 @@ namespace GyroScope.DataTests
         }
 
         /// <summary>
-        /// Notifies of collection changed on add
+        /// Notifies of collection changed on remove
         /// </summary>
         [Fact]
         public void ShouldNotifyOfCollectionChangedOnRemove()
@@ -67,6 +67,7 @@ namespace GyroScope.DataTests
             order.Remove(leoLambGyro);
 
             Assert.NotNull(args);
+            Assert.Equal(NotifyCollectionChangedAction.Add, args.Action);
             Assert.Equal(NotifyCollectionChangedAction.Remove, args.Action);
             Assert.Equal(order, args.NewItems[0]);
             Assert.Equal(order, args.NewItems[1]);
@@ -115,10 +116,10 @@ namespace GyroScope.DataTests
         public void ShouldNotifyofSubtotalChangingOnAdd()
         {
             var order = new Order();
-            var leoLambGyro = new LeoLambGyro();
             Assert.PropertyChanged(order, "Subtotal", () =>
             {
-                order.Add(leoLambGyro);
+                order.Add(new LeoLambGyro());
+
             });
         }
 
@@ -129,10 +130,10 @@ namespace GyroScope.DataTests
         public void ShouldNotifyofTaxChangingOnAdd()
         {
             var order = new Order();
-            var leoLambGyro = new LeoLambGyro();
             Assert.PropertyChanged(order, "Tax", () =>
             {
-                order.Add(leoLambGyro);
+                order.Add(new LeoLambGyro());
+
             });
         }
 

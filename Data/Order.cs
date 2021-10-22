@@ -45,27 +45,7 @@ namespace GyroScope.Data
         /// <param name="e">Name of collection that is changing</param>
         protected virtual void OnCollectionChanged(NotifyCollectionChangedEventArgs e) 
         {
-            this.CollectionChanged(this, e);
-        }
-
-
-        /// <summary>
-        /// Helper method for the notify property changed event.
-        /// </summary>
-        /// <param name="sender">The object.</param>
-        /// <param name="e">The event.</param>
-        protected virtual void HelperPropertyChanged(object sender, PropertyChangedEventArgs e)
-        {
-            if (e.PropertyName.Equals("Price"))
-            {
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Tax"));
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Total"));
-            }
-            if (e.PropertyName.Equals("Calories"))
-            {
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
-            }
+            CollectionChanged?.Invoke(this, e);
         }
 
         /// <summary>
@@ -94,7 +74,6 @@ namespace GyroScope.Data
         {
             menuItemList.Add(menuItem);
             OnCollectionChanged(new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Add, menuItem));
-            ((INotifyPropertyChanged)menuItem).PropertyChanged += HelperPropertyChanged;
             OnPropertyChanged(nameof(this.Subtotal));
             OnPropertyChanged(nameof(this.Tax));
             OnPropertyChanged(nameof(this.Total));
@@ -114,7 +93,6 @@ namespace GyroScope.Data
                 int index = menuItemList.IndexOf(menuItem);
                 menuItemList.Remove(menuItem);
                 OnCollectionChanged(new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Remove, menuItem, index));
-                ((INotifyPropertyChanged)menuItem).PropertyChanged += HelperPropertyChanged;
                 OnPropertyChanged(nameof(this.Subtotal));
                 OnPropertyChanged(nameof(this.Tax));
                 OnPropertyChanged(nameof(this.Total));
@@ -153,21 +131,9 @@ namespace GyroScope.Data
 
 
         /// <summary>
-        /// backing field for Tax
+        /// Calculates the Tax
         /// </summary>
-        public decimal _tax;
-
-        /// <summary>
-        /// Tax
-        /// </summary>
-        public decimal Tax
-        {
-            get 
-            {
-                _tax = Subtotal * SalesTaxRate;
-                return _tax;
-            }
-        }
+        public decimal Tax => Subtotal * SalesTaxRate;
 
         /// <summary>
         /// Subtotal
@@ -187,22 +153,12 @@ namespace GyroScope.Data
             }
         }
 
-        /// <summary>
-        /// backing field for Total
-        /// </summary>
-        public decimal _total;
 
         /// <summary>
-        /// Total
+        /// Calculates the Total
         /// </summary>
-        public decimal Total
-        {
-            get
-            {
-                _total = Subtotal + Tax;
-                return _total;
-            }
-        }
+        public decimal Total => Subtotal + Tax;
+
 
 
         /// <summary>
@@ -246,6 +202,7 @@ namespace GyroScope.Data
                     OnPropertyChanged(nameof(Count));
                     OnPropertyChanged(nameof(Subtotal));
                     OnPropertyChanged(nameof(Total));
+                    OnPropertyChanged(nameof(SalesTaxRate));
                 }
             }
         }
@@ -259,12 +216,12 @@ namespace GyroScope.Data
         /// <summary>
         /// backing field for PlacedAt
         /// </summary>
-        public DateTime _placedAt = DateTime.Now;
+        public DateTime _placedAt;
 
         /// <summary>
         /// Data and time the order was placed
         /// </summary>
-        public DateTime PlacedAt { get => _placedAt; }
+        public DateTime PlacedAt => _placedAt;
         
         /// <summary>
         /// Gets count of items in Menu Item List
@@ -345,6 +302,16 @@ namespace GyroScope.Data
         public IEnumerator<IMenuItem> GetEnumerator()
         {
             return menuItemList.GetEnumerator();
+        }
+
+        /// <summary>
+        /// Constructor for order class
+        /// </summary>
+        public Order() 
+        {
+            Number = NextOrderNumber;
+            NextOrderNumber++;
+            _placedAt = DateTime.Now;
         }
 
     }
