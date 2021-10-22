@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GyroScope.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,18 +24,28 @@ namespace PointOfSale
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = new Order();
         }
 
-        
+        /// <summary>
+        /// Initializes a order.
+        /// </summary>
+        public Order _order = new Order();
 
         /// <summary>
-        /// Starts new menu item control 
+        /// Sets the order property.
         /// </summary>
-        /// <param name="sender">sender</param>
-        /// <param name="e">e</param>
-        private void SelectItems_Click(object sender, RoutedEventArgs e)
+        public Order Order 
         {
-            newMenuItem.Child = new MenuItemSelectionControl();
+            get => _order;
+            set 
+            {
+                if (_order != value) 
+                {
+                    _order = value;
+                    DataContext = value;
+                }
+            }
         }
 
         /// <summary>
@@ -44,13 +55,30 @@ namespace PointOfSale
         /// <param name="e">e</param>
         private void CancelOrder_Click(object sender, RoutedEventArgs e)
         {
-            if (sender is Button button)
-            {
-                if (button.Content.ToString() == "Cancel Order")
-                {
-                    menuItem = new MenuItemSelectionControl();
-                }
-            }
+            menuItemSelection.Child = new MenuItemSelectionControl();
+            Order = new Order();
+        }
+
+        /// <summary>
+        /// Event handler for "Select Items" click.
+        /// </summary>
+        /// <param name="sender">sender</param>
+        /// <param name="e">e</param>
+        private void SelectItems_Click(object sender, RoutedEventArgs e) 
+        {
+            menuItemSelection.Child = new MenuItemSelectionControl();
+            Order = new Order();
+        }
+
+        /// <summary>
+        /// Event handler for "Complete Order" click.
+        /// </summary>
+        /// <param name="sender">sender</param>
+        /// <param name="e">e</param>
+        private void CompleteOrder_Click(object sender, RoutedEventArgs e) 
+        {
+            menuItemSelection.Child = new MenuItemSelectionControl();
+            Order = new Order();
         }
     }
 }

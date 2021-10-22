@@ -67,7 +67,6 @@ namespace GyroScope.DataTests
             order.Remove(leoLambGyro);
 
             Assert.NotNull(args);
-            Assert.Equal(NotifyCollectionChangedAction.Add, args.Action);
             Assert.Equal(NotifyCollectionChangedAction.Remove, args.Action);
             Assert.Equal(order, args.NewItems[0]);
             Assert.Equal(order, args.NewItems[1]);
