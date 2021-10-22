@@ -100,7 +100,7 @@ namespace GyroScope.Data
         /// <summary>
         /// Rate of sales tax
         /// </summary>
-        public decimal SaleTaxRate { get => _salesTaxRate; }
+        public decimal SalesTaxRate { get => _salesTaxRate; }
 
 
         /// <summary>
@@ -115,7 +115,7 @@ namespace GyroScope.Data
         {
             get 
             {
-                _tax = Subtotal * SaleTaxRate;
+                _tax = Subtotal * SalesTaxRate;
                 return _tax;
             }
         }
@@ -133,7 +133,7 @@ namespace GyroScope.Data
         {
             get
             {
-                _subtotal = Tax * SaleTaxRate;
+                _subtotal = Tax * SalesTaxRate;
                 return _subtotal;
             }
         }
