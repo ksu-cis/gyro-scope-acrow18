@@ -21,21 +21,7 @@ namespace PointOfSale
         /// <summary>
         /// Accessor for data context 
         /// </summary>
-        public Order<IMenuItem> DataContextAccessor => (Order<IMenuItem>)DataContext;
-
-        /// <summary>
-        /// Removes item from order
-        /// </summary>
-        /// <param name="sender">Sender</param>
-        /// <param name="e">e</param>
-        /// <param name="index">index of item to remove</param>
-        private void RemoveItem_Click(object sender, RoutedEventArgs e) 
-        {
-            if (sender is Button button) 
-            {
-                DataContextAccessor.Remove((IMenuItem)button.DataContext);
-            }
-        }
+        public Order DataContextAccessor => (Order)DataContext;
 
        
         /// <summary>
@@ -107,6 +93,11 @@ namespace PointOfSale
                     main.newMenuItem.Child = customization;
                 }
             }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

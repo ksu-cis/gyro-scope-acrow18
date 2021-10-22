@@ -21,8 +21,8 @@
 							<TextBlock Text="{Binding Path=Name}"/>
 							<TextBlock Text="{Binding Path=Price}"/>
 							<ListBox ItemsSource="{Binding Path=SpecialInstructions}"/>
-							<Button Content="Remove from order" Click="RemoveItem_Click"/>
-						</StackPanel>
+                            <Button Content="Remove from order"/>
+                        </StackPanel>
 					</Border>
 				</DataTemplate>
 			</ListBox.ItemTemplate>

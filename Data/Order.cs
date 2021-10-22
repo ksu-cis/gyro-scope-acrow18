@@ -69,6 +69,19 @@ namespace GyroScope.Data
         }
 
         /// <summary>
+        /// Clears data from order
+        /// </summary>
+        public void Clear() 
+        {
+            menuItemList.Clear();
+            OnCollectionChanged(new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Reset));
+            OnPropertyChanged(nameof(this.Subtotal));
+            OnPropertyChanged(nameof(this.Tax));
+            OnPropertyChanged(nameof(this.Total));
+            OnPropertyChanged(nameof(this.Calories));
+        }
+
+        /// <summary>
         /// Collections of menu items
         /// </summary>
         List<IMenuItem> menuItemList = new List<IMenuItem>();
@@ -254,6 +267,26 @@ namespace GyroScope.Data
         /// </summary>
         public object SyncRoot { get; }
 
+        /// <summary>
+        /// Price of item
+        /// </summary>
+        public decimal Price { get; }
+
+
+        /// <summary>
+        /// Special instructions of order
+        /// </summary>
+        public IEnumerable<string> SpecialInstructions { get; }
+
+        /// <summary>
+        /// The name of the item
+        /// </summary>
+        public string Name { get; }
+
+        /// <summary>
+        /// Checks if order is read only
+        /// </summary>
+        public bool IsReadOnly => true;
 
         /// <summary>
         /// Checks to see if them menu item list contains the item

@@ -64,7 +64,7 @@ namespace GyroScope.DataTests
             order.Add(leoLambGyro);
             order.Add(scorpioSpicyGyro);
 
-            order.Remove(leoLambGyro, 0);
+            order.Remove(leoLambGyro);
 
             Assert.NotNull(args);
             Assert.Equal(NotifyCollectionChangedAction.Remove, args.Action);
