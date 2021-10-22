@@ -19,7 +19,7 @@
             <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
         <Label Content="GyroScope Point of Sale" FontSize="40" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3" Margin="30,0,0,0"/>
-        <Button Name="CancelOrder" Content="Cancel Order" FontSize="30" Grid.Column="0" Grid.Row="2" Click="cancelOrder_Click_1"/>
+        <Button Name="CancelOrder" Content="Cancel Order" FontSize="30" Grid.Column="0" Grid.Row="2" Click="CancelOrder_Click"/>
         <Button Name="SelectItems" Click="SelectItems_Click" Content="Select Items" FontSize="30" Grid.Column="1" Grid.Row="2" />
         <Button Name="CompleteOrder" Content="Complete Order" FontSize="30" Grid.Column="2" Grid.Row="2"/>
 
