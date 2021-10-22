@@ -22,7 +22,19 @@ namespace PointOfSale
         /// Accessor for data context 
         /// </summary>
         public Order DataContextAccessor => (Order)DataContext;
-
+        
+        /// <summary>
+        /// Event handler for "Remove from Order" click.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void RemoveItem_Click(object sender, RoutedEventArgs e) 
+        {
+            if (sender is Button button) 
+            {
+                DataContextAccessor.Remove((IMenuItem)button.DataContext);
+            }
+        }
        
         /// <summary>
         /// Traverses the tree until it hits a main window
@@ -40,11 +52,9 @@ namespace PointOfSale
 
             while (!(parent is null) || parent is MainWindow);
 
-            if (parent is MainWindow) 
+            if (parent is MainWindow main)
             {
-                MainWindow main = (MainWindow)parent;
-
-                if (orderList.SelectedValue is Gyro) 
+                if (orderList.SelectedValue is Gyro)
                 {
                     var customization = new GyroCustomizationControl();
                     customization.DataContext = orderList.SelectedItems;
@@ -93,11 +103,6 @@ namespace PointOfSale
                     main.newMenuItem.Child = customization;
                 }
             }
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

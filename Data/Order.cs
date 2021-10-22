@@ -136,7 +136,20 @@ namespace GyroScope.Data
         /// <summary>
         /// Rate of sales tax
         /// </summary>
-        public decimal SalesTaxRate { get => _salesTaxRate; }
+        public decimal SalesTaxRate
+        {
+            get { return _salesTaxRate; }
+
+            set
+            {
+                if(_salesTaxRate != value) 
+                {
+                    _salesTaxRate = value;
+                    OnPropertyChanged(nameof(Total));
+                    OnPropertyChanged(nameof(Tax));
+                }
+            }
+        }
 
 
         /// <summary>
@@ -156,12 +169,6 @@ namespace GyroScope.Data
             }
         }
 
-
-        /// <summary>
-        /// backing field for Subtotal
-        /// </summary>
-        public decimal _subtotal;
-
         /// <summary>
         /// Subtotal
         /// </summary>
@@ -169,8 +176,14 @@ namespace GyroScope.Data
         {
             get
             {
-                _subtotal = Tax * SalesTaxRate;
-                return _subtotal;
+                decimal subtotalSum = 0M;
+
+                foreach (IMenuItem menuItem in menuItemList) 
+                {
+                    subtotalSum += menuItem.Price;
+                }
+
+                return subtotalSum;
             }
         }
 
@@ -193,11 +206,6 @@ namespace GyroScope.Data
 
 
         /// <summary>
-        /// backing field for Calories
-        /// </summary>
-        public uint _calories;
-
-        /// <summary>
         /// Calories
         /// </summary>
         public uint Calories
@@ -207,8 +215,7 @@ namespace GyroScope.Data
                 uint sumOfCalories = 0;
                 foreach (IMenuItem menuItem in menuItemList) 
                 {
-                    _calories = menuItem.Calories;
-                    sumOfCalories = _calories++;
+                    sumOfCalories += menuItem.Calories;
                 }
 
 
@@ -228,11 +235,19 @@ namespace GyroScope.Data
         {
             get
             {
-               _number = NextOrderNumber;
                 return _number;
             }
 
-            set => NextOrderNumber++;
+            set 
+            {
+                if (_number != value) 
+                {
+                    _number = value;
+                    OnPropertyChanged(nameof(Count));
+                    OnPropertyChanged(nameof(Subtotal));
+                    OnPropertyChanged(nameof(Total));
+                }
+            }
         }
 
         /// <summary>
