@@ -58,49 +58,55 @@ namespace PointOfSale
                 {
                     var customization = new GyroCustomizationControl();
                     customization.DataContext = orderList.SelectedItems;
-                    main.newMenuItem.Child = customization;
+                    main.menuItemSelection.Child = customization;
                 }
 
                 if (orderList.SelectedValue is PiscesFishDish)
                 {
                     var customization = new PiscesFishDishControl();
                     customization.DataContext = orderList.SelectedItems;
-                    main.newMenuItem.Child = customization;
+                    main.menuItemSelection.Child = customization;
+
                 }
 
                 if (orderList.SelectedValue is Side)
                 {
                     var customization = new SidesControl();
                     customization.DataContext = orderList.SelectedItems;
-                    main.newMenuItem.Child = customization;
+                    main.menuItemSelection.Child = customization;
+
                 }
 
                 if (orderList.SelectedValue is LibraLibation)
                 {
                     var customization = new LibraLibationControl();
                     customization.DataContext = orderList.SelectedItems;
-                    main.newMenuItem.Child = customization;
+                    main.menuItemSelection.Child = customization;
+
                 }
 
                 if (orderList.SelectedValue is AquariusIce)
                 {
                     var customization = new AquariusIceControl();
                     customization.DataContext = orderList.SelectedItems;
-                    main.newMenuItem.Child = customization;
+                    main.menuItemSelection.Child = customization;
+
                 }
 
                 if (orderList.SelectedValue is CancerHalvaCake)
                 {
                     var customization = new CancerHalvaCakeControl();
                     customization.DataContext = orderList.SelectedItems;
-                    main.newMenuItem.Child = customization;
+                    main.menuItemSelection.Child = customization;
+
                 }
 
                 if (orderList.SelectedValue is CapricornMountainTea)
                 {
                     var customization = new CapricornMountainTeaControl();
                     customization.DataContext = orderList.SelectedItems;
-                    main.newMenuItem.Child = customization;
+                    main.menuItemSelection.Child = customization;
+
                 }
             }
         }
