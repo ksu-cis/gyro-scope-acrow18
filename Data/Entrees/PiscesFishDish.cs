@@ -5,6 +5,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,7 +18,7 @@ namespace GyroScope.Data.Entrees
     /// <summary>
     /// Pisces Fish Dish
     /// </summary>
-    public class PiscesFishDish : Entree, IMenuItem
+    public class PiscesFishDish : Entree, IMenuItem, INotifyPropertyChanged
     {
         /// <summary>
         /// Price of Dish

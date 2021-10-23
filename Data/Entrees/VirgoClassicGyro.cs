@@ -6,6 +6,7 @@
 using GyroScope.Data.Enums;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,7 +20,7 @@ namespace GyroScope.Data.Entrees
     /// <summary>
     /// Virgo Classic Gyro
     /// </summary>
-    public class VirgoClassicGyro : Gyro, IMenuItem
+    public class VirgoClassicGyro : Gyro, IMenuItem, INotifyPropertyChanged
     {
 
         public VirgoClassicGyro()

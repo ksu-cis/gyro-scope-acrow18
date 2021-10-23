@@ -21,22 +21,20 @@ namespace PointOfSale
         /// <summary>
         /// Accessor for data context 
         /// </summary>
-        public Order<IMenuItem> DataContextAccessor => (Order<IMenuItem>)DataContext;
-
+        public Order DataContextAccessor => (Order)DataContext;
+        
         /// <summary>
-        /// Removes item from order
+        /// Event handler for "Remove from Order" click.
         /// </summary>
-        /// <param name="sender">Sender</param>
+        /// <param name="sender">sender</param>
         /// <param name="e">e</param>
-        /// <param name="index">index of item to remove</param>
-        private void RemoveItemClick(object sender, RoutedEventArgs e, int index) 
+        private void RemoveItem_Click(object sender, RoutedEventArgs e) 
         {
             if (sender is Button button) 
             {
-                DataContextAccessor.Remove((IMenuItem)button.DataContext, index);
+                DataContextAccessor.Remove((IMenuItem)button.DataContext);
             }
         }
-
        
         /// <summary>
         /// Traverses the tree until it hits a main window
@@ -54,57 +52,61 @@ namespace PointOfSale
 
             while (!(parent is null) || parent is MainWindow);
 
-            if (parent is MainWindow) 
+            if (parent is MainWindow main)
             {
-                MainWindow main = (MainWindow)parent;
-
-                if (orderList.SelectedValue is Gyro) 
+                if (orderList.SelectedValue is Gyro)
                 {
                     var customization = new GyroCustomizationControl();
                     customization.DataContext = orderList.SelectedItems;
-                    main.newMenuItem.Child = customization;
+                    main.menuItemSelection.Child = customization;
                 }
 
                 if (orderList.SelectedValue is PiscesFishDish)
                 {
                     var customization = new PiscesFishDishControl();
                     customization.DataContext = orderList.SelectedItems;
-                    main.newMenuItem.Child = customization;
+                    main.menuItemSelection.Child = customization;
+
                 }
 
                 if (orderList.SelectedValue is Side)
                 {
                     var customization = new SidesControl();
                     customization.DataContext = orderList.SelectedItems;
-                    main.newMenuItem.Child = customization;
+                    main.menuItemSelection.Child = customization;
+
                 }
 
                 if (orderList.SelectedValue is LibraLibation)
                 {
                     var customization = new LibraLibationControl();
                     customization.DataContext = orderList.SelectedItems;
-                    main.newMenuItem.Child = customization;
+                    main.menuItemSelection.Child = customization;
+
                 }
 
                 if (orderList.SelectedValue is AquariusIce)
                 {
                     var customization = new AquariusIceControl();
                     customization.DataContext = orderList.SelectedItems;
-                    main.newMenuItem.Child = customization;
+                    main.menuItemSelection.Child = customization;
+
                 }
 
                 if (orderList.SelectedValue is CancerHalvaCake)
                 {
                     var customization = new CancerHalvaCakeControl();
                     customization.DataContext = orderList.SelectedItems;
-                    main.newMenuItem.Child = customization;
+                    main.menuItemSelection.Child = customization;
+
                 }
 
                 if (orderList.SelectedValue is CapricornMountainTea)
                 {
                     var customization = new CapricornMountainTeaControl();
                     customization.DataContext = orderList.SelectedItems;
-                    main.newMenuItem.Child = customization;
+                    main.menuItemSelection.Child = customization;
+
                 }
             }
         }

@@ -6,6 +6,7 @@
 using GyroScope.Data.Enums;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,7 +16,7 @@ namespace GyroScope.Data.Treats
     /// <summary>
     /// Cancer Halveh Cake
     /// </summary>
-    public class CancerHalvaCake : Treat, IMenuItem
+    public class CancerHalvaCake : Treat, IMenuItem, INotifyPropertyChanged
     {
         /// <summary>
         /// Price of Cancer Halveh Cake

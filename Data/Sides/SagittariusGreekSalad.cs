@@ -117,6 +117,7 @@ namespace GyroScope.Data.Sides
         /// <returns>Descriptive name</returns>
         public override string ToString()
         {
+            OnPropertyChanged(nameof(this.Name));
             return _name = $"{ Size} Sagittarius Greek Salad";
         }
 

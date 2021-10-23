@@ -112,7 +112,8 @@ namespace GyroScope.Data.Sides
         /// <returns>Descriptive name</returns>
         public override string ToString()
         {
-           return _name = $"{ Size} Gemini Stuffed Grape Leaves";
+            OnPropertyChanged(nameof(this.Name));
+            return _name = $"{ Size} Gemini Stuffed Grape Leaves";
         }
 
         /// <summary>

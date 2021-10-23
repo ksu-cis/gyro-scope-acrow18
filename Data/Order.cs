@@ -18,7 +18,7 @@ namespace GyroScope.Data
     /// Represents an order
     /// </summary>
     /// <typeparam name="IMenuItems">Collection of IMenuItems</typeparam>
-    public class Order<IMenuItems> : ICollection, INotifyCollectionChanged, INotifyPropertyChanged
+    public class Order : IMenuItem, ICollection<IMenuItem>, INotifyCollectionChanged, INotifyPropertyChanged
     {
         /// <summary>
         /// Event handler for changing properties
@@ -26,7 +26,7 @@ namespace GyroScope.Data
         public event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>
-        /// Event handlerfor changing collections
+        /// Event handler for changing collections
         /// </summary>
         public event NotifyCollectionChangedEventHandler CollectionChanged;
 
@@ -40,28 +40,31 @@ namespace GyroScope.Data
         }
 
         /// <summary>
-        /// Used to trigger a collection changed add event
+        /// Used to trigger a collection changed event
         /// </summary>
-        /// <param name="menuItem">Menu item to add</param>
-        protected void OnCollectionChangedAdd(IMenuItem menuItem) 
+        /// <param name="e">Name of collection that is changing</param>
+        protected virtual void OnCollectionChanged(NotifyCollectionChangedEventArgs e) 
         {
-            CollectionChanged?.Invoke(this, new NotifyCollectionChangedEventArgs((NotifyCollectionChangedAction)CollectionChangeAction.Add, menuItem));
+            CollectionChanged?.Invoke(this, e);
         }
 
         /// <summary>
-        /// Used to trigger a collection changed removed event
+        /// Clears data from order
         /// </summary>
-        /// <param name="menuItem">Menu item to remove</param>
-        /// <param name="index">Index of menu item to remove</param>
-        protected void OnCollectionChangedRemove(IMenuItem menuItem, int index)
+        public void Clear() 
         {
-            CollectionChanged?.Invoke(this, new NotifyCollectionChangedEventArgs((NotifyCollectionChangedAction)CollectionChangeAction.Remove, menuItem, index));
+            menuItemList.Clear();
+            OnCollectionChanged(new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Reset));
+            OnPropertyChanged(nameof(this.Subtotal));
+            OnPropertyChanged(nameof(this.Tax));
+            OnPropertyChanged(nameof(this.Total));
+            OnPropertyChanged(nameof(this.Calories));
         }
 
         /// <summary>
         /// Collections of menu items
         /// </summary>
-        List<IMenuItem> menuItemList = new List<IMenuItem>();
+        public List<IMenuItem> menuItemList = new List<IMenuItem>();
 
         /// <summary>
         /// Adds a Menu Item
@@ -70,57 +73,67 @@ namespace GyroScope.Data
         public void Add(IMenuItem menuItem)
         {
             menuItemList.Add(menuItem);
-            OnCollectionChangedAdd(menuItem);
+            OnCollectionChanged(new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Add, menuItem));
             OnPropertyChanged(nameof(this.Subtotal));
             OnPropertyChanged(nameof(this.Tax));
             OnPropertyChanged(nameof(this.Total));
             OnPropertyChanged(nameof(this.Calories));
+        }
+
+        
+        /// <summary>
+        /// Removes the item
+        /// </summary>
+        /// <param name="menuItem">Item to be removed</param>
+        /// <returns>True if the item is in the list false if not</returns>
+        public bool Remove(IMenuItem menuItem)
+        {
+            if (menuItemList.Contains(menuItem))
+            {
+                int index = menuItemList.IndexOf(menuItem);
+                menuItemList.Remove(menuItem);
+                OnCollectionChanged(new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Remove, menuItem, index));
+                OnPropertyChanged(nameof(this.Subtotal));
+                OnPropertyChanged(nameof(this.Tax));
+                OnPropertyChanged(nameof(this.Total));
+                OnPropertyChanged(nameof(this.Calories));
+                return true;
+            }
+
+            else 
+            { 
+                return false;
+            }
         }
 
         /// <summary>
-        /// Removes a Menu item
+        /// backing field for sales tax rate
         /// </summary>
-        /// <param name="menuItem">Menu item to remove</param>
-        /// <param name="index">Index of menu item to remove</param>
-        public void Remove(IMenuItem menuItem, int index)
-        {
-            menuItemList.Remove(menuItem);
-            OnCollectionChangedRemove(menuItem, index);
-            OnPropertyChanged(nameof(this.Subtotal));
-            OnPropertyChanged(nameof(this.Tax));
-            OnPropertyChanged(nameof(this.Total));
-            OnPropertyChanged(nameof(this.Calories));
-        }
-
+        public decimal _salesTaxRate = 0.09M;
 
         /// <summary>
         /// Rate of sales tax
         /// </summary>
-        public decimal SaleTaxRate { get; set; } = 0.09M;
-
-
-        /// <summary>
-        /// backing field for Tax
-        /// </summary>
-        public decimal _tax;
-
-        /// <summary>
-        /// Tax
-        /// </summary>
-        public decimal Tax
+        public decimal SalesTaxRate
         {
-            get 
+            get { return _salesTaxRate; }
+
+            set
             {
-                _tax = Subtotal * SaleTaxRate;
-                return _tax;
+                if(_salesTaxRate != value) 
+                {
+                    _salesTaxRate = value;
+                    OnPropertyChanged(nameof(Total));
+                    OnPropertyChanged(nameof(Tax));
+                }
             }
         }
 
 
         /// <summary>
-        /// backing field for Subtotal
+        /// Calculates the Tax
         /// </summary>
-        public decimal _subtotal;
+        public decimal Tax => Subtotal * SalesTaxRate;
 
         /// <summary>
         /// Subtotal
@@ -129,33 +142,24 @@ namespace GyroScope.Data
         {
             get
             {
-                _subtotal = Tax * SaleTaxRate;
-                return _subtotal;
-            }
-        }
+                decimal subtotalSum = 0M;
 
-        /// <summary>
-        /// backing field for Total
-        /// </summary>
-        public decimal _total;
+                foreach (IMenuItem menuItem in menuItemList) 
+                {
+                    subtotalSum += menuItem.Price;
+                }
 
-        /// <summary>
-        /// Total
-        /// </summary>
-        public decimal Total
-        {
-            get
-            {
-                _total = Subtotal + Tax;
-                return _total;
+                return subtotalSum;
             }
         }
 
 
         /// <summary>
-        /// backing field for Calories
+        /// Calculates the Total
         /// </summary>
-        public uint _calories;
+        public decimal Total => Subtotal + Tax;
+
+
 
         /// <summary>
         /// Calories
@@ -167,8 +171,7 @@ namespace GyroScope.Data
                 uint sumOfCalories = 0;
                 foreach (IMenuItem menuItem in menuItemList) 
                 {
-                    _calories = menuItem.Calories;
-                    sumOfCalories = _calories++;
+                    sumOfCalories += menuItem.Calories;
                 }
 
 
@@ -188,11 +191,20 @@ namespace GyroScope.Data
         {
             get
             {
-               _number = NextOrderNumber;
                 return _number;
             }
 
-            set => NextOrderNumber++;
+            set 
+            {
+                if (_number != value) 
+                {
+                    _number = value;
+                    OnPropertyChanged(nameof(Count));
+                    OnPropertyChanged(nameof(Subtotal));
+                    OnPropertyChanged(nameof(Total));
+                    OnPropertyChanged(nameof(SalesTaxRate));
+                }
+            }
         }
 
         /// <summary>
@@ -200,10 +212,16 @@ namespace GyroScope.Data
         /// </summary>
         private static int NextOrderNumber { get; set; } = 1;
 
+
+        /// <summary>
+        /// backing field for PlacedAt
+        /// </summary>
+        public DateTime _placedAt;
+
         /// <summary>
         /// Data and time the order was placed
         /// </summary>
-        public DateTime PlacedAt;
+        public DateTime PlacedAt => _placedAt;
         
         /// <summary>
         /// Gets count of items in Menu Item List
@@ -212,32 +230,88 @@ namespace GyroScope.Data
 
 
         /// <summary>
-        /// Not implemented
+        /// IsSynchronized property (Not used)
         /// </summary>
-        public bool IsSynchronized => throw new NotImplementedException();
+        public bool IsSynchronized { get; }
 
         /// <summary>
-        /// Not implemented
+        /// Sync root property (Not used)
         /// </summary>
-        public object SyncRoot => throw new NotImplementedException();
+        public object SyncRoot { get; }
 
         /// <summary>
-        /// Not implemented
+        /// Price of item
         /// </summary>
-        /// <param name="array">Array</param>
-        /// <param name="index">Index</param>
-        public void CopyTo(Array array, int index)
+        public decimal Price { get; }
+
+
+        /// <summary>
+        /// Special instructions of order
+        /// </summary>
+        public IEnumerable<string> SpecialInstructions { get; }
+
+        /// <summary>
+        /// The name of the item
+        /// </summary>
+        public string Name { get; }
+
+        /// <summary>
+        /// Checks if order is read only
+        /// </summary>
+        public bool IsReadOnly => true;
+
+        /// <summary>
+        /// Checks to see if them menu item list contains the item
+        /// </summary>
+        /// <param name="item">The item.</param>
+        /// <returns>
+        /// Returns true if contains, otherwise false.
+        /// </returns>
+        public bool Contains(IMenuItem item)
         {
-            throw new NotImplementedException();
+            return menuItemList.Contains(item);
+        }
+
+
+        /// <summary>
+        /// Copies the data of the menu item array
+        /// </summary>
+        /// <param name="menuItemArray">Array</param>
+        /// <param name="index">Index</param>
+        public void CopyTo(IMenuItem[] menuItemArray, int index)
+        {
+            menuItemList.CopyTo(menuItemArray, index);
+        }
+
+
+        /// <summary>
+        /// Gets the enumerator.
+        /// </summary>
+        /// <returns>
+        /// Returns the enumerator.
+        /// </returns>
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return menuItemList.GetEnumerator();
         }
 
         /// <summary>
-        /// Not implemented
+        /// Enumerator for IMenuItem (Not used)
         /// </summary>
         /// <returns>not implemented exception</returns>
-        public IEnumerator GetEnumerator()
+        public IEnumerator<IMenuItem> GetEnumerator()
         {
-            throw new NotImplementedException();
+            return menuItemList.GetEnumerator();
+        }
+
+        /// <summary>
+        /// Constructor for order class
+        /// </summary>
+        public Order() 
+        {
+            Number = NextOrderNumber;
+            NextOrderNumber++;
+            _placedAt = DateTime.Now;
         }
 
     }
