@@ -26,8 +26,8 @@ namespace PointOfSale
         /// <summary>
         /// Event handler for "Remove from Order" click.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">sender</param>
+        /// <param name="e">e</param>
         private void RemoveItem_Click(object sender, RoutedEventArgs e) 
         {
             if (sender is Button button) 
