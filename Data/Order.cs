@@ -64,7 +64,7 @@ namespace GyroScope.Data
         /// <summary>
         /// Collections of menu items
         /// </summary>
-        List<IMenuItem> menuItemList = new List<IMenuItem>();
+        public List<IMenuItem> menuItemList = new List<IMenuItem>();
 
         /// <summary>
         /// Adds a Menu Item
