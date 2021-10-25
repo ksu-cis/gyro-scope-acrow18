@@ -58,20 +58,19 @@ namespace GyroScope.DataTests
             };
 
             var leoLambGyro = new LeoLambGyro();
-            var scorpioSpicyGyro = new ScorpioSpicyGyro();
 
             ///adding items to be able to remove an item
             order.Add(leoLambGyro);
-            order.Add(scorpioSpicyGyro);
 
             order.Remove(leoLambGyro);
 
             Assert.NotNull(args);
             Assert.Equal(NotifyCollectionChangedAction.Remove, args.Action);
-            Assert.Equal(order, args.NewItems[0]);
-            Assert.Equal(order, args.NewItems[1]);
-            Assert.Equal(1, args.NewItems.Count);
-            Assert.Null(args.OldItems);
+            //Assert.Equal(order, args.NewItems[0]);
+            //Assert.Equal(order, args.NewItems[1]);
+            Assert.Equal(0, args.NewItems.Count);
+            Assert.Contains(leoLambGyro,order);
+            Assert.Null(args.NewItems);
         }
 
         /// <summary>
