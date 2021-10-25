@@ -172,8 +172,9 @@ namespace PointOfSale
         }
 
         /// <summary>
-        /// Used to access 
+        /// Finds the main window
         /// </summary>
+        /// <returns>A main window</returns>
         public MainWindow FindMainWindow() 
         {
 

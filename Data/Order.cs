@@ -197,10 +197,7 @@ namespace GyroScope.Data
                 if (_number != value) 
                 {
                     _number = value;
-                    OnPropertyChanged(nameof(Count));
-                    OnPropertyChanged(nameof(Subtotal));
-                    OnPropertyChanged(nameof(Total));
-                    OnPropertyChanged(nameof(SalesTaxRate));
+                    OnPropertyChanged(nameof(NextOrderNumber));
                 }
             }
         }
