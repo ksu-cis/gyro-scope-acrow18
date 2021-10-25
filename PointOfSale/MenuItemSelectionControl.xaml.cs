@@ -16,6 +16,7 @@ using GyroScope.Data.Drinks;
 using GyroScope.Data.Entrees;
 using GyroScope.Data.Treats;
 using GyroScope.Data.Sides;
+using GyroScope.Data;
 
 namespace PointOfSale
 {
@@ -57,6 +58,8 @@ namespace PointOfSale
         {
             ///not a var because vars need to be set to something
             dynamic customization;
+            MainWindow mainWindow = FindMainWindow();
+
 
             switch (name) 
             {
@@ -80,6 +83,10 @@ namespace PointOfSale
                     customization = new GyroCustomizationControl();
                     MenuSelectionControl.Child = customization;
                     VirgoClassicGyro virgoClassicGyro = new VirgoClassicGyro();
+                    Border orderBorder = (Border)mainWindow.orderSummary;
+                    OrderSummaryControl orderSumControl = (OrderSummaryControl)orderBorder.Child;
+                    Order order = (Order)orderSumControl.DataContext;
+                    order.Add(virgoClassicGyro);
                     customization.DataContext = virgoClassicGyro;
                 break;
 
@@ -167,7 +174,7 @@ namespace PointOfSale
         /// <summary>
         /// Used to access 
         /// </summary>
-        public MainWindow FindMainWindowMain() 
+        public MainWindow FindMainWindow() 
         {
 
             DependencyObject parent = this;
@@ -177,7 +184,7 @@ namespace PointOfSale
                 parent = LogicalTreeHelper.GetParent(parent);
             }
 
-            while (!(parent is null) || parent is MainWindow);
+            while (!(parent is null || parent is MainWindow));
             MainWindow mainWindow = (MainWindow)parent;
             return mainWindow;
         }
