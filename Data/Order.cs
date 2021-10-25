@@ -80,7 +80,7 @@ namespace GyroScope.Data
             OnPropertyChanged(nameof(this.Calories));
         }
 
-        
+
         /// <summary>
         /// Removes the item
         /// </summary>
