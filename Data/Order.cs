@@ -310,7 +310,6 @@ namespace GyroScope.Data
         public Order() 
         {
             Number = NextOrderNumber;
-            NextOrderNumber++;
             _placedAt = DateTime.Now;
         }
 
