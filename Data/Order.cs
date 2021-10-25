@@ -160,7 +160,6 @@ namespace GyroScope.Data
         public decimal Total => Subtotal + Tax;
 
 
-
         /// <summary>
         /// Calories
         /// </summary>
@@ -173,7 +172,6 @@ namespace GyroScope.Data
                 {
                     sumOfCalories += menuItem.Calories;
                 }
-
 
                 return sumOfCalories;
             }
@@ -210,7 +208,7 @@ namespace GyroScope.Data
         /// <summary>
         /// Ensures uniqueness of order number
         /// </summary>
-        private static int NextOrderNumber { get; set; } = 0;
+        private static int NextOrderNumber { get; set; } = 1;
 
 
         /// <summary>
@@ -310,7 +308,7 @@ namespace GyroScope.Data
         public Order() 
         {
             Number = NextOrderNumber;
-            Number++;
+            NextOrderNumber++;
             _placedAt = DateTime.Now;
         }
 
