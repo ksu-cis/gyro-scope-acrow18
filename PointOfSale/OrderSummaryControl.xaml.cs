@@ -19,6 +19,11 @@ namespace PointOfSale
         }
 
         /// <summary>
+        /// New order
+        /// </summary>
+        public Order order = new Order();
+
+        /// <summary>
         /// Accessor for data context 
         /// </summary>
         public Order DataContextAccessor => (Order)DataContext;

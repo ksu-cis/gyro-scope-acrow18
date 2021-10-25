@@ -163,5 +163,23 @@ namespace PointOfSale
                 e.Handled = true;
             }
         }
+
+        /// <summary>
+        /// Used to access 
+        /// </summary>
+        public MainWindow FindMainWindowMain() 
+        {
+
+            DependencyObject parent = this;
+
+            do
+            {
+                parent = LogicalTreeHelper.GetParent(parent);
+            }
+
+            while (!(parent is null) || parent is MainWindow);
+            MainWindow mainWindow = (MainWindow)parent;
+            return mainWindow;
+        }
     }
 }
