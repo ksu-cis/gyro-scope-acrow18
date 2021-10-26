@@ -113,13 +113,13 @@ namespace GyroScope.Data.Sides
         public override string ToString()
         {
             OnPropertyChanged(nameof(this.Name));
-            return _name = $"{ Size} Aries Fries";
+            return _name = $"{Size} Aries Fries";
         }
 
         /// <summary>
         /// Same name as ToString
         /// </summary>
-        public override string Name { get => _name; }
+        public override string Name { get { return $"{ Size} Aries Fries"; } }
 
     }
 }

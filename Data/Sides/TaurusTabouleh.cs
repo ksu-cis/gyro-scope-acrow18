@@ -19,7 +19,7 @@ namespace GyroScope.Data.Sides
     /// <summary>
     /// Declares a class for the side Taurus Tabuleh
     /// </summary>
-    public class TaurusTabuleh : Side, IMenuItem, INotifyPropertyChanged
+    public class TaurusTabouleh : Side, IMenuItem, INotifyPropertyChanged
     {
         /// <summary>
         /// backing field for size
@@ -113,13 +113,13 @@ namespace GyroScope.Data.Sides
         public override string ToString()
         {
             OnPropertyChanged(nameof(this.Name));
-            return _name = $"{ Size} Taurus Tabuleh";
+            return _name = $"{ Size} Taurus Tabouleh";
         }
 
         /// <summary>
         /// Same name as ToString
         /// </summary>
-        public override string Name { get => _name; }
+        public override string Name { get { return $"{ Size} Taurus Tabouleh"; } }
 
     }
 }

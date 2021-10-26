@@ -140,10 +140,10 @@ namespace PointOfSale
                     customization.DataContext = sagittariusGreekSalad;
                 break;
 
-                case "Taurus Tabuleh":
+                case "Taurus Tabouleh":
                     customization = new SidesControl();
                     MenuSelectionControl.Child = customization;
-                    TaurusTabuleh taurusTabuleh = new TaurusTabuleh();
+                    TaurusTabouleh taurusTabuleh = new TaurusTabouleh();
                     order.Add(taurusTabuleh);
                     customization.DataContext = taurusTabuleh;
                 break;
