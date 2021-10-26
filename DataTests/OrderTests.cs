@@ -58,7 +58,6 @@ namespace GyroScope.DataTests
             };
 
             var leoLambGyro = new LeoLambGyro();
-            var scorpioSpicyGyro = new ScorpioSpicyGyro();
 
             ///adding items to be able to remove an item
             order.Add(leoLambGyro);
