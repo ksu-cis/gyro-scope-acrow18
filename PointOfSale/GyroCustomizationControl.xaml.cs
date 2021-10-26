@@ -24,5 +24,31 @@ namespace PointOfSale
         {
             InitializeComponent();
         }
+
+        /// <summary>
+        /// Changes label to represent current Gyro
+        /// </summary>
+        public void ChangeLabel(object sender) 
+        {
+            
+            MenuItemSelectionControl menuItemSelectionControl = new MenuItemSelectionControl();
+            string nameOfbuttonClicked = menuItemSelectionControl.ItemNameOfButtonClicked(sender);
+
+            if (nameOfbuttonClicked == "Virgo Classic Gyro")
+            {
+                typeOfGyro.Content = "Customize Virgo Classic Gyro";
+            }
+
+            else if (nameOfbuttonClicked == "Leo Lamb Gyro")
+            {
+                typeOfGyro.Content = "Customize Leo Lamb Gyro";
+            }
+
+            else if (nameOfbuttonClicked == "Scorpio Spicy Gyro")
+            {
+                typeOfGyro.Content = "Customize Scorpio Spicy Gyro";
+            }
+
+        }
     }
 }
