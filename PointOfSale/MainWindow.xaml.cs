@@ -53,7 +53,7 @@ namespace PointOfSale
         /// </summary>
         /// <param name="sender">sender</param>
         /// <param name="e">e</param>
-        private void cancelOrder_Click_1(object sender, RoutedEventArgs e)
+        private void CancelOrder_Click(object sender, RoutedEventArgs e)
         {
             menuItemSelection.Child = new MenuItemSelectionControl();
             Order = new Order();
