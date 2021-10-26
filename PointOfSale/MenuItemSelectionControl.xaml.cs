@@ -59,7 +59,9 @@ namespace PointOfSale
             ///not a var because vars need to be set to something
             dynamic customization;
             MainWindow mainWindow = FindMainWindow();
-
+            Border orderBorder = (Border)mainWindow.orderSummary;
+            OrderSummaryControl orderSumControl = (OrderSummaryControl)orderBorder.Child;
+            Order order = (Order)orderSumControl.DataContext;
 
             switch (name) 
             {
@@ -68,6 +70,7 @@ namespace PointOfSale
                     customization = new CapricornMountainTeaControl();
                     MenuSelectionControl.Child = customization;
                     CapricornMountainTea capricornMountainTea = new CapricornMountainTea();
+                    order.Add(capricornMountainTea);
                     customization.DataContext = capricornMountainTea; 
                 break;
 
@@ -75,6 +78,7 @@ namespace PointOfSale
                     customization = new LibraLibationControl();
                     MenuSelectionControl.Child = customization;
                     LibraLibation libraLibation = new LibraLibation();
+                    order.Add(libraLibation);
                     customization.DataContext = libraLibation;
                 break;
 
@@ -83,9 +87,6 @@ namespace PointOfSale
                     customization = new GyroCustomizationControl();
                     MenuSelectionControl.Child = customization;
                     VirgoClassicGyro virgoClassicGyro = new VirgoClassicGyro();
-                    Border orderBorder = (Border)mainWindow.orderSummary;
-                    OrderSummaryControl orderSumControl = (OrderSummaryControl)orderBorder.Child;
-                    Order order = (Order)orderSumControl.DataContext;
                     order.Add(virgoClassicGyro);
                     customization.DataContext = virgoClassicGyro;
                 break;
@@ -94,6 +95,7 @@ namespace PointOfSale
                     customization = new GyroCustomizationControl();
                     MenuSelectionControl.Child = customization;
                     LeoLambGyro leoLambGyro = new LeoLambGyro();
+                    order.Add(leoLambGyro);
                     customization.DataContext = leoLambGyro;
                 break;
 
@@ -101,6 +103,7 @@ namespace PointOfSale
                     customization = new GyroCustomizationControl();
                     MenuSelectionControl.Child = customization;
                     ScorpioSpicyGyro scorpioSpicyGyro = new ScorpioSpicyGyro();
+                    order.Add(scorpioSpicyGyro);
                     customization.DataContext = scorpioSpicyGyro;
                 break;
 
@@ -108,6 +111,7 @@ namespace PointOfSale
                     customization = new PiscesFishDishControl();
                     MenuSelectionControl.Child = customization;
                     PiscesFishDish piscesFishDish = new PiscesFishDish();
+                    order.Add(piscesFishDish);
                     customization.DataContext = piscesFishDish;
                 break;
 
@@ -116,6 +120,7 @@ namespace PointOfSale
                     customization = new SidesControl();
                     MenuSelectionControl.Child = customization;
                     AriesFries ariesFries = new AriesFries();
+                    order.Add(ariesFries);
                     customization.DataContext = ariesFries;
                 break;
 
@@ -123,6 +128,7 @@ namespace PointOfSale
                     customization = new SidesControl();
                     MenuSelectionControl.Child = customization;
                     GeminiStuffedGrapeLeaves geminiStuffedGrapeLeaves = new GeminiStuffedGrapeLeaves();
+                    order.Add(geminiStuffedGrapeLeaves);
                     customization.DataContext = geminiStuffedGrapeLeaves;
                 break;
 
@@ -130,6 +136,7 @@ namespace PointOfSale
                     customization = new SidesControl();
                     MenuSelectionControl.Child = customization;
                     SagittariusGreekSalad sagittariusGreekSalad = new SagittariusGreekSalad();
+                    order.Add(sagittariusGreekSalad);
                     customization.DataContext = sagittariusGreekSalad;
                 break;
 
@@ -137,6 +144,7 @@ namespace PointOfSale
                     customization = new SidesControl();
                     MenuSelectionControl.Child = customization;
                     TaurusTabuleh taurusTabuleh = new TaurusTabuleh();
+                    order.Add(taurusTabuleh);
                     customization.DataContext = taurusTabuleh;
                 break;
 
@@ -145,6 +153,7 @@ namespace PointOfSale
                     customization = new AquariusIceControl();
                     MenuSelectionControl.Child = customization;
                     AquariusIce aquariusIce = new AquariusIce();
+                    order.Add(aquariusIce);
                     customization.DataContext = aquariusIce;
                 break;
 
@@ -152,6 +161,7 @@ namespace PointOfSale
                     customization = new CancerHalvaCakeControl();
                     MenuSelectionControl.Child = customization;
                     CancerHalvaCake cancerHalvaCake = new CancerHalvaCake();
+                    order.Add(cancerHalvaCake);
                     customization.DataContext = cancerHalvaCake;
                 break;
             }

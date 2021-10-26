@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data", "Data\Data.csproj", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataTests", "DataTests\DataTests.csproj", "{3B39FF60-50B1-441A-979E-196DD55723AD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PointOfSale", "PointOfSale\PointOfSale.csproj", "{AAE94DAC-4847-45ED-B831-8AAD7D337C6A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PointOfSale", "PointOfSale\PointOfSale.csproj", "{AAE94DAC-4847-45ED-B831-8AAD7D337C6A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,16 +15,16 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{46841929-758D-4136-A9DB-65FE6D3FB9C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{46841929-758D-4136-A9DB-65FE6D3FB9C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46841929-758D-4136-A9DB-65FE6D3FB9C8}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{46841929-758D-4136-A9DB-65FE6D3FB9C8}.Debug|Any CPU.Build.0 = Release|Any CPU
 		{46841929-758D-4136-A9DB-65FE6D3FB9C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{46841929-758D-4136-A9DB-65FE6D3FB9C8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3B39FF60-50B1-441A-979E-196DD55723AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3B39FF60-50B1-441A-979E-196DD55723AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B39FF60-50B1-441A-979E-196DD55723AD}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{3B39FF60-50B1-441A-979E-196DD55723AD}.Debug|Any CPU.Build.0 = Release|Any CPU
 		{3B39FF60-50B1-441A-979E-196DD55723AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3B39FF60-50B1-441A-979E-196DD55723AD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AAE94DAC-4847-45ED-B831-8AAD7D337C6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AAE94DAC-4847-45ED-B831-8AAD7D337C6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAE94DAC-4847-45ED-B831-8AAD7D337C6A}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{AAE94DAC-4847-45ED-B831-8AAD7D337C6A}.Debug|Any CPU.Build.0 = Release|Any CPU
 		{AAE94DAC-4847-45ED-B831-8AAD7D337C6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AAE94DAC-4847-45ED-B831-8AAD7D337C6A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
