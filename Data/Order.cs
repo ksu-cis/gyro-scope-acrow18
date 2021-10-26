@@ -205,7 +205,7 @@ namespace GyroScope.Data
         /// <summary>
         /// Ensures uniqueness of order number
         /// </summary>
-        private static int NextOrderNumber { get; set; } = 1;
+        private static int NextOrderNumber { get; set; } = -1;
 
 
         /// <summary>

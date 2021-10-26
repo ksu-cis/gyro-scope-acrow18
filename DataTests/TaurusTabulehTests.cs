@@ -21,7 +21,7 @@ namespace GyroScope.DataTests
         [Fact]
         public void SizeShouldDefaultToSmall()
         {
-            var taurusTabuleh = new TaurusTabouleh();
+            var taurusTabuleh = new TaurusTabuleh();
             Assert.Equal(Size.Small, taurusTabuleh.Size);
         }
 
@@ -35,7 +35,7 @@ namespace GyroScope.DataTests
         [InlineData(Size.Large)]
         public void ShouldBeAbleToSetSize(Size size)
         {
-            var taurusTabuleh = new TaurusTabouleh();
+            var taurusTabuleh = new TaurusTabuleh();
             taurusTabuleh.Size = size;
             Assert.Equal(size, taurusTabuleh.Size);
         }
@@ -51,7 +51,7 @@ namespace GyroScope.DataTests
         [InlineData(Size.Large, 2.50)]
         public void PriceShouldBeCorrectForSize(Size size, decimal price)
         {
-            var taurusTabuleh = new TaurusTabouleh()
+            var taurusTabuleh = new TaurusTabuleh()
             {
                 Size = size
             };
@@ -69,7 +69,7 @@ namespace GyroScope.DataTests
         [InlineData(Size.Large, 248)]
         public void CaloriesShouldBeCorrectForSize(Size size, uint calories)
         {
-            var taurusTabuleh = new TaurusTabouleh()
+            var taurusTabuleh = new TaurusTabuleh()
             {
                 Size = size,
             };
@@ -83,7 +83,7 @@ namespace GyroScope.DataTests
         [Fact]
         public void ShouldImplementINotifyPropertyChanged()
         {
-            var taurusTabuleh = new TaurusTabouleh();
+            var taurusTabuleh = new TaurusTabuleh();
             Assert.IsAssignableFrom<System.ComponentModel.INotifyPropertyChanged>(taurusTabuleh);
         }
 
@@ -108,7 +108,7 @@ namespace GyroScope.DataTests
         public void ShouldNotifyOfPropertyChangedWhenSizeChanges(Size size, string propertyName)
         {
 
-            var taurusTabuleh = new TaurusTabouleh();
+            var taurusTabuleh = new TaurusTabuleh();
 
             //A quick hack to avoid not changing size when setting to default size
             if (size == Size.Small)

@@ -53,7 +53,7 @@
             <RowDefinition Height="5*"/>
             <RowDefinition Height="5*"/>
         </Grid.RowDefinitions>
-        <Label Name="typeOfGyro" FontSize="50" Grid.ColumnSpan="3" HorizontalAlignment="Center"/>
+        <TextBlock x:Name="NameOfGyroTextBlock" DockPanel.Dock="Top" FontWeight="Bold" FontSize="60" TextAlignment="Center" Grid.ColumnSpan="3"/>
         <Label Content="Doner Meat" FontSize="25" Grid.Row ="1" Grid.Column="0"/>
         <ListBox Grid.ColumnSpan="2" Grid.RowSpan="3" Grid.Row="2" ItemsSource="{Binding Source = {StaticResource meats}}" SelectedItem="{Binding Path=Meat}" Background="Transparent" BorderBrush="Transparent"/>
         <CheckBox Content="Pita" IsChecked="{Binding Path=Pita}" Name="pitaButton" FontSize="15" Grid.Row ="1" Grid.Column="1"/>

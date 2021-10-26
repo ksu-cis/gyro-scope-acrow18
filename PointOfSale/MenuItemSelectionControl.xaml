@@ -29,7 +29,7 @@
         <Button Content="Pisces Fish Dish" Name="piscesFishButton" FontSize ="30" Grid.Column="0" Grid.Row="4"/>
 
         <Label Content ="Sides" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" FontSize="25"/>
-        <Button Content="Taurus Tabouleh" Name="taurusTaboulehButton" FontSize ="30" Grid.Column="1" Grid.Row="1"/>
+        <Button Content="Taurus Tabuleh" Name="taurusTaboulehButton" FontSize ="30" Grid.Column="1" Grid.Row="1"/>
         <Button Content="Gemini Stuffed Grape Leaves" Name="grapeStuffedButton" FontSize ="25" Grid.Column="1" Grid.Row="2"/>
         <Button Content="Sagittarius Greek Salad" Name="greekSaladButton" FontSize ="30" Grid.Column="1" Grid.Row="3"/>
         <Button Content="Aries Fries" Name="ariesFriesButton" FontSize ="30" Grid.Column="1" Grid.Row="4"/>

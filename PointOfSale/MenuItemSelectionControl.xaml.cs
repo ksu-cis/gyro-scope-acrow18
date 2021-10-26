@@ -85,6 +85,7 @@ namespace PointOfSale
                 ///Entrees
                 case "Virgo Classic Gyro":
                     customization = new GyroCustomizationControl();
+                    customization.NameOfGyroTextBlock.Text = "Customize Virgo Classic Gyro";
                     MenuSelectionControl.Child = customization;
                     VirgoClassicGyro virgoClassicGyro = new VirgoClassicGyro();
                     order.Add(virgoClassicGyro);
@@ -93,6 +94,7 @@ namespace PointOfSale
 
                 case "Leo Lamb Gyro":
                     customization = new GyroCustomizationControl();
+                    customization.NameOfGyroTextBlock.Text = "Customize Leo Lamb Gyro";
                     MenuSelectionControl.Child = customization;
                     LeoLambGyro leoLambGyro = new LeoLambGyro();
                     order.Add(leoLambGyro);
@@ -101,6 +103,7 @@ namespace PointOfSale
 
                 case "Scorpio Spicy Gyro":
                     customization = new GyroCustomizationControl();
+                    customization.NameOfGyroTextBlock.Text = "Customize Scorpio Spicy Gyro";
                     MenuSelectionControl.Child = customization;
                     ScorpioSpicyGyro scorpioSpicyGyro = new ScorpioSpicyGyro();
                     order.Add(scorpioSpicyGyro);
@@ -118,6 +121,7 @@ namespace PointOfSale
                 ///Sides
                 case "Aries Fries":
                     customization = new SidesControl();
+
                     MenuSelectionControl.Child = customization;
                     AriesFries ariesFries = new AriesFries();
                     order.Add(ariesFries);
@@ -140,10 +144,10 @@ namespace PointOfSale
                     customization.DataContext = sagittariusGreekSalad;
                 break;
 
-                case "Taurus Tabouleh":
+                case "Taurus Tabuleh":
                     customization = new SidesControl();
                     MenuSelectionControl.Child = customization;
-                    TaurusTabouleh taurusTabuleh = new TaurusTabouleh();
+                    TaurusTabuleh taurusTabuleh = new TaurusTabuleh();
                     order.Add(taurusTabuleh);
                     customization.DataContext = taurusTabuleh;
                 break;
