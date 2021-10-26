@@ -101,19 +101,18 @@ namespace GyroScope.DataTests
         /// <param name="sparkling">Sparkling</param>
         /// <param name="name">Name</param>
         [Theory]
-        [InlineData(Size.Small, LibraLibationFlavor.Biral, true, "Small Sparkling Biral Libra Libation")]
-        [InlineData(Size.Small, LibraLibationFlavor.Biral, false, "Small Still Biral Libra Libation")]
-        [InlineData(Size.Medium, LibraLibationFlavor.Orangeade, true, "Medium Sparkling Orangeade Libra Libation")]
-        [InlineData(Size.Medium, LibraLibationFlavor.Orangeade, false, "Medium Still Orangeade Libra Libation")]
-        [InlineData(Size.Large, LibraLibationFlavor.PinkLemonada, true, "Large Sparkling PinkLemonada Libra Libation")]
-        [InlineData(Size.Large, LibraLibationFlavor.PinkLemonada, false, "Large Still PinkLemonada Libra Libation")]
-        [InlineData(Size.Small, LibraLibationFlavor.SourCherry, true, "Small Sparkling SourCherry Libra Libation")]
-        [InlineData(Size.Medium, LibraLibationFlavor.SourCherry, false, "Medium Still SourCherry Libra Libation")]
-        public void NameShouldBeCorrectForFlavorSparklingandSize(Size size, LibraLibationFlavor flavor, bool sparkling, string name)
+        [InlineData(LibraLibationFlavor.Biral, true, "Sparkling Biral Libra Libation")]
+        [InlineData(LibraLibationFlavor.Biral, false, "Still Biral Libra Libation")]
+        [InlineData(LibraLibationFlavor.Orangeade, true, "Sparkling Orangeade Libra Libation")]
+        [InlineData(LibraLibationFlavor.Orangeade, false, "Still Orangeade Libra Libation")]
+        [InlineData(LibraLibationFlavor.PinkLemonada, true, "Sparkling PinkLemonada Libra Libation")]
+        [InlineData(LibraLibationFlavor.PinkLemonada, false, "Still PinkLemonada Libra Libation")]
+        [InlineData(LibraLibationFlavor.SourCherry, true, "Sparkling SourCherry Libra Libation")]
+        [InlineData(LibraLibationFlavor.SourCherry, false, "Still SourCherry Libra Libation")]
+        public void NameShouldBeCorrectForFlavorSparklingandSize(LibraLibationFlavor flavor, bool sparkling, string name)
         {
             var libraLibation = new LibraLibation()
             {
-                Size = size,
                 Flavor = flavor,
                 Sparkling = sparkling
             };
