@@ -45,6 +45,30 @@ namespace GyroScope.Data.Drinks
             }
         }
 
+
+        /// <summary>
+        /// backing field for flavor
+        /// </summary>
+        public Size _size;
+
+        /// <summary>
+        /// Determines flavor of Libra Libation
+        /// </summary>
+        public Size Size
+        {
+            get => _size;
+            set
+            {
+                if (_size != value)
+                {
+                    _size = value;
+                    OnPropertyChanged(nameof(this.Name));
+
+                }
+            }
+        }
+
+
         /// <summary>
         /// backing field for sparkling
         /// </summary>
@@ -148,11 +172,11 @@ namespace GyroScope.Data.Drinks
             {
                 if (Sparkling != true)
                 {
-                    return $"Still {Flavor} Libra Libation";
+                    return $"{Size} Still {Flavor} Libra Libation";
                 }
                 else 
                 {
-                    return $"Sparkling {Flavor} Libra Libation";
+                    return $"{Size} Sparkling {Flavor} Libra Libation";
                 }
             }
         }
