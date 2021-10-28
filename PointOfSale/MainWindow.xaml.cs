@@ -78,6 +78,7 @@ namespace PointOfSale
         private void CompleteOrder_Click(object sender, RoutedEventArgs e) 
         {
             menuItemSelection.Child = new PaymentOptionsControl();
+            Order = new Order();
         }
     }
 }
