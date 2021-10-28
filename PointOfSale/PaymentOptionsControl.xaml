@@ -19,8 +19,8 @@
         <Border Grid.ColumnSpan="1" Grid.RowSpan="4" Grid.Row="0" Grid.Column="1">
             <local:OrderSummaryControl x:Name="orderSummary"/>
         </Border>
-        <Button Name ="cashButton" Content="Cash" FontSize="50" Height="100" Grid.Column="0" Grid.Row="0"/>
-        <Button Name ="debitButton" Content="Debit" FontSize="50" Height="100" Grid.Column="0" Grid.Row="1"/>
-        <Button Name ="creditButton" Content="Credit" FontSize="50" Height="100" Grid.Column="0" Grid.Row="2"/>
+        <Button Name ="cashButton" Content="Cash" FontSize="50" Height="100" Grid.Column="0" Grid.Row="0" Click="cashButton_Click"/>
+        <Button Name ="debitButton" Content="Debit" FontSize="50" Height="100" Grid.Column="0" Grid.Row="1" Click="debitButton_Click"/>
+        <Button Name ="creditButton" Content="Credit" FontSize="50" Height="100" Grid.Column="0" Grid.Row="2" Click="creditButton_Click"/>
     </Grid>
 </UserControl>

@@ -24,5 +24,35 @@ namespace PointOfSale
         {
             InitializeComponent();
         }
+
+        /// <summary>
+        /// Event handler for "Cash" button click
+        /// </summary>
+        /// <param name="sender">sender</param>
+        /// <param name="e">e</param>
+        private void cashButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        /// <summary>
+        /// Event handler for "Debit" button click
+        /// </summary>
+        /// <param name="sender">sender</param>
+        /// <param name="e"></param>
+        private void debitButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        /// <summary>
+        /// Event handler for "Credit" button click
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void creditButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

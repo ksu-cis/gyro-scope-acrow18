@@ -77,8 +77,7 @@ namespace PointOfSale
         /// <param name="e">e</param>
         private void CompleteOrder_Click(object sender, RoutedEventArgs e) 
         {
-            menuItemSelection.Child = new MenuItemSelectionControl();
-            Order = new Order();
+            menuItemSelection.Child = new PaymentOptionsControl();
         }
     }
 }
