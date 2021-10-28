@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GyroScope.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -42,6 +43,37 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void debitButton_Click(object sender, RoutedEventArgs e)
         {
+            Order order = new Order();
+            double total = (double)order.Total;
+            if (RoundRegister.CardReader.RunCard(total) == RoundRegister.CardTransactionResult.Approved)
+            {
+                //print recipt
+                Order newOrder = new Order();
+            }
+
+            else if (RoundRegister.CardReader.RunCard(total) == RoundRegister.CardTransactionResult.Declined) 
+            {
+                MessageBox.Show("This card is declined");
+                //try a different card
+            }
+
+            else if (RoundRegister.CardReader.RunCard(total) == RoundRegister.CardTransactionResult.ReadError)
+            {
+                MessageBox.Show("This card has a read error");
+                //have them swipe card again
+            }
+
+            else if (RoundRegister.CardReader.RunCard(total) == RoundRegister.CardTransactionResult.InsufficientFunds)
+            {
+                MessageBox.Show("This card has insufficient funds");
+            }
+
+            else if (RoundRegister.CardReader.RunCard(total) == RoundRegister.CardTransactionResult.IncorrectPin)
+            {
+                MessageBox.Show("This card's pin is incorrect");
+                //if there was a correct pin enum test again
+            }
+
 
         }
 
