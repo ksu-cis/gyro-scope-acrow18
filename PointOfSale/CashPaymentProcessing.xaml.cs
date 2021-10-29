@@ -18,9 +18,9 @@ namespace PointOfSale
     /// <summary>
     /// Interaction logic for CardPaymentProcessing.xaml
     /// </summary>
-    public partial class CardPaymentProcessing : UserControl
+    public partial class CashPaymentProcessing : UserControl
     {
-        public CardPaymentProcessing()
+        public CashPaymentProcessing()
         {
             InitializeComponent();
         }

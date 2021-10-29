@@ -33,7 +33,21 @@ namespace PointOfSale
         /// <param name="e">e</param>
         private void cashButton_Click(object sender, RoutedEventArgs e)
         {
+            DependencyObject parent = this;
 
+            do
+            {
+                parent = LogicalTreeHelper.GetParent(parent);
+            }
+
+            while (!(parent is null) || parent is MainWindow);
+
+            if (parent is MainWindow main)
+            {
+                var customization = new CashPaymentProcessing();
+                //customization.DataContext = orderList.SelectedItems;
+               //main.menuItemSelection.Child = customization;
+            }
         }
 
         /// <summary>
@@ -41,7 +55,7 @@ namespace PointOfSale
         /// </summary>
         /// <param name="sender">sender</param>
         /// <param name="e">e</param>
-        private void debitButton_Click(object sender, RoutedEventArgs e)
+        private void DebitButton_Click(object sender, RoutedEventArgs e)
         {
             MainWindow main = new MainWindow();
             double total = (double)main.Order.Total;
@@ -73,8 +87,6 @@ namespace PointOfSale
                 MessageBox.Show("This card's pin is incorrect");
                 //if there was a correct pin enum test again
             }
-
-
         }
 
         /// <summary>
@@ -82,7 +94,7 @@ namespace PointOfSale
         /// </summary>
         /// <param name="sender">sender</param>
         /// <param name="e">e</param>
-        private void creditButton_Click(object sender, RoutedEventArgs e)
+        private void CreditButton_Click(object sender, RoutedEventArgs e)
         {
             MainWindow main = new MainWindow();
             double total = (double)main.Order.Total;

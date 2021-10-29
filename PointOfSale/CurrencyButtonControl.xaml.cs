@@ -24,5 +24,7 @@ namespace PointOfSale
         {
             InitializeComponent();
         }
+        
+        //put dependency properties
     }
 }
