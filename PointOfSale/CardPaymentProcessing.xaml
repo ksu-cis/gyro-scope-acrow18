@@ -28,55 +28,55 @@
             <RowDefinition Height="4*"/>
         </Grid.RowDefinitions>
         <Label Content="$100" Grid.Column="0" Grid.Row="1" FontSize="50" HorizontalAlignment="Center" Background="ForestGreen"/>
-        <local:CurrencyButtonControl
+        <local:CurrencyButtonControl x:Name="hundredButton" Grid.Column="1" Grid.Row="1"/>
         <Label Content="0" Grid.Column="2" Grid.Row="1" HorizontalAlignment="Center" FontSize="60" BorderBrush="Green" BorderThickness="3"/>
        
         <Label Content="$50" Grid.Column="0" Grid.Row="2" FontSize="50" HorizontalAlignment="Center" Background="ForestGreen"/>
-        <!-- Add from customer button-->
+        <local:CurrencyButtonControl x:Name="fiftyButton" Grid.Column="1" Grid.Row="2"/>
         <Label Content="0" Grid.Column="2" Grid.Row="2" HorizontalAlignment="Center" FontSize="60" BorderBrush="Green" BorderThickness="3"/>
         
         <Label Content="$20" Grid.Column="0" Grid.Row="3" FontSize="50" HorizontalAlignment="Center" Background="ForestGreen"/>
-        <!-- Add from customer button-->
+        <local:CurrencyButtonControl x:Name="twentyButton" Grid.Column="1" Grid.Row="3"/>
         <Label Content="0" Grid.Column="2" Grid.Row="3" HorizontalAlignment="Center" FontSize="60" BorderBrush="Green" BorderThickness="3"/>
         
         <Label Content="$10" Grid.Column="0" Grid.Row="4" FontSize="50" HorizontalAlignment="Center" Background="ForestGreen"/>
-        <!-- Add from customer button-->
+        <local:CurrencyButtonControl x:Name="tenButton" Grid.Column="1" Grid.Row="4"/>
         <Label Content="0" Grid.Column="2" Grid.Row="4" HorizontalAlignment="Center" FontSize="60" BorderBrush="Green" BorderThickness="3"/>
         
         <Label Content="$5" Grid.Column="0" Grid.Row="5" FontSize="50" HorizontalAlignment="Center" Background="ForestGreen"/>
-        <!-- Add from customer button-->
+        <local:CurrencyButtonControl x:Name="fiveButton" Grid.Column="1" Grid.Row="5"/>
         <Label Content="0" Grid.Column="2" Grid.Row="5" HorizontalAlignment="Center" FontSize="60" BorderBrush="Green" BorderThickness="3"/>
         
         <Label Content="$2" Grid.Column="0" Grid.Row="6" FontSize="50" HorizontalAlignment="Center" Background="ForestGreen"/>
-        <!-- Add from customer button-->
+        <local:CurrencyButtonControl x:Name="twoButton" Grid.Column="1" Grid.Row="6"/>
         <Label Content="0" Grid.Column="2" Grid.Row="6" HorizontalAlignment="Center" FontSize="60" BorderBrush="Green" BorderThickness="3"/>
         
         <Label Content="$1" Grid.Column="0" Grid.Row="7" FontSize="50" HorizontalAlignment="Center" Background="ForestGreen"/>
-        <!-- Add from customer button-->
+        <local:CurrencyButtonControl x:Name="oneButton" Grid.Column="1" Grid.Row="7"/>
         <Label Content="0" Grid.Column="2" Grid.Row="7" HorizontalAlignment="Center" FontSize="60" BorderBrush="Green" BorderThickness="3"/>
 
         <Label Content="$1" Grid.Column="3" Grid.Row="2" FontSize="50" HorizontalAlignment="Center" Background="Goldenrod"/>
-        <!-- Add from customer button-->
+        <local:CurrencyButtonControl x:Name="oneCentsButton" Grid.Column="4" Grid.Row="2"/>
         <Label Content="0" Grid.Column="5" Grid.Row="2" HorizontalAlignment="Center" FontSize="60" BorderBrush="Green" BorderThickness="3"/>
         
         <Label Content="50¢" Grid.Column="3" Grid.Row="3" FontSize="50" HorizontalAlignment="Center" Background="Goldenrod"/>
-        <!-- Add from customer button-->
+        <local:CurrencyButtonControl x:Name="fiftyCentsButton" Grid.Column="4" Grid.Row="3"/>
         <Label Content="0" Grid.Column="5" Grid.Row="3" HorizontalAlignment="Center" FontSize="60" BorderBrush="Green" BorderThickness="3"/>
         
         <Label Content="25¢" Grid.Column="3" Grid.Row="4" FontSize="50" HorizontalAlignment="Center" Background="Goldenrod"/>
-        <!-- Add from customer button-->
+        <local:CurrencyButtonControl x:Name="twentyfiveCentsButton" Grid.Column="4" Grid.Row="4"/>
         <Label Content="0" Grid.Column="5" Grid.Row="4" HorizontalAlignment="Center" FontSize="60" BorderBrush="Green" BorderThickness="3"/>
         
         <Label Content="10¢" Grid.Column="3" Grid.Row="5" FontSize="50" HorizontalAlignment="Center" Background="Goldenrod"/>
-        <!-- Add from customer button-->
+        <local:CurrencyButtonControl x:Name="tenCentsButton" Grid.Column="4" Grid.Row="5"/>
         <Label Content="0" Grid.Column="5" Grid.Row="5" HorizontalAlignment="Center" FontSize="60" BorderBrush="Green" BorderThickness="3"/>
         
         <Label Content="5¢" Grid.Column="3" Grid.Row="6" FontSize="50" HorizontalAlignment="Center" Background="Goldenrod"/>
-        <!-- Add from customer button-->
+        <local:CurrencyButtonControl x:Name="fiveCentsButton" Grid.Column="4" Grid.Row="6"/>
         <Label Content="0" Grid.Column="5" Grid.Row="6" HorizontalAlignment="Center" FontSize="60" BorderBrush="Green" BorderThickness="3"/>
 
         <Label Content="1¢" Grid.Column="3" Grid.Row="7" FontSize="50" HorizontalAlignment="Center" Background="Goldenrod"/>
-        <!-- Add from customer button-->
+        <local:CurrencyButtonControl x:Name="oneCentButton" Grid.Column="4" Grid.Row="7"/>
         <Label Content="0" Grid.Column="5" Grid.Row="7" HorizontalAlignment="Center" FontSize="60" BorderBrush="Green" BorderThickness="3"/>
 
         <!-- Top labels -->
