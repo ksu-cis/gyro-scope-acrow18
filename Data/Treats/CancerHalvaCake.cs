@@ -50,6 +50,10 @@ namespace GyroScope.Data.Treats
             return "Cancer Halva Cake";
         }
 
-        
+        /// <summary>
+        /// No special instructions
+        /// </summary>
+        public override IEnumerable<string> SpecialInstructions { get; }
+
     }
 }

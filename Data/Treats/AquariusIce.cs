@@ -116,5 +116,10 @@ namespace GyroScope.Data.Treats
                 }
             }
         }
+
+        /// <summary>
+        /// No special instructions
+        /// </summary>
+        public override IEnumerable<string> SpecialInstructions { get; }
     }
 }

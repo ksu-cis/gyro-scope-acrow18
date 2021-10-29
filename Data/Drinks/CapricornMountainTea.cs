@@ -95,9 +95,9 @@ namespace GyroScope.Data.Drinks
         public override string Name { get => _name; }
 
         /// <summary>
-        /// Not implemented 
+        /// No special instructions
         /// </summary>
-        public override IEnumerable<string> SpecialInstructions => throw new NotImplementedException();
+        public override IEnumerable<string> SpecialInstructions { get; }
 
     }
 }

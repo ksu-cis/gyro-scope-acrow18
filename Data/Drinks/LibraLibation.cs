@@ -29,7 +29,7 @@ namespace GyroScope.Data.Drinks
         /// <summary>
         /// Determines flavor of Libra Libation
         /// </summary>
-        public LibraLibationFlavor Flavor 
+        public LibraLibationFlavor Flavor
         {
             get => _flavor;
             set
@@ -53,7 +53,7 @@ namespace GyroScope.Data.Drinks
         /// <summary>
         /// Determines if its Sparkling or not
         /// </summary>
-        public bool Sparkling 
+        public bool Sparkling
         {
             get => _sparkling;
             set
@@ -76,7 +76,7 @@ namespace GyroScope.Data.Drinks
         /// <summary>
         /// Determines if LibraLibation has honey.
         /// </summary>
-        public bool Honey 
+        public bool Honey
         {
             get => _honey;
             set
@@ -98,11 +98,11 @@ namespace GyroScope.Data.Drinks
         /// <summary>
         /// Calories of Libra Libation
         /// </summary>
-        public override uint Calories 
-        { 
-            get 
+        public override uint Calories
+        {
+            get
             {
-                if (Flavor == LibraLibationFlavor.Orangeade) 
+                if (Flavor == LibraLibationFlavor.Orangeade)
                 {
                     _calories = 180;
                 }
@@ -123,7 +123,7 @@ namespace GyroScope.Data.Drinks
                 }
 
                 return _calories;
-            } 
+            }
         }
 
         /// <summary>
@@ -134,7 +134,7 @@ namespace GyroScope.Data.Drinks
         /// <summary>
         /// Price of Libra Libation
         /// </summary>
-        public override decimal Price 
+        public override decimal Price
         {
             get => _price;
         }
@@ -150,7 +150,7 @@ namespace GyroScope.Data.Drinks
                 {
                     return $"Still {Flavor} Libra Libation";
                 }
-                else 
+                else
                 {
                     return $"Sparkling {Flavor} Libra Libation";
                 }
@@ -167,8 +167,8 @@ namespace GyroScope.Data.Drinks
         }
 
         /// <summary>
-        /// Not implemented
+        /// No special instructions
         /// </summary>
-        public override IEnumerable<string> SpecialInstructions => throw new NotImplementedException();
+        public override IEnumerable<string> SpecialInstructions { get; }
     }
 }

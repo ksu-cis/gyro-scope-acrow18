@@ -52,9 +52,9 @@ namespace GyroScope.Data.Treats
         }
 
         /// <summary>
-        /// Not implemented
+        /// No special instructions
         /// </summary>
-        public IEnumerable<string> SpecialInstructions => throw new NotImplementedException();
+        public abstract IEnumerable<string> SpecialInstructions { get; }
     }
 }
 

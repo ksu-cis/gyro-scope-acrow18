@@ -28,9 +28,9 @@
             <RowDefinition Height="4*"/>
         </Grid.RowDefinitions>
         <Label Content="$100" Grid.Column="0" Grid.Row="1" FontSize="50" HorizontalAlignment="Center" Background="ForestGreen"/>
-        <!-- Add from customer button-->
+        <local:CurrencyButtonControl
         <Label Content="0" Grid.Column="2" Grid.Row="1" HorizontalAlignment="Center" FontSize="60" BorderBrush="Green" BorderThickness="3"/>
-        
+       
         <Label Content="$50" Grid.Column="0" Grid.Row="2" FontSize="50" HorizontalAlignment="Center" Background="ForestGreen"/>
         <!-- Add from customer button-->
         <Label Content="0" Grid.Column="2" Grid.Row="2" HorizontalAlignment="Center" FontSize="60" BorderBrush="Green" BorderThickness="3"/>
