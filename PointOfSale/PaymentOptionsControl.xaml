@@ -6,7 +6,8 @@
              xmlns:local="clr-namespace:PointOfSale"
              mc:Ignorable="d" 
              d:DesignHeight="825" d:DesignWidth="1100">
-    <Grid>
+    <Border x:Name="PaymentOptions">
+        <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
@@ -19,4 +20,5 @@
         <Button Name ="DebitButton" Content="Debit" FontSize="50" Height="100" Grid.Column="0" Grid.Row="1" Click="DebitButton_Click"/>
         <Button Name ="CreditButton" Content="Credit" FontSize="50" Height="100" Grid.Column="0" Grid.Row="2" Click="CreditButton_Click"/>
     </Grid>
+    </Border>
 </UserControl>

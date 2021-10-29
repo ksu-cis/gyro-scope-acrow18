@@ -26,13 +26,14 @@ namespace PointOfSale
             InitializeComponent();
         }
 
+
         /// <summary>
-        /// Event handler for "Cash" button click
+        /// Finds the main window
         /// </summary>
-        /// <param name="sender">sender</param>
-        /// <param name="e">e</param>
-        private void cashButton_Click(object sender, RoutedEventArgs e)
+        /// <returns>A main window</returns>
+        public MainWindow FindMainWindow()
         {
+
             DependencyObject parent = this;
 
             do
@@ -40,14 +41,23 @@ namespace PointOfSale
                 parent = LogicalTreeHelper.GetParent(parent);
             }
 
-            while (!(parent is null) || parent is MainWindow);
+            while (!(parent is null || parent is MainWindow));
+            MainWindow mainWindow = (MainWindow)parent;
+            return mainWindow;
+        }
 
-            if (parent is MainWindow main)
-            {
-                var customization = new CashPaymentProcessing();
-                //customization.DataContext = orderList.SelectedItems;
-               //main.menuItemSelection.Child = customization;
-            }
+        /// <summary>
+        /// Event handler for "Cash" button click
+        /// </summary>
+        /// <param name="sender">sender</param>
+        /// <param name="e">e</param>
+        private void cashButton_Click(object sender, RoutedEventArgs e)
+        {
+            dynamic customization;
+            MainWindow mainWindow = FindMainWindow();
+            customization = new CashPaymentProcessing();
+            PaymentOptions.Child = customization;
+           
         }
 
         /// <summary>
@@ -57,8 +67,8 @@ namespace PointOfSale
         /// <param name="e">e</param>
         private void DebitButton_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow main = new MainWindow();
-            double total = (double)main.Order.Total;
+            MainWindow mainWindow = FindMainWindow();
+            double total = (double)mainWindow.Order.Total;
             if (RoundRegister.CardReader.RunCard(total) == RoundRegister.CardTransactionResult.Approved)
             {
                 //print recipt
