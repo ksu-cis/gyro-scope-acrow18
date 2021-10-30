@@ -24,7 +24,27 @@ namespace PointOfSale
         {
             InitializeComponent();
         }
-        
-        //put dependency properties
+
+
+
+        /// <summary>
+        /// Creates a property for the plus and minus button
+        /// </summary>
+        public static DependencyProperty StepProperty = DependencyProperty.Register("Step", typeof(int), typeof(CurrencyButtonControl), new PropertyMetadata(0));
+
+
+        /// <summary>
+        /// Identifies the NumberBox.Step XAML attached property
+        /// </summary>
+        public static readonly DependencyProperty StepProperty = DependencyProperty.Register("Step", typeof(int), typeof(CurrencyButtonControl), new PropertyMetadata(1.0));
+
+        /// <summary>
+        /// The amount each increment or decrement operation should change the value by
+        /// </summary>
+        public double Step
+        {
+            get { return (double)GetValue(StepProperty); }
+            set { SetValue(StepProperty, value); }
+        }
     }
 }
