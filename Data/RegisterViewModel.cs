@@ -95,5 +95,140 @@ namespace GyroScope.Data
                 }
             }
         }
+
+        /// <summary>
+        /// backing field for dimes
+        /// </summary>
+        public int _quarters;
+
+        /// <summary>
+        /// Dimes in cash register
+        /// </summary>
+        public decimal Quarters
+        {
+            get { return _quarters; }
+
+            set
+            {
+                if (_quarters != value)
+                {
+                    _quarters = (int)value;
+                    OnPropertyChanged(nameof(Quarters));
+                }
+            }
+        }
+
+
+        /// <summary>
+        /// backing field for dimes
+        /// </summary>
+        public int _halfDollars;
+
+        /// <summary>
+        /// Dimes in cash register
+        /// </summary>
+        public decimal HalfDollars
+        {
+            get { return _halfDollars; }
+
+            set
+            {
+                if (_halfDollars != value)
+                {
+                    _halfDollars = (int)value;
+                    OnPropertyChanged(nameof(HalfDollars));
+                }
+            }
+        }
+
+
+        /// <summary>
+        /// backing field for dimes
+        /// </summary>
+        public int _dollars;
+
+        /// <summary>
+        /// Dimes in cash register
+        /// </summary>
+        public decimal Dollars
+        {
+            get { return _dollars; }
+
+            set
+            {
+                if (_dollars != value)
+                {
+                    _dollars = (int)value;
+                    OnPropertyChanged(nameof(Dollars));
+                }
+            }
+        }
+
+
+        /// <summary>
+        /// backing field for dimes
+        /// </summary>
+        public int _ones;
+
+        /// <summary>
+        /// Dimes in cash register
+        /// </summary>
+        public decimal Ones
+        {
+            get { return _ones; }
+
+            set
+            {
+                if (_ones != value)
+                {
+                    _ones = (int)value;
+                    OnPropertyChanged(nameof(Ones));
+                }
+            }
+        }
+
+        /// <summary>
+        /// backing field for dimes
+        /// </summary>
+        public int _twos;
+
+        /// <summary>
+        /// Dimes in cash register
+        /// </summary>
+        public decimal Twos
+        {
+            get { return _twos; }
+
+            set
+            {
+                if (_twos != value)
+                {
+                    _twos = (int)value;
+                    OnPropertyChanged(nameof(Twos));
+                }
+            }
+        }
+
+        /// <summary>
+        /// backing field for dimes
+        /// </summary>
+        public int _fives;
+
+        /// <summary>
+        /// Dimes in cash register
+        /// </summary>
+        public decimal Fives
+        {
+            get { return _fives; }
+
+            set
+            {
+                if (_fives != value)
+                {
+                    _fives = (int)value;
+                    OnPropertyChanged(nameof(Fives));
+                }
+            }
+        }
     }
 }
