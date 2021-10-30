@@ -97,12 +97,12 @@ namespace GyroScope.Data
         }
 
         /// <summary>
-        /// backing field for dimes
+        /// backing field for quarters
         /// </summary>
         public int _quarters;
 
         /// <summary>
-        /// Dimes in cash register
+        /// Quarters in cash register
         /// </summary>
         public decimal Quarters
         {
@@ -120,12 +120,12 @@ namespace GyroScope.Data
 
 
         /// <summary>
-        /// backing field for dimes
+        /// backing field for half dollars
         /// </summary>
         public int _halfDollars;
 
         /// <summary>
-        /// Dimes in cash register
+        /// Half Dollars in cash register
         /// </summary>
         public decimal HalfDollars
         {
@@ -143,12 +143,12 @@ namespace GyroScope.Data
 
 
         /// <summary>
-        /// backing field for dimes
+        /// backing field for dollars (cents)
         /// </summary>
         public int _dollars;
 
         /// <summary>
-        /// Dimes in cash register
+        /// Dollars (cents) in cash register
         /// </summary>
         public decimal Dollars
         {
@@ -166,12 +166,12 @@ namespace GyroScope.Data
 
 
         /// <summary>
-        /// backing field for dimes
+        /// backing field for one dollar bills
         /// </summary>
         public int _ones;
 
         /// <summary>
-        /// Dimes in cash register
+        /// One dollar bills in cash register
         /// </summary>
         public decimal Ones
         {
@@ -188,12 +188,12 @@ namespace GyroScope.Data
         }
 
         /// <summary>
-        /// backing field for dimes
+        /// backing field for two dollar bills
         /// </summary>
         public int _twos;
 
         /// <summary>
-        /// Dimes in cash register
+        /// Two dollar bills in cash register
         /// </summary>
         public decimal Twos
         {
@@ -210,12 +210,12 @@ namespace GyroScope.Data
         }
 
         /// <summary>
-        /// backing field for dimes
+        /// backing field for five dollar bills
         /// </summary>
         public int _fives;
 
         /// <summary>
-        /// Dimes in cash register
+        /// Five dollar bills in cash register
         /// </summary>
         public decimal Fives
         {
@@ -232,12 +232,12 @@ namespace GyroScope.Data
         }
 
         /// <summary>
-        /// backing field for dimes
+        /// backing field for ten dollar bills
         /// </summary>
         public int _tens;
 
         /// <summary>
-        /// Dimes in cash register
+        /// Ten dollar bills in cash register
         /// </summary>
         public decimal Tens
         {
@@ -255,12 +255,12 @@ namespace GyroScope.Data
 
 
         /// <summary>
-        /// backing field for dimes
+        /// backing field for twenty dollar bills
         /// </summary>
         public int _twenties;
 
         /// <summary>
-        /// Dimes in cash register
+        /// Twenty dollar bills in cash register
         /// </summary>
         public decimal Twenties
         {
@@ -277,12 +277,12 @@ namespace GyroScope.Data
         }
 
         /// <summary>
-        /// backing field for dimes
+        /// backing field for fifty dollar bills
         /// </summary>
         public int _fifties;
 
         /// <summary>
-        /// Dimes in cash register
+        /// Fity dollar bills in cash register
         /// </summary>
         public decimal Fifties
         {
@@ -299,12 +299,12 @@ namespace GyroScope.Data
         }
 
         /// <summary>
-        /// backing field for dimes
+        /// backing field for one hundred dollar bills
         /// </summary>
         public int _hundreds;
 
         /// <summary>
-        /// Dimes in cash register
+        /// One hundred dollar bills in cash register
         /// </summary>
         public decimal Hundreds
         {
