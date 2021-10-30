@@ -230,5 +230,94 @@ namespace GyroScope.Data
                 }
             }
         }
+
+        /// <summary>
+        /// backing field for dimes
+        /// </summary>
+        public int _tens;
+
+        /// <summary>
+        /// Dimes in cash register
+        /// </summary>
+        public decimal Tens
+        {
+            get { return _tens; }
+
+            set
+            {
+                if (_tens != value)
+                {
+                    _tens = (int)value;
+                    OnPropertyChanged(nameof(Tens));
+                }
+            }
+        }
+
+
+        /// <summary>
+        /// backing field for dimes
+        /// </summary>
+        public int _twenties;
+
+        /// <summary>
+        /// Dimes in cash register
+        /// </summary>
+        public decimal Twenties
+        {
+            get { return _twenties; }
+
+            set
+            {
+                if (_twenties != value)
+                {
+                    _twenties = (int)value;
+                    OnPropertyChanged(nameof(Twenties));
+                }
+            }
+        }
+
+        /// <summary>
+        /// backing field for dimes
+        /// </summary>
+        public int _fifties;
+
+        /// <summary>
+        /// Dimes in cash register
+        /// </summary>
+        public decimal Fifties
+        {
+            get { return _fifties; }
+
+            set
+            {
+                if (_fifties != value)
+                {
+                    _fifties = (int)value;
+                    OnPropertyChanged(nameof(Fifties));
+                }
+            }
+        }
+
+        /// <summary>
+        /// backing field for dimes
+        /// </summary>
+        public int _hundreds;
+
+        /// <summary>
+        /// Dimes in cash register
+        /// </summary>
+        public decimal Hundreds
+        {
+            get { return _hundreds; }
+
+            set
+            {
+                if (_hundreds != value)
+                {
+                    _hundreds = (int)value;
+                    OnPropertyChanged(nameof(Hundreds));
+                }
+            }
+        }
     }
 }
