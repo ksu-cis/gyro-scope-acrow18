@@ -120,7 +120,7 @@ namespace GyroScope.Data
         public int _customerPennies;
 
         /// <summary>
-        /// Pennies in cash register
+        /// Pennies customer has
         /// </summary>
         public decimal CustomerPennies
         {
@@ -142,7 +142,7 @@ namespace GyroScope.Data
         public int _customerNickels;
 
         /// <summary>
-        /// Nickels in cash register
+        /// Nickels customer has
         /// </summary>
         public decimal CustomerNickels
         {
@@ -164,7 +164,7 @@ namespace GyroScope.Data
         public int _customerDimes;
 
         /// <summary>
-        /// Dimes in cash register
+        /// Dimes customer has
         /// </summary>
         public decimal CustomerDimes
         {
@@ -186,7 +186,7 @@ namespace GyroScope.Data
         public int _customerQuarters;
 
         /// <summary>
-        /// Quarters in cash register
+        /// Quarters customer has
         /// </summary>
         public decimal CustomerQuarters
         {
@@ -209,7 +209,7 @@ namespace GyroScope.Data
         public int _customerHalfDollars;
 
         /// <summary>
-        /// Half Dollars in cash register
+        /// Half Dollars customer has
         /// </summary>
         public decimal CustomerHalfDollars
         {
@@ -232,7 +232,7 @@ namespace GyroScope.Data
         public int _customerDollars;
 
         /// <summary>
-        /// Dollars (cents) in cash register
+        /// Dollars customer has
         /// </summary>
         public decimal CustomerDollars
         {
@@ -255,7 +255,7 @@ namespace GyroScope.Data
         public int _customerOnes;
 
         /// <summary>
-        /// One dollar bills in cash register
+        /// One dollar bills customer has
         /// </summary>
         public decimal CustomerOnes
         {
@@ -277,7 +277,7 @@ namespace GyroScope.Data
         public int _customerTwos;
 
         /// <summary>
-        /// Two dollar bills in cash register
+        /// Two dollar bills customer has
         /// </summary>
         public decimal CustomerTwos
         {
@@ -299,7 +299,7 @@ namespace GyroScope.Data
         public int _customerFives;
 
         /// <summary>
-        /// Five dollar bills in cash register
+        /// Five dollar bills customer has
         /// </summary>
         public decimal CustomerFives
         {
@@ -321,7 +321,7 @@ namespace GyroScope.Data
         public int _customerTens;
 
         /// <summary>
-        /// Ten dollar bills in cash register
+        /// Ten dollar bills customer has
         /// </summary>
         public decimal CustomerTens
         {
@@ -344,7 +344,7 @@ namespace GyroScope.Data
         public int _customerTwenties;
 
         /// <summary>
-        /// Twenty dollar bills in cash register
+        /// Twenty dollar bills customer has
         /// </summary>
         public decimal CustomerTwenties
         {
@@ -366,7 +366,7 @@ namespace GyroScope.Data
         public int _customerFifties;
 
         /// <summary>
-        /// Fity dollar bills in cash register
+        /// Fity dollar bills customer has
         /// </summary>
         public decimal CustomerFifties
         {
@@ -388,7 +388,7 @@ namespace GyroScope.Data
         public int _customerHundreds;
 
         /// <summary>
-        /// One hundred dollar bills in cash register
+        /// One hundred dollar bills customer has
         /// </summary>
         public decimal CustomerHundreds
         {
@@ -413,7 +413,7 @@ namespace GyroScope.Data
         public int _changePennies;
 
         /// <summary>
-        /// Pennies in cash register
+        /// Pennies owed in change
         /// </summary>
         public decimal ChangePennies
         {
@@ -437,7 +437,7 @@ namespace GyroScope.Data
         public int _changeNickels;
 
         /// <summary>
-        /// Nickels in cash register
+        /// Nickels owed in change
         /// </summary>
         public decimal ChangeNickels
         {
@@ -459,7 +459,7 @@ namespace GyroScope.Data
         public int _changeDimes;
 
         /// <summary>
-        /// Dimes in cash register
+        /// Dimes owed in change
         /// </summary>
         public decimal ChangeDimes
         {
@@ -481,7 +481,7 @@ namespace GyroScope.Data
         public int _changeQuarters;
 
         /// <summary>
-        /// Quarters in cash register
+        /// Quarters owed in change
         /// </summary>
         public decimal ChangeQuarters
         {
@@ -504,7 +504,7 @@ namespace GyroScope.Data
         public int _changeHalfDollars;
 
         /// <summary>
-        /// Half Dollars in cash register
+        /// Half Dollars owed in change
         /// </summary>
         public decimal ChangeHalfDollars
         {
@@ -527,7 +527,7 @@ namespace GyroScope.Data
         public int _changeDollars;
 
         /// <summary>
-        /// Dollars (cents) in cash register
+        /// Dollars owed in change
         /// </summary>
         public decimal ChangeDollars
         {
@@ -550,7 +550,7 @@ namespace GyroScope.Data
         public int _changeOnes;
 
         /// <summary>
-        /// One dollar bills in cash register
+        /// One dollar bills owed in change
         /// </summary>
         public decimal ChangeOnes
         {
@@ -572,7 +572,7 @@ namespace GyroScope.Data
         public int _changeTwos;
 
         /// <summary>
-        /// Two dollar bills in cash register
+        /// Two dollar bills owed in change
         /// </summary>
         public decimal ChangeTwos
         {
@@ -594,7 +594,7 @@ namespace GyroScope.Data
         public int _changeFives;
 
         /// <summary>
-        /// Five dollar bills in cash register
+        /// Five dollar bills owed in change
         /// </summary>
         public decimal ChangeFives
         {
@@ -616,7 +616,7 @@ namespace GyroScope.Data
         public int _changeTens;
 
         /// <summary>
-        /// Ten dollar bills in cash register
+        /// Ten dollar bills owed in change
         /// </summary>
         public decimal ChangeTens
         {
@@ -639,7 +639,7 @@ namespace GyroScope.Data
         public int _changeTwenties;
 
         /// <summary>
-        /// Twenty dollar bills in cash register
+        /// Twenty dollar bills owed in change
         /// </summary>
         public decimal ChangeTwenties
         {
@@ -661,7 +661,7 @@ namespace GyroScope.Data
         public int _changeFifties;
 
         /// <summary>
-        /// Fity dollar bills in cash register
+        /// Fity dollar bills owed in change
         /// </summary>
         public decimal ChangeFifties
         {
@@ -683,7 +683,7 @@ namespace GyroScope.Data
         public int _changeHundreds;
 
         /// <summary>
-        /// One hundred dollar bills in cash register
+        /// One hundred dollar bills owed in change
         /// </summary>
         public decimal ChangeHundreds
         {
