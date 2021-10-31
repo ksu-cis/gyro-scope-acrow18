@@ -16,7 +16,7 @@ namespace GyroScope.Data
     /// <summary>
     /// Intermediate class for CashRegister
     /// </summary>
-    public class RegisterViewModel
+    public class RegisterViewModel : INotifyPropertyChanged
     {
 
         /// <summary>
@@ -33,6 +33,30 @@ namespace GyroScope.Data
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
+        /// <summary>
+        /// Backing field to hold the order
+        /// </summary>
+        private Order _order;
+
+        /// <summary>
+        /// The order the viewmodel is based on
+        /// </summary>
+        public Order Order => _order;
+
+        /// <summary>
+        /// Default constructor 
+        /// </summary>
+        public RegisterViewModel() 
+        {
+            this._order = Order;
+            _order.PropertyChanged += OnOrderChanged();
+        }
+
+        /// <summary>
+        /// Represents how much the order costs
+        /// </summary>
+        public decimal Total => _order.Total;
 
         //Beginning of cash drawer properties
 
@@ -135,6 +159,8 @@ namespace GyroScope.Data
                 {
                     _customerPennies = (int)value;
                     OnPropertyChanged(nameof(CustomerPennies));
+                    OnPropertyChanged(nameof(AmountDue));
+                    OnPropertyChanged(nameof(ChangeOwed));
                 }
             }
         }
