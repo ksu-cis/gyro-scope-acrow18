@@ -112,7 +112,7 @@ namespace GyroScope.Data
         }
 
         //End of cashdrawer properties
-
+        //Beginning of customer properties
         
         /// <summary>
         /// backing field for pennies
@@ -274,21 +274,21 @@ namespace GyroScope.Data
         /// <summary>
         /// backing field for two dollar bills
         /// </summary>
-        public int _twos;
+        public int _customerTwos;
 
         /// <summary>
         /// Two dollar bills in cash register
         /// </summary>
-        public decimal Twos
+        public decimal CustomerTwos
         {
-            get { return _twos; }
+            get { return _customerTwos; }
 
             set
             {
-                if (_twos != value)
+                if (_customerTwos != value)
                 {
-                    _twos = (int)value;
-                    OnPropertyChanged(nameof(Twos));
+                    _customerTwos = (int)value;
+                    OnPropertyChanged(nameof(CustomerTwos));
                 }
             }
         }
@@ -296,21 +296,21 @@ namespace GyroScope.Data
         /// <summary>
         /// backing field for five dollar bills
         /// </summary>
-        public int _fives;
+        public int _customerFives;
 
         /// <summary>
         /// Five dollar bills in cash register
         /// </summary>
-        public decimal Fives
+        public decimal CustomerFives
         {
-            get { return _fives; }
+            get { return _customerFives; }
 
             set
             {
-                if (_fives != value)
+                if (_customerFives != value)
                 {
-                    _fives = (int)value;
-                    OnPropertyChanged(nameof(Fives));
+                    _customerFives = (int)value;
+                    OnPropertyChanged(nameof(CustomerFives));
                 }
             }
         }
@@ -318,21 +318,21 @@ namespace GyroScope.Data
         /// <summary>
         /// backing field for ten dollar bills
         /// </summary>
-        public int _tens;
+        public int _customerTens;
 
         /// <summary>
         /// Ten dollar bills in cash register
         /// </summary>
-        public decimal Tens
+        public decimal CustomerTens
         {
-            get { return _tens; }
+            get { return _customerTens; }
 
             set
             {
-                if (_tens != value)
+                if (_customerTens != value)
                 {
-                    _tens = (int)value;
-                    OnPropertyChanged(nameof(Tens));
+                    _customerTens = (int)value;
+                    OnPropertyChanged(nameof(CustomerTens));
                 }
             }
         }
@@ -341,21 +341,21 @@ namespace GyroScope.Data
         /// <summary>
         /// backing field for twenty dollar bills
         /// </summary>
-        public int _twenties;
+        public int _customerTwenties;
 
         /// <summary>
         /// Twenty dollar bills in cash register
         /// </summary>
-        public decimal Twenties
+        public decimal CustomerTwenties
         {
-            get { return _twenties; }
+            get { return _customerTwenties; }
 
             set
             {
-                if (_twenties != value)
+                if (_customerTwenties != value)
                 {
-                    _twenties = (int)value;
-                    OnPropertyChanged(nameof(Twenties));
+                    _customerTwenties = (int)value;
+                    OnPropertyChanged(nameof(CustomerTwenties));
                 }
             }
         }
@@ -363,21 +363,21 @@ namespace GyroScope.Data
         /// <summary>
         /// backing field for fifty dollar bills
         /// </summary>
-        public int _fifties;
+        public int _customerFifties;
 
         /// <summary>
         /// Fity dollar bills in cash register
         /// </summary>
-        public decimal Fifties
+        public decimal CustomerFifties
         {
-            get { return _fifties; }
+            get { return _customerFifties; }
 
             set
             {
-                if (_fifties != value)
+                if (_customerFifties != value)
                 {
-                    _fifties = (int)value;
-                    OnPropertyChanged(nameof(Fifties));
+                    _customerFifties = (int)value;
+                    OnPropertyChanged(nameof(CustomerFifties));
                 }
             }
         }
@@ -385,24 +385,26 @@ namespace GyroScope.Data
         /// <summary>
         /// backing field for one hundred dollar bills
         /// </summary>
-        public int _hundreds;
+        public int _customerHundreds;
 
         /// <summary>
         /// One hundred dollar bills in cash register
         /// </summary>
-        public decimal Hundreds
+        public decimal CustomerHundreds
         {
-            get { return _hundreds; }
+            get { return _customerHundreds; }
 
             set
             {
-                if (_hundreds != value)
+                if (_customerHundreds != value)
                 {
-                    _hundreds = (int)value;
-                    OnPropertyChanged(nameof(Hundreds));
+                    _customerHundreds = (int)value;
+                    OnPropertyChanged(nameof(CustomerHundreds));
                 }
             }
         }
+
+        //End of customer properties
 
         /*
         /// <summary>
