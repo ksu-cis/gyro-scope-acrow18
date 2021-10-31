@@ -875,7 +875,7 @@ namespace GyroScope.Data
         /// </summary>
         public void MakeChange() 
         {
-            if (Incoming < Total) 
+            if (Incoming < Total)
             {
                 int change = (int)((Incoming - Total) * 100);
 
@@ -887,7 +887,7 @@ namespace GyroScope.Data
                     ChangeHundreds = check;
                 }
 
-                else 
+                else
                 {
                     change -= CashDrawerHundreds * 10000;
                     ChangeHundreds = CashDrawerHundreds;
@@ -930,7 +930,7 @@ namespace GyroScope.Data
                     ChangeTens = CashDrawerTens;
                 }
 
-                if (CashDrawerFives> check)
+                if (CashDrawerFives > check)
                 {
                     change -= check * 500;
                     ChangeFives = check;
@@ -964,16 +964,94 @@ namespace GyroScope.Data
                 {
                     change -= CashDrawerOnes * 100;
                     ChangeOnes = CashDrawerOnes;
+
+
+                    if (CashDrawerDollarsInCents >= check)
+                    {
+                        change -= (check - ChangeOnes) * 100;
+                        ChangeDollars = check;
+                    }
                 }
 
-                /*
-                else 
+
+                check = change / 50;
+
+                if (CashDrawerHalfDollars >= check)
                 {
-                    //set change to zero
+                    change -= check * 50;
+                    ChangeHalfDollars = check;
                 }
-            */
-            }
-    }
 
-}
+                else
+                {
+                    change -= CashDrawerHalfDollars * 50;
+                    ChangeHalfDollars = CashDrawerHalfDollars;
+                }
+
+                if (CashDrawerQuarters >= check)
+                {
+                    change -= check * 25;
+                    ChangeQuarters = check;
+                }
+
+                else
+                {
+                    change -= CashDrawerQuarters * 25;
+                    ChangeQuarters = CashDrawerQuarters;
+                }
+
+
+                if (CashDrawerDimes >= check)
+                {
+                    change -= check * 10;
+                    ChangeDimes = check;
+                }
+
+                else
+                {
+                    change -= CashDrawerDimes * 10;
+                    ChangeDimes = CashDrawerDimes;
+                }
+
+                if (CashDrawerNickels >= check)
+                {
+                    change -= check * 5;
+                    ChangeQuarters = check;
+                }
+
+                else
+                {
+                    change -= CashDrawerNickels * 5;
+                    ChangeNickels = CashDrawerNickels;
+                }
+
+                check = change;
+                if (CashDrawerPennies >= check)
+                {
+                    ChangePennies = change;
+                }
+
+                else
+                {
+                    change -= CashDrawerPennies * 100;
+                    ChangePennies = CashDrawerPennies;
+                }
+            }
+
+            else
+            {
+                //set change to zero
+                ChangeHundreds = 0;
+                ChangeFifties = 0;
+                ChangeTwenties = 0;
+                ChangeTens = 0;
+                ChangeFives = 0;
+                ChangeTwos = 0;
+                ChangeOnes = 0;
+                Dollars
+            }
+            
+        }
+
+    }
 }
