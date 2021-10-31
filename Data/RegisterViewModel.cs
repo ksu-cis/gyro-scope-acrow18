@@ -138,6 +138,64 @@ namespace GyroScope.Data
 
         }
 
+        /// <summary>
+        /// backing field for incoming
+        /// </summary>
+        public decimal _incoming;
+
+        /// <summary>
+        /// Represents how much the customer has paid so far
+        /// </summary>
+        public decimal Incoming 
+        {
+            get { return _incoming; }
+            set 
+            {
+                if (_incoming != value) 
+                {
+                    _incoming = value;
+                    OnPropertyChanged(nameof(Incoming));
+                    OnPropertyChanged(nameof(AmountDue));
+                    OnPropertyChanged(nameof(ChangeOwed));
+                }
+            }
+        }
+
+        /// <summary>
+        /// backing field for outgoing
+        /// </summary>
+        public decimal _outgoing;
+
+        /// <summary>
+        /// Represents how much the customer has paid so far
+        /// </summary>
+        public decimal Outgoing
+        {
+            get { return _outgoing; }
+            set
+            {
+                if (_outgoing != value)
+                {
+                    _outgoing = value;
+                    OnPropertyChanged(nameof(Outgoing));
+                    OnPropertyChanged(nameof(AmountDue));
+                    OnPropertyChanged(nameof(ChangeOwed));
+                }
+            }
+        }
+
+
+        public decimal AmountDue 
+        {
+            get
+            {
+                if (Total < ) 
+                {
+
+                }
+            }
+        }
+
         //End of cashdrawer properties
         //Beginning of customer properties
         
