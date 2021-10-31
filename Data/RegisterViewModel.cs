@@ -13,6 +13,9 @@ using RoundRegister;
 
 namespace GyroScope.Data
 {
+    /// <summary>
+    /// Intermediate class for CashRegister
+    /// </summary>
     public class RegisterViewModel
     {
 

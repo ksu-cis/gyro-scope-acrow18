@@ -51,7 +51,7 @@ namespace PointOfSale
         /// </summary>
         /// <param name="sender">sender</param>
         /// <param name="e">e</param>
-        private void cashButton_Click(object sender, RoutedEventArgs e)
+        private void CashButton_Click(object sender, RoutedEventArgs e)
         {
             dynamic customization;
             MainWindow mainWindow = FindMainWindow();
