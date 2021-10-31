@@ -914,7 +914,7 @@ namespace GyroScope.Data
 
                 else
                 {
-                    change -= CashDrawerTwenties * 5000;
+                    change -= CashDrawerTwenties * 2000;
                     ChangeTwenties = CashDrawerTwenties;
                 }
 
@@ -938,20 +938,32 @@ namespace GyroScope.Data
 
                 else
                 {
-                    change -= CashDrawerFives * 5000;
+                    change -= CashDrawerFives * 500;
                     ChangeFives = CashDrawerFives;
                 }
 
-                if (CashDrawerTwenties > check)
+                if (CashDrawerTwos > check)
                 {
-                    change -= check * 2000;
+                    change -= check * 200;
                     ChangeTwenties = check;
                 }
 
                 else
                 {
-                    change -= CashDrawerTwenties * 5000;
-                    ChangeTwenties = CashDrawerTwenties;
+                    change -= CashDrawerTwos * 200;
+                    ChangeTwos = CashDrawerTwos;
+                }
+
+                if (CashDrawerOnes > check)
+                {
+                    change -= check * 100;
+                    ChangeOnes = check;
+                }
+
+                else
+                {
+                    change -= CashDrawerOnes * 100;
+                    ChangeOnes = CashDrawerOnes;
                 }
 
                 /*
