@@ -9,6 +9,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using RoundRegister;
 
 namespace GyroScope.Data
 {
@@ -34,7 +35,59 @@ namespace GyroScope.Data
         /// <summary>
         /// Pennies in cash register
         /// </summary>
-        public decimal Pennies => RoundRegister.Pennies;
+        public decimal CashDrawerPennies => CashDrawer.Pennies;
+
+        /// <summary>
+        /// Nickels in cash register
+        /// </summary>
+        public decimal CashDrawerNickels => CashDrawer.Nickels;
+
+        /// <summary>
+        /// Dimes in cash register
+        /// </summary>
+        public decimal CashDrawerDimes => CashDrawer.Dimes;
+
+        /// <summary>
+        /// Quarters in cash register
+        /// </summary>
+        public decimal CashDrawerQuarters => CashDrawer.Quarters;
+
+        /// <summary>
+        /// Half dollars in cash register
+        /// </summary>
+        public decimal CashDrawerHalfDollars => CashDrawer.HalfDollars;
+
+        /// <summary>
+        /// Dollars in cash register
+        /// </summary>
+        public decimal CashDrawerDollarsInCents => CashDrawer.Dollars;
+
+        /// <summary>
+        /// Dimes in cash register
+        /// </summary>
+        public decimal CashDrawerOnes => CashDrawer.Ones;
+
+        /// <summary>
+        /// Dimes in cash register
+        /// </summary>
+        public decimal CashDrawerTwos => CashDrawer.Twos;
+
+        /// <summary>
+        /// Dimes in cash register
+        /// </summary>
+        public decimal CashDrawerFives => CashDrawer.Fives;
+
+        /// <summary>
+        /// Dimes in cash register
+        /// </summary>
+        public decimal CashDrawerTens => CashDrawer.Tens;
+
+        /// <summary>
+        /// Dimes in cash register
+        /// </summary>
+        public decimal CashDrawerTwenties => CashDrawer.Twenties;
+
+
 
 
         /// <summary>
