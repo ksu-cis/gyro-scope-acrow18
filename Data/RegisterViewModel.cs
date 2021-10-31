@@ -862,5 +862,35 @@ namespace GyroScope.Data
                 }
             }
         }
+
+        /// <summary>
+        /// Total of drawer
+        /// </summary>
+        public decimal DrawerTotal => (CashDrawerHundreds * 100 + CashDrawerFifties * 50 + CashDrawerTwenties * 20 + CashDrawerTens * 10
+            + CashDrawerFives * 5 + CashDrawerTwos * 2 + CashDrawerOnes * 1 + CashDrawerDollarsInCents * 1 + CashDrawerHalfDollars * 0.50M
+            + CashDrawerQuarters * 0.25M + CashDrawerDimes * 0.10M + CashDrawerNickels * 0.05M + CashDrawerPennies * 0.01M);
+
+        /// <summary>
+        /// Calculates change to give back based on Incoming amount and total
+        /// </summary>
+        public void MakeChange() 
+        {
+            if (Incoming < Total) 
+            {
+                int change = (int)((Incoming - Total) * 100);
+
+                int check = change / 10000;
+
+                if ()
+                {
+
+                }
+
+                else 
+                {
+                    //set change to zero
+                }
+            }
+        }
     }
 }
