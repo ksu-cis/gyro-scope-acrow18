@@ -670,7 +670,7 @@ namespace GyroScope.Data
         /// <summary>
         /// Dollars owed in change
         /// </summary>
-        public decimal ChangeDollars
+        public int ChangeDollars
         {
             get { return _changeDollars; }
 
@@ -1060,30 +1060,58 @@ namespace GyroScope.Data
             {
                 CashDrawer.Hundreds -= ChangeHundreds;
                 CashDrawer.Hundreds += CustomerHundreds;
+                OnPropertyChanged(nameof(CashDrawerHundreds));
             }
 
             if ((ChangeFifties + CustomerFifties) != 0)
             {
                 CashDrawer.Fifties -= ChangeFifties;
                 CashDrawer.Fifties += CustomerFifties;
+                OnPropertyChanged(nameof(CashDrawerFifties));
             }
 
             if ((ChangeTwenties + CustomerTwenties) != 0)
             {
                 CashDrawer.Twenties -= ChangeTwenties;
                 CashDrawer.Twenties += CustomerTwenties;
+                OnPropertyChanged(nameof(CashDrawerTwenties));
+
             }
 
             if ((ChangeTens + CustomerTens) != 0)
             {
                 CashDrawer.Tens -= ChangeTens;
                 CashDrawer.Tens += CustomerTens;
+                OnPropertyChanged(nameof(CashDrawerTens));
+
             }
 
             if ((ChangeFives + CustomerFives) != 0)
             {
                 CashDrawer.Fives -= ChangeFives;
                 CashDrawer.Fives += CustomerFives;
+                OnPropertyChanged(nameof(CashDrawerFives));
+            }
+
+            if ((ChangeTwos + CustomerTwos) != 0)
+            {
+                CashDrawer.Twos -= ChangeTwos;
+                CashDrawer.Twos += CustomerTwos;
+                OnPropertyChanged(nameof(CashDrawerTwos));
+            }
+
+            if ((ChangeOnes + CustomerOnes) != 0)
+            {
+                CashDrawer.Ones -= ChangeOnes;
+                CashDrawer.Ones += CustomerOnes;
+                OnPropertyChanged(nameof(CashDrawerOnes));
+            }
+
+            if ((ChangeDollars + CustomerDollars) != 0)
+            {
+                CashDrawer.Ones -= ChangeDollars;
+                CashDrawer.Ones += CustomerDollars;
+                OnPropertyChanged(nameof(CashDrawerOnes));
             }
         }
     }
