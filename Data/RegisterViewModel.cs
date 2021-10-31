@@ -63,67 +63,67 @@ namespace GyroScope.Data
         /// <summary>
         /// Pennies in cash register
         /// </summary>
-        public decimal CashDrawerPennies => CashDrawer.Pennies;
+        public int CashDrawerPennies => CashDrawer.Pennies;
 
         /// <summary>
         /// Nickels in cash register
         /// </summary>
-        public decimal CashDrawerNickels => CashDrawer.Nickels;
+        public int CashDrawerNickels => CashDrawer.Nickels;
 
         /// <summary>
         /// Dimes in cash register
         /// </summary>
-        public decimal CashDrawerDimes => CashDrawer.Dimes;
+        public int CashDrawerDimes => CashDrawer.Dimes;
 
         /// <summary>
         /// Quarters in cash register
         /// </summary>
-        public decimal CashDrawerQuarters => CashDrawer.Quarters;
+        public int CashDrawerQuarters => CashDrawer.Quarters;
 
         /// <summary>
         /// Half dollars in cash register
         /// </summary>
-        public decimal CashDrawerHalfDollars => CashDrawer.HalfDollars;
+        public int CashDrawerHalfDollars => CashDrawer.HalfDollars;
 
         /// <summary>
         /// Dollars in cash register
         /// </summary>
-        public decimal CashDrawerDollarsInCents => CashDrawer.Dollars;
+        public int CashDrawerDollarsInCents => CashDrawer.Dollars;
 
         /// <summary>
         /// Ones in cash register
         /// </summary>
-        public decimal CashDrawerOnes => CashDrawer.Ones;
+        public int CashDrawerOnes => CashDrawer.Ones;
 
         /// <summary>
         /// Twos in cash register
         /// </summary>
-        public decimal CashDrawerTwos => CashDrawer.Twos;
+        public int CashDrawerTwos => CashDrawer.Twos;
 
         /// <summary>
         /// Fives in cash register
         /// </summary>
-        public decimal CashDrawerFives => CashDrawer.Fives;
+        public int CashDrawerFives => CashDrawer.Fives;
 
         /// <summary>
         /// Tens in cash register
         /// </summary>
-        public decimal CashDrawerTens => CashDrawer.Tens;
+        public int CashDrawerTens => CashDrawer.Tens;
 
         /// <summary>
         /// Twenties in cash register
         /// </summary>
-        public decimal CashDrawerTwenties => CashDrawer.Twenties;
+        public int CashDrawerTwenties => CashDrawer.Twenties;
 
         /// <summary>
         /// Fifties in cash register
         /// </summary>
-        public decimal CashDrawerFifties => CashDrawer.Fifties;
+        public int CashDrawerFifties => CashDrawer.Fifties;
 
         /// <summary>
         /// Hundreds in cash register
         /// </summary>
-        public decimal CashDrawerHundreds => CashDrawer.Hundreds;
+        public int CashDrawerHundreds => CashDrawer.Hundreds;
 
         /// <summary>
         /// Total of Cash drawer
@@ -881,16 +881,87 @@ namespace GyroScope.Data
 
                 int check = change / 10000;
 
-                if ()
+                if (CashDrawerHundreds > check)
                 {
-
+                    change -= check * 10000;
+                    ChangeHundreds = check;
                 }
 
                 else 
                 {
+                    change -= CashDrawerHundreds * 10000;
+                    ChangeHundreds = CashDrawerHundreds;
+                }
+
+
+                if (CashDrawerFifties > check)
+                {
+                    change -= check * 5000;
+                    ChangeFifties = check;
+                }
+
+                else
+                {
+                    change -= CashDrawerFifties * 5000;
+                    ChangeFifties = CashDrawerFifties;
+                }
+
+                if (CashDrawerTwenties > check)
+                {
+                    change -= check * 2000;
+                    ChangeTwenties = check;
+                }
+
+                else
+                {
+                    change -= CashDrawerTwenties * 5000;
+                    ChangeTwenties = CashDrawerTwenties;
+                }
+
+                if (CashDrawerTens > check)
+                {
+                    change -= check * 1000;
+                    ChangeTens = check;
+                }
+
+                else
+                {
+                    change -= CashDrawerTens * 1000;
+                    ChangeTens = CashDrawerTens;
+                }
+
+                if (CashDrawerFives> check)
+                {
+                    change -= check * 500;
+                    ChangeFives = check;
+                }
+
+                else
+                {
+                    change -= CashDrawerFives * 5000;
+                    ChangeFives = CashDrawerFives;
+                }
+
+                if (CashDrawerTwenties > check)
+                {
+                    change -= check * 2000;
+                    ChangeTwenties = check;
+                }
+
+                else
+                {
+                    change -= CashDrawerTwenties * 5000;
+                    ChangeTwenties = CashDrawerTwenties;
+                }
+
+                /*
+                else 
+                {
                     //set change to zero
                 }
+            */
             }
-        }
     }
+
+}
 }
