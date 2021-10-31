@@ -1141,6 +1141,30 @@ namespace GyroScope.Data
                 CashDrawer.Ones += CustomerDollars;
                 OnPropertyChanged(nameof(CashDrawerDollarsInCents));
             }
+
+            RecieptPrinter.PrintLine("Order Number: " + Order.Number.ToString());
+            RecieptPrinter.PrintLine("Date and Time: " + Order.PlacedAt.ToString());
+            RecieptPrinter.PrintLine(" ");
+            RecieptPrinter.PrintLine("Order: ");
+
+            foreach (IMenuItem item in Order.menuItemList)
+            {
+                RecieptPrinter.PrintLine(item.ToString() + " $" + item.Price.ToString());
+                if (item.SpecialInstructions != null)
+                {
+                    foreach (string special in item.SpecialInstructions)
+                    {
+                        RecieptPrinter.PrintLine("   - " + special);
+                    }
+
+                    RecieptPrinter.PrintLine(" ");
+                }
+            }
+
+            RecieptPrinter.PrintLine(" ");
+            //finsh adding print statements
+
         }
+
     }
 }
