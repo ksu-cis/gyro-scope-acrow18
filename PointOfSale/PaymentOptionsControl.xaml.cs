@@ -26,6 +26,35 @@ namespace PointOfSale
             InitializeComponent();
         }
 
+        public string paymentMethod = "";
+
+        /// <summary>
+        /// Checks the type of payment
+        /// </summary>
+        /// <param name="sender">sender</param>
+        /// <returns>Type of payment</returns>
+        public string TypeOfPayment(object sender)
+        {
+            if (sender is Button button)
+            {
+                if (button.Content == "Cash")
+                {
+                    return "Cash";
+                }
+
+                if (button.Content == "Credit")
+                {
+                    return "Credit";
+                }
+
+                if (button.Content == "Debit")
+                {
+                    return "Cash";
+                }
+            }
+
+            return "Payment doesn't exist";
+        }
 
         /// <summary>
         /// Finds the main window
@@ -56,8 +85,7 @@ namespace PointOfSale
             dynamic customization;
             MainWindow mainWindow = FindMainWindow();
             customization = new CashPaymentProcessing();
-            PaymentOptions.Child = customization;
-           
+            PaymentOptions.Child = customization;           
         }
 
         /// <summary>

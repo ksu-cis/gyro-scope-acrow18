@@ -1165,7 +1165,7 @@ namespace GyroScope.Data
             RecieptPrinter.PrintLine("Subtotal: $" + Order.Subtotal.ToString());
             RecieptPrinter.PrintLine("Tax: $" + Order.Tax.ToString());
             RecieptPrinter.PrintLine("Total: $" + Order.Total.ToString());
-            RecieptPrinter.PrintLine("Payment method: $" + );
+            RecieptPrinter.PrintLine("Payment method: $");
 
 
 
