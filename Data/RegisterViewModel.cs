@@ -130,13 +130,6 @@ namespace GyroScope.Data
         /// </summary>
         public double TotalOfCashDrawer => CashDrawer.Total;
 
-        /// <summary>
-        /// Used to open drawer 
-        /// </summary>
-        public void OpenDrawer() 
-        {
-
-        }
 
         /// <summary>
         /// backing field for incoming
@@ -234,7 +227,7 @@ namespace GyroScope.Data
         /// <summary>
         /// Pennies customer has
         /// </summary>
-        public decimal CustomerPennies
+        public int CustomerPennies
         {
             get { return _customerPennies; }
 
@@ -258,7 +251,7 @@ namespace GyroScope.Data
         /// <summary>
         /// Nickels customer has
         /// </summary>
-        public decimal CustomerNickels
+        public int CustomerNickels
         {
             get { return _customerNickels; }
 
@@ -282,7 +275,7 @@ namespace GyroScope.Data
         /// <summary>
         /// Dimes customer has
         /// </summary>
-        public decimal CustomerDimes
+        public int CustomerDimes
         {
             get { return _customerDimes; }
 
@@ -306,7 +299,7 @@ namespace GyroScope.Data
         /// <summary>
         /// Quarters customer has
         /// </summary>
-        public decimal CustomerQuarters
+        public int CustomerQuarters
         {
             get { return _customerQuarters; }
 
@@ -331,7 +324,7 @@ namespace GyroScope.Data
         /// <summary>
         /// Half Dollars customer has
         /// </summary>
-        public decimal CustomerHalfDollars
+        public int CustomerHalfDollars
         {
             get { return _customerHalfDollars; }
 
@@ -356,7 +349,7 @@ namespace GyroScope.Data
         /// <summary>
         /// Dollars customer has
         /// </summary>
-        public decimal CustomerDollars
+        public int CustomerDollars
         {
             get { return _customerDollars; }
 
@@ -381,7 +374,7 @@ namespace GyroScope.Data
         /// <summary>
         /// One dollar bills customer has
         /// </summary>
-        public decimal CustomerOnes
+        public int CustomerOnes
         {
             get { return _customerOnes; }
 
@@ -405,7 +398,7 @@ namespace GyroScope.Data
         /// <summary>
         /// Two dollar bills customer has
         /// </summary>
-        public decimal CustomerTwos
+        public int CustomerTwos
         {
             get { return _customerTwos; }
 
@@ -429,7 +422,7 @@ namespace GyroScope.Data
         /// <summary>
         /// Five dollar bills customer has
         /// </summary>
-        public decimal CustomerFives
+        public int CustomerFives
         {
             get { return _customerFives; }
 
@@ -453,7 +446,7 @@ namespace GyroScope.Data
         /// <summary>
         /// Ten dollar bills customer has
         /// </summary>
-        public decimal CustomerTens
+        public int CustomerTens
         {
             get { return _customerTens; }
 
@@ -478,7 +471,7 @@ namespace GyroScope.Data
         /// <summary>
         /// Twenty dollar bills customer has
         /// </summary>
-        public decimal CustomerTwenties
+        public int CustomerTwenties
         {
             get { return _customerTwenties; }
 
@@ -502,7 +495,7 @@ namespace GyroScope.Data
         /// <summary>
         /// Fity dollar bills customer has
         /// </summary>
-        public decimal CustomerFifties
+        public int CustomerFifties
         {
             get { return _customerFifties; }
 
@@ -526,7 +519,7 @@ namespace GyroScope.Data
         /// <summary>
         /// One hundred dollar bills customer has
         /// </summary>
-        public decimal CustomerHundreds
+        public int CustomerHundreds
         {
             get { return _customerHundreds; }
 
@@ -553,7 +546,7 @@ namespace GyroScope.Data
         /// <summary>
         /// Pennies owed in change
         /// </summary>
-        public decimal ChangePennies
+        public int ChangePennies
         {
             get { return _changePennies; }
 
@@ -579,7 +572,7 @@ namespace GyroScope.Data
         /// <summary>
         /// Nickels owed in change
         /// </summary>
-        public decimal ChangeNickels
+        public int ChangeNickels
         {
             get { return _changeNickels; }
 
@@ -603,7 +596,7 @@ namespace GyroScope.Data
         /// <summary>
         /// Dimes owed in change
         /// </summary>
-        public decimal ChangeDimes
+        public int ChangeDimes
         {
             get { return _changeDimes; }
 
@@ -627,7 +620,7 @@ namespace GyroScope.Data
         /// <summary>
         /// Quarters owed in change
         /// </summary>
-        public decimal ChangeQuarters
+        public int ChangeQuarters
         {
             get { return _changeQuarters; }
 
@@ -652,7 +645,7 @@ namespace GyroScope.Data
         /// <summary>
         /// Half Dollars owed in change
         /// </summary>
-        public decimal ChangeHalfDollars
+        public int ChangeHalfDollars
         {
             get { return _changeHalfDollars; }
 
@@ -702,7 +695,7 @@ namespace GyroScope.Data
         /// <summary>
         /// One dollar bills owed in change
         /// </summary>
-        public decimal ChangeOnes
+        public int ChangeOnes
         {
             get { return _changeOnes; }
 
@@ -726,7 +719,7 @@ namespace GyroScope.Data
         /// <summary>
         /// Two dollar bills owed in change
         /// </summary>
-        public decimal ChangeTwos
+        public int ChangeTwos
         {
             get { return _changeTwos; }
 
@@ -750,7 +743,7 @@ namespace GyroScope.Data
         /// <summary>
         /// Five dollar bills owed in change
         /// </summary>
-        public decimal ChangeFives
+        public int ChangeFives
         {
             get { return _changeFives; }
 
@@ -774,7 +767,7 @@ namespace GyroScope.Data
         /// <summary>
         /// Ten dollar bills owed in change
         /// </summary>
-        public decimal ChangeTens
+        public int ChangeTens
         {
             get { return _changeTens; }
 
@@ -799,7 +792,7 @@ namespace GyroScope.Data
         /// <summary>
         /// Twenty dollar bills owed in change
         /// </summary>
-        public decimal ChangeTwenties
+        public int ChangeTwenties
         {
             get { return ChangeTwenties; }
 
@@ -823,7 +816,7 @@ namespace GyroScope.Data
         /// <summary>
         /// Fity dollar bills owed in change
         /// </summary>
-        public decimal ChangeFifties
+        public int ChangeFifties
         {
             get { return _changeFifties; }
 
@@ -847,7 +840,7 @@ namespace GyroScope.Data
         /// <summary>
         /// One hundred dollar bills owed in change
         /// </summary>
-        public decimal ChangeHundreds
+        public int ChangeHundreds
         {
             get { return _changeHundreds; }
 
@@ -1057,5 +1050,41 @@ namespace GyroScope.Data
             }            
         }
 
+        /// <summary>
+        /// Represents opening the drawer and changing currency, as well as printing the recipt
+        /// </summary>
+        public void FinalizeSale() 
+        {
+            CashDrawer.OpenDrawer();
+            if ((ChangeHundreds + CustomerHundreds) != 0) 
+            {
+                CashDrawer.Hundreds -= ChangeHundreds;
+                CashDrawer.Hundreds += CustomerHundreds;
+            }
+
+            if ((ChangeFifties + CustomerFifties) != 0)
+            {
+                CashDrawer.Fifties -= ChangeFifties;
+                CashDrawer.Fifties += CustomerFifties;
+            }
+
+            if ((ChangeTwenties + CustomerTwenties) != 0)
+            {
+                CashDrawer.Twenties -= ChangeTwenties;
+                CashDrawer.Twenties += CustomerTwenties;
+            }
+
+            if ((ChangeTens + CustomerTens) != 0)
+            {
+                CashDrawer.Tens -= ChangeTens;
+                CashDrawer.Tens += CustomerTens;
+            }
+
+            if ((ChangeFives + CustomerFives) != 0)
+            {
+                CashDrawer.Fives -= ChangeFives;
+                CashDrawer.Fives += CustomerFives;
+            }
+        }
     }
 }
