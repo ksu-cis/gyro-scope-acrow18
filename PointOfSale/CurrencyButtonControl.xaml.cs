@@ -35,7 +35,10 @@ namespace PointOfSale
         /// </summary>
         public static DependencyProperty IncomingCountProperty = DependencyProperty.Register("IncomingCount", typeof(int), typeof(CurrencyButtonControl));
 
-        public static readonly IncomingClickChangeEvent = EventManager.RegisterRoutedEvent("IncomingChangeClick", RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(CurrencyButtonControl));
+        /// <summary>
+        /// Click event for incoming change
+        /// </summary>
+        public static readonly RoutedEvent IncomingClickChangeEvent = EventManager.RegisterRoutedEvent("IncomingChangeClick", RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(CurrencyButtonControl));
 
         /// <summary>
         /// Number of denomination given back as change.
@@ -60,8 +63,8 @@ namespace PointOfSale
         /// </summary>
         public event RoutedEventHandler IncomingChangeClick 
         {
-            add { AddHandler(IncomingChangeClickEvent, value); }
-            remove { RemoveHandler(IncomingChangeClickEvent, value); }
+            add { AddHandler(IncomingClickChangeEvent, value); }
+            remove { RemoveHandler(IncomingClickChangeEvent, value); }
         }
 
 
@@ -78,11 +81,13 @@ namespace PointOfSale
                 {
                     case "plusButton":
                         IncomingCount++;
+                        IncomingCountLabel.Content = IncomingCount.ToString();
                         break;
 
                     case "minusButton":
                         if(IncomingCount > 0) 
                         IncomingCount--;
+                        IncomingCountLabel.Content = IncomingCount.ToString();
                         break;
                 }
             }
