@@ -1107,11 +1107,39 @@ namespace GyroScope.Data
                 OnPropertyChanged(nameof(CashDrawerOnes));
             }
 
+            if ((ChangeNickels + CustomerNickels) != 0)
+            {
+                CashDrawer.Nickels -= ChangeNickels;
+                CashDrawer.Nickels += CustomerNickels;
+                OnPropertyChanged(nameof(CashDrawerNickels));
+            }
+
+            if ((ChangeDimes + CustomerDimes) != 0)
+            {
+                CashDrawer.Dimes -= ChangeDimes;
+                CashDrawer.Dimes += CustomerDimes;
+                OnPropertyChanged(nameof(CashDrawerDimes));
+            }
+
+            if ((ChangeQuarters + CustomerQuarters) != 0)
+            {
+                CashDrawer.Quarters -= ChangeQuarters;
+                CashDrawer.Quarters += CustomerQuarters;
+                OnPropertyChanged(nameof(CashDrawerQuarters));
+            }
+
+            if ((ChangeHalfDollars + CustomerHalfDollars) != 0)
+            {
+                CashDrawer.HalfDollars -= ChangeHalfDollars;
+                CashDrawer.HalfDollars += CustomerHalfDollars;
+                OnPropertyChanged(nameof(CashDrawerHalfDollars));
+            }
+
             if ((ChangeDollars + CustomerDollars) != 0)
             {
                 CashDrawer.Ones -= ChangeDollars;
                 CashDrawer.Ones += CustomerDollars;
-                OnPropertyChanged(nameof(CashDrawerOnes));
+                OnPropertyChanged(nameof(CashDrawerDollarsInCents));
             }
         }
     }
