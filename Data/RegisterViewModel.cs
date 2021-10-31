@@ -1048,9 +1048,13 @@ namespace GyroScope.Data
                 ChangeFives = 0;
                 ChangeTwos = 0;
                 ChangeOnes = 0;
-                Dollars
-            }
-            
+                ChangeDollars = 0;
+                ChangeHalfDollars = 0;
+                ChangeQuarters = 0;
+                ChangeDimes = 0;
+                ChangeNickels = 0;
+                ChangePennies = 0;
+            }            
         }
 
     }
