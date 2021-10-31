@@ -31,6 +31,7 @@ namespace GyroScope.Data
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
+        //Beginning of cash drawer properties
 
         /// <summary>
         /// Pennies in cash register
@@ -63,32 +64,46 @@ namespace GyroScope.Data
         public decimal CashDrawerDollarsInCents => CashDrawer.Dollars;
 
         /// <summary>
-        /// Dimes in cash register
+        /// Ones in cash register
         /// </summary>
         public decimal CashDrawerOnes => CashDrawer.Ones;
 
         /// <summary>
-        /// Dimes in cash register
+        /// Twos in cash register
         /// </summary>
         public decimal CashDrawerTwos => CashDrawer.Twos;
 
         /// <summary>
-        /// Dimes in cash register
+        /// Fives in cash register
         /// </summary>
         public decimal CashDrawerFives => CashDrawer.Fives;
 
         /// <summary>
-        /// Dimes in cash register
+        /// Tens in cash register
         /// </summary>
         public decimal CashDrawerTens => CashDrawer.Tens;
 
         /// <summary>
-        /// Dimes in cash register
+        /// Twenties in cash register
         /// </summary>
         public decimal CashDrawerTwenties => CashDrawer.Twenties;
 
+        /// <summary>
+        /// Fifties in cash register
+        /// </summary>
+        public decimal CashDrawerFifties => CashDrawer.Fifties;
 
+        /// <summary>
+        /// Hundreds in cash register
+        /// </summary>
+        public decimal CashDrawerHundreds => CashDrawer.Hundreds;
 
+        /// <summary>
+        /// Total of Cash drawer
+        /// </summary>
+        public int Total { get; }
+
+        //End of cashdrawer properties
 
         /// <summary>
         /// backing field for pennies
