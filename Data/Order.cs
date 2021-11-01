@@ -155,7 +155,7 @@ namespace GyroScope.Data
 
 
         /// <summary>
-        /// Calculates the Total
+        /// Calculates the Total (round with Math.Floor)
         /// </summary>
         public decimal Total => Subtotal + Tax;
 

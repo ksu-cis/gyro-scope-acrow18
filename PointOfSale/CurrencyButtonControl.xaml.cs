@@ -20,20 +20,16 @@ namespace PointOfSale
     /// </summary>
     public partial class CurrencyButtonControl : UserControl
     {
-        public CurrencyButtonControl()
-        {
-            InitializeComponent();
-        }
-
+        
         /// <summary>
         /// Dependency property representing amount to give as change
         /// </summary>
-        public static readonly DependencyProperty OutgoingCountProperty = DependencyProperty.Register("OutgoingCount", typeof(int), typeof(CurrencyButtonControl), new FrameworkPropertyMetadata(0, FrameworkPropertyMetadataOptions.AffectsRender | FrameworkPropertyMetadataOptions.AffectsMeasure));
+        public static DependencyProperty OutgoingCountProperty = DependencyProperty.Register("OutgoingCount", typeof(int), typeof(CurrencyButtonControl), new FrameworkPropertyMetadata(0, FrameworkPropertyMetadataOptions.AffectsRender | FrameworkPropertyMetadataOptions.AffectsMeasure));
 
         /// <summary>
         /// Dependency property representing amount coming from customer
         /// </summary>
-        public static readonly DependencyProperty IncomingCountProperty = DependencyProperty.Register("IncomingCount", typeof(int), typeof(CurrencyButtonControl), new FrameworkPropertyMetadata(0, FrameworkPropertyMetadataOptions.AffectsRender|FrameworkPropertyMetadataOptions.AffectsMeasure| FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
+        public static DependencyProperty IncomingCountProperty = DependencyProperty.Register("IncomingCount", typeof(int), typeof(CurrencyButtonControl), new FrameworkPropertyMetadata(0, FrameworkPropertyMetadataOptions.AffectsRender|FrameworkPropertyMetadataOptions.AffectsMeasure| FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
 
         /// <summary>
         /// Click event for incoming change
@@ -89,6 +85,18 @@ namespace PointOfSale
                         break;
                 }
             }
+
+            e.Handled = true;
+        }
+
+        /// <summary>
+        /// Default constructor
+        /// </summary>
+        public CurrencyButtonControl()
+        {
+            InitializeComponent();
+            Button button = new Button();
+            button.Click += HandleIncomingClick;
         }
     }
 }

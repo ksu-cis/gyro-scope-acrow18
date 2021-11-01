@@ -134,22 +134,23 @@ namespace GyroScope.Data
         /// <summary>
         /// backing field for incoming
         /// </summary>
-        public decimal _incoming;
+        public decimal _customer;
 
         /// <summary>
         /// Represents how much the customer has paid so far
         /// </summary>
-        public decimal Incoming 
+        public decimal Customer
         {
-            get { return _incoming; }
+            get { return _customer; }
             set 
             {
-                if (_incoming != value) 
+                if (_customer != value) 
                 {
-                    _incoming = value;
-                    OnPropertyChanged(nameof(Incoming));
+                    _customer = value;
+                    OnPropertyChanged(nameof(Customer));
                     OnPropertyChanged(nameof(AmountDue));
                     OnPropertyChanged(nameof(ChangeOwed));
+                    MakeChange();
                 }
             }
         }
@@ -157,20 +158,20 @@ namespace GyroScope.Data
         /// <summary>
         /// backing field for outgoing
         /// </summary>
-        public decimal _outgoing;
+        public decimal _change;
 
         /// <summary>
         /// Represents how much the customer has paid so far
         /// </summary>
-        public decimal Outgoing
+        public decimal Change
         {
-            get { return _outgoing; }
+            get { return _change; }
             set
             {
-                if (_outgoing != value)
+                if (_change != value)
                 {
-                    _outgoing = value;
-                    OnPropertyChanged(nameof(Outgoing));
+                    _change = value;
+                    OnPropertyChanged(nameof(Change));
                     OnPropertyChanged(nameof(AmountDue));
                     OnPropertyChanged(nameof(ChangeOwed));
                 }
@@ -184,14 +185,14 @@ namespace GyroScope.Data
         {
             get
             {
-                if (Total < Incoming)
+                if (Total < Customer)
                 {
                     return 0M;
                 }
 
                 else 
                 {
-                    return Incoming - Total;
+                    return Total - Customer;
                 }
             }
         }
@@ -204,14 +205,14 @@ namespace GyroScope.Data
         {
             get
             {
-                if (Incoming < Total)
+                if (Customer < Total)
                 {
                     return 0M;
                 }
 
                 else
                 {
-                    return Incoming - Total;
+                    return Customer - Total;
                 }
             }
         }
@@ -237,8 +238,7 @@ namespace GyroScope.Data
                 {
                     _customerPennies = (int)value;
                     OnPropertyChanged(nameof(CustomerPennies));
-                    OnPropertyChanged(nameof(AmountDue));
-                    OnPropertyChanged(nameof(ChangeOwed));
+                    Customer += (value - _customerPennies) * 0.01M;
                 }
             }
         }
@@ -529,8 +529,7 @@ namespace GyroScope.Data
                 {
                     _customerHundreds = (int)value;
                     OnPropertyChanged(nameof(CustomerHundreds));
-                    OnPropertyChanged(nameof(AmountDue));
-                    OnPropertyChanged(nameof(ChangeOwed));
+                    Customer += (value - _customerHundreds) * 100M;
                 }
             }
         }
@@ -868,9 +867,9 @@ namespace GyroScope.Data
         /// </summary>
         public void MakeChange() 
         {
-            if (Incoming < Total)
+            if (Customer < Total)
             {
-                int change = (int)((Incoming - Total) * 100);
+                int change = (int)((Customer - Total) * 100);
 
                 int check = change / 10000;
 
