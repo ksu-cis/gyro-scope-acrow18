@@ -124,6 +124,6 @@ namespace GyroScope.Data.Sides
         /// <summary>
         /// Same name as ToString
         /// </summary>
-        public override string Name { get => $"{ Size} Sagittarius Greek Salad" }
+        public override string Name { get => $"{ Size} Sagittarius Greek Salad"; }
     }
 }
