@@ -27,6 +27,11 @@ namespace PointOfSale
         }
 
         /// <summary>
+        /// Holds the current order
+        /// </summary>
+        public Order order => (Order)DataContext;
+
+        /// <summary>
         /// Checks the type of payment
         /// </summary>
         /// <param name="sender">sender</param>
@@ -80,10 +85,11 @@ namespace PointOfSale
         /// <param name="e">e</param>
         private void CashButton_Click(object sender, RoutedEventArgs e)
         {
-            dynamic customization;
             MainWindow mainWindow = FindMainWindow();
-            customization = new CashPaymentProcessing();
-            mainWindow.menuItemSelection.Child = customization;
+            var temp = new CashPaymentProcessing();
+            var tempRVM = new RegisterViewModel(order);
+            temp.DataContext = tempRVM;
+            mainWindow.menuItemSelection.Child = temp;
         }
 
         /// <summary>
@@ -99,7 +105,7 @@ namespace PointOfSale
             {
                 MessageBox.Show("This card has been approved.");
                 //print recipt
-                Order newOrder = new Order();
+                mainWindow = FindMainWindow();
             }
 
             else if (RoundRegister.CardReader.RunCard(total) == RoundRegister.CardTransactionResult.Declined)
