@@ -843,16 +843,15 @@ namespace GyroScope.Data
         /// </summary>
         public void MakeChange() 
         {
-            if (Customer < Total)
+            if (Customer > Total)
             {
                 int change = (int)((Customer - Total) * 100);
 
-                int check = change / 10000;
-
-                if (CashDrawerHundreds > check)
+                int count = change / 10000;
+                if (CashDrawerHundreds > count)
                 {
-                    change -= check * 10000;
-                    ChangeHundreds = check;
+                    change -= count * 10000;
+                    ChangeHundreds = count;
                 }
 
                 else
@@ -861,11 +860,11 @@ namespace GyroScope.Data
                     ChangeHundreds = CashDrawerHundreds;
                 }
 
-
-                if (CashDrawerFifties > check)
+                count = change / 5000;
+                if (CashDrawerFifties >= count)
                 {
-                    change -= check * 5000;
-                    ChangeFifties = check;
+                    change -= count * 5000;
+                    ChangeFifties = count;
                 }
 
                 else
@@ -874,10 +873,11 @@ namespace GyroScope.Data
                     ChangeFifties = CashDrawerFifties;
                 }
 
-                if (CashDrawerTwenties > check)
+                count = change / 2000;
+                if (CashDrawerTwenties >= count)
                 {
-                    change -= check * 2000;
-                    ChangeTwenties = check;
+                    change -= count * 2000;
+                    ChangeTwenties = count;
                 }
 
                 else
@@ -886,10 +886,11 @@ namespace GyroScope.Data
                     ChangeTwenties = CashDrawerTwenties;
                 }
 
-                if (CashDrawerTens > check)
+                count = change / 1000;
+                if (CashDrawerTens >= count)
                 {
-                    change -= check * 1000;
-                    ChangeTens = check;
+                    change -= count * 1000;
+                    ChangeTens = count;
                 }
 
                 else
@@ -898,10 +899,11 @@ namespace GyroScope.Data
                     ChangeTens = CashDrawerTens;
                 }
 
-                if (CashDrawerFives > check)
+                count = change / 500;
+                if (CashDrawerFives >= count)
                 {
-                    change -= check * 500;
-                    ChangeFives = check;
+                    change -= count * 500;
+                    ChangeFives = count;
                 }
 
                 else
@@ -910,10 +912,11 @@ namespace GyroScope.Data
                     ChangeFives = CashDrawerFives;
                 }
 
-                if (CashDrawerTwos > check)
+                count = change / 200;
+                if (CashDrawerTwos >= count)
                 {
-                    change -= check * 200;
-                    ChangeTwenties = check;
+                    change -= count * 200;
+                    ChangeTwenties = count;
                 }
 
                 else
@@ -922,10 +925,11 @@ namespace GyroScope.Data
                     ChangeTwos = CashDrawerTwos;
                 }
 
-                if (CashDrawerOnes > check)
+                count = change / 100;
+                if (CashDrawerOnes >= count)
                 {
-                    change -= check * 100;
-                    ChangeOnes = check;
+                    change -= count * 100;
+                    ChangeOnes = count;
                 }
 
                 else
@@ -934,20 +938,19 @@ namespace GyroScope.Data
                     ChangeOnes = CashDrawerOnes;
 
 
-                    if (CashDrawerDollarsInCents >= check)
+                    if (CashDrawerDollarsInCents >= count)
                     {
-                        change -= (check - ChangeOnes) * 100;
-                        ChangeDollars = check;
+                        change -= (count - ChangeOnes) * 100;
+                        ChangeDollars = count;
                     }
                 }
 
 
-                check = change / 50;
-
-                if (CashDrawerHalfDollars >= check)
+                count = change / 50;
+                if (CashDrawerHalfDollars >= count)
                 {
-                    change -= check * 50;
-                    ChangeHalfDollars = check;
+                    change -= count * 50;
+                    ChangeHalfDollars = count;
                 }
 
                 else
@@ -956,10 +959,11 @@ namespace GyroScope.Data
                     ChangeHalfDollars = CashDrawerHalfDollars;
                 }
 
-                if (CashDrawerQuarters >= check)
+                count = change / 25;
+                if (CashDrawerQuarters >= count)
                 {
-                    change -= check * 25;
-                    ChangeQuarters = check;
+                    change -= count * 25;
+                    ChangeQuarters = count;
                 }
 
                 else
@@ -968,11 +972,11 @@ namespace GyroScope.Data
                     ChangeQuarters = CashDrawerQuarters;
                 }
 
-
-                if (CashDrawerDimes >= check)
+                count = change / 10;
+                if (CashDrawerDimes >= count)
                 {
-                    change -= check * 10;
-                    ChangeDimes = check;
+                    change -= count * 10;
+                    ChangeDimes = count;
                 }
 
                 else
@@ -981,10 +985,11 @@ namespace GyroScope.Data
                     ChangeDimes = CashDrawerDimes;
                 }
 
-                if (CashDrawerNickels >= check)
+                count = change / 5;
+                if (CashDrawerNickels >= count)
                 {
-                    change -= check * 5;
-                    ChangeQuarters = check;
+                    change -= count * 5;
+                    ChangeQuarters = count;
                 }
 
                 else
@@ -993,8 +998,8 @@ namespace GyroScope.Data
                     ChangeNickels = CashDrawerNickels;
                 }
 
-                check = change;
-                if (CashDrawerPennies >= check)
+                count = change;
+                if (CashDrawerPennies >= count)
                 {
                     ChangePennies = change;
                 }
