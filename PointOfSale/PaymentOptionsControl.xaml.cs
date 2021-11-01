@@ -26,8 +26,6 @@ namespace PointOfSale
             InitializeComponent();
         }
 
-        public string paymentMethod = "";
-
         /// <summary>
         /// Checks the type of payment
         /// </summary>

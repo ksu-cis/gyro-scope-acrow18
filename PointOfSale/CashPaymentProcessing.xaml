@@ -8,8 +8,8 @@
              d:DesignHeight="825" d:DesignWidth="1100">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="2*"/>
-            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="1.5*"/>
+            <ColumnDefinition Width="2.5*"/>
             <ColumnDefinition Width="2*"/>
             <ColumnDefinition Width="2*"/>
             <ColumnDefinition Width="2*"/>
@@ -78,20 +78,20 @@
       
 
         <!-- Top labels -->
-        <Label Content="From Customer" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.Row="0" FontSize="20"/>
-        <Label Content="Give As Change" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2" Grid.Row="0" FontSize="20"/>
-        <Label Content="From Customer" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="4" Grid.Row="0" FontSize="20"/>
-        <Label Content="Give As Change" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="5" Grid.Row="0" FontSize="20"/>
-        <Button Content="Return to Order" HorizontalAlignment="Center" Grid.Column="6" Grid.Row="0" FontSize="20" Height="40" Click="ReturnToOrder_Click"/>
+        <Label Content="From Customer" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Column="1" Grid.Row="0" FontSize="20"/>
+        <Label Content="Give As Change" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Column="2" Grid.Row="0" FontSize="20"/>
+        <Label Content="From Customer" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Column="4" Grid.Row="0" FontSize="20"/>
+        <Label Content="Give As Change" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Column="5" Grid.Row="0" FontSize="20"/>
+        <Button Content="Return to Order" HorizontalAlignment="Right" Grid.Column="6" Grid.Row="0" FontSize="20" Height="40" Click="ReturnToOrder_Click"/>
         
         <!-- Bottom labels-->
         <Label Content="Total Sale" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.Row="8" FontSize="20"/>
-        <Label Content="Total Box" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.Row="8" FontSize="25"/>
+        <Label Content="{Binding Path=Total}" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Grid.Row="8" FontSize="25"/>
         <Label Content="Amount Due" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2" Grid.Row="8" FontSize="25"/>
         <Label Content="{Binding Path=AmountDue}" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="3" Grid.Row="8" FontSize="35" Background="DarkRed"/>
         <Label Content="Change Owed" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="4" Grid.Row="8" FontSize="20"/>
         <Label Content="{Binding Path=ChangeOwed}" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="5" Grid.Row="8" FontSize="35" Background="Green"/>
-        <Button Content="Finalize Sale" HorizontalAlignment="Center" Grid.Column="6" Grid.Row="8" FontSize="25" Height="40" Click="FinalizeSale_Click"/>
+        <Button Content="Finalize Sale" HorizontalAlignment="Right" Grid.Column="6" Grid.Row="8" FontSize="25" Height="40" Click="FinalizeSale_Click"/>
 
     </Grid>
 </UserControl>

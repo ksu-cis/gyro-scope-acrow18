@@ -39,7 +39,7 @@ namespace GyroScope.Data.Treats
         /// <summary>
         /// Name of Halveh Cake
         /// </summary>
-        public override string Name { get; } = "";
+        public override string Name { get; } = "Cancer Halva Cake";
 
         /// <summary>
         /// Overridden ToString

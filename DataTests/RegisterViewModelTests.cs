@@ -14,17 +14,6 @@ namespace GyroScope.DataTests
     /// </summary>
     public class RegisterViewModelTests
     {
-        [Theory]
-        [InlineData(new int[] { 10, 10, 10 }, new int[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 })] //10x(Virgo, Scorpio, Leo) (190.20)
-        public void IsChangeCorrect(int[] items, int[] expectedChange)
-        {
-            RoundRegister.CashDrawer.ResetDrawer();
-            var order = new Order();
-            for (int i = 0; i < items[0]; i++) order.Add(new VirgoClassicGyro());
-            for (int i = 0; i < items[1]; i++) order.Add(new ScorpioSpicyGyro());
-            for (int i = 0; i < items[2]; i++) order.Add(new LeoLambGyro());
-            var viewModel = new RegisterViewModel(order);
-            viewModel.CustomerHundreds = 1;
-        }
+
     }
 }

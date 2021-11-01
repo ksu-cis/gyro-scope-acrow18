@@ -72,7 +72,8 @@ namespace PointOfSale
         /// <param name="e">e</param>
         private void FinalizeSale_Click(object sender, RoutedEventArgs e)
         {
-            
+            RegisterViewModel RVM = new RegisterViewModel(Order);
+            RVM.FinalizeSale();
         }
 
         /// <summary>

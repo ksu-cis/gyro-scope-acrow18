@@ -37,7 +37,7 @@ namespace GyroScope.Data
         /// <summary>
         /// Backing field to hold the order
         /// </summary>
-        private Order _order;
+        private readonly Order _order;
 
         /// <summary>
         /// The order the viewmodel is based on
@@ -50,7 +50,6 @@ namespace GyroScope.Data
         public RegisterViewModel(Order order) 
         {
             this._order = order;
-            //_order.PropertyChanged += OnOrderChanged();
         }
 
         /// <summary>
@@ -1165,7 +1164,7 @@ namespace GyroScope.Data
             RecieptPrinter.PrintLine("Subtotal: $" + Order.Subtotal.ToString());
             RecieptPrinter.PrintLine("Tax: $" + Order.Tax.ToString());
             RecieptPrinter.PrintLine("Total: $" + Order.Total.ToString());
-            RecieptPrinter.PrintLine("Payment method: " + "TypeofPayment from PaymentOptionsControl");
+            RecieptPrinter.PrintLine("Payment method: ");
             RecieptPrinter.PrintLine("Changed owed is: " + ChangeOwed);
         }
 

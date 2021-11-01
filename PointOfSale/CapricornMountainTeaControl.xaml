@@ -26,6 +26,6 @@
         </Grid.RowDefinitions>
         <Label Content ="Capricorn Mountain Tea" HorizontalAlignment="Left" Width="137" Grid.Row="0" Grid.Column="1"></Label>
         <Label Content ="Additives" HorizontalAlignment="Center" FontSize="40" Width="174" Grid.Column="0" Grid.Row="0"/>
-        <CheckBox Content="Honey" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <CheckBox Content="Honey" IsChecked="{Binding Path=Honey}" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
     </Grid>
 </UserControl>
