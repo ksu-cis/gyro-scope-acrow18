@@ -85,11 +85,24 @@ namespace PointOfSale
         /// <param name="e">e</param>
         private void CashButton_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow mainWindow = FindMainWindow();
-            var temp = new CashPaymentProcessing();
-            var tempRVM = new RegisterViewModel(order);
-            temp.DataContext = tempRVM;
-            mainWindow.menuItemSelection.Child = temp;
+            DependencyObject parent = this;
+
+            do
+            {
+                parent = LogicalTreeHelper.GetParent(parent);
+            }
+
+            while (!(parent is null || parent is MainWindow));
+
+
+            if (parent is MainWindow) 
+            {
+                MainWindow mainWindow = (MainWindow)parent;
+                var temp = new CashPaymentProcessing();
+                var tempRVM = new RegisterViewModel(order);
+                temp.DataContext = tempRVM;
+                mainWindow.menuItemSelection.Child = temp;
+            }
         }
 
         /// <summary>
