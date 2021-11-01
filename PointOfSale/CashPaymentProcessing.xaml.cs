@@ -56,7 +56,10 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void ReturnToOrder_Click(object sender, RoutedEventArgs e)
         {
-
+            dynamic customization;
+            MainWindow mainWindow = FindMainWindow();
+            customization = new MenuItemSelectionControl();
+            mainWindow.menuItemSelection.Child = customization;
         }
 
         /// <summary>
@@ -67,6 +70,25 @@ namespace PointOfSale
         private void FinalizeSale_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        /// <summary>
+        /// Finds the main window
+        /// </summary>
+        /// <returns>A main window</returns>
+        public MainWindow FindMainWindow()
+        {
+
+            DependencyObject parent = this;
+
+            do
+            {
+                parent = LogicalTreeHelper.GetParent(parent);
+            }
+
+            while (!(parent is null || parent is MainWindow));
+            MainWindow mainWindow = (MainWindow)parent;
+            return mainWindow;
         }
     }
 }

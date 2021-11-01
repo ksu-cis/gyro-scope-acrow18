@@ -794,7 +794,7 @@ namespace GyroScope.Data
         /// </summary>
         public int ChangeTwenties
         {
-            get { return ChangeTwenties; }
+            get { return _changeTwenties; }
 
             set
             {
