@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:PointOfSale"
+             xmlns:local="clr-namespace:PointOfSale" xmlns:data="clr-namespace:GyroScope.Data;assembly=GyroScope.Data" d:DataContext="{d:DesignInstance Type=data:RegisterViewModel}"
              mc:Ignorable="d" 
              d:DesignHeight="825" d:DesignWidth="1100">
     <Grid>
@@ -32,49 +32,49 @@
         
        
         <Label Content="$50" Grid.Column ="0" Grid.Row="2" FontSize="50" HorizontalAlignment="Center" Background="ForestGreen"/>
-        <local:CurrencyButtonControl x:Name="fiftyButton" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2"/>
+        <local:CurrencyButtonControl x:Name="fiftyButton" OutgoingCount="{Binding Path=ChangeFifties}" IncomingCount="{Binding Path=CustomerFifties}" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2"/>
 
 
         <Label Content="$20" Grid.Column="0" Grid.Row="3" FontSize="50" HorizontalAlignment="Center" Background="ForestGreen"/>
-        <local:CurrencyButtonControl x:Name="twentyButton" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="2"/>
+        <local:CurrencyButtonControl x:Name="twentyButton" OutgoingCount="{Binding Path=ChangeTwenties}" IncomingCount="{Binding Path=CustomerTwenties}" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="2"/>
         
         
         <Label Content="$10" Grid.Column="0" Grid.Row="4" FontSize="50" HorizontalAlignment="Center" Background="ForestGreen"/>
-        <local:CurrencyButtonControl x:Name="tenButton" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="2"/>
+        <local:CurrencyButtonControl x:Name="tenButton" OutgoingCount="{Binding Path=ChangeTens}" IncomingCount="{Binding Path=CustomerTens}" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="2"/>
         
         
         <Label Content="$5" Grid.Column="0" Grid.Row="5" FontSize="50" HorizontalAlignment="Center" Background="ForestGreen"/>
-        <local:CurrencyButtonControl x:Name="fiveButton" Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="2"/>
+        <local:CurrencyButtonControl x:Name="fiveButton" OutgoingCount="{Binding Path=ChangeFives}" IncomingCount="{Binding Path=CustomerFives}" Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="2"/>
         
         
         <Label Content="$2" Grid.Column="0" Grid.Row="6" FontSize="50" HorizontalAlignment="Center" Background="ForestGreen"/>
-        <local:CurrencyButtonControl x:Name="twoButton" Grid.Column="1" Grid.Row="6" Grid.ColumnSpan="2"/>
+        <local:CurrencyButtonControl x:Name="twoButton" OutgoingCount="{Binding Path=ChangeTwos}" IncomingCount="{Binding Path=CustomerTwos}" Grid.Column="1" Grid.Row="6" Grid.ColumnSpan="2"/>
         
         
         <Label Content="$1" Grid.Column="0" Grid.Row="7" FontSize="50" HorizontalAlignment="Center" Background="ForestGreen"/>
-        <local:CurrencyButtonControl x:Name="oneButton" Grid.Column="1" Grid.Row="7" Grid.ColumnSpan="2"/>
+        <local:CurrencyButtonControl x:Name="oneButton" OutgoingCount="{Binding Path=ChangeOnes}" IncomingCount="{Binding Path=CustomerOnes}" Grid.Column="1" Grid.Row="7" Grid.ColumnSpan="2"/>
         
         <Label Content="$1" Grid.Column="3" Grid.Row="2" FontSize="50" HorizontalAlignment="Center" Background="Goldenrod"/>
-        <local:CurrencyButtonControl x:Name="oneCentsButton" Grid.Column="4" Grid.Row="2" Grid.ColumnSpan="2"/>
+        <local:CurrencyButtonControl x:Name="oneCentsButton" OutgoingCount="{Binding Path=ChangeDollars}" IncomingCount="{Binding Path=CustomerDollars}" Grid.Column="4" Grid.Row="2" Grid.ColumnSpan="2"/>
         
         
         <Label Content="50¢" Grid.Column="3" Grid.Row="3" FontSize="50" HorizontalAlignment="Center" Background="Goldenrod"/>
-        <local:CurrencyButtonControl x:Name="fiftyCentsButton" Grid.Column="4" Grid.Row="3" Grid.ColumnSpan="2"/>
+        <local:CurrencyButtonControl x:Name="fiftyCentsButton" OutgoingCount="{Binding Path=ChangeHalfDollars}" IncomingCount="{Binding Path=CustomerHalfDollars}" Grid.Column="4" Grid.Row="3" Grid.ColumnSpan="2"/>
         
         
         <Label Content="25¢" Grid.Column="3" Grid.Row="4" FontSize="50" HorizontalAlignment="Center" Background="Goldenrod"/>
-        <local:CurrencyButtonControl x:Name="twentyfiveCentsButton" Grid.Column="4" Grid.Row="4" Grid.ColumnSpan="2"/>
+        <local:CurrencyButtonControl x:Name="twentyfiveCentsButton" OutgoingCount="{Binding Path=ChangeQuarters}" IncomingCount="{Binding Path=CustomerQuarters}" Grid.Column="4" Grid.Row="4" Grid.ColumnSpan="2"/>
         
         
         <Label Content="10¢" Grid.Column="3" Grid.Row="5" FontSize="50" HorizontalAlignment="Center" Background="Goldenrod"/>
-        <local:CurrencyButtonControl x:Name="tenCentsButton" Grid.Column="4" Grid.Row="5" Grid.ColumnSpan="2"/>
+        <local:CurrencyButtonControl x:Name="tenCentsButton" OutgoingCount="{Binding Path=ChangeDimes}" IncomingCount="{Binding Path=CustomerDimes}" Grid.Column="4" Grid.Row="5" Grid.ColumnSpan="2"/>
         
         <Label Content="5¢" Grid.Column="3" Grid.Row="6" FontSize="50" HorizontalAlignment="Center" Background="Goldenrod"/>
-        <local:CurrencyButtonControl x:Name="fiveCentsButton" Grid.Column="4" Grid.Row="6" Grid.ColumnSpan="2"/>
+        <local:CurrencyButtonControl x:Name="fiveCentsButton" OutgoingCount="{Binding Path=ChangeNickels}" IncomingCount="{Binding Path=CustomerNickels}" Grid.Column="4" Grid.Row="6" Grid.ColumnSpan="2"/>
         
 
         <Label Content="1¢" Grid.Column="3" Grid.Row="7" FontSize="50" HorizontalAlignment="Center" Background="Goldenrod"/>
-        <local:CurrencyButtonControl x:Name="oneCentButton" Grid.Column="4" Grid.Row="7" Grid.ColumnSpan="2"/>
+        <local:CurrencyButtonControl x:Name="oneCentButton" OutgoingCount="{Binding Path=ChangePennies}" IncomingCount="{Binding Path=CustomerPennies}" Grid.Column="4" Grid.Row="7" Grid.ColumnSpan="2"/>
       
 
         <!-- Top labels -->
