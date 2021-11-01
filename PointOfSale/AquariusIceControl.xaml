@@ -48,7 +48,7 @@
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
         <Label Content ="Flavors" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" FontSize="40"/>
-        <ListBox Grid.ColumnSpan="1" Grid.RowSpan="3" ItemsSource="{Binding Source = {StaticResource flavors}}" SelectedItem="{Binding Path=Flavors}" Background="Transparent" BorderBrush="Transparent" Margin="0,45,0,58"/>
+        <ListBox Grid.ColumnSpan="1" Grid.RowSpan="3" ItemsSource="{Binding Source = {StaticResource flavors}}" SelectedItem="{Binding Path=Flavor}" Background="Transparent" BorderBrush="Transparent" Margin="0,45,0,58"/>
         <Label Content ="Size" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" FontSize="40"/>
         <ListBox Grid.ColumnSpan="1" Grid.RowSpan="1" Grid.Row="1" Grid.Column="1" ItemsSource="{Binding Source = {StaticResource size}}" SelectedItem="{Binding Path= Size}" Background="Transparent" BorderBrush="Transparent" HorizontalAlignment="Center"/>
 

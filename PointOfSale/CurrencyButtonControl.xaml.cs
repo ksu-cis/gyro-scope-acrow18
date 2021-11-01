@@ -28,12 +28,12 @@ namespace PointOfSale
         /// <summary>
         /// Dependency property representing amount to give as change
         /// </summary>
-        public static DependencyProperty OutgoingCountProperty = DependencyProperty.Register("OutgoingCount", typeof(int), typeof(CurrencyButtonControl));
+        public static DependencyProperty OutgoingCountProperty = DependencyProperty.Register("OutgoingCount", typeof(int), typeof(CurrencyButtonControl), new FrameworkPropertyMetadata(0, FrameworkPropertyMetadataOptions.AffectsRender | FrameworkPropertyMetadataOptions.AffectsMeasure);
 
         /// <summary>
         /// Dependency property representing amount coming from customer
         /// </summary>
-        public static DependencyProperty IncomingCountProperty = DependencyProperty.Register("IncomingCount", typeof(int), typeof(CurrencyButtonControl));
+        public static DependencyProperty IncomingCountProperty = DependencyProperty.Register("IncomingCount", typeof(int), typeof(CurrencyButtonControl), new FrameworkPropertyMetadata(0, FrameworkPropertyMetadataOptions.AffectsRender|FrameworkPropertyMetadataOptions.AffectsMeasure| FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
 
         /// <summary>
         /// Click event for incoming change
@@ -81,13 +81,11 @@ namespace PointOfSale
                 {
                     case "plusButton":
                         IncomingCount++;
-                        IncomingCountLabel.Content = IncomingCount.ToString();
                         break;
 
                     case "minusButton":
                         if(IncomingCount > 0) 
                         IncomingCount--;
-                        IncomingCountLabel.Content = IncomingCount.ToString();
                         break;
                 }
             }
