@@ -172,7 +172,6 @@ namespace GyroScope.Data
                 {
                     _change = value;
                     OnPropertyChanged(nameof(Change));
-                    OnPropertyChanged(nameof(AmountDue));
                     OnPropertyChanged(nameof(ChangeOwed));
                 }
             }
@@ -261,7 +260,7 @@ namespace GyroScope.Data
                 {
                     _customerNickels = (int)value;
                     OnPropertyChanged(nameof(CustomerNickels));
-                    Customer += (value - _customerPennies) * 0.05M;
+                    Customer += (value - _customerNickels) * 0.05M;
                 }
             }
         }
@@ -284,8 +283,7 @@ namespace GyroScope.Data
                 {
                     _customerDimes = (int)value;
                     OnPropertyChanged(nameof(CustomerDimes));
-                    OnPropertyChanged(nameof(AmountDue));
-                    OnPropertyChanged(nameof(ChangeOwed));
+                    Customer += (value - _customerDimes) * 0.10M;
                 }
             }
         }
@@ -308,8 +306,7 @@ namespace GyroScope.Data
                 {
                     _customerQuarters = (int)value;
                     OnPropertyChanged(nameof(CustomerQuarters));
-                    OnPropertyChanged(nameof(AmountDue));
-                    OnPropertyChanged(nameof(ChangeOwed));
+                    Customer += (value - _customerQuarters) * 0.25M;
                 }
             }
         }
@@ -333,7 +330,7 @@ namespace GyroScope.Data
                 {
                     _customerHalfDollars = (int)value;
                     OnPropertyChanged(nameof(CustomerHalfDollars));
-                    Customer += (value - _customerHalfDollars) * 100M;
+                    Customer += (value - _customerHalfDollars) * .50M;
                 }
             }
         }
@@ -546,8 +543,7 @@ namespace GyroScope.Data
                 {
                     _changePennies = (int)value;
                     OnPropertyChanged(nameof(ChangePennies));
-                    OnPropertyChanged(nameof(AmountDue));
-                    OnPropertyChanged(nameof(ChangeOwed));
+                    Change += (value - _changePennies) * 0.01M;
                 }
             }
         }
@@ -572,8 +568,7 @@ namespace GyroScope.Data
                 {
                     _changeNickels = (int)value;
                     OnPropertyChanged(nameof(ChangeNickels));
-                    OnPropertyChanged(nameof(AmountDue));
-                    OnPropertyChanged(nameof(ChangeOwed));
+                    Change += (value - _changeNickels) * 0.05M;
                 }
             }
         }
@@ -596,8 +591,7 @@ namespace GyroScope.Data
                 {
                     _changeDimes = (int)value;
                     OnPropertyChanged(nameof(ChangeDimes));
-                    OnPropertyChanged(nameof(AmountDue));
-                    OnPropertyChanged(nameof(ChangeOwed));
+                    Change += (value - _changeDimes) * 0.10M;
                 }
             }
         }
@@ -620,8 +614,7 @@ namespace GyroScope.Data
                 {
                     _changeQuarters = (int)value;
                     OnPropertyChanged(nameof(ChangeQuarters));
-                    OnPropertyChanged(nameof(AmountDue));
-                    OnPropertyChanged(nameof(ChangeOwed));
+                    Change += (value - _changeQuarters) * 0.25M;
                 }
             }
         }
@@ -645,8 +638,7 @@ namespace GyroScope.Data
                 {
                     _changeHalfDollars = (int)value;
                     OnPropertyChanged(nameof(ChangeHalfDollars));
-                    OnPropertyChanged(nameof(AmountDue));
-                    OnPropertyChanged(nameof(ChangeOwed));
+                    Change += (value - _changeHalfDollars) * 0.50M;
                 }
             }
         }
@@ -670,8 +662,8 @@ namespace GyroScope.Data
                 {
                     _changeDollars = (int)value;
                     OnPropertyChanged(nameof(ChangeDollars));
-                    OnPropertyChanged(nameof(AmountDue));
-                    OnPropertyChanged(nameof(ChangeOwed));
+                    Change += (value - _changeDollars) * 1.00M;
+
                 }
             }
         }
@@ -695,8 +687,7 @@ namespace GyroScope.Data
                 {
                     _changeOnes = (int)value;
                     OnPropertyChanged(nameof(ChangeOnes));
-                    OnPropertyChanged(nameof(AmountDue));
-                    OnPropertyChanged(nameof(ChangeOwed));
+                    Change += (value - _changeOnes) * 1;
                 }
             }
         }
@@ -719,8 +710,7 @@ namespace GyroScope.Data
                 {
                     _changeTwos = (int)value;
                     OnPropertyChanged(nameof(ChangeTwos));
-                    OnPropertyChanged(nameof(AmountDue));
-                    OnPropertyChanged(nameof(ChangeOwed));
+                    Change += (value - _changeTwos) * 2;
                 }
             }
         }
@@ -743,8 +733,7 @@ namespace GyroScope.Data
                 {
                     _changeFives = (int)value;
                     OnPropertyChanged(nameof(ChangeFives));
-                    OnPropertyChanged(nameof(AmountDue));
-                    OnPropertyChanged(nameof(ChangeOwed));
+                    Change += (value - _changeFives) * 5;
                 }
             }
         }
