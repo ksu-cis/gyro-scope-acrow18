@@ -31,6 +31,7 @@ namespace PointOfSale
         /// </summary>
         public Order order => (Order)DataContext;
 
+
         /// <summary>
         /// Checks the type of payment
         /// </summary>
