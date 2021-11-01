@@ -49,7 +49,7 @@ namespace GyroScope.Data
         /// </summary>
         public RegisterViewModel(Order order) 
         {
-            this._order = Order;
+            this._order = order;
             //_order.PropertyChanged += OnOrderChanged();
         }
 

@@ -21,6 +21,9 @@ namespace PointOfSale
     /// </summary>
     public partial class CashPaymentProcessing : UserControl
     {
+        /// <summary>
+        /// Default constructor for cash payment
+        /// </summary>
         public CashPaymentProcessing()
         {
             InitializeComponent();
@@ -69,7 +72,7 @@ namespace PointOfSale
         /// <param name="e">e</param>
         private void FinalizeSale_Click(object sender, RoutedEventArgs e)
         {
-
+            
         }
 
         /// <summary>

@@ -34,7 +34,7 @@
         </Style>
         <ObjectDataProvider ObjectType="system:Enum" MethodName="GetValues" x:Key="flavors">
             <ObjectDataProvider.MethodParameters>
-                <x:Type TypeName="enums:LibraLibationFlavor"></x:Type>
+                <x:Type TypeName="enums:LibraLibationFlavor"/>
             </ObjectDataProvider.MethodParameters>
         </ObjectDataProvider>
     </UserControl.Resources>

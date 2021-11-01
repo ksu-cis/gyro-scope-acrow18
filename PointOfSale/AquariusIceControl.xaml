@@ -27,7 +27,7 @@
         </Style>
         <ObjectDataProvider ObjectType="system:Enum" MethodName="GetValues" x:Key="flavors">
             <ObjectDataProvider.MethodParameters>
-                <x:Type TypeName="enums:AquariusIceFlavor"></x:Type>
+                <x:Type TypeName="enums:AquariusIceFlavor"/>
             </ObjectDataProvider.MethodParameters>
         </ObjectDataProvider>
         <ObjectDataProvider ObjectType="system:Enum" MethodName="GetValues" x:Key="size">
