@@ -55,7 +55,7 @@
         <ListBox Grid.ColumnSpan="1" Grid.RowSpan="3" Grid.Row="1" ItemsSource="{Binding Source = {StaticResource flavors}}" SelectedItem="{Binding Path=Flavors}" Background="Transparent" BorderBrush="Transparent" Margin="0,74,0,48"/>
 
         <Label Content ="Additives" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" FontSize="40"/>
-        <CheckBox Content="Sparkling" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <CheckBox Content="Sparkling" IsChecked="{Binding Path=Sparkling}" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         <CheckBox Content="Honey" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
     </Grid>
 </UserControl>

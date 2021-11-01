@@ -54,8 +54,8 @@ namespace GyroScope.Data.Sides
         }
 
         /// <summary>
-        /// Not implemented
+        /// Special instructions
         /// </summary>
-        public IEnumerable<string> SpecialInstructions => throw new NotImplementedException();
+        public IEnumerable<string> SpecialInstructions { get; }
     }
 }

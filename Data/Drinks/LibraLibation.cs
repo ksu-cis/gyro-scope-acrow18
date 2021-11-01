@@ -140,7 +140,7 @@ namespace GyroScope.Data.Drinks
         }
 
         /// <summary>
-        /// Greek Soda
+        /// Libra libation
         /// </summary>
         public override string Name
         {
