@@ -17,8 +17,8 @@
             <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
         <Button Name ="CashButton" Content="Cash" FontSize="50" Height="100" Grid.Column="0" Grid.Row="0" Click="CashButton_Click"/>
-            <Button Name ="DebitButton" Content="Debit" FontSize="50" Height="100" Grid.Column="0" Grid.Row="1" Click="DebitAndCreditButton_Click"/>
-            <Button Name ="CreditButton" Content="Credit" FontSize="50" Height="100" Grid.Column="0" Grid.Row="2" Click="DebitAndCreditButton_Click"/>
+        <Button Name ="DebitButton" Content="Debit" FontSize="50" Height="100" Grid.Column="0" Grid.Row="1" Click="DebitAndCreditButton_Click"/>
+        <Button Name ="CreditButton" Content="Credit" FontSize="50" Height="100" Grid.Column="0" Grid.Row="2" Click="DebitAndCreditButton_Click"/>
     </Grid>
     </Border>
 </UserControl>

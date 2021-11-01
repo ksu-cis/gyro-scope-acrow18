@@ -103,25 +103,30 @@ namespace PointOfSale
 
             else if (RoundRegister.CardReader.RunCard(total) == RoundRegister.CardTransactionResult.Declined)
             {
-                MessageBox.Show("This card is declined");
+                MessageBox.Show("This card is declined.");
                 //try a different card
             }
 
             else if (RoundRegister.CardReader.RunCard(total) == RoundRegister.CardTransactionResult.ReadError)
             {
-                MessageBox.Show("This card has a read error");
+                MessageBox.Show("This card has a read error.");
                 //have them swipe card again
             }
 
             else if (RoundRegister.CardReader.RunCard(total) == RoundRegister.CardTransactionResult.InsufficientFunds)
             {
-                MessageBox.Show("This card has insufficient funds");
+                MessageBox.Show("This card has insufficient funds.");
             }
 
             else if (RoundRegister.CardReader.RunCard(total) == RoundRegister.CardTransactionResult.IncorrectPin)
             {
-                MessageBox.Show("This card's pin is incorrect");
+                MessageBox.Show("This card's pin is incorrect.");
                 //if there was a correct pin enum test again
+            }
+
+            else 
+            {
+                MessageBox.Show("This is an invalid transaction.");
             }
         }
     }

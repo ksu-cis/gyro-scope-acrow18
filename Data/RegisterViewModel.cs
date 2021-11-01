@@ -44,6 +44,7 @@ namespace GyroScope.Data
         /// </summary>
         public Order Order => _order;
 
+
         /// <summary>
         /// Default constructor 
         /// </summary>
