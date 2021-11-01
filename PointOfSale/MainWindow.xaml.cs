@@ -67,7 +67,6 @@ namespace PointOfSale
         private void SelectItems_Click(object sender, RoutedEventArgs e) 
         {
             menuItemSelection.Child = new MenuItemSelectionControl();
-            Order = new Order();
         }
 
         /// <summary>
