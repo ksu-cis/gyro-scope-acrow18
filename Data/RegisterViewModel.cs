@@ -62,72 +62,72 @@ namespace GyroScope.Data
         /// <summary>
         /// Pennies in cash register
         /// </summary>
-        public int CashDrawerPennies => CashDrawer.Pennies;
+        public static int CashDrawerPennies => CashDrawer.Pennies;
 
         /// <summary>
         /// Nickels in cash register
         /// </summary>
-        public int CashDrawerNickels => CashDrawer.Nickels;
+        public static int CashDrawerNickels => CashDrawer.Nickels;
 
         /// <summary>
         /// Dimes in cash register
         /// </summary>
-        public int CashDrawerDimes => CashDrawer.Dimes;
+        public static int CashDrawerDimes => CashDrawer.Dimes;
 
         /// <summary>
         /// Quarters in cash register
         /// </summary>
-        public int CashDrawerQuarters => CashDrawer.Quarters;
+        public static int CashDrawerQuarters => CashDrawer.Quarters;
 
         /// <summary>
         /// Half dollars in cash register
         /// </summary>
-        public int CashDrawerHalfDollars => CashDrawer.HalfDollars;
+        public static int CashDrawerHalfDollars => CashDrawer.HalfDollars;
 
         /// <summary>
         /// Dollars in cash register
         /// </summary>
-        public int CashDrawerDollarsInCents => CashDrawer.Dollars;
+        public static int CashDrawerDollarsInCents => CashDrawer.Dollars;
 
         /// <summary>
         /// Ones in cash register
         /// </summary>
-        public int CashDrawerOnes => CashDrawer.Ones;
+        public static int CashDrawerOnes => CashDrawer.Ones;
 
         /// <summary>
         /// Twos in cash register
         /// </summary>
-        public int CashDrawerTwos => CashDrawer.Twos;
+        public static int CashDrawerTwos => CashDrawer.Twos;
 
         /// <summary>
         /// Fives in cash register
         /// </summary>
-        public int CashDrawerFives => CashDrawer.Fives;
+        public static int CashDrawerFives => CashDrawer.Fives;
 
         /// <summary>
         /// Tens in cash register
         /// </summary>
-        public int CashDrawerTens => CashDrawer.Tens;
+        public static int CashDrawerTens => CashDrawer.Tens;
 
         /// <summary>
         /// Twenties in cash register
         /// </summary>
-        public int CashDrawerTwenties => CashDrawer.Twenties;
+        public static int CashDrawerTwenties => CashDrawer.Twenties;
 
         /// <summary>
         /// Fifties in cash register
         /// </summary>
-        public int CashDrawerFifties => CashDrawer.Fifties;
+        public static int CashDrawerFifties => CashDrawer.Fifties;
 
         /// <summary>
         /// Hundreds in cash register
         /// </summary>
-        public int CashDrawerHundreds => CashDrawer.Hundreds;
+        public static int CashDrawerHundreds => CashDrawer.Hundreds;
 
         /// <summary>
         /// Total of Cash drawer
         /// </summary>
-        public double TotalOfCashDrawer => CashDrawer.Total;
+        public static double TotalOfCashDrawer => CashDrawer.Total;
 
 
         /// <summary>
