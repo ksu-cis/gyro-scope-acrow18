@@ -28,7 +28,7 @@ namespace PointOfSale
         /// <summary>
         /// Dependency property representing amount to give as change
         /// </summary>
-        public static DependencyProperty OutgoingCountProperty = DependencyProperty.Register("OutgoingCount", typeof(int), typeof(CurrencyButtonControl), new FrameworkPropertyMetadata(0, FrameworkPropertyMetadataOptions.AffectsRender | FrameworkPropertyMetadataOptions.AffectsMeasure);
+        public static DependencyProperty OutgoingCountProperty = DependencyProperty.Register("OutgoingCount", typeof(int), typeof(CurrencyButtonControl), new FrameworkPropertyMetadata(0, FrameworkPropertyMetadataOptions.AffectsRender | FrameworkPropertyMetadataOptions.AffectsMeasure));
 
         /// <summary>
         /// Dependency property representing amount coming from customer
