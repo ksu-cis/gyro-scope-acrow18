@@ -37,17 +37,17 @@ namespace PointOfSale
         {
             if (sender is Button button)
             {
-                if (button.Content == "Cash")
+                if (button.Content.ToString() == "Cash")
                 {
                     return "Cash";
                 }
 
-                if (button.Content == "Credit")
+                if (button.Content.ToString() == "Credit")
                 {
                     return "Credit";
                 }
 
-                if (button.Content == "Debit")
+                if (button.Content.ToString() == "Debit")
                 {
                     return "Cash";
                 }
