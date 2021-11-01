@@ -28,7 +28,7 @@
             <RowDefinition Height="4*"/>
         </Grid.RowDefinitions>
         <Label Content="$100" Grid.Column="0" Grid.Row="1" FontSize="50" HorizontalAlignment="Center" Background="ForestGreen"/>
-        <local:CurrencyButtonControl x:Name="hundredButton" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2"/>
+        <local:CurrencyButtonControl x:Name="hundredButton" OutgoingCount="{Binding Path=ChangeHundreds}" IncomingCount="{Binding Path=CustomerHundreds}" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2"/>
         
        
         <Label Content="$50" Grid.Column ="0" Grid.Row="2" FontSize="50" HorizontalAlignment="Center" Background="ForestGreen"/>
