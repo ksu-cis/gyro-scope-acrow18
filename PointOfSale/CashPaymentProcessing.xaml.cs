@@ -24,5 +24,25 @@ namespace PointOfSale
         {
             InitializeComponent();
         }
+
+        /// <summary>
+        /// Event handler for "Return to Order" click.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ReturnToOrder_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        /// <summary>
+        /// Event handler for "Finalize Sale" click.
+        /// </summary>
+        /// <param name="sender">sender</param>
+        /// <param name="e">e</param>
+        private void FinalizeSale_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
