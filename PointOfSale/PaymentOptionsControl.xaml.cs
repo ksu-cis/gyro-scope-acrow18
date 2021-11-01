@@ -82,10 +82,11 @@ namespace PointOfSale
         /// <param name="e">e</param>
         private void CashButton_Click(object sender, RoutedEventArgs e)
         {
-            dynamic customization;
-            MainWindow mainWindow = FindMainWindow();
-            customization = new CashPaymentProcessing();
-            PaymentOptions.Child = customization;           
+                MainWindow mainWindow = FindMainWindow();
+                var temp = new CashPaymentProcessing();
+                var tempRVM = new  RegisterViewModel(temp);
+                temp.DataContext = tempRVM;
+                mainWindow.menuItemSelection.Child = temp;
         }
 
         /// <summary>
