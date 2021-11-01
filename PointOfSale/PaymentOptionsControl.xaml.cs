@@ -97,13 +97,14 @@ namespace PointOfSale
             double total = (double)mainWindow.Order.Total;
             if (RoundRegister.CardReader.RunCard(total) == RoundRegister.CardTransactionResult.Approved)
             {
+                MessageBox.Show("This card has been approved.");
                 //print recipt
                 Order newOrder = new Order();
             }
 
             else if (RoundRegister.CardReader.RunCard(total) == RoundRegister.CardTransactionResult.Declined)
             {
-                MessageBox.Show("This card is declined.");
+                MessageBox.Show("This card has been declined.");
                 //try a different card
             }
 
