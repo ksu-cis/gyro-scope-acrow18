@@ -61,14 +61,48 @@ namespace GyroScope.Data
         //Beginning of cash drawer properties
 
         /// <summary>
+        /// backing field for cash drawer pennies
+        /// </summary>
+        public int _cashDrawerPennies = CashDrawer.Pennies;
+
+        /// <summary>
         /// Pennies in cash register
         /// </summary>
-        public int CashDrawerPennies => CashDrawer.Pennies;
+        public int CashDrawerPennies
+        {
+            get { return _cashDrawerPennies; }
+            set
+            {
+                if (_cashDrawerPennies != value)
+                {
+                    _cashDrawerPennies = value;
+                    OnPropertyChanged(nameof(CashDrawerPennies));
+
+                }
+            }
+        }
+
+        /// <summary>
+        /// backing field cash drawer nickels
+        /// </summary>
+        public int _cashDrawerNickels = CashDrawer.Nickels;
 
         /// <summary>
         /// Nickels in cash register
         /// </summary>
-        public int CashDrawerNickels => CashDrawer.Nickels;
+        public int CashDrawerNickels
+        {
+            get { return _cashDrawerNickels; }
+            set
+            {
+                if (_cashDrawerNickels != value)
+                {
+                    _cashDrawerNickels = value;
+                    OnPropertyChanged(nameof(CashDrawerNickels));
+
+                }
+            }
+        }
 
         /// <summary>
         /// Dimes in cash register
@@ -1156,7 +1190,6 @@ namespace GyroScope.Data
             RecieptPrinter.CutTape();
         }
 
-        /*
         /// <summary>
         /// Keeps track of change owed to customer
         /// </summary>
@@ -1254,6 +1287,5 @@ namespace GyroScope.Data
                 ChangePennies++;
             }
         }
-        */
     }
 }
