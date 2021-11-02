@@ -198,10 +198,7 @@ namespace GyroScope.Data
                 if (_number != value) 
                 {
                     _number = value;
-                    OnPropertyChanged(nameof(Count));
-                    OnPropertyChanged(nameof(Subtotal));
-                    OnPropertyChanged(nameof(Total));
-                    OnPropertyChanged(nameof(SalesTaxRate));
+                    OnPropertyChanged(nameof(NextOrderNumber));
                 }
             }
         }
@@ -209,7 +206,7 @@ namespace GyroScope.Data
         /// <summary>
         /// Ensures uniqueness of order number
         /// </summary>
-        private static int NextOrderNumber { get; set; } = 0;
+        private static int NextOrderNumber { get; set; } = 1;
 
 
         /// <summary>
