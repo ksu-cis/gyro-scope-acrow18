@@ -72,8 +72,18 @@ namespace PointOfSale
         /// <param name="e">e</param>
         private void FinalizeSale_Click(object sender, RoutedEventArgs e)
         {
-            RegisterViewModel RVM = new RegisterViewModel(Order);
-            RVM.FinalizeSale();
+            if (e.OriginalSource is Button button) 
+            {
+                switch (button.Name) 
+                {
+                    case "Finalize Sale":
+                    MainWindow mainWindow = FindMainWindow();
+                    var cash = new RegisterViewModel(mainWindow.Order);
+                    mainWindow.menuItemSelection.Child = new MenuItemSelectionControl();
+                    mainWindow.Order = new Order();
+                    break;
+                }
+            }
         }
 
         /// <summary>
