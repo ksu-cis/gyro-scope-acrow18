@@ -1366,7 +1366,7 @@ namespace GyroScope.Data
         /// <summary>
         /// Print Receipt
         /// </summary>
-        public void PrintReceipt(Order order, string method, string change)
+        public void PrintReceipt(Order order, string method)
         {
             RecieptPrinter.PrintLine("Order Number: " + Order.Number.ToString());
             RecieptPrinter.PrintLine("Date and Time: " + Order.PlacedAt.ToString());
@@ -1399,7 +1399,7 @@ namespace GyroScope.Data
         /// <summary>
         /// Keeps track of change owed to customer
         /// </summary>
-        private void GiveChange()
+        public void GiveChange()
         {
             decimal remainingChange = Customer - Total;
             while (remainingChange >= 100)
