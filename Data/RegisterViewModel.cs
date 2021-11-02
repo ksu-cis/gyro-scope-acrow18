@@ -200,9 +200,43 @@ namespace GyroScope.Data
         public int _cashDrawerOnes = CashDrawer.Ones;
 
         /// <summary>
+        /// backing field cash drawer dimes
+        /// </summary>
+        public int CashDrawerOnes
+        {
+            get { return _cashDrawerOnes; }
+            set
+            {
+                if (_cashDrawerOnes != value)
+                {
+                    _cashDrawerOnes = value;
+                    OnPropertyChanged(nameof(CashDrawerOnes));
+
+                }
+            }
+        }
+
+        /// <summary>
+        /// Ones in cash register
+        /// </summary>
+        public int _cashDrawerTwos = CashDrawer.Twos;
+
+        /// <summary>
         /// Twos in cash register
         /// </summary>
-        public int CashDrawerTwos => CashDrawer.Twos;
+        public int CashDrawerTwos 
+        {
+            get { return _cashDrawerTwos; }
+            set
+            {
+                if (_cashDrawerTwos != value)
+                {
+                    _cashDrawerTwos = value;
+                    OnPropertyChanged(nameof(CashDrawerTwos));
+
+                }
+            }
+        }
 
         /// <summary>
         /// Fives in cash register
