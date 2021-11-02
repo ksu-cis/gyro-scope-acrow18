@@ -27,6 +27,7 @@ namespace PointOfSale
         public CashPaymentProcessing()
         {
             InitializeComponent();
+            DataContext = new RegisterViewModel(Order);
         }
 
         /// <summary>
