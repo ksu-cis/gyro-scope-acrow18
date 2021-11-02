@@ -1126,7 +1126,7 @@ namespace GyroScope.Data
         /// <summary>
         /// Print Receipt
         /// </summary>
-        public void PrintReceipt(Order order)
+        public void PrintReceipt(Order order, string method, string change)
         {
             RecieptPrinter.PrintLine("Order Number: " + Order.Number.ToString());
             RecieptPrinter.PrintLine("Date and Time: " + Order.PlacedAt.ToString());
@@ -1148,13 +1148,14 @@ namespace GyroScope.Data
             }
 
             RecieptPrinter.PrintLine(" ");
-            RecieptPrinter.PrintLine("Subtotal: $" + Order.Subtotal.ToString());
-            RecieptPrinter.PrintLine("Tax: $" + Order.Tax.ToString());
-            RecieptPrinter.PrintLine("Total: $" + Order.Total.ToString());
-            RecieptPrinter.PrintLine("Payment method: Cash");
-            RecieptPrinter.PrintLine("Changed owed is: " + ChangeOwed);
+            RecieptPrinter.PrintLine($"Subtotal: ${Decimal.Round(Order.Subtotal, 2)}");
+            RecieptPrinter.PrintLine($"Tax: ${Decimal.Round(Order.Tax, 2)}");
+            RecieptPrinter.PrintLine($"Total: ${Decimal.Round(Order.Total, 2)}");
+            RecieptPrinter.PrintLine("Payment method: "+ method);
+            RecieptPrinter.PrintLine($"Changed owed is: $ + {Decimal.Round(ChangeOwed, 2)}");
         }
 
+        /*
         /// <summary>
         /// Keeps track of change owed to customer
         /// </summary>
@@ -1252,5 +1253,6 @@ namespace GyroScope.Data
                 ChangePennies++;
             }
         }
+        */
     }
 }
