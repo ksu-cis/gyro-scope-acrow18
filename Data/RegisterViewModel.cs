@@ -1153,6 +1153,7 @@ namespace GyroScope.Data
             RecieptPrinter.PrintLine($"Total: ${Decimal.Round(Order.Total, 2)}");
             RecieptPrinter.PrintLine("Payment method: "+ method);
             RecieptPrinter.PrintLine($"Changed owed is: $ + {Decimal.Round(ChangeOwed, 2)}");
+            RecieptPrinter.CutTape();
         }
 
         /*

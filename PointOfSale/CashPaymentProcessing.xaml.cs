@@ -53,28 +53,15 @@ namespace PointOfSale
 
 
         /// <summary>
-        /// Event handler for "Return to Order" click.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void ReturnToOrder_Click(object sender, RoutedEventArgs e)
-        {
-            dynamic customization;
-            MainWindow mainWindow = FindMainWindow();
-            customization = new MenuItemSelectionControl();
-            mainWindow.menuItemSelection.Child = customization;
-        }
-
-        /// <summary>
-        /// Event handler for "Finalize Sale" click.
+        /// Event handler for button clicks.
         /// </summary>
         /// <param name="sender">sender</param>
         /// <param name="e">e</param>
-        private void FinalizeSale_Click(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
             if (e.OriginalSource is Button button) 
             {
-                switch (button.Name) 
+                switch (button.Content) 
                 {
                     case "Finalize Sale":
                     MainWindow mainWindow = FindMainWindow();
@@ -82,6 +69,13 @@ namespace PointOfSale
                     mainWindow.menuItemSelection.Child = new MenuItemSelectionControl();
                     mainWindow.Order = new Order();
                     break;
+
+                    case "Return to Order":
+                    MainWindow mainWindow1 = FindMainWindow();
+                    var customization = new MenuItemSelectionControl();
+                    mainWindow1.menuItemSelection.Child = customization;
+                    break;
+
                 }
             }
         }
