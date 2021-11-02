@@ -48,7 +48,7 @@ namespace GyroScope.Data
         /// <summary>
         /// Default constructor 
         /// </summary>
-        public RegisterViewModel(Order order) 
+        public RegisterViewModel(Order order)
         {
             this._order = order;
         }
@@ -63,72 +63,72 @@ namespace GyroScope.Data
         /// <summary>
         /// Pennies in cash register
         /// </summary>
-        public static int CashDrawerPennies => CashDrawer.Pennies;
+        public int CashDrawerPennies => CashDrawer.Pennies;
 
         /// <summary>
         /// Nickels in cash register
         /// </summary>
-        public static int CashDrawerNickels => CashDrawer.Nickels;
+        public int CashDrawerNickels => CashDrawer.Nickels;
 
         /// <summary>
         /// Dimes in cash register
         /// </summary>
-        public static int CashDrawerDimes => CashDrawer.Dimes;
+        public int CashDrawerDimes => CashDrawer.Dimes;
 
         /// <summary>
         /// Quarters in cash register
         /// </summary>
-        public static int CashDrawerQuarters => CashDrawer.Quarters;
+        public int CashDrawerQuarters => CashDrawer.Quarters;
 
         /// <summary>
         /// Half dollars in cash register
         /// </summary>
-        public static int CashDrawerHalfDollars => CashDrawer.HalfDollars;
+        public int CashDrawerHalfDollars => CashDrawer.HalfDollars;
 
         /// <summary>
         /// Dollars in cash register
         /// </summary>
-        public static int CashDrawerDollarsInCents => CashDrawer.Dollars;
+        public int CashDrawerDollarsInCents => CashDrawer.Dollars;
 
         /// <summary>
         /// Ones in cash register
         /// </summary>
-        public static int CashDrawerOnes => CashDrawer.Ones;
+        public int CashDrawerOnes => CashDrawer.Ones;
 
         /// <summary>
         /// Twos in cash register
         /// </summary>
-        public static int CashDrawerTwos => CashDrawer.Twos;
+        public int CashDrawerTwos => CashDrawer.Twos;
 
         /// <summary>
         /// Fives in cash register
         /// </summary>
-        public static int CashDrawerFives => CashDrawer.Fives;
+        public int CashDrawerFives => CashDrawer.Fives;
 
         /// <summary>
         /// Tens in cash register
         /// </summary>
-        public static int CashDrawerTens => CashDrawer.Tens;
+        public int CashDrawerTens => CashDrawer.Tens;
 
         /// <summary>
         /// Twenties in cash register
         /// </summary>
-        public static int CashDrawerTwenties => CashDrawer.Twenties;
+        public int CashDrawerTwenties => CashDrawer.Twenties;
 
         /// <summary>
         /// Fifties in cash register
         /// </summary>
-        public static int CashDrawerFifties => CashDrawer.Fifties;
+        public int CashDrawerFifties => CashDrawer.Fifties;
 
         /// <summary>
         /// Hundreds in cash register
         /// </summary>
-        public static int CashDrawerHundreds => CashDrawer.Hundreds;
+        public int CashDrawerHundreds => CashDrawer.Hundreds;
 
         /// <summary>
         /// Total of Cash drawer
         /// </summary>
-        public static double TotalOfCashDrawer => CashDrawer.Total;
+        public double TotalOfCashDrawer => CashDrawer.Total;
 
 
         /// <summary>
@@ -142,9 +142,9 @@ namespace GyroScope.Data
         public decimal Customer
         {
             get { return _customer; }
-            set 
+            set
             {
-                if (_customer != value) 
+                if (_customer != value)
                 {
                     _customer = value;
                     OnPropertyChanged(nameof(Customer));
@@ -180,7 +180,7 @@ namespace GyroScope.Data
         /// <summary>
         /// How much the customer still owes 
         /// </summary>
-        public decimal AmountDue 
+        public decimal AmountDue
         {
             get
             {
@@ -189,7 +189,7 @@ namespace GyroScope.Data
                     return 0M;
                 }
 
-                else 
+                else
                 {
                     return Total - Customer;
                 }
@@ -200,7 +200,7 @@ namespace GyroScope.Data
         /// <summary>
         /// Amount of change owed to customer
         /// </summary>
-        public decimal ChangeOwed 
+        public decimal ChangeOwed
         {
             get
             {
@@ -218,7 +218,7 @@ namespace GyroScope.Data
 
         //End of cashdrawer properties
         //Beginning of customer properties
-        
+
         /// <summary>
         /// backing field for pennies
         /// </summary>
@@ -841,7 +841,7 @@ namespace GyroScope.Data
         /// <summary>
         /// Calculates change to give back based on Incoming amount and total
         /// </summary>
-        public void MakeChange() 
+        public void MakeChange()
         {
             if (Customer > Total)
             {
@@ -1027,16 +1027,16 @@ namespace GyroScope.Data
                 ChangeDimes = 0;
                 ChangeNickels = 0;
                 ChangePennies = 0;
-            }            
+            }
         }
 
         /// <summary>
         /// Represents opening the drawer and changing currency, as well as printing the recipt
         /// </summary>
-        public void FinalizeSale() 
+        public void FinalizeSale()
         {
             CashDrawer.OpenDrawer();
-            if ((ChangeHundreds + CustomerHundreds) != 0) 
+            if ((ChangeHundreds + CustomerHundreds) != 0)
             {
                 CashDrawer.Hundreds -= ChangeHundreds;
                 CashDrawer.Hundreds += CustomerHundreds;
@@ -1121,7 +1121,13 @@ namespace GyroScope.Data
                 CashDrawer.Ones += CustomerDollars;
                 OnPropertyChanged(nameof(CashDrawerDollarsInCents));
             }
+        }
 
+        /// <summary>
+        /// Print Receipt
+        /// </summary>
+        public void PrintReceipt(Order order)
+        {
             RecieptPrinter.PrintLine("Order Number: " + Order.Number.ToString());
             RecieptPrinter.PrintLine("Date and Time: " + Order.PlacedAt.ToString());
             RecieptPrinter.PrintLine(" ");
@@ -1149,5 +1155,102 @@ namespace GyroScope.Data
             RecieptPrinter.PrintLine("Changed owed is: " + ChangeOwed);
         }
 
+        /// <summary>
+        /// Keeps track of change owed to customer
+        /// </summary>
+        private void GiveChange()
+        {
+            decimal remainingChange = Customer - Total;
+            while (remainingChange >= 100)
+            {
+                remainingChange -= 100;
+                CashDrawerHundreds--;
+                ChangeHundreds++;
+            }
+
+            while (remainingChange >= 50)
+            {
+                remainingChange -= 50;
+                CashDrawerHundreds--;
+                ChangeFifties++;
+            }
+
+            while (remainingChange >= 20)
+            {
+                remainingChange -= 20;
+                CashDrawerHundreds--;
+                ChangeTwenties++;
+            }
+
+            while (remainingChange >= 10)
+            {
+                remainingChange -= 100;
+                CashDrawerHundreds--;
+                ChangeTens++;
+            }
+
+            while (remainingChange >= 5)
+            {
+                remainingChange -= 100;
+                CashDrawerHundreds--;
+                ChangeFives++;
+            }
+
+            while (remainingChange >= 2)
+            {
+                remainingChange -= 100;
+                CashDrawerHundreds--;
+                ChangeTwos++;
+            }
+
+            while (remainingChange >= 1)
+            {
+                remainingChange -= 100;
+                CashDrawerHundreds--;
+                ChangeOnes++;
+            }
+
+            while (remainingChange >= 1.00M)
+            {
+                remainingChange -= 100;
+                CashDrawerHundreds--;
+                ChangeDollars++;
+            }
+
+            while (remainingChange >= 0.50M)
+            {
+                remainingChange -= 0.50M;
+                CashDrawerHundreds--;
+                ChangeHalfDollars++;
+            }
+
+            while (remainingChange >= 0.25M)
+            {
+                remainingChange -= 100;
+                CashDrawerHundreds--;
+                ChangeQuarters++;
+            }
+
+            while (remainingChange >= 0.10M)
+            {
+                remainingChange -= 100;
+                CashDrawerHundreds--;
+                ChangeDimes++;
+            }
+
+            while (remainingChange >= 0.05M)
+            {
+                remainingChange -= 100;
+                CashDrawerHundreds--;
+                ChangeNickels++;
+            }
+
+            while (remainingChange >= 0.01M)
+            {
+                remainingChange -= 100;
+                CashDrawerHundreds--;
+                ChangePennies++;
+            }
+        }
     }
 }

@@ -23,7 +23,26 @@ namespace GyroScope.DataTests
             order.Add(new VirgoClassicGyro());
             var viewModel = new RegisterViewModel(order);
             viewModel.CustomerHundreds = 1;
-            Assert.Equal(viewModel.ChangeOwed, viewModel.Customer - viewModel.Total);
+            Assert.Equal(viewModel.ChangeOwed, viewModel.Total - viewModel.Customer);
+        }
+
+        [Fact]
+        public void IsAmountDueCorrect()
+        {
+            var order = new Order();
+            order.Add(new ScorpioSpicyGyro());
+            order.Add(new VirgoClassicGyro());
+            order.Add(new VirgoClassicGyro());
+            var viewModel = new RegisterViewModel(order);
+            viewModel.CustomerHundreds = 1;
+            Assert.Equal(viewModel.AmountDue, viewModel.Total - viewModel.Customer);
+        }
+
+
+        [Fact]
+        public void IsCashRegisterCorrect()
+        {
+            var cashRegister
         }
     }
 }

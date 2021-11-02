@@ -118,7 +118,7 @@ namespace PointOfSale
             if (RoundRegister.CardReader.RunCard(total) == RoundRegister.CardTransactionResult.Approved)
             {
                 MessageBox.Show("This card has been approved.");
-                //print recipt
+                //
                 mainWindow = FindMainWindow();
             }
 

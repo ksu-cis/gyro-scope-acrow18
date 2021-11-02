@@ -160,7 +160,6 @@ namespace GyroScope.Data
         public decimal Total => Math.Round(Subtotal + Tax, 2);
 
 
-
         /// <summary>
         /// Calories
         /// </summary>
