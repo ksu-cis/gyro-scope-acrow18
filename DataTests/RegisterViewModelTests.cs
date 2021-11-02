@@ -89,20 +89,49 @@ namespace GyroScope.DataTests
             Assert.Equal(total, RVM.ChangeOwed);
         }
 
-
+        /// <summary>
+        /// Checks that bills are removed from the cash register as change is given to the customer
+        /// </summary>
+        /// <param name="customerBills">Amount of fives recieved from the customer</param>
+        /// <param name="drawerFives">Fives in drawer remaining</param>
+        /// <param name="drawerTens">Tens in drawer remaining</param>
         [Theory]
-        [InlineData()]
-        public void MoneyShouldBeRemovedFromCashRegister(int customerBills, int drawerTwos, int drawerTens) 
+        [InlineData(1, 4, 10)]
+        [InlineData(2, 3, 10)]
+        [InlineData(3, 4, 9)]
+        [InlineData(4, 4, 9)]
+        [InlineData(5, 4, 10)]
+        public void MoneyShouldBeRemovedFromCashRegister(int customerBills, int drawerFives, int drawerTens) 
         {
             var order = new Order();
             order.Add(new VirgoClassicGyro());
             var RVM = new RegisterViewModel(order);
-            RVM.CustomerTwos = customerBills;
-            Assert.Equal(drawerTwos, RVM.CashDrawerTwos);
+            RVM.CustomerFives = customerBills;
+            Assert.Equal(drawerFives, RVM.CashDrawerTwos);
             Assert.Equal(drawerTens, RVM.CashDrawerTens);
 
         }
 
+        [Theory]
+        [InlineData(1, "ChangeFives")]
+        [InlineData(2, "ChangeFives")]
+        [InlineData(3, "ChangeFives")]
+        public void ShouldNotifyOfChangePropertyChangingWhenCustomerRecievesChange(int customerBills, string propertyName) 
+        {
+            var order = new Order();
+            order.Add(new VirgoClassicGyro());
+            var RVM = new RegisterViewModel(order);
+
+            Assert.PropertyChanged(RVM, propertyName, () =>
+            {
+                RVM.CustomerFives = customerBills;
+            });
+
+            Assert.PropertyChanged(RVM, propertyName, () =>
+            {
+                RVM.CustomerTens = customerBills;
+            });
+        }
 
     }
 }
