@@ -1412,84 +1412,84 @@ namespace GyroScope.Data
             while (remainingChange >= 50)
             {
                 remainingChange -= 50;
-                CashDrawerHundreds--;
+                CashDrawerFifties--;
                 ChangeFifties++;
             }
 
             while (remainingChange >= 20)
             {
                 remainingChange -= 20;
-                CashDrawerHundreds--;
+                CashDrawerFifties--;
                 ChangeTwenties++;
             }
 
             while (remainingChange >= 10)
             {
-                remainingChange -= 100;
-                CashDrawerHundreds--;
+                remainingChange -= 10;
+                CashDrawerTens--;
                 ChangeTens++;
             }
 
             while (remainingChange >= 5)
             {
-                remainingChange -= 100;
-                CashDrawerHundreds--;
+                remainingChange -= 5;
+                CashDrawerFives--;
                 ChangeFives++;
             }
 
             while (remainingChange >= 2)
             {
-                remainingChange -= 100;
-                CashDrawerHundreds--;
+                remainingChange -= 2;
+                CashDrawerTwos--;
                 ChangeTwos++;
             }
 
             while (remainingChange >= 1)
             {
-                remainingChange -= 100;
-                CashDrawerHundreds--;
+                remainingChange -= 1;
+                CashDrawerOnes--;
                 ChangeOnes++;
             }
 
             while (remainingChange >= 1.00M)
             {
-                remainingChange -= 100;
-                CashDrawerHundreds--;
+                remainingChange -= 1.00M;
+                CashDrawerDollarsInCents--;
                 ChangeDollars++;
             }
 
             while (remainingChange >= 0.50M)
             {
                 remainingChange -= 0.50M;
-                CashDrawerHundreds--;
+                CashDrawerHalfDollars--;
                 ChangeHalfDollars++;
             }
 
             while (remainingChange >= 0.25M)
             {
-                remainingChange -= 100;
-                CashDrawerHundreds--;
+                remainingChange -= 0.25M;
+                CashDrawerQuarters--;
                 ChangeQuarters++;
             }
 
             while (remainingChange >= 0.10M)
             {
-                remainingChange -= 100;
-                CashDrawerHundreds--;
+                remainingChange -= 0.10M;
+                CashDrawerDimes--;
                 ChangeDimes++;
             }
 
             while (remainingChange >= 0.05M)
             {
-                remainingChange -= 100;
-                CashDrawerHundreds--;
+                remainingChange -= 0.05M;
+                CashDrawerNickels--;
                 ChangeNickels++;
             }
 
             while (remainingChange >= 0.01M)
             {
-                remainingChange -= 100;
-                CashDrawerHundreds--;
+                remainingChange -= 0.01M;
+                CashDrawerPennies--;
                 ChangePennies++;
             }
         }
