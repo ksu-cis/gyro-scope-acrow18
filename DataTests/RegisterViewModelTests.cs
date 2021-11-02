@@ -38,11 +38,12 @@ namespace GyroScope.DataTests
             Assert.Equal(viewModel.AmountDue, viewModel.Total - viewModel.Customer);
         }
 
-
+        /*
         [Fact]
         public void IsCashRegisterCorrect()
         {
             var cashRegister
         }
+        */
     }
 }

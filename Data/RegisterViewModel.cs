@@ -127,7 +127,7 @@ namespace GyroScope.Data
         }
 
         /// <summary>
-        /// backing field cash drawer dimes
+        /// backing field cash drawer quarters
         /// </summary>
         public int _cashDrawerQuarters = CashDrawer.Quarters;
 
@@ -149,12 +149,12 @@ namespace GyroScope.Data
         }
 
         /// <summary>
-        /// backing field cash drawer dimes
+        /// backing field cash drawer half dollars
         /// </summary>
         public int _cashDrawerHalfDollars = CashDrawer.HalfDollars;
 
         /// <summary>
-        /// backing field cash drawer dimes
+        /// Half dollars in cash register
         /// </summary>
         public int CashDrawerHalfDollars
         {
@@ -172,12 +172,12 @@ namespace GyroScope.Data
 
 
         /// <summary>
-        /// Dollars in cash register
+        /// backing field for dollars in cents
         /// </summary>
         public int _cashDrawerDollarsInCents = CashDrawer.Dollars;
 
         /// <summary>
-        /// backing field cash drawer dimes
+        /// Dollars in cash register (cent)
         /// </summary>
         public int CashDrawerDollarsInCents 
         {
@@ -195,12 +195,12 @@ namespace GyroScope.Data
 
 
         /// <summary>
-        /// Ones in cash register
+        /// backing field for ones
         /// </summary>
         public int _cashDrawerOnes = CashDrawer.Ones;
 
         /// <summary>
-        /// backing field cash drawer dimes
+        /// Ones in cash register
         /// </summary>
         public int CashDrawerOnes
         {
@@ -217,7 +217,7 @@ namespace GyroScope.Data
         }
 
         /// <summary>
-        /// Ones in cash register
+        /// backing field for twos
         /// </summary>
         public int _cashDrawerTwos = CashDrawer.Twos;
 
@@ -239,34 +239,136 @@ namespace GyroScope.Data
         }
 
         /// <summary>
+        /// backing field for fives
+        /// </summary>
+        public int _cashDrawerFives = CashDrawer.Fives;
+
+        /// <summary>
         /// Fives in cash register
         /// </summary>
-        public int CashDrawerFives => CashDrawer.Fives;
+        public int CashDrawerFives 
+        {
+            get { return _cashDrawerFives; }
+            set
+            {
+                if (_cashDrawerFives != value)
+                {
+                    _cashDrawerFives = value;
+                    OnPropertyChanged(nameof(CashDrawerFives));
+
+                }
+            }
+        }
+
+        /// <summary>
+        /// backing field for tens
+        /// </summary>
+        public int _cashDrawerTens = CashDrawer.Tens;
 
         /// <summary>
         /// Tens in cash register
         /// </summary>
-        public int CashDrawerTens => CashDrawer.Tens;
+        public int CashDrawerTens 
+        {
+            get { return _cashDrawerTens; }
+            set
+            {
+                if (_cashDrawerTens != value)
+                {
+                    _cashDrawerTens = value;
+                    OnPropertyChanged(nameof(CashDrawerTens));
+
+                }
+            }
+        }
+
+        /// <summary>
+        /// backing field for twenties
+        /// </summary>
+        public int _cashDrawerTwenties = CashDrawer.Twenties;
 
         /// <summary>
         /// Twenties in cash register
         /// </summary>
-        public int CashDrawerTwenties => CashDrawer.Twenties;
+        public int CashDrawerTwenties
+        {
+            get { return _cashDrawerTwenties; }
+            set
+            {
+                if (_cashDrawerTwenties != value)
+                {
+                    _cashDrawerTwenties = value;
+                    OnPropertyChanged(nameof(CashDrawerTwenties));
+
+                }
+            }
+        }
+
+        /// <summary>
+        /// backing field for fifties
+        /// </summary>
+        public int _cashDrawerFifties = CashDrawer.Fifties;
 
         /// <summary>
         /// Fifties in cash register
         /// </summary>
-        public int CashDrawerFifties => CashDrawer.Fifties;
+        public int CashDrawerFifties 
+        {
+            get { return _cashDrawerFifties; }
+            set
+            {
+                if (_cashDrawerFifties != value)
+                {
+                    _cashDrawerFifties = value;
+                    OnPropertyChanged(nameof(CashDrawerFifties));
+
+                }
+            }
+        }
+
+        /// <summary>
+        /// backing field for hundreds
+        /// </summary>
+        public int _cashDrawerHundreds = CashDrawer.Hundreds;
 
         /// <summary>
         /// Hundreds in cash register
         /// </summary>
-        public int CashDrawerHundreds => CashDrawer.Hundreds;
+        public int CashDrawerHundreds 
+        {
+            get { return _cashDrawerHundreds; }
+            set
+            {
+                if (_cashDrawerHundreds != value)
+                {
+                    _cashDrawerHundreds = value;
+                    OnPropertyChanged(nameof(CashDrawerHundreds));
+
+                }
+            }
+        }
+
+        /// <summary>
+        /// backing field for total of cash drawer
+        /// </summary>
+        public double _totalOfCashDrawer = CashDrawer.Total;
 
         /// <summary>
         /// Total of Cash drawer
         /// </summary>
-        public double TotalOfCashDrawer => CashDrawer.Total;
+        public double TotalOfCashDrawer
+        {
+            get { return _totalOfCashDrawer; }
+            set
+            {
+                if (_totalOfCashDrawer != value)
+                {
+                    _totalOfCashDrawer = value;
+                    OnPropertyChanged(nameof(TotalOfCashDrawer));
+
+                }
+            }
+        }
 
 
         /// <summary>
