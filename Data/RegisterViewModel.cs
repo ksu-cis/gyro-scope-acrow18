@@ -100,6 +100,7 @@ namespace GyroScope.Data
                     _cashDrawerNickels = value;
                     OnPropertyChanged(nameof(CashDrawerNickels));
                     OnPropertyChanged(nameof(TotalOfCashDrawer));
+                    OnPropertyChanged(nameof(DrawerTotal));
                 }
             }
         }
@@ -122,6 +123,7 @@ namespace GyroScope.Data
                     _cashDrawerDimes = value;
                     OnPropertyChanged(nameof(CashDrawerDimes));
                     OnPropertyChanged(nameof(TotalOfCashDrawer));
+                    OnPropertyChanged(nameof(DrawerTotal));
                 }
             }
         }
@@ -144,6 +146,7 @@ namespace GyroScope.Data
                     _cashDrawerQuarters = value;
                     OnPropertyChanged(nameof(CashDrawerQuarters));
                     OnPropertyChanged(nameof(TotalOfCashDrawer));
+                    OnPropertyChanged(nameof(DrawerTotal));
                 }
             }
         }
@@ -166,6 +169,7 @@ namespace GyroScope.Data
                     _cashDrawerHalfDollars = value;
                     OnPropertyChanged(nameof(CashDrawerHalfDollars));
                     OnPropertyChanged(nameof(TotalOfCashDrawer));
+                    OnPropertyChanged(nameof(DrawerTotal));
                 }
             }
         }
@@ -189,6 +193,7 @@ namespace GyroScope.Data
                     _cashDrawerDollarsInCents = value;
                     OnPropertyChanged(nameof(CashDrawerDollarsInCents));
                     OnPropertyChanged(nameof(TotalOfCashDrawer));
+                    OnPropertyChanged(nameof(DrawerTotal));
                 }
             }
         }
@@ -212,6 +217,7 @@ namespace GyroScope.Data
                     _cashDrawerOnes = value;
                     OnPropertyChanged(nameof(CashDrawerOnes));
                     OnPropertyChanged(nameof(TotalOfCashDrawer));
+                    OnPropertyChanged(nameof(DrawerTotal));
                 }
             }
         }
@@ -234,6 +240,7 @@ namespace GyroScope.Data
                     _cashDrawerTwos = value;
                     OnPropertyChanged(nameof(CashDrawerTwos));
                     OnPropertyChanged(nameof(TotalOfCashDrawer));
+                    OnPropertyChanged(nameof(DrawerTotal));
                 }
             }
         }
@@ -256,6 +263,7 @@ namespace GyroScope.Data
                     _cashDrawerFives = value;
                     OnPropertyChanged(nameof(CashDrawerFives));
                     OnPropertyChanged(nameof(TotalOfCashDrawer));
+                    OnPropertyChanged(nameof(DrawerTotal));
                 }
             }
         }
@@ -278,6 +286,7 @@ namespace GyroScope.Data
                     _cashDrawerTens = value;
                     OnPropertyChanged(nameof(CashDrawerTens));
                     OnPropertyChanged(nameof(TotalOfCashDrawer));
+                    OnPropertyChanged(nameof(DrawerTotal));
                 }
             }
         }
@@ -300,6 +309,7 @@ namespace GyroScope.Data
                     _cashDrawerTwenties = value;
                     OnPropertyChanged(nameof(CashDrawerTwenties));
                     OnPropertyChanged(nameof(TotalOfCashDrawer));
+                    OnPropertyChanged(nameof(DrawerTotal));
                 }
             }
         }
@@ -322,6 +332,7 @@ namespace GyroScope.Data
                     _cashDrawerFifties = value;
                     OnPropertyChanged(nameof(CashDrawerFifties));
                     OnPropertyChanged(nameof(TotalOfCashDrawer));
+                    OnPropertyChanged(nameof(DrawerTotal));
                 }
             }
         }
@@ -344,6 +355,7 @@ namespace GyroScope.Data
                     _cashDrawerHundreds = value;
                     OnPropertyChanged(nameof(CashDrawerHundreds));
                     OnPropertyChanged(nameof(TotalOfCashDrawer));
+                    OnPropertyChanged(nameof(DrawerTotal));
                 }
             }
         }
@@ -365,7 +377,7 @@ namespace GyroScope.Data
                 {
                     _totalOfCashDrawer = value;
                     OnPropertyChanged(nameof(TotalOfCashDrawer));
-
+                    OnPropertyChanged(nameof(DrawerTotal));
                 }
             }
         }
