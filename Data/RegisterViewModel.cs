@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using RoundRegister;
+using System.Windows;
 
 namespace GyroScope.Data
 {
@@ -1174,7 +1175,7 @@ namespace GyroScope.Data
                 if (CashDrawerTwenties >= 1) //if a hundred is in the register
                 {
                     int twentyAmount = changeCash / 20;
-                    minAmount = Math.Min(twentyAmount, CashDrawerFifties);
+                    minAmount = Math.Min(twentyAmount, CashDrawerTwenties);
                     ChangeTwenties = minAmount;
                     CashDrawerTwenties -= ChangeTwenties;
                     changeCash -= ChangeTwenties * 20;
@@ -1223,7 +1224,7 @@ namespace GyroScope.Data
                 {
                     int onesAmount = changeCash / 2;
                     minAmount = Math.Min(onesAmount, CashDrawerTwos);
-                    ChangeOnes = minAmount;
+                    ChangeTwos = minAmount;
                     CashDrawerTwos -= ChangeTwos;
                     changeCash -= ChangeTwos * 2;
                 }
@@ -1350,7 +1351,7 @@ namespace GyroScope.Data
 
             if (change > 0 || changeCash > 0) 
             {
-                //MessageBox.Show("There is not enough change in the cash register");
+                MessageBox.Show("There is not enough change in the cash register");
             }
 
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ChangeHundreds"));
