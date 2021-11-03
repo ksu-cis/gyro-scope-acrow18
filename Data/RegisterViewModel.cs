@@ -77,7 +77,7 @@ namespace GyroScope.Data
                 {
                     _cashDrawerPennies = value;
                     OnPropertyChanged(nameof(CashDrawerPennies));
-
+                    OnPropertyChanged(nameof(TotalOfCashDrawer));
                 }
             }
         }
@@ -99,7 +99,7 @@ namespace GyroScope.Data
                 {
                     _cashDrawerNickels = value;
                     OnPropertyChanged(nameof(CashDrawerNickels));
-
+                    OnPropertyChanged(nameof(TotalOfCashDrawer));
                 }
             }
         }
@@ -120,8 +120,8 @@ namespace GyroScope.Data
                 if (_cashDrawerDimes != value)
                 {
                     _cashDrawerDimes = value;
-                    OnPropertyChanged(nameof(_cashDrawerDimes));
-
+                    OnPropertyChanged(nameof(CashDrawerDimes));
+                    OnPropertyChanged(nameof(TotalOfCashDrawer));
                 }
             }
         }
@@ -143,7 +143,7 @@ namespace GyroScope.Data
                 {
                     _cashDrawerQuarters = value;
                     OnPropertyChanged(nameof(CashDrawerQuarters));
-
+                    OnPropertyChanged(nameof(TotalOfCashDrawer));
                 }
             }
         }
@@ -165,7 +165,7 @@ namespace GyroScope.Data
                 {
                     _cashDrawerHalfDollars = value;
                     OnPropertyChanged(nameof(CashDrawerHalfDollars));
-
+                    OnPropertyChanged(nameof(TotalOfCashDrawer));
                 }
             }
         }
@@ -188,7 +188,7 @@ namespace GyroScope.Data
                 {
                     _cashDrawerDollarsInCents = value;
                     OnPropertyChanged(nameof(CashDrawerDollarsInCents));
-
+                    OnPropertyChanged(nameof(TotalOfCashDrawer));
                 }
             }
         }
@@ -211,7 +211,7 @@ namespace GyroScope.Data
                 {
                     _cashDrawerOnes = value;
                     OnPropertyChanged(nameof(CashDrawerOnes));
-
+                    OnPropertyChanged(nameof(TotalOfCashDrawer));
                 }
             }
         }
@@ -233,7 +233,7 @@ namespace GyroScope.Data
                 {
                     _cashDrawerTwos = value;
                     OnPropertyChanged(nameof(CashDrawerTwos));
-
+                    OnPropertyChanged(nameof(TotalOfCashDrawer));
                 }
             }
         }
@@ -255,7 +255,7 @@ namespace GyroScope.Data
                 {
                     _cashDrawerFives = value;
                     OnPropertyChanged(nameof(CashDrawerFives));
-
+                    OnPropertyChanged(nameof(TotalOfCashDrawer));
                 }
             }
         }
@@ -277,7 +277,7 @@ namespace GyroScope.Data
                 {
                     _cashDrawerTens = value;
                     OnPropertyChanged(nameof(CashDrawerTens));
-
+                    OnPropertyChanged(nameof(TotalOfCashDrawer));
                 }
             }
         }
@@ -299,7 +299,7 @@ namespace GyroScope.Data
                 {
                     _cashDrawerTwenties = value;
                     OnPropertyChanged(nameof(CashDrawerTwenties));
-
+                    OnPropertyChanged(nameof(TotalOfCashDrawer));
                 }
             }
         }
@@ -321,7 +321,7 @@ namespace GyroScope.Data
                 {
                     _cashDrawerFifties = value;
                     OnPropertyChanged(nameof(CashDrawerFifties));
-
+                    OnPropertyChanged(nameof(TotalOfCashDrawer));
                 }
             }
         }
@@ -343,7 +343,7 @@ namespace GyroScope.Data
                 {
                     _cashDrawerHundreds = value;
                     OnPropertyChanged(nameof(CashDrawerHundreds));
-
+                    OnPropertyChanged(nameof(TotalOfCashDrawer));
                 }
             }
         }
@@ -1366,7 +1366,7 @@ namespace GyroScope.Data
         /// <summary>
         /// Print Receipt
         /// </summary>
-        public void PrintReceipt(Order order, string method)
+        public void PrintReceipt()
         {
             RecieptPrinter.PrintLine("Order Number: " + Order.Number.ToString());
             RecieptPrinter.PrintLine("Date and Time: " + Order.PlacedAt.ToString());
@@ -1391,7 +1391,7 @@ namespace GyroScope.Data
             RecieptPrinter.PrintLine($"Subtotal: ${Decimal.Round(Order.Subtotal, 2)}");
             RecieptPrinter.PrintLine($"Tax: ${Decimal.Round(Order.Tax, 2)}");
             RecieptPrinter.PrintLine($"Total: ${Decimal.Round(Order.Total, 2)}");
-            RecieptPrinter.PrintLine("Payment method: "+ method);
+            RecieptPrinter.PrintLine("Payment method: Cash");
             RecieptPrinter.PrintLine($"Changed owed is: $ + {Decimal.Round(ChangeOwed, 2)}");
             RecieptPrinter.CutTape();
         }
