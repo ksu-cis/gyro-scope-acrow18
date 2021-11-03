@@ -125,6 +125,7 @@ namespace GyroScope.Data
                     _salesTaxRate = value;
                     OnPropertyChanged(nameof(Total));
                     OnPropertyChanged(nameof(Tax));
+                    OnPropertyChanged(nameof(SalesTaxRate));
                 }
             }
         }
@@ -198,7 +199,7 @@ namespace GyroScope.Data
                 if (_number != value) 
                 {
                     _number = value;
-                    OnPropertyChanged(nameof(NextOrderNumber));
+                    OnPropertyChanged(nameof(Number));
                 }
             }
         }
