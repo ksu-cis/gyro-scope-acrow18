@@ -24,9 +24,9 @@ namespace GyroScope.DataTests
             order.Add(new ScorpioSpicyGyro());
             order.Add(new VirgoClassicGyro());
             order.Add(new VirgoClassicGyro());
-            var RVM= new RegisterViewModel(order);
-            RVM.CustomerHundreds = 1;
-            Assert.Equal(RVM.ChangeOwed, RVM.Total - RVM.Customer);
+            var rVM = new RegisterViewModel(order);
+            rVM.CustomerHundreds = 1;
+            Assert.Equal(rVM.ChangeOwed, rVM.Total - rVM.Customer);
         }
 
 
@@ -40,9 +40,9 @@ namespace GyroScope.DataTests
             order.Add(new ScorpioSpicyGyro());
             order.Add(new VirgoClassicGyro());
             order.Add(new VirgoClassicGyro());
-            var RVM = new RegisterViewModel(order);
-            RVM.CustomerHundreds = 1;
-            Assert.Equal(RVM.AmountDue, RVM.Total - RVM.Customer);
+            var rVM = new RegisterViewModel(order);
+            rVM.CustomerHundreds = 1;
+            Assert.Equal(rVM.AmountDue, rVM.Total - rVM.Customer);
         }
 
         
@@ -54,8 +54,8 @@ namespace GyroScope.DataTests
         {
             var order = new Order();
             order.Add(new VirgoClassicGyro());
-            var RVM = new RegisterViewModel(order);
-            Assert.Equal(0, RVM.ChangeOwed);
+            var rVM = new RegisterViewModel(order);
+            Assert.Equal(0, rVM.ChangeOwed);
         }
 
 
@@ -67,8 +67,8 @@ namespace GyroScope.DataTests
         {
             var order = new Order();
             order.Add(new VirgoClassicGyro());
-            var RVM = new RegisterViewModel(order);
-            Assert.Equal(RVM.Total, order.Total);
+            var rVM = new RegisterViewModel(order);
+            Assert.Equal(rVM.Total, order.Total);
         }
 
         /// <summary>
@@ -84,9 +84,9 @@ namespace GyroScope.DataTests
         {
             var order = new Order();
             order.Add(new VirgoClassicGyro());
-            var RVM = new RegisterViewModel(order);
-            RVM.CustomerTwenties = num;
-            Assert.Equal(total, RVM.ChangeOwed);
+            var rVM = new RegisterViewModel(order);
+            rVM.CustomerTwenties = num;
+            Assert.Equal(total, rVM.ChangeOwed);
         }
 
         /// <summary>
@@ -105,10 +105,10 @@ namespace GyroScope.DataTests
         {
             var order = new Order();
             order.Add(new VirgoClassicGyro());
-            var RVM = new RegisterViewModel(order);
-            RVM.CustomerFives = customerBills;
-            Assert.Equal(drawerFives, RVM.CashDrawerTwos);
-            Assert.Equal(drawerTens, RVM.CashDrawerTens);
+            var rVM = new RegisterViewModel(order);
+            rVM.CustomerFives = customerBills;
+            Assert.Equal(drawerFives, rVM.CashDrawerTwos);
+            Assert.Equal(drawerTens, rVM.CashDrawerTens);
 
         }
 
@@ -120,16 +120,16 @@ namespace GyroScope.DataTests
         {
             var order = new Order();
             order.Add(new VirgoClassicGyro());
-            var RVM = new RegisterViewModel(order);
+            var rVM = new RegisterViewModel(order);
 
-            Assert.PropertyChanged(RVM, propertyName, () =>
+            Assert.PropertyChanged(rVM, propertyName, () =>
             {
-                RVM.CustomerFives = customerBills;
+                rVM.CustomerFives = customerBills;
             });
 
-            Assert.PropertyChanged(RVM, propertyName, () =>
+            Assert.PropertyChanged(rVM, propertyName, () =>
             {
-                RVM.CustomerTens = customerBills;
+                rVM.CustomerTens = customerBills;
             });
         }
 
