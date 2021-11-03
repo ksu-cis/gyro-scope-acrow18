@@ -61,325 +61,223 @@ namespace GyroScope.Data
         //Beginning of cash drawer properties
 
         /// <summary>
-        /// backing field for cash drawer pennies
-        /// </summary>
-        public int _cashDrawerPennies = CashDrawer.Pennies;
-
-        /// <summary>
         /// Pennies in cash register
         /// </summary>
         public int CashDrawerPennies
         {
-            get { return _cashDrawerPennies; }
+            get
+            {
+                return CashDrawer.Pennies;
+            }
             set
             {
-                if (_cashDrawerPennies != value)
-                {
-                    _cashDrawerPennies = value;
-                    OnPropertyChanged(nameof(CashDrawerPennies));
-                    OnPropertyChanged(nameof(TotalOfCashDrawer));
-                    OnPropertyChanged(nameof(DrawerTotal));
-                }
+                CashDrawer.Pennies = value;
+                OnPropertyChanged(nameof(CashDrawerPennies));
+                OnPropertyChanged(nameof(DrawerTotal));
             }
         }
-
-        /// <summary>
-        /// backing field cash drawer nickels
-        /// </summary>
-        public int _cashDrawerNickels = CashDrawer.Nickels;
 
         /// <summary>
         /// Nickels in cash register
         /// </summary>
         public int CashDrawerNickels
         {
-            get { return _cashDrawerNickels; }
+            get
+            {
+                return CashDrawer.Nickels;
+            }
             set
             {
-                if (_cashDrawerNickels != value)
-                {
-                    _cashDrawerNickels = value;
-                    OnPropertyChanged(nameof(CashDrawerNickels));
-                    OnPropertyChanged(nameof(TotalOfCashDrawer));
-                    OnPropertyChanged(nameof(DrawerTotal));
-                }
+                CashDrawer.Nickels = value;
+                OnPropertyChanged(nameof(CashDrawerNickels));
+                OnPropertyChanged(nameof(DrawerTotal));
             }
         }
-
-        /// <summary>
-        /// backing field cash drawer dimes
-        /// </summary>
-        public int _cashDrawerDimes = CashDrawer.Dimes;
 
         /// <summary>
         /// Dimes in cash register
         /// </summary>
         public int CashDrawerDimes
         {
-            get { return _cashDrawerDimes; }
+            get
+            {
+                return CashDrawer.Dimes;
+            }
             set
             {
-                if (_cashDrawerDimes != value)
-                {
-                    _cashDrawerDimes = value;
-                    OnPropertyChanged(nameof(CashDrawerDimes));
-                    OnPropertyChanged(nameof(TotalOfCashDrawer));
-                    OnPropertyChanged(nameof(DrawerTotal));
-                }
+                CashDrawer.Dimes = value;
+                OnPropertyChanged(nameof(CashDrawerDimes));
+                OnPropertyChanged(nameof(DrawerTotal));
             }
         }
-
-        /// <summary>
-        /// backing field cash drawer quarters
-        /// </summary>
-        public int _cashDrawerQuarters = CashDrawer.Quarters;
 
         /// <summary>
         /// Quarters in cash register
         /// </summary>
-        public int CashDrawerQuarters 
+        public int CashDrawerQuarters
         {
-            get { return _cashDrawerQuarters; }
+            get
+            {
+                return CashDrawer.Quarters;
+            }
             set
             {
-                if (_cashDrawerQuarters != value)
-                {
-                    _cashDrawerQuarters = value;
-                    OnPropertyChanged(nameof(CashDrawerQuarters));
-                    OnPropertyChanged(nameof(TotalOfCashDrawer));
-                    OnPropertyChanged(nameof(DrawerTotal));
-                }
+                CashDrawer.Quarters = value;
+                OnPropertyChanged(nameof(CashDrawerQuarters));
+                OnPropertyChanged(nameof(DrawerTotal));
             }
         }
 
         /// <summary>
-        /// backing field cash drawer half dollars
-        /// </summary>
-        public int _cashDrawerHalfDollars = CashDrawer.HalfDollars;
-
-        /// <summary>
-        /// Half dollars in cash register
+        /// Halfdollars in cash register
         /// </summary>
         public int CashDrawerHalfDollars
         {
-            get { return _cashDrawerHalfDollars; }
+            get
+            {
+                return CashDrawer.HalfDollars;
+            }
             set
             {
-                if (_cashDrawerHalfDollars != value)
-                {
-                    _cashDrawerHalfDollars = value;
-                    OnPropertyChanged(nameof(CashDrawerHalfDollars));
-                    OnPropertyChanged(nameof(TotalOfCashDrawer));
-                    OnPropertyChanged(nameof(DrawerTotal));
-                }
+                CashDrawer.HalfDollars = value;
+                OnPropertyChanged(nameof(CashDrawerHalfDollars));
+                OnPropertyChanged(nameof(DrawerTotal));
             }
         }
 
-
         /// <summary>
-        /// backing field for dollars in cents
+        /// Cents Dollars in cash register
         /// </summary>
-        public int _cashDrawerDollarsInCents = CashDrawer.Dollars;
-
-        /// <summary>
-        /// Dollars in cash register (cent)
-        /// </summary>
-        public int CashDrawerDollarsInCents 
+        public int CashDrawerDollarsInCents
         {
-            get { return _cashDrawerDollarsInCents; }
+            get
+            {
+                return CashDrawer.Dollars;
+            }
             set
             {
-                if (_cashDrawerDollarsInCents != value)
-                {
-                    _cashDrawerDollarsInCents = value;
-                    OnPropertyChanged(nameof(CashDrawerDollarsInCents));
-                    OnPropertyChanged(nameof(TotalOfCashDrawer));
-                    OnPropertyChanged(nameof(DrawerTotal));
-                }
+                CashDrawer.Dollars = value;
+                OnPropertyChanged(nameof(CashDrawerDollarsInCents));
+                OnPropertyChanged(nameof(DrawerTotal));
             }
         }
 
-
         /// <summary>
-        /// backing field for ones
-        /// </summary>
-        public int _cashDrawerOnes = CashDrawer.Ones;
-
-        /// <summary>
-        /// Ones in cash register
+        /// Dollars in cash register
         /// </summary>
         public int CashDrawerOnes
         {
-            get { return _cashDrawerOnes; }
+            get
+            {
+                return CashDrawer.Ones;
+            }
             set
             {
-                if (_cashDrawerOnes != value)
-                {
-                    _cashDrawerOnes = value;
-                    OnPropertyChanged(nameof(CashDrawerOnes));
-                    OnPropertyChanged(nameof(TotalOfCashDrawer));
-                    OnPropertyChanged(nameof(DrawerTotal));
-                }
+                CashDrawer.Ones = value;
+                OnPropertyChanged(nameof(CashDrawerOnes));
+                OnPropertyChanged(nameof(DrawerTotal));
             }
         }
-
-        /// <summary>
-        /// backing field for twos
-        /// </summary>
-        public int _cashDrawerTwos = CashDrawer.Twos;
 
         /// <summary>
         /// Twos in cash register
         /// </summary>
-        public int CashDrawerTwos 
+        public int CashDrawerTwos
         {
-            get { return _cashDrawerTwos; }
+            get
+            {
+                return CashDrawer.Twos;
+            }
             set
             {
-                if (_cashDrawerTwos != value)
-                {
-                    _cashDrawerTwos = value;
-                    OnPropertyChanged(nameof(CashDrawerTwos));
-                    OnPropertyChanged(nameof(TotalOfCashDrawer));
-                    OnPropertyChanged(nameof(DrawerTotal));
-                }
+                CashDrawer.Twos = value;
+                OnPropertyChanged(nameof(CashDrawerTwos));
+                OnPropertyChanged(nameof(DrawerTotal));
             }
         }
-
-        /// <summary>
-        /// backing field for fives
-        /// </summary>
-        public int _cashDrawerFives = CashDrawer.Fives;
 
         /// <summary>
         /// Fives in cash register
         /// </summary>
-        public int CashDrawerFives 
+        public int CashDrawerFives
         {
-            get { return _cashDrawerFives; }
+            get
+            {
+                return CashDrawer.Fives;
+            }
             set
             {
-                if (_cashDrawerFives != value)
-                {
-                    _cashDrawerFives = value;
-                    OnPropertyChanged(nameof(CashDrawerFives));
-                    OnPropertyChanged(nameof(TotalOfCashDrawer));
-                    OnPropertyChanged(nameof(DrawerTotal));
-                }
+                CashDrawer.Fives = value;
+                OnPropertyChanged(nameof(CashDrawerFives));
+                OnPropertyChanged(nameof(DrawerTotal));
             }
         }
-
-        /// <summary>
-        /// backing field for tens
-        /// </summary>
-        public int _cashDrawerTens = CashDrawer.Tens;
 
         /// <summary>
         /// Tens in cash register
         /// </summary>
-        public int CashDrawerTens 
+        public int CashDrawerTens
         {
-            get { return _cashDrawerTens; }
+            get
+            {
+                return CashDrawer.Tens;
+            }
             set
             {
-                if (_cashDrawerTens != value)
-                {
-                    _cashDrawerTens = value;
-                    OnPropertyChanged(nameof(CashDrawerTens));
-                    OnPropertyChanged(nameof(TotalOfCashDrawer));
-                    OnPropertyChanged(nameof(DrawerTotal));
-                }
+                CashDrawer.Tens = value;
+                OnPropertyChanged(nameof(CashDrawerTens));
+                OnPropertyChanged(nameof(DrawerTotal));
             }
         }
-
-        /// <summary>
-        /// backing field for twenties
-        /// </summary>
-        public int _cashDrawerTwenties = CashDrawer.Twenties;
 
         /// <summary>
         /// Twenties in cash register
         /// </summary>
         public int CashDrawerTwenties
         {
-            get { return _cashDrawerTwenties; }
+            get
+            {
+                return CashDrawer.Twenties;
+            }
             set
             {
-                if (_cashDrawerTwenties != value)
-                {
-                    _cashDrawerTwenties = value;
-                    OnPropertyChanged(nameof(CashDrawerTwenties));
-                    OnPropertyChanged(nameof(TotalOfCashDrawer));
-                    OnPropertyChanged(nameof(DrawerTotal));
-                }
+                CashDrawer.Twenties = value;
+                OnPropertyChanged(nameof(CashDrawerTwenties));
+                OnPropertyChanged(nameof(DrawerTotal));
             }
         }
-
-        /// <summary>
-        /// backing field for fifties
-        /// </summary>
-        public int _cashDrawerFifties = CashDrawer.Fifties;
 
         /// <summary>
         /// Fifties in cash register
         /// </summary>
-        public int CashDrawerFifties 
+        public int CashDrawerFifties
         {
-            get { return _cashDrawerFifties; }
+            get
+            {
+                return CashDrawer.Fifties;
+            }
             set
             {
-                if (_cashDrawerFifties != value)
-                {
-                    _cashDrawerFifties = value;
-                    OnPropertyChanged(nameof(CashDrawerFifties));
-                    OnPropertyChanged(nameof(TotalOfCashDrawer));
-                    OnPropertyChanged(nameof(DrawerTotal));
-                }
+                CashDrawer.Fifties = value;
+                OnPropertyChanged(nameof(CashDrawerFifties));
+                OnPropertyChanged(nameof(DrawerTotal));
             }
         }
-
-        /// <summary>
-        /// backing field for hundreds
-        /// </summary>
-        public int _cashDrawerHundreds = CashDrawer.Hundreds;
 
         /// <summary>
         /// Hundreds in cash register
         /// </summary>
-        public int CashDrawerHundreds 
+        public int CashDrawerHundreds
         {
-            get { return _cashDrawerHundreds; }
-            set
+            get
             {
-                if (_cashDrawerHundreds != value)
-                {
-                    _cashDrawerHundreds = value;
-                    OnPropertyChanged(nameof(CashDrawerHundreds));
-                    OnPropertyChanged(nameof(TotalOfCashDrawer));
-                    OnPropertyChanged(nameof(DrawerTotal));
-                }
+                return CashDrawer.Hundreds;
             }
-        }
-
-        /// <summary>
-        /// backing field for total of cash drawer
-        /// </summary>
-        public double _totalOfCashDrawer = CashDrawer.Total;
-
-        /// <summary>
-        /// Total of Cash drawer
-        /// </summary>
-        public double TotalOfCashDrawer
-        {
-            get { return _totalOfCashDrawer; }
             set
             {
-                if (_totalOfCashDrawer != value)
-                {
-                    _totalOfCashDrawer = value;
-                    OnPropertyChanged(nameof(TotalOfCashDrawer));
-                    OnPropertyChanged(nameof(DrawerTotal));
-                }
+                CashDrawer.Hundreds = value;
+                OnPropertyChanged(nameof(CashDrawerHundreds));
+                OnPropertyChanged(nameof(DrawerTotal));
             }
         }
 
