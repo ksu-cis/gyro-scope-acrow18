@@ -112,6 +112,11 @@ namespace GyroScope.DataTests
 
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="customerBills">Amount of fives recieved from the customer</param>
+        /// <param name="propertyName">Name of property being changed</param>
         [Theory]
         [InlineData(1, "ChangeFives")]
         [InlineData(2, "ChangeFives")]
