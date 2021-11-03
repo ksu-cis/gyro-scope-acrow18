@@ -402,6 +402,7 @@ namespace GyroScope.Data
                     OnPropertyChanged(nameof(Customer));
                     OnPropertyChanged(nameof(AmountDue));
                     OnPropertyChanged(nameof(ChangeOwed));
+                    OnPropertyChanged(nameof(DrawerTotal));
                     MakeChange();
                 }
             }
@@ -425,6 +426,7 @@ namespace GyroScope.Data
                     _change = value;
                     OnPropertyChanged(nameof(Change));
                     OnPropertyChanged(nameof(ChangeOwed));
+                    OnPropertyChanged(nameof(DrawerTotal));
                 }
             }
         }
