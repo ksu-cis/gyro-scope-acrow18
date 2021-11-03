@@ -72,9 +72,12 @@ namespace GyroScope.Data
             }
             set
             {
-                CashDrawer.Pennies = value;
-                OnPropertyChanged(nameof(CashDrawerPennies));
-                OnPropertyChanged(nameof(DrawerTotal));
+                if (CashDrawer.Pennies != value)
+                {
+                    CashDrawer.Pennies = value;
+                    OnPropertyChanged(nameof(CashDrawerPennies));
+                    OnPropertyChanged(nameof(DrawerTotal));
+                }
             }
         }
 
@@ -89,9 +92,12 @@ namespace GyroScope.Data
             }
             set
             {
-                CashDrawer.Nickels = value;
-                OnPropertyChanged(nameof(CashDrawerNickels));
-                OnPropertyChanged(nameof(DrawerTotal));
+                if (CashDrawer.Nickels != value)
+                {
+                    CashDrawer.Nickels = value;
+                    OnPropertyChanged(nameof(CashDrawerNickels));
+                    OnPropertyChanged(nameof(DrawerTotal));
+                }
             }
         }
 
@@ -106,9 +112,12 @@ namespace GyroScope.Data
             }
             set
             {
-                CashDrawer.Dimes = value;
-                OnPropertyChanged(nameof(CashDrawerDimes));
-                OnPropertyChanged(nameof(DrawerTotal));
+                if (CashDrawer.Dimes != value)
+                {
+                    CashDrawer.Dimes = value;
+                    OnPropertyChanged(nameof(CashDrawerDimes));
+                    OnPropertyChanged(nameof(DrawerTotal));
+                }
             }
         }
 
@@ -123,9 +132,12 @@ namespace GyroScope.Data
             }
             set
             {
-                CashDrawer.Quarters = value;
-                OnPropertyChanged(nameof(CashDrawerQuarters));
-                OnPropertyChanged(nameof(DrawerTotal));
+                if (CashDrawer.Quarters != value)
+                {
+                    CashDrawer.Quarters = value;
+                    OnPropertyChanged(nameof(CashDrawerQuarters));
+                    OnPropertyChanged(nameof(DrawerTotal));
+                }
             }
         }
 
@@ -140,9 +152,12 @@ namespace GyroScope.Data
             }
             set
             {
-                CashDrawer.HalfDollars = value;
-                OnPropertyChanged(nameof(CashDrawerHalfDollars));
-                OnPropertyChanged(nameof(DrawerTotal));
+                if (CashDrawer.HalfDollars != value)
+                {
+                    CashDrawer.HalfDollars = value;
+                    OnPropertyChanged(nameof(CashDrawerHalfDollars));
+                    OnPropertyChanged(nameof(DrawerTotal));
+                }
             }
         }
 
@@ -157,9 +172,12 @@ namespace GyroScope.Data
             }
             set
             {
-                CashDrawer.Dollars = value;
-                OnPropertyChanged(nameof(CashDrawerDollarsInCents));
-                OnPropertyChanged(nameof(DrawerTotal));
+                if (CashDrawer.Dollars != value)
+                {
+                    CashDrawer.Dollars = value;
+                    OnPropertyChanged(nameof(CashDrawerDollarsInCents));
+                    OnPropertyChanged(nameof(DrawerTotal));
+                }
             }
         }
 
@@ -174,9 +192,12 @@ namespace GyroScope.Data
             }
             set
             {
-                CashDrawer.Ones = value;
-                OnPropertyChanged(nameof(CashDrawerOnes));
-                OnPropertyChanged(nameof(DrawerTotal));
+                if (CashDrawer.Ones != value)
+                {
+                    CashDrawer.Ones = value;
+                    OnPropertyChanged(nameof(CashDrawerOnes));
+                    OnPropertyChanged(nameof(DrawerTotal));
+                }
             }
         }
 
@@ -191,9 +212,12 @@ namespace GyroScope.Data
             }
             set
             {
-                CashDrawer.Twos = value;
-                OnPropertyChanged(nameof(CashDrawerTwos));
-                OnPropertyChanged(nameof(DrawerTotal));
+                if (CashDrawer.Twos != value)
+                {
+                    CashDrawer.Twos = value;
+                    OnPropertyChanged(nameof(CashDrawerTwos));
+                    OnPropertyChanged(nameof(DrawerTotal));
+                }
             }
         }
 
@@ -208,9 +232,12 @@ namespace GyroScope.Data
             }
             set
             {
-                CashDrawer.Fives = value;
-                OnPropertyChanged(nameof(CashDrawerFives));
-                OnPropertyChanged(nameof(DrawerTotal));
+                if (CashDrawer.Fives != value)
+                {
+                    CashDrawer.Fives = value;
+                    OnPropertyChanged(nameof(CashDrawerFives));
+                    OnPropertyChanged(nameof(DrawerTotal));
+                }
             }
         }
 
@@ -225,9 +252,12 @@ namespace GyroScope.Data
             }
             set
             {
-                CashDrawer.Tens = value;
-                OnPropertyChanged(nameof(CashDrawerTens));
-                OnPropertyChanged(nameof(DrawerTotal));
+                if (CashDrawer.Tens != value)
+                {
+                    CashDrawer.Tens = value;
+                    OnPropertyChanged(nameof(CashDrawerTens));
+                    OnPropertyChanged(nameof(DrawerTotal));
+                }
             }
         }
 
@@ -242,9 +272,12 @@ namespace GyroScope.Data
             }
             set
             {
-                CashDrawer.Twenties = value;
-                OnPropertyChanged(nameof(CashDrawerTwenties));
-                OnPropertyChanged(nameof(DrawerTotal));
+                if (CashDrawer.Twenties != value)
+                {
+                    CashDrawer.Twenties = value;
+                    OnPropertyChanged(nameof(CashDrawerTwenties));
+                    OnPropertyChanged(nameof(DrawerTotal));
+                }
             }
         }
 
@@ -259,9 +292,12 @@ namespace GyroScope.Data
             }
             set
             {
-                CashDrawer.Fifties = value;
-                OnPropertyChanged(nameof(CashDrawerFifties));
-                OnPropertyChanged(nameof(DrawerTotal));
+                if (CashDrawer.Fifties != value)
+                {
+                    CashDrawer.Fifties = value;
+                    OnPropertyChanged(nameof(CashDrawerFifties));
+                    OnPropertyChanged(nameof(DrawerTotal));
+                }
             }
         }
 
@@ -276,9 +312,12 @@ namespace GyroScope.Data
             }
             set
             {
-                CashDrawer.Hundreds = value;
-                OnPropertyChanged(nameof(CashDrawerHundreds));
-                OnPropertyChanged(nameof(DrawerTotal));
+                if (CashDrawer.Hundreds != value)
+                {
+                    CashDrawer.Hundreds = value;
+                    OnPropertyChanged(nameof(CashDrawerHundreds));
+                    OnPropertyChanged(nameof(DrawerTotal));
+                }
             }
         }
 
