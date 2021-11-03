@@ -78,8 +78,8 @@ namespace GyroScope.DataTests
         /// <param name="total">Total remaining from customer</param>
         [Theory]
         [InlineData(1, 14)]
-        [InlineData(2, 8)]
-        [InlineData(3, 2)]
+        [InlineData(2, 34)]
+        [InlineData(3, 54)]
         public void ChangeOwedShouldCalculateCorrectly(int num, decimal total) 
         {
             var order = new Order();
