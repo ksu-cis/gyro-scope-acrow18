@@ -1093,180 +1093,240 @@ namespace GyroScope.Data
         /// </summary>
         public void MakeChange()
         {
-            if (Customer > Total)
+            int changeCash = (int)Change; // 400
+            int change = (int)((Customer - Total) * 100); // 50 -> 400.500
+            int minAmount = 0;
+            
+            ///beginning of making cash change
+            if (changeCash >= 100)
             {
-                int change = (int)((Customer - Total) * 100);
-                int cents = (int)change;
-
-                if (CashDrawerHundreds * 10000 > cents)
+                if (CashDrawerHundreds >= 1) //if a hundred is in the register
                 {
-                    change -= cents * 10000;
-                    ChangeHundreds = cents;
+                    int hundredAmount = changeCash / 100;
+                    minAmount = Math.Min(hundredAmount, CashDrawerHundreds);
+                    ChangeHundreds = minAmount;
+                    CashDrawerHundreds -= ChangeHundreds;
+                    changeCash -= ChangeHundreds * 100;
                 }
-
                 else
                 {
-                    change -= CashDrawerHundreds * 10000;
-                    ChangeHundreds = CashDrawerHundreds;
-                }
-
-                if (CashDrawerFifties * 5000 >= cents)
-                {
-                    change -= cents * 5000;
-                    ChangeFifties = cents;
-                }
-
-                else
-                {
-                    change -= CashDrawerFifties * 5000;
-                    ChangeFifties = CashDrawerFifties;
-                }
-
-                if (CashDrawerTwenties * 2000 >= cents)
-                {
-                    change -= cents * 2000;
-                    ChangeTwenties = cents;
-                }
-
-                else
-                {
-                    change -= CashDrawerTwenties * 2000;
-                    ChangeTwenties = CashDrawerTwenties;
-                }
-
-                if (CashDrawerTens * 1000 >= cents)
-                {
-                    change -= cents * 1000;
-                    ChangeTens = cents;
-                }
-
-                else
-                {
-                    change -= CashDrawerTens * 1000;
-                    ChangeTens = CashDrawerTens;
-                }
-
-                if (CashDrawerFives * 500 >= cents)
-                {
-                    change -= cents * 500;
-                    ChangeFives = cents;
-                }
-
-                else
-                {
-                    change -= CashDrawerFives * 500;
-                    ChangeFives = CashDrawerFives;
-                }
-
-                if (CashDrawerTwos * 200 >= cents)
-                {
-                    change -= cents * 200;
-                    ChangeTwenties = cents;
-                }
-
-                else
-                {
-                    change -= CashDrawerTwos * 200;
-                    ChangeTwos = CashDrawerTwos;
-                }
-
-                if (CashDrawerOnes * 100 >= cents)
-                {
-                    change -= cents * 100;
-                    ChangeOnes = cents;
-                }
-
-                else
-                {
-                    change -= CashDrawerOnes * 100;
-                    ChangeOnes = CashDrawerOnes;
-
-
-                    if (CashDrawerDollarsInCents * 100M >= cents)
-                    {
-                        change -= (cents - ChangeOnes) * 100;
-                        ChangeDollars = cents;
-                    }
-                }
-
-
-                if (CashDrawerHalfDollars * 50 >= cents)
-                {
-                    change -= cents * 50;
-                    ChangeHalfDollars = cents;
-                }
-
-                else
-                {
-                    change -= CashDrawerHalfDollars * 50;
-                    ChangeHalfDollars = CashDrawerHalfDollars;
-                }
-
-                if (CashDrawerQuarters * 25 >= cents)
-                {
-                    change -= cents * 25;
-                    ChangeQuarters = cents;
-                }
-
-                else
-                {
-                    change -= CashDrawerQuarters * 25;
-                    ChangeQuarters = CashDrawerQuarters;
-                }
-
-                if (CashDrawerDimes * 10 >= cents)
-                {
-                    change -= cents * 10;
-                    ChangeDimes = cents;
-                }
-
-                else
-                {
-                    change -= CashDrawerDimes * 10;
-                    ChangeDimes = CashDrawerDimes;
-                }
-
-                if (CashDrawerNickels * 5 >= cents)
-                {
-                    change -= cents * 5;
-                    ChangeQuarters = cents;
-                }
-
-                else
-                {
-                    change -= CashDrawerNickels * 5;
-                    ChangeNickels = CashDrawerNickels;
-                }
-
-                if (CashDrawerPennies >= cents)
-                {
-                    ChangePennies = change;
-                }
-
-                else
-                {
-                    change -= CashDrawerPennies * 100;
-                    ChangePennies = CashDrawerPennies;
+                    ChangeHundreds = 0;
                 }
             }
 
-            else
+            if (changeCash >= 50)
             {
-                //set change to zero
-                ChangeHundreds = 0;
-                ChangeFifties = 0;
-                ChangeTwenties = 0;
-                ChangeTens = 0;
-                ChangeFives = 0;
-                ChangeTwos = 0;
-                ChangeOnes = 0;
-                ChangeDollars = 0;
-                ChangeHalfDollars = 0;
-                ChangeQuarters = 0;
-                ChangeDimes = 0;
-                ChangeNickels = 0;
-                ChangePennies = 0;
+                if (CashDrawerFifties >= 1) //if a hundred is in the register
+                {
+                    int fiftyAmount = changeCash / 50;
+                    minAmount = Math.Min(fiftyAmount, CashDrawerFifties);
+                    ChangeFifties = minAmount;
+                    CashDrawerFifties -= ChangeFifties;
+                    changeCash -= ChangeFifties * 50;
+                }
+                else
+                {
+                    ChangeFifties = 0;
+                }
             }
+
+            if (changeCash >= 20)
+            {
+                if (CashDrawerTwenties >= 1) //if a hundred is in the register
+                {
+                    int twentyAmount = changeCash / 20;
+                    minAmount = Math.Min(twentyAmount, CashDrawerFifties);
+                    ChangeTwenties = minAmount;
+                    CashDrawerTwenties -= ChangeTwenties;
+                    changeCash -= ChangeTwenties * 20;
+                }
+                else
+                {
+                    ChangeTwenties = 0;
+                }
+            }
+
+            if (changeCash >= 10)
+            {
+                if (CashDrawerTens >= 1) //if a hundred is in the register
+                {
+                    int tenAmount = changeCash / 10;
+                    minAmount = Math.Min(tenAmount, CashDrawerTens);
+                    ChangeTens = minAmount;
+                    CashDrawerTens -= ChangeTens;
+                    changeCash -= ChangeTens * 10;
+                }
+                else
+                {
+                    ChangeTens = 0;
+                }
+            }
+
+            if (changeCash >= 5)
+            {
+                if (CashDrawerFives >= 1) //if a hundred is in the register
+                {
+                    int hundredAmount = changeCash / 5;
+                    minAmount = Math.Min(hundredAmount, CashDrawerFives);
+                    ChangeFives = minAmount;
+                    CashDrawerFives -= ChangeFives;
+                    changeCash -= ChangeFives * 5;
+                }
+                else
+                {
+                    ChangeFives = 0;
+                }
+            }
+
+            if (changeCash >= 2)
+            {
+                if (CashDrawerTwos >= 1) //if a hundred is in the register
+                {
+                    int onesAmount = changeCash / 2;
+                    minAmount = Math.Min(onesAmount, CashDrawerTwos);
+                    ChangeOnes = minAmount;
+                    CashDrawerTwos -= ChangeTwos;
+                    changeCash -= ChangeTwos * 2;
+                }
+                else
+                {
+                    ChangeTwos = 0;
+                }
+            }
+
+            if (change >= 1)
+            {
+                if (CustomerPennies >= 1) //if a hundred is in the register
+                {
+                    int penniesAmount = change / 1;
+                    minAmount = Math.Min(penniesAmount, CustomerPennies);
+                    ChangePennies = minAmount;
+                    CashDrawerPennies -= ChangePennies;
+                    changeCash -= ChangePennies * 1;
+                }
+                else
+                {
+                    ChangePennies = 0;
+                }
+            }
+
+            if (changeCash >= 1)
+            {
+                if (CashDrawerOnes >= 1) //if a hundred is in the register
+                {
+                    int twosAmount = changeCash / 1;
+                    minAmount = Math.Min(twosAmount, CashDrawerOnes);
+                    ChangeOnes = minAmount;
+                    CashDrawerOnes -= ChangeOnes;
+                    changeCash -= ChangeOnes * 1;
+                }
+                else
+                {
+                    ChangeOnes = 0;
+                }
+            }
+
+            ///end of making cash change
+            ///beginning of making coin change
+
+            if (change >= 1)
+            {
+                if (CustomerPennies >= 1) //if a hundred is in the register
+                {
+                    int penniesAmount = change / 1;
+                    minAmount = Math.Min(penniesAmount, CustomerPennies);
+                    ChangePennies = minAmount;
+                    CashDrawerPennies -= ChangePennies;
+                    changeCash -= ChangePennies * 1;
+                }
+                else
+                {
+                    ChangePennies = 0;
+                }
+            }
+
+            if (change >= 5)
+            {
+                if (CustomerNickels >= 1) //if a hundred is in the register
+                {
+                    int nickelsAmount = change / 5;
+                    minAmount = Math.Min(nickelsAmount, CustomerNickels);
+                    ChangeNickels = minAmount;
+                    CashDrawerNickels -= ChangeNickels;
+                    changeCash -= ChangeNickels * 5;
+                }
+                else
+                {
+                    ChangeNickels = 0;
+                }
+            }
+
+            if (change >= 10)
+            {
+                if (CustomerDimes >= 1) //if a hundred is in the register
+                {
+                    int dimesAmount = change / 5;
+                    minAmount = Math.Min(dimesAmount, CustomerDimes);
+                    ChangeDimes = minAmount;
+                    CashDrawerDimes -= ChangeDimes;
+                    changeCash -= ChangeDimes * 5;
+                }
+                else
+                {
+                    ChangeDimes = 0;
+                }
+            }
+
+            if (change >= 25)
+            {
+                if (CustomerQuarters >= 1) //if a hundred is in the register
+                {
+                    int quartersAmount = change / 5;
+                    minAmount = Math.Min(quartersAmount, CustomerQuarters);
+                    ChangeQuarters = minAmount;
+                    CashDrawerQuarters -= ChangeQuarters;
+                    changeCash -= ChangeQuarters * 5;
+                }
+                else
+                {
+                    ChangeQuarters = 0;
+                }
+            }
+
+            if (change >= 50)
+            {
+                if (CustomerHalfDollars >= 1) //if a hundred is in the register
+                {
+                    int halfDollarsAmount = change / 5;
+                    minAmount = Math.Min(halfDollarsAmount, CustomerHalfDollars);
+                    ChangeHalfDollars = minAmount;
+                    CashDrawerHalfDollars -= ChangeHalfDollars;
+                    changeCash -= ChangeHalfDollars * 5;
+                }
+                else
+                {
+                    ChangeHalfDollars = 0;
+                }
+            }
+
+            if (change >= 100)
+            {
+                if (CustomerDollars >= 1) //if a hundred is in the register
+                {
+                    int dollarsAmount = change / 5;
+                    minAmount = Math.Min(dollarsAmount, CustomerDollars);
+                    ChangeDollars = minAmount;
+                    CashDrawerDollarsInCents -= ChangeDollars;
+                    changeCash -= ChangeDollars * 5;
+                }
+                else
+                {
+                    ChangeDollars = 0;
+                }
+            }
+
+
+
         }
 
         /// <summary>
