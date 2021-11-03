@@ -408,6 +408,7 @@ namespace GyroScope.Data
                     MakeChange();
                     OnPropertyChanged(nameof(ChangePennies));
                     OnPropertyChanged(nameof(ChangeOwed));
+                    OnPropertyChanged(nameof(AmountDue));
             }
         }
         
@@ -442,6 +443,7 @@ namespace GyroScope.Data
                 MakeChange();
                 OnPropertyChanged(nameof(ChangeNickels));
                 OnPropertyChanged(nameof(ChangeOwed));
+                OnPropertyChanged(nameof(AmountDue));
             }
         }
 
@@ -475,6 +477,7 @@ namespace GyroScope.Data
                 MakeChange();
                 OnPropertyChanged(nameof(ChangeDimes));
                 OnPropertyChanged(nameof(ChangeOwed));
+                OnPropertyChanged(nameof(AmountDue));
             }
         }
 
@@ -508,6 +511,7 @@ namespace GyroScope.Data
                 MakeChange();
                 OnPropertyChanged(nameof(ChangeQuarters));
                 OnPropertyChanged(nameof(ChangeOwed));
+                OnPropertyChanged(nameof(AmountDue));
             }
         }
 
@@ -542,6 +546,7 @@ namespace GyroScope.Data
                 MakeChange();
                 OnPropertyChanged(nameof(ChangeHalfDollars));
                 OnPropertyChanged(nameof(ChangeOwed));
+                OnPropertyChanged(nameof(AmountDue));
             }
         }
 
@@ -576,6 +581,7 @@ namespace GyroScope.Data
                 MakeChange();
                 OnPropertyChanged(nameof(ChangeDollars));
                 OnPropertyChanged(nameof(ChangeOwed));
+                OnPropertyChanged(nameof(AmountDue));
             }
         }
 
@@ -610,6 +616,7 @@ namespace GyroScope.Data
                 MakeChange();
                 OnPropertyChanged(nameof(ChangeOnes));
                 OnPropertyChanged(nameof(ChangeOwed));
+                OnPropertyChanged(nameof(AmountDue));
             }
         }
 
@@ -643,6 +650,7 @@ namespace GyroScope.Data
                 MakeChange();
                 OnPropertyChanged(nameof(ChangeTwos));
                 OnPropertyChanged(nameof(ChangeOwed));
+                OnPropertyChanged(nameof(AmountDue));
             }
         }
 
@@ -676,6 +684,7 @@ namespace GyroScope.Data
                 MakeChange();
                 OnPropertyChanged(nameof(ChangeFives));
                 OnPropertyChanged(nameof(ChangeOwed));
+                OnPropertyChanged(nameof(AmountDue));
             }
         }
 
@@ -709,6 +718,7 @@ namespace GyroScope.Data
                 MakeChange();
                 OnPropertyChanged(nameof(ChangeTens));
                 OnPropertyChanged(nameof(ChangeOwed));
+                OnPropertyChanged(nameof(AmountDue));
             }
         }
 
@@ -743,6 +753,7 @@ namespace GyroScope.Data
                 MakeChange();
                 OnPropertyChanged(nameof(ChangeTwenties));
                 OnPropertyChanged(nameof(ChangeOwed));
+                OnPropertyChanged(nameof(AmountDue));
             }
         }
 
@@ -776,6 +787,7 @@ namespace GyroScope.Data
                 MakeChange();
                 OnPropertyChanged(nameof(ChangeFifties));
                 OnPropertyChanged(nameof(ChangeOwed));
+                OnPropertyChanged(nameof(AmountDue));
             }
         }
 
@@ -809,6 +821,7 @@ namespace GyroScope.Data
                 MakeChange();
                 OnPropertyChanged(nameof(ChangeHundreds));
                 OnPropertyChanged(nameof(ChangeOwed));
+                OnPropertyChanged(nameof(AmountDue));
             }
         }
 
