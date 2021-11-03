@@ -113,7 +113,7 @@ namespace GyroScope.DataTests
         }
 
         /// <summary>
-        /// 
+        /// Checks if change properties are changing when customer receives change
         /// </summary>
         /// <param name="customerBills">Amount of fives recieved from the customer</param>
         /// <param name="propertyName">Name of property being changed</param>

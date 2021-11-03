@@ -78,6 +78,7 @@ namespace GyroScope.Data
                     _cashDrawerPennies = value;
                     OnPropertyChanged(nameof(CashDrawerPennies));
                     OnPropertyChanged(nameof(TotalOfCashDrawer));
+                    OnPropertyChanged(nameof(DrawerTotal));
                 }
             }
         }
