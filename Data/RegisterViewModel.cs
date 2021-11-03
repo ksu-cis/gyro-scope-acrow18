@@ -1325,8 +1325,24 @@ namespace GyroScope.Data
                 }
             }
 
+            if (change > 0 || changeCash > 0) 
+            {
+                //MessageBox.Show("There is not enough change in the cash register");
+            }
 
-
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ChangeHundreds"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ChangeFifties"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ChangeTwenties"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ChangeTens"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ChangeFives"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ChangeTwos"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ChangeOnes"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ChangeDollars"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ChangeHalfDollars"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ChangeQuarters"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ChangeDimes"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ChangeNickels"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ChangePennies"));
         }
 
         /// <summary>
