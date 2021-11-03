@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,7 +19,7 @@ namespace PointOfSale
     /// <summary>
     /// Interaction logic for CurrencyButtonControl.xaml
     /// </summary>
-    public partial class CurrencyButtonControl : UserControl
+    public partial class CurrencyButtonControl : UserControl, INotifyPropertyChanged
     {
         
         /// <summary>
@@ -37,12 +38,22 @@ namespace PointOfSale
         public static readonly RoutedEvent IncomingClickChangeEvent = EventManager.RegisterRoutedEvent("IncomingChangeClick", RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(CurrencyButtonControl));
 
         /// <summary>
+        /// Property change event handler
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
+
+        /// <summary>
         /// Number of denomination given back as change.
         /// </summary>
         public int OutgoingCount
         {
             get { return (int)GetValue(OutgoingCountProperty); }
-            set { SetValue(OutgoingCountProperty, value);  }
+            set 
+            { 
+                SetValue(OutgoingCountProperty, value);
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(OutgoingCount)));
+            }
         }
 
         /// <summary>
@@ -51,7 +62,11 @@ namespace PointOfSale
         public int IncomingCount
         {
             get { return (int)GetValue(IncomingCountProperty); }
-            set { SetValue(IncomingCountProperty, value); }
+            set 
+            { 
+                SetValue(IncomingCountProperty, value);
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(IncomingCount)));
+            }
         }
 
         /// <summary>
