@@ -10,7 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using RoundRegister;
-using System.Windows;
+
 
 namespace GyroScope.Data
 {
@@ -1351,7 +1351,7 @@ namespace GyroScope.Data
 
             if (change > 0 || changeCash > 0) 
             {
-                MessageBox.Show("There is not enough change in the cash register");
+                //MessageBox.Show("There is not enough change in the cash register");
             }
 
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ChangeHundreds"));
