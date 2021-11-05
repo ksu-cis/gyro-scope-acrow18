@@ -1185,8 +1185,9 @@ namespace GyroScope.Data
         /// </summary>
         public void MakeChange()
         {
+            Change = (Customer - Total);
             int changeCash = (int)Change; // 400
-            int change = (int)((Customer - Total) * 100); // 50 -> 400.500
+            int change = (int)((Change - changeCash) * 100); // 50 -> 400.500
             int minAmount = 0;
             
             ///beginning of making cash change

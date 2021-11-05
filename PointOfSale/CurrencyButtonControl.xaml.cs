@@ -19,7 +19,7 @@ namespace PointOfSale
     /// <summary>
     /// Interaction logic for CurrencyButtonControl.xaml
     /// </summary>
-    public partial class CurrencyButtonControl : UserControl, INotifyPropertyChanged
+    public partial class CurrencyButtonControl : UserControl
     {
         
         /// <summary>
@@ -38,12 +38,6 @@ namespace PointOfSale
         public static readonly RoutedEvent IncomingClickChangeEvent = EventManager.RegisterRoutedEvent("IncomingChangeClick", RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(CurrencyButtonControl));
 
         /// <summary>
-        /// Property change event handler
-        /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
-
-
-        /// <summary>
         /// Number of denomination given back as change.
         /// </summary>
         public int OutgoingCount
@@ -52,7 +46,6 @@ namespace PointOfSale
             set 
             { 
                 SetValue(OutgoingCountProperty, value);
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(OutgoingCount)));
             }
         }
 
@@ -65,7 +58,6 @@ namespace PointOfSale
             set 
             { 
                 SetValue(IncomingCountProperty, value);
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(IncomingCount)));
             }
         }
 
