@@ -1306,25 +1306,57 @@ namespace GyroScope.Data
             ///end of making cash change
             ///beginning of making coin change
 
-            if (change >= 1)
+            if (change >= 100)
             {
-                if (CustomerPennies >= 1) //if a hundred is in the register
+                if (CashDrawerDollarsInCents >= 100) //if a hundred is in the register
                 {
-                    int penniesAmount = change / 1;
-                    minAmount = Math.Min(penniesAmount, CustomerPennies);
-                    ChangePennies = minAmount;
-                    CashDrawerPennies -= ChangePennies;
-                    change -= ChangePennies * 1;
+                    int dollarsAmount = change / 100;
+                    minAmount = Math.Min(dollarsAmount, CustomerDollars);
+                    ChangeDollars = minAmount;
+                    CashDrawerDollarsInCents -= ChangeDollars;
+                    change -= ChangeDollars * 100;
                 }
                 else
                 {
-                    ChangePennies = 0;
+                    ChangeDollars = 0;
                 }
             }
 
-            if (change >= 5)
+            if (change >= 50)
             {
-                if (CustomerNickels >= 1) //if a hundred is in the register
+                if (CashDrawerHalfDollars >= 1) //if a hundred is in the register
+                {
+                    int halfDollarsAmount = change / 50;
+                    minAmount = Math.Min(halfDollarsAmount, CustomerHalfDollars);
+                    ChangeHalfDollars = minAmount;
+                    CashDrawerHalfDollars -= ChangeHalfDollars;
+                    change -= ChangeHalfDollars * 50;
+                }
+                else
+                {
+                    ChangeHalfDollars = 0;
+                }
+            }
+
+            if (change >= 25)
+            {
+                if (CashDrawerDimes >= 1) //if a hundred is in the register
+                {
+                    int dimesAmount = change / 10;
+                    minAmount = Math.Min(dimesAmount, CustomerDimes);
+                    ChangeDimes = minAmount;
+                    CashDrawerDimes -= ChangeDimes;
+                    change -= ChangeDimes * 10;
+                }
+                else
+                {
+                    ChangeDimes = 0;
+                }
+            }
+
+            if (change >= 10)
+            {
+                if (CashDrawerNickels >= 1) //if a hundred is in the register
                 {
                     int nickelsAmount = change / 5;
                     minAmount = Math.Min(nickelsAmount, CustomerNickels);
@@ -1338,70 +1370,40 @@ namespace GyroScope.Data
                 }
             }
 
-            if (change >= 10)
+            if (change >= 5)
             {
-                if (CustomerDimes >= 1) //if a hundred is in the register
+                if (CashDrawerNickels >= 1) //if a hundred is in the register
                 {
-                    int dimesAmount = change / 5;
-                    minAmount = Math.Min(dimesAmount, CustomerDimes);
-                    ChangeDimes = minAmount;
-                    CashDrawerDimes -= ChangeDimes;
-                    change -= ChangeDimes * 5;
+                    int nickelsAmount = change / 5;
+                    minAmount = Math.Min(nickelsAmount, CustomerNickels);
+                    ChangeNickels = minAmount;
+                    CashDrawerNickels -= ChangeNickels;
+                    change -= ChangeNickels * 5;
                 }
                 else
                 {
-                    ChangeDimes = 0;
+                    ChangeNickels = 0;
                 }
             }
 
-            if (change >= 25)
+
+            if (change >= 1)
             {
-                if (CustomerQuarters >= 1) //if a hundred is in the register
+                if (CashDrawerPennies >= 1) //if a hundred is in the register
                 {
-                    int quartersAmount = change / 5;
-                    minAmount = Math.Min(quartersAmount, CustomerQuarters);
-                    ChangeQuarters = minAmount;
-                    CashDrawerQuarters -= ChangeQuarters;
-                    change -= ChangeQuarters * 5;
+                    int penniesAmount = change / 1;
+                    minAmount = Math.Min(penniesAmount, CustomerPennies);
+                    ChangePennies = minAmount;
+                    CashDrawerPennies -= ChangePennies;
+                    change -= ChangePennies * 1;
                 }
                 else
                 {
-                    ChangeQuarters = 0;
+                    ChangePennies = 0;
                 }
             }
 
-            if (change >= 50)
-            {
-                if (CustomerHalfDollars >= 1) //if a hundred is in the register
-                {
-                    int halfDollarsAmount = change / 5;
-                    minAmount = Math.Min(halfDollarsAmount, CustomerHalfDollars);
-                    ChangeHalfDollars = minAmount;
-                    CashDrawerHalfDollars -= ChangeHalfDollars;
-                    change -= ChangeHalfDollars * 5;
-                }
-                else
-                {
-                    ChangeHalfDollars = 0;
-                }
-            }
-
-            if (change >= 100)
-            {
-                if (CustomerDollars >= 1) //if a hundred is in the register
-                {
-                    int dollarsAmount = change / 5;
-                    minAmount = Math.Min(dollarsAmount, CustomerDollars);
-                    ChangeDollars = minAmount;
-                    CashDrawerDollarsInCents -= ChangeDollars;
-                    change -= ChangeDollars * 5;
-                }
-                else
-                {
-                    ChangeDollars = 0;
-                }
-            }
-
+            
             if (change > 0 || changeCash > 0) 
             {
                 //MessageBox.Show("There is not enough change in the cash register");
