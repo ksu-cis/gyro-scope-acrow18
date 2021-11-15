@@ -27,30 +27,7 @@ namespace PointOfSale
         public CashPaymentProcessing()
         {
             InitializeComponent();
-            DataContext = new RegisterViewModel(Order);
         }
-
-        /// <summary>
-        /// Initializes a order.
-        /// </summary>
-        public Order _order = new Order();
-
-        /// <summary>
-        /// Sets the order property.
-        /// </summary>
-        public Order Order
-        {
-            get => _order;
-            set
-            {
-                if (_order != value)
-                {
-                    _order = value;
-                    DataContext = value;
-                }
-            }
-        }
-
 
         /// <summary>
         /// Event handler for button clicks.

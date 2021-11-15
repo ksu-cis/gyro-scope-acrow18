@@ -1306,12 +1306,12 @@ namespace GyroScope.Data
             ///end of making cash change
             ///beginning of making coin change
 
-            if (change >= 100)
+            if (change >= 1)
             {
-                if (CashDrawerDollarsInCents >= 100) //if a hundred is in the register
+                if (CashDrawerDollarsInCents >= 1) //if a hundred is in the register
                 {
-                    int dollarsAmount = change / 100;
-                    minAmount = Math.Min(dollarsAmount, CustomerDollars);
+                    int dollarsInCentsAmount = change / 1;
+                    minAmount = Math.Min(dollarsInCentsAmount, CustomerDollars);
                     ChangeDollars = minAmount;
                     CashDrawerDollarsInCents -= ChangeDollars;
                     change -= ChangeDollars * 100;
