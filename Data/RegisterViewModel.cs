@@ -1306,12 +1306,12 @@ namespace GyroScope.Data
             ///end of making cash change
             ///beginning of making coin change
 
-            if (change >= 1)
+            if (change >= 100)
             {
                 if (CashDrawerDollarsInCents >= 1) //if a hundred is in the register
                 {
-                    int dollarsInCentsAmount = change / 1;
-                    minAmount = Math.Min(dollarsInCentsAmount, CustomerDollars);
+                    int dollarsInCentsAmount = change / 100;
+                    minAmount = Math.Min(dollarsInCentsAmount, CashDrawerDollarsInCents);
                     ChangeDollars = minAmount;
                     CashDrawerDollarsInCents -= ChangeDollars;
                     change -= ChangeDollars * 100;
@@ -1327,7 +1327,7 @@ namespace GyroScope.Data
                 if (CashDrawerHalfDollars >= 1) //if a hundred is in the register
                 {
                     int halfDollarsAmount = change / 50;
-                    minAmount = Math.Min(halfDollarsAmount, CustomerHalfDollars);
+                    minAmount = Math.Min(halfDollarsAmount, CashDrawerHalfDollars);
                     ChangeHalfDollars = minAmount;
                     CashDrawerHalfDollars -= ChangeHalfDollars;
                     change -= ChangeHalfDollars * 50;
@@ -1340,10 +1340,26 @@ namespace GyroScope.Data
 
             if (change >= 25)
             {
+                if (CashDrawerQuarters >= 1) //if a hundred is in the register
+                {
+                    int quartersAmount = change / 25;
+                    minAmount = Math.Min(quartersAmount, CashDrawerQuarters);
+                    ChangeQuarters = minAmount;
+                    CashDrawerQuarters -= ChangeQuarters;
+                    change -= ChangeQuarters * 25;
+                }
+                else
+                {
+                    ChangeQuarters = 0;
+                }
+            }
+
+            if (change >= 10)
+            {
                 if (CashDrawerDimes >= 1) //if a hundred is in the register
                 {
                     int dimesAmount = change / 10;
-                    minAmount = Math.Min(dimesAmount, CustomerDimes);
+                    minAmount = Math.Min(dimesAmount, CashDrawerDimes);
                     ChangeDimes = minAmount;
                     CashDrawerDimes -= ChangeDimes;
                     change -= ChangeDimes * 10;
@@ -1354,28 +1370,12 @@ namespace GyroScope.Data
                 }
             }
 
-            if (change >= 10)
-            {
-                if (CashDrawerNickels >= 1) //if a hundred is in the register
-                {
-                    int nickelsAmount = change / 5;
-                    minAmount = Math.Min(nickelsAmount, CustomerNickels);
-                    ChangeNickels = minAmount;
-                    CashDrawerNickels -= ChangeNickels;
-                    change -= ChangeNickels * 5;
-                }
-                else
-                {
-                    ChangeNickels = 0;
-                }
-            }
-
             if (change >= 5)
             {
                 if (CashDrawerNickels >= 1) //if a hundred is in the register
                 {
                     int nickelsAmount = change / 5;
-                    minAmount = Math.Min(nickelsAmount, CustomerNickels);
+                    minAmount = Math.Min(nickelsAmount, CashDrawerNickels);
                     ChangeNickels = minAmount;
                     CashDrawerNickels -= ChangeNickels;
                     change -= ChangeNickels * 5;
@@ -1392,7 +1392,7 @@ namespace GyroScope.Data
                 if (CashDrawerPennies >= 1) //if a hundred is in the register
                 {
                     int penniesAmount = change / 1;
-                    minAmount = Math.Min(penniesAmount, CustomerPennies);
+                    minAmount = Math.Min(penniesAmount, CashDrawerPennies);
                     ChangePennies = minAmount;
                     CashDrawerPennies -= ChangePennies;
                     change -= ChangePennies * 1;
