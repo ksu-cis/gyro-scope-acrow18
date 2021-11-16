@@ -2,9 +2,12 @@
  * Menu.cs
  * Author: ALisha C.
  */
+
+using GyroScope.Data.Drinks;
 using GyroScope.Data.Entrees;
 using GyroScope.Data.Enums;
 using GyroScope.Data.Sides;
+using GyroScope.Data.Treats;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -59,12 +62,46 @@ namespace GyroScope.Data
         /// <summary>
         /// Gets a list of drinks 
         /// </summary>
-        public static IEnumerable<IMenuItem> Drinks { get;  }
+        public static IEnumerable<IMenuItem> Drinks
+        { //change foreach
+            get
+            {
+                var drinks = new List<IMenuItem>();
+
+                drinks.Add(new CapricornMountainTea());
+
+                foreach (LibraLibationFlavor flavor in Enum.GetValues(typeof(LibraLibationFlavor)))
+                {
+                    drinks.Add(new LibraLibation() { Flavor = flavor });
+                }
+
+                return drinks;
+            }
+        }
 
         /// <summary>
-        /// Gets a list of drinks 
+        /// Gets a list of treats
         /// </summary>
-        public static IEnumerable<IMenuItem> Treats { get;  }
+        public static IEnumerable<IMenuItem> Treats 
+        {
+            
+            get
+            {
+
+                var treats = new List<IMenuItem>();
+
+                treats.Add(new CancerHalvaCake());
+
+                foreach (AquariusIceFlavor flavor in Enum.GetValues(typeof(AquariusIceFlavor)))
+                {
+                    treats.Add(new AquariusIce() { Flavor = flavor });
+                }
+
+                return treats;
+            }
+            
+
+        }
 
         /// <summary>
         /// Gets a full menu list of all gyro scope options
