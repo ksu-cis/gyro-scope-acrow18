@@ -108,6 +108,29 @@ p
     top: 50%;
     left: 0%;
     right: 0%;
+}
+
+.paragraph
+{
     border: 3px dashed white;
+}
+
+ul 
+{
+    list-style-type: none;
+    border: none;
+}
+
+li 
+{
+    border: none;
+}
+
+.itemName 
+{
+    font-size: 1.5rem;
+    font-style: oblique;
+    font-weight: bold;
+    text-align: center;
 }
 

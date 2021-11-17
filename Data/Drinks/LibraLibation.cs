@@ -24,7 +24,7 @@ namespace GyroScope.Data.Drinks
         /// <summary>
         /// backing field for flavor
         /// </summary>
-        public LibraLibationFlavor _flavor;
+        public LibraLibationFlavor _flavor = LibraLibationFlavor.PinkLemonada;
 
         /// <summary>
         /// Determines flavor of Libra Libation
@@ -40,7 +40,6 @@ namespace GyroScope.Data.Drinks
                     OnPropertyChanged(nameof(this.Flavor));
                     OnPropertyChanged(nameof(this.Calories));
                     OnPropertyChanged(nameof(this.Name));
-
                 }
             }
         }
@@ -63,7 +62,6 @@ namespace GyroScope.Data.Drinks
                     _sparkling = value;
                     OnPropertyChanged(nameof(this.Name));
                     OnPropertyChanged(nameof(this.Sparkling));
-
                 }
             }
         }
@@ -85,7 +83,6 @@ namespace GyroScope.Data.Drinks
                 {
                     _honey = value;
                     OnPropertyChanged(nameof(this.Honey));
-
                 }
             }
         }

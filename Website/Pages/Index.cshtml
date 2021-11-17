@@ -4,7 +4,106 @@
     ViewData["Title"] = "Gyroscope Menu";
 }
 
+@using GyroScope.Data;
+@using GyroScope.Data.Enums;
+@using GyroScope.Data.Drinks;
+
+<h1 class="display-4">Gyro Scope</h1>
+<p>When the planets align!</p>
+
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+
+    <div id="entrees" class="allEntrees">
+        <h2 class="Entrees">
+            Entrees
+        </h2>
+        <hr style="border-top-color: white;" />
+        <ul>
+            @foreach (IMenuItem entree in Menu.Entrees)
+            {
+                <li>
+                    <p class="itemName">
+                        @entree.Name
+                    </p>
+                    <p class="itemPrice">
+                        $@entree.Price
+                    </p>
+                    <p class="itemCalories">
+                        @entree.Calories
+                    </p>
+                </li>
+            }
+        </ul>
+
+    </div>
+
+    <div id="sides" class="allSides">
+        <h3 class="Sides">
+            Sides
+        </h3>
+        <hr style="border-top-color: white;" />
+        <ul>
+            @foreach (IMenuItem sides in Menu.Sides)
+            {
+                <li>
+                    <p class="itemName">
+                        @sides.Name
+                    </p>
+                    <p class="itemPrice">
+                        $@sides.Price
+                    </p>
+                    <p class="itemCalories">
+                        @sides.Calories
+                    </p>
+                </li>
+            }
+        </ul>
+    </div>
+
+    <div id="treats" class="allTreats">
+        <h4 class="Treats">
+            Treats
+        </h4>
+        <hr style="border-top-color: white;" />
+        <ul>
+            @foreach (IMenuItem treat in Menu.Treats)
+            {
+                <li>
+                    <p class="itemName">
+                        @treat.Name
+                    </p>
+                    <p class="itemPrice">
+                        $@treat.Price
+                    </p>
+                    <p class="itemCalories">
+                        @treat.Calories
+                    </p>
+                </li>
+            }
+        </ul>
+    </div>
+
+    <div id="drinks" class="allDrinks">
+        <h5 class="Drinks">
+            Drinks
+        </h5>
+        <hr style="border-top-color: white;" />
+        <ul>
+             @foreach (IMenuItem drink in Menu.Drinks)
+             {
+                <li>
+                    <p class="itemName">
+                        @drink.Name
+                    </p>
+                    <p class="itemPrice">
+                        $@drink.Price
+                    </p>
+                    <p class="itemCalories">
+                        @drink.Calories
+                    </p>
+                </li>
+              }
+        </ul>
+    </div>
 </div>

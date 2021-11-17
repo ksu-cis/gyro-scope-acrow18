@@ -5,16 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Gyroscope</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/>
 </head>
 <body>
     <header>
         <nav class="navbar-container">
             <div class="container">
                 <a class="navbar-brand" asp-area="" asp-page="/Index">Gyroscope</a>
-                <a class="navbar-brand" asp-area="" asp-page="/Entrees">Entrees</a>
-                <a class="navbar-brand" asp-area="" asp-page="/Sides">Sides</a>
-                <a class="navbar-brand" asp-area="" asp-page="/Drinks">Drinks</a>
+                <a class="navbar-brand" asp-area="" asp-fragment="entrees" asp-page="/Index">Entrees</a>
+                <a class="navbar-brand" asp-area="" asp-fragment="sides" asp-page="/Index">Sides</a>
+                <a class="navbar-brand" asp-area="" asp-fragment="drinks" asp-page="/Index">Drinks</a>
+                <a class="navbar-brand" asp-area="" asp-fragment="treats" asp-page="/Index">Treats</a>
                 <a class="navbar-brand" asp-area="" asp-page="/Privacy">Privacy</a>
                 <a class="navbar-brand" asp-area="" asp-page="/About">About</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"

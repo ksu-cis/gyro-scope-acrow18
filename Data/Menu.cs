@@ -63,16 +63,19 @@ namespace GyroScope.Data
         /// Gets a list of drinks 
         /// </summary>
         public static IEnumerable<IMenuItem> Drinks
-        { //change foreach
+        {
+            //change foreach
             get
             {
                 var drinks = new List<IMenuItem>();
+                LibraLibation libraLibation = new LibraLibation();
 
                 drinks.Add(new CapricornMountainTea());
 
                 foreach (LibraLibationFlavor flavor in Enum.GetValues(typeof(LibraLibationFlavor)))
                 {
-                    drinks.Add(new LibraLibation() { Flavor = flavor });
+                    
+                    drinks.Add(new LibraLibation() {Sparkling = libraLibation.Sparkling, Flavor = flavor });
                 }
 
                 return drinks;
@@ -83,8 +86,7 @@ namespace GyroScope.Data
         /// Gets a list of treats
         /// </summary>
         public static IEnumerable<IMenuItem> Treats 
-        {
-            
+        {  
             get
             {
 
@@ -92,15 +94,17 @@ namespace GyroScope.Data
 
                 treats.Add(new CancerHalvaCake());
 
-                foreach (AquariusIceFlavor flavor in Enum.GetValues(typeof(AquariusIceFlavor)))
+                foreach (Size size in Enum.GetValues(typeof(Size)))
                 {
-                    treats.Add(new AquariusIce() { Flavor = flavor });
+                    foreach (AquariusIceFlavor flavor in Enum.GetValues(typeof(AquariusIceFlavor)))
+                    {
+
+                        treats.Add(new AquariusIce() { Size = size, Flavor = flavor });
+                    }
                 }
 
                 return treats;
             }
-            
-
         }
 
         /// <summary>
