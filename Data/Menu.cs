@@ -106,6 +106,25 @@ namespace GyroScope.Data
         /// <summary>
         /// Gets a full menu list of all gyro scope options
         /// </summary>
-        public static IEnumerable<IMenuItem> FullMenu { get; }
+        public static IEnumerable<IMenuItem> FullMenu 
+        {
+            get
+            {
+                List<IMenuItem> myList = new List<IMenuItem>();
+                myList.Add(new VirgoClassicGyro());
+                myList.Add(new LeoLambGyro());
+                myList.Add(new ScorpioSpicyGyro());
+                myList.Add(new PiscesFishDish());
+                myList.Add(new AriesFries());
+                myList.Add(new GeminiStuffedGrapeLeaves());
+                myList.Add(new SagittariusGreekSalad());
+                myList.Add(new TaurusTabuleh());
+                myList.Add(new CapricornMountainTea());
+                myList.Add(new LibraLibation());
+                myList.Add(new CancerHalvaCake());
+                myList.Add(new AquariusIce());
+                return myList;
+            }
+        }
     }
 }
