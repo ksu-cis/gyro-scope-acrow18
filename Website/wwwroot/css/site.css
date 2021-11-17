@@ -66,12 +66,15 @@ body {
     color: azure;
     background-color: #000000;
 }
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  white-space: nowrap;
-  line-height: 20px; /* Vertically center the text there */
+.footer 
+{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 20px; /* Vertically center the text there */
+    margin-inline-start: 50px;
+    font-style: oblique;
 }
 
 .navbar-container 
@@ -113,7 +116,16 @@ p
 .paragraph
 {
     border: 3px dashed white;
+    text-align: center;
+    margin-block-start: 100px;
 }
+
+.title 
+{
+    margin-block-start: 100px;
+}
+
+
 
 ul 
 {
@@ -126,11 +138,30 @@ li
     border: none;
 }
 
-.itemName 
+.itemName
 {
     font-size: 1.5rem;
     font-style: oblique;
     font-weight: bold;
     text-align: center;
+}
+
+.itemPrice, .itemCalories 
+{
+    text-align: center;
+    font-style: oblique
+}
+
+.allDrinks, .allSides, .allEntrees, .allTreats 
+{
+    text-align: center;
+}
+
+h2, h3, h4, h5 
+{
+    font-style: oblique;
+    font-weight: bold;
+    text-align: center;
+    margin-inline-start: 40px;
 }
 
