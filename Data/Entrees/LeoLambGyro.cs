@@ -107,7 +107,7 @@ namespace GyroScope.Data.Entrees
             "and shredded lettuce, smothered in mint chutney and served in pita";
 
         /// <summary>
-        /// Description of Libra Libation
+        /// Description of Leo Lamb Gyro
         /// </summary>
         public override string Description { get => _description; }
 

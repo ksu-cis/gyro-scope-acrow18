@@ -125,5 +125,15 @@ namespace GyroScope.Data.Sides
         /// Same name as ToString
         /// </summary>
         public override string Name { get => $"{ Size} Sagittarius Greek Salad"; }
+
+        /// <summary>
+        /// backing field for description
+        /// </summary>
+        public string _description = "A fresh salad of sliced cucumbers, tomatoes, peppers, onion, olives, and feta cheese.";
+
+        /// <summary>
+        /// Description of Sagittarius Greek Salad
+        /// </summary>
+        public override string Description { get => _description; }
     }
 }

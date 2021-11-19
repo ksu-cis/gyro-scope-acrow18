@@ -121,6 +121,17 @@ namespace GyroScope.Data.Sides
         /// </summary>
         public override string Name { get => $"{ Size} Taurus Tabuleh"; }
 
+
+        /// <summary>
+        /// backing field for description
+        /// </summary>
+        public string _description = "A bulgar salad rife with fresh herbs and lemon.";
+
+        /// <summary>
+        /// Description of Taurus Tabuleh
+        /// </summary>
+        public override string Description { get => _description; }
+
     }
 }
 

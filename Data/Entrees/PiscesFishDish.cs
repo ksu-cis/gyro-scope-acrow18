@@ -60,7 +60,7 @@ namespace GyroScope.Data.Entrees
         public string _description = "Halibut baked with onions and tomatoes in a red wine sauce.";
 
         /// <summary>
-        /// Description of Libra Libation
+        /// Description of Pisces Fish Dish
         /// </summary>
         public override string Description { get => _description; }
     }

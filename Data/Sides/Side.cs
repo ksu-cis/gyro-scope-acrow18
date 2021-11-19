@@ -57,5 +57,10 @@ namespace GyroScope.Data.Sides
         /// Special instructions
         /// </summary>
         public IEnumerable<string> SpecialInstructions { get; }
+
+        /// <summary>
+        /// Description of side
+        /// </summary>
+        public abstract string Description { get; }
     }
 }

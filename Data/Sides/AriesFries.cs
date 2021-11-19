@@ -121,5 +121,15 @@ namespace GyroScope.Data.Sides
         /// </summary>
         public override string Name { get => $"{ Size} Aries Fries"; }
 
+        /// <summary>
+        /// backing field for description
+        /// </summary>
+        public string _description = "Crispy fried potatoes topped with feta cheese, onions, and herbs.";
+
+        /// <summary>
+        /// Description of Aries Fries
+        /// </summary>
+        public override string Description { get => _description; }
+
     }
 }

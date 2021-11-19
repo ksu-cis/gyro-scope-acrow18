@@ -121,6 +121,16 @@ namespace GyroScope.Data.Sides
         /// </summary>
         public override string Name { get => $"{ Size} Gemini Stuffed Grape Leaves"; }
 
+        /// <summary>
+        /// backing field for description
+        /// </summary>
+        public string _description = "Grape leaves stuffed with spiced meat and rice.";
+
+        /// <summary>
+        /// Description of Gemini Stuffed Grape Leaves
+        /// </summary>
+        public override string Description { get => _description; }
+
     }
 }
 

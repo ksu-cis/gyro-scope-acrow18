@@ -108,7 +108,7 @@ namespace GyroScope.Data.Entrees
             "and shredded lettuce topped with hot wing sauce and wrapped in a warm pita.";
 
         /// <summary>
-        /// Description of Libra Libation
+        /// Description of Scorpio Spicy Gyro
         /// </summary>
         public override string Description { get => _description; }
 

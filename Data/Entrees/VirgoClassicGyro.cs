@@ -109,7 +109,7 @@ namespace GyroScope.Data.Entrees
             "shredded lettuce, and tzatziki sauce, wrapped in a warm flaky pita.";
 
         /// <summary>
-        /// Description of Libra Libation
+        /// Description of Virgo Classic Gyro
         /// </summary>
         public override string Description { get => _description; }
     }
