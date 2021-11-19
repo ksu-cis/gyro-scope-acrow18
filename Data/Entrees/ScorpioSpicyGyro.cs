@@ -101,5 +101,16 @@ namespace GyroScope.Data.Entrees
         /// </summary>
         public override string Name { get => _name; }
 
+        /// <summary>
+        /// backing field for description
+        /// </summary>
+        public string _description = "A gyro with a spicy twist - seasoned doner chicken, steamed peppers, chopped onions, " +
+            "and shredded lettuce topped with hot wing sauce and wrapped in a warm pita.";
+
+        /// <summary>
+        /// Description of Libra Libation
+        /// </summary>
+        public override string Description { get => _description; }
+
     }
 }

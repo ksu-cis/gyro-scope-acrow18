@@ -33,6 +33,11 @@ namespace GyroScope.Data.Drinks
         public abstract string Name { get; }
 
         /// <summary>
+        /// Description of drink
+        /// </summary>
+        public abstract string Description { get; }
+
+        /// <summary>
         /// Event handler for changing properties
         /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;

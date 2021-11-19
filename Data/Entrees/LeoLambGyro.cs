@@ -84,7 +84,7 @@ namespace GyroScope.Data.Entrees
         /// <summary>
         /// backing field for name
         /// </summary>
-        public String _name = "Leo Lamb Gyro";
+        public string _name = "Leo Lamb Gyro";
 
         /// <summary>
         /// Overridden ToString
@@ -99,6 +99,17 @@ namespace GyroScope.Data.Entrees
         /// Same name as ToString
         /// </summary>
         public override string Name { get => _name; }
+
+        /// <summary>
+        /// backing field for description
+        /// </summary>
+        public string _description = "A fresh take on the gyro - seasoned doner lamb, fresh sliced tomato, diced onion, steamed eggplant, " +
+            "and shredded lettuce, smothered in mint chutney and served in pita";
+
+        /// <summary>
+        /// Description of Libra Libation
+        /// </summary>
+        public override string Description { get => _description; }
 
     }
 }

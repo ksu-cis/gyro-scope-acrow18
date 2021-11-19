@@ -53,5 +53,15 @@ namespace GyroScope.Data.Entrees
         /// Same name as ToString
         /// </summary>
         public override string Name { get => _name; }
+
+        /// <summary>
+        /// backing field for description
+        /// </summary>
+        public string _description = "Halibut baked with onions and tomatoes in a red wine sauce.";
+
+        /// <summary>
+        /// Description of Libra Libation
+        /// </summary>
+        public override string Description { get => _description; }
     }
 }

@@ -77,7 +77,7 @@ namespace GyroScope.Data.Drinks
         /// <summary>
         /// backing field for name
         /// </summary>
-        public String _name = "Capricorn Mountain Tea";
+        public string _name = "Capricorn Mountain Tea";
 
         /// <summary>
         /// Overridden ToString
@@ -98,6 +98,17 @@ namespace GyroScope.Data.Drinks
         /// No special instructions
         /// </summary>
         public override IEnumerable<string> SpecialInstructions { get; }
+
+
+        /// <summary>
+        /// backing field for description
+        /// </summary>
+        public string _description = "Tea brewed from the ironwart plant, a traditional herbal health enhancer.";
+
+        /// <summary>
+        /// Description of Capricorn Mountain Tea
+        /// </summary>
+        public override string Description { get => _description; }
 
     }
 }

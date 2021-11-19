@@ -100,5 +100,17 @@ namespace GyroScope.Data.Entrees
         /// Same name as ToString
         /// </summary>
         public override string Name { get => _name; }
+
+
+        /// <summary>
+        /// backing field for description
+        /// </summary>
+        public string _description = "The classic American gyro - seasoned doner pork, fresh sliced tomato, diced onion, " +
+            "shredded lettuce, and tzatziki sauce, wrapped in a warm flaky pita.";
+
+        /// <summary>
+        /// Description of Libra Libation
+        /// </summary>
+        public override string Description { get => _description; }
     }
 }

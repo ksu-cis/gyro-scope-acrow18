@@ -34,5 +34,10 @@ namespace GyroScope.Data
         /// Name of menu item
         /// </summary>
         public string Name { get; }
+
+        /// <summary>
+        /// Description of menu item
+        /// </summary>
+        public string Description { get; }
     }
 }
