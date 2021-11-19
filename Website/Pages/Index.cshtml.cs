@@ -33,8 +33,6 @@ namespace Website.Pages
         /// <returns>The results of the search</returns>
         public static IEnumerable<IMenuItem> Search(string terms)
         {
-            
-
             List<IMenuItem> results = new List<IMenuItem>();
 
             //null check
@@ -43,23 +41,26 @@ namespace Website.Pages
             //Add menu item if the name is a match
             foreach (IMenuItem menuItem in FullMenu)
             {
-                if (menuItem.Name != null && menuItem.Name.Contains(terms, menuItem.Name.Split(' ')))
+                foreach (string term in terms.Split(' '))
                 {
-                    results.Add(menuItem);
+                    if (menuItem.Name != null && menuItem.Name.Contains(term))
+                    {
+                        results.Add(menuItem);
+                        break;
+                    }
                 }
-            }
 
-            //Add menu item if the Description is a match
-            foreach (IMenuItem menuItem in FullMenu)
-            {
-                if (menuItem.Description != null && menuItem.Description.Contains(terms, menuItem.Description.Split(' ')))
+                foreach (string term in terms.Split(' '))
                 {
-                    results.Add(menuItem);
+                    if (menuItem.Description != null && menuItem.Description.Contains(term))
+                    {
+                        results.Add(menuItem);
+                        break;
+                    }
                 }
             }
 
             return results;
-
         }
 
     }
