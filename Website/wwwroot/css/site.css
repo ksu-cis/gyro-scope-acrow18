@@ -142,9 +142,18 @@ li
     border: none;
 }
 
+
 .itemName
 {
     font-size: 1.5rem;
+    font-style: oblique;
+    font-weight: bold;
+    text-align: center;
+}
+
+.itemDescription 
+{
+    font-size: 1.1rem;
     font-style: oblique;
     font-weight: bold;
     text-align: center;

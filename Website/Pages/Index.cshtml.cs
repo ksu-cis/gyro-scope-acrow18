@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using GyroScope.Data;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 using System;
@@ -21,5 +22,45 @@ namespace Website.Pages
         {
 
         }
+
+
+        public static IEnumerable<IMenuItem> FullMenu { get { return Menu.FullMenu; } }
+
+        /// <summary>
+        /// Searches movies in database
+        /// </summary>
+        /// <param name="terms">The terms to search for</param>
+        /// <returns>The results of the search</returns>
+        public static IEnumerable<IMenuItem> Search(string terms)
+        {
+            
+
+            List<IMenuItem> results = new List<IMenuItem>();
+
+            //null check
+            if (terms == null) return FullMenu;
+
+            //Add menu item if the name is a match
+            foreach (IMenuItem menuItem in FullMenu)
+            {
+                if (menuItem.Name != null && menuItem.Name.Contains(terms, menuItem.Name.Split(' ')))
+                {
+                    results.Add(menuItem);
+                }
+            }
+
+            //Add menu item if the Description is a match
+            foreach (IMenuItem menuItem in FullMenu)
+            {
+                if (menuItem.Description != null && menuItem.Description.Contains(terms, menuItem.Description.Split(' ')))
+                {
+                    results.Add(menuItem);
+                }
+            }
+
+            return results;
+
+        }
+
     }
 }
