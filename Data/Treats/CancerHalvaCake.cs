@@ -55,5 +55,15 @@ namespace GyroScope.Data.Treats
         /// </summary>
         public override IEnumerable<string> SpecialInstructions { get; }
 
+        /// <summary>
+        /// backing field for description
+        /// </summary>
+        public string _description = "A gluten-free cake made from sesame seeds.";
+
+        /// <summary>
+        /// Description of Aquarius Ice
+        /// </summary>
+        public override string Description { get => _description; }
+
     }
 }

@@ -121,5 +121,15 @@ namespace GyroScope.Data.Treats
         /// No special instructions
         /// </summary>
         public override IEnumerable<string> SpecialInstructions { get; }
+
+        /// <summary>
+        /// backing field for description
+        /// </summary>
+        public string _description = "Italian flavored ices, the coolest treat you can eat with a spoon!";
+
+        /// <summary>
+        /// Description of Aquarius Ice
+        /// </summary>
+        public override string Description { get => _description; }
     }
 }

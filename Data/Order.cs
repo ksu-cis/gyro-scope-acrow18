@@ -43,7 +43,7 @@ namespace GyroScope.Data
         /// Used to trigger a collection changed event
         /// </summary>
         /// <param name="e">Name of collection that is changing</param>
-        protected virtual void OnCollectionChanged(NotifyCollectionChangedEventArgs e) 
+        protected virtual void OnCollectionChanged(NotifyCollectionChangedEventArgs e)
         {
             CollectionChanged?.Invoke(this, e);
         }
@@ -51,7 +51,7 @@ namespace GyroScope.Data
         /// <summary>
         /// Clears data from order
         /// </summary>
-        public void Clear() 
+        public void Clear()
         {
             menuItemList.Clear();
             OnCollectionChanged(new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Reset));
@@ -80,7 +80,7 @@ namespace GyroScope.Data
             OnPropertyChanged(nameof(this.Calories));
         }
 
-        
+
         /// <summary>
         /// Removes the item
         /// </summary>
@@ -100,8 +100,8 @@ namespace GyroScope.Data
                 return true;
             }
 
-            else 
-            { 
+            else
+            {
                 return false;
             }
         }
@@ -120,7 +120,7 @@ namespace GyroScope.Data
 
             set
             {
-                if(_salesTaxRate != value) 
+                if (_salesTaxRate != value)
                 {
                     _salesTaxRate = value;
                     OnPropertyChanged(nameof(Total));
@@ -145,7 +145,7 @@ namespace GyroScope.Data
             {
                 decimal subtotalSum = 0M;
 
-                foreach (IMenuItem menuItem in menuItemList) 
+                foreach (IMenuItem menuItem in menuItemList)
                 {
                     subtotalSum += menuItem.Price;
                 }
@@ -166,10 +166,10 @@ namespace GyroScope.Data
         /// </summary>
         public uint Calories
         {
-            get 
+            get
             {
                 uint sumOfCalories = 0;
-                foreach (IMenuItem menuItem in menuItemList) 
+                foreach (IMenuItem menuItem in menuItemList)
                 {
                     sumOfCalories += menuItem.Calories;
                 }
@@ -187,16 +187,16 @@ namespace GyroScope.Data
         /// <summary>
         /// Unique order number 
         /// </summary>
-        public int Number 
+        public int Number
         {
             get
             {
                 return _number;
             }
 
-            set 
+            set
             {
-                if (_number != value) 
+                if (_number != value)
                 {
                     _number = value;
                     OnPropertyChanged(nameof(Number));
@@ -219,7 +219,7 @@ namespace GyroScope.Data
         /// Data and time the order was placed
         /// </summary>
         public DateTime PlacedAt => _placedAt;
-        
+
         /// <summary>
         /// Gets count of items in Menu Item List
         /// </summary>
@@ -256,6 +256,11 @@ namespace GyroScope.Data
         /// Checks if order is read only
         /// </summary>
         public bool IsReadOnly => true;
+
+        /// <summary>
+        /// Description of order
+        /// </summary>
+        public string Description { get; }
 
         /// <summary>
         /// Checks to see if them menu item list contains the item
@@ -310,6 +315,5 @@ namespace GyroScope.Data
             NextOrderNumber++;
             _placedAt = DateTime.Now;
         }
-
     }
 }

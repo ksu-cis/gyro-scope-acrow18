@@ -30,7 +30,7 @@ namespace GyroScope.Data.Treats
         /// <summary>
         /// Name of treat
         /// </summary>
-        public abstract String Name { get; }
+        public abstract string Name { get; }
 
         /// <summary>
         /// The price of the treat
@@ -55,6 +55,11 @@ namespace GyroScope.Data.Treats
         /// No special instructions
         /// </summary>
         public abstract IEnumerable<string> SpecialInstructions { get; }
+
+        /// <summary>
+        /// Description of treat
+        /// </summary>
+        public abstract string Description { get; }
     }
 }
 

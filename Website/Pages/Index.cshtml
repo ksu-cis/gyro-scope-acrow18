@@ -22,17 +22,20 @@
         <ul>
             @foreach (IMenuItem entree in Menu.Entrees)
             {
-                <li>
-                    <p class="itemName">
-                        @entree.Name
-                    </p>
-                    <p class="itemPrice">
-                        $@entree.Price
-                    </p>
-                    <p class="itemCalories">
-                        @entree.Calories
-                    </p>
-                </li>
+            <li>
+                <p class="itemName">
+                    @entree.Name
+                </p>
+                <p class="itemPrice">
+                    $@entree.Price
+                </p>
+                <p class="itemCalories">
+                    @entree.Calories
+                </p>
+                <p class="itemDescription">
+                    @entree.Description
+                </p>
+            </li>
             }
         </ul>
 
@@ -46,17 +49,20 @@
         <ul>
             @foreach (IMenuItem sides in Menu.Sides)
             {
-                <li>
-                    <p class="itemName">
-                        @sides.Name
-                    </p>
-                    <p class="itemPrice">
-                        $@sides.Price
-                    </p>
-                    <p class="itemCalories">
-                        @sides.Calories
-                    </p>
-                </li>
+            <li>
+                <p class="itemName">
+                    @sides.Name
+                </p>
+                <p class="itemPrice">
+                    $@sides.Price
+                </p>
+                <p class="itemCalories">
+                    @sides.Calories
+                </p>
+                <p class="itemDescription">
+                    @sides.Description
+                </p>
+            </li>
             }
         </ul>
     </div>
@@ -69,17 +75,20 @@
         <ul>
             @foreach (IMenuItem treat in Menu.Treats)
             {
-                <li>
-                    <p class="itemName">
-                        @treat.Name
-                    </p>
-                    <p class="itemPrice">
-                        $@treat.Price
-                    </p>
-                    <p class="itemCalories">
-                        @treat.Calories
-                    </p>
-                </li>
+            <li>
+                <p class="itemName">
+                    @treat.Name
+                </p>
+                <p class="itemPrice">
+                    $@treat.Price
+                </p>
+                <p class="itemCalories">
+                    @treat.Calories
+                </p>
+                <p class="itemDescription">
+                    @treat.Description
+                </p>
+            </li>
             }
         </ul>
     </div>
@@ -92,17 +101,20 @@
         <ul>
              @foreach (IMenuItem drink in Menu.Drinks)
              {
-                <li>
-                    <p class="itemName">
-                        @drink.Name
-                    </p>
-                    <p class="itemPrice">
-                        $@drink.Price
-                    </p>
-                    <p class="itemCalories">
-                        @drink.Calories
-                    </p>
-                </li>
+            <li>
+                <p class="itemName">
+                    @drink.Name
+                </p>
+                <p class="itemPrice">
+                    $@drink.Price
+                </p>
+                <p class="itemCalories">
+                    @drink.Calories
+                </p>
+                <p class="itemDescription">
+                    @drink.Description
+                </p>
+            </li>
               }
         </ul>
     </div>
