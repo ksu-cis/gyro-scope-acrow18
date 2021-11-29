@@ -22,9 +22,13 @@ namespace Website.Pages
             _logger = logger;
         }
 
-        public void OnGet(string SearchTerms)
+        public void OnGet(string SearchTerms, double? CalorieMax, double? CalorieMin, double? PriceMax, double? PriceMin)
         {
             this.SearchTerms = SearchTerms;
+            this.CalorieMax = CalorieMax;
+            this.CalorieMin = CalorieMin;
+            this.PriceMax = PriceMax;
+            this.PriceMin = PriceMin;
             MenuItems = Menu.Search(SearchTerms);
         }
 
@@ -61,12 +65,12 @@ namespace Website.Pages
         /// <summary>
         /// Min calories
         /// </summary>
-        public double? CaloriesMin { get; set; }
+        public double? CalorieMin { get; set; }
 
         /// <summary>
         /// Max calories
         /// </summary>
-        public double? CaloriesMax { get; set; }
+        public double? CalorieMax { get; set; }
 
         /// <summary>
         /// Min price
