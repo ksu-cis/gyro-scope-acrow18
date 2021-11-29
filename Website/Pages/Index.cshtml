@@ -8,115 +8,139 @@
 @using GyroScope.Data.Enums;
 @using GyroScope.Data.Drinks;
 
-<h1 class="display-4">Gyro Scope</h1>
-<p>When the planets align!</p>
+<form id="menu">
+    <div id="filters">
+        <div id="search">
+            <input type="text" name="SearchTerms" value="@Model.SearchTerms" />
+            <input type="submit" value="Search">
 
-<div class="text-center">
+            <h4>Calories</h4>
+            <div>
+                Between
+                <input name="CaloriesMin" type="number" min="0" max="10" step="0.1" placeholder="min" value="@Model.CaloriesMin" />
+                and
+                <input name="PriceMax" type="number" min="0" max="10" step="0.1" placeholder="max" value="@Model.CaloriesMax" />
+            </div>
 
+            <h4>Price</h4>
+            <div>
+                Between
+                <input name="PricesMin" type="number" min="0" max="10" step="0.1" placeholder="min" value="@Model.PriceMin" />
+                and
+                <input name="PriceMax" type="number" min="0" max="10" step="0.1" placeholder="max" value="@Model.PriceMax" />
+            </div>
 
-    <div id="entrees" class="allEntrees">
-        <h2 class="Entrees">
-            Entrees
-        </h2>
-        <hr style="border-top-color: white;" />
-        <ul>
-            @foreach (IMenuItem entree in Menu.Entrees)
-            {
-            <li>
-                <p class="itemName">
-                    @entree.Name
-                </p>
-                <p class="itemDescription">
-                    @entree.Description
-                </p>
-                <p class="itemPrice">
-                    $@entree.Price
-                </p>
-                <p class="itemCalories">
-                    @entree.Calories
-                </p>
-            </li>
-            }
-        </ul>
-
+        </div>
     </div>
+</form>
 
-    <div id="sides" class="allSides">
-        <h3 class="Sides">
-            Sides
-        </h3>
-        <hr style="border-top-color: white;" />
-        <ul>
-            @foreach (IMenuItem sides in Menu.Sides)
-            {
-            <li>
-                <p class="itemName">
-                    @sides.Name
-                </p>
-                <p class="itemDescription">
-                    @sides.Description
-                </p>
-                <p class="itemPrice">
-                    $@sides.Price
-                </p>
-                <p class="itemCalories">
-                    @sides.Calories
-                </p>
-            </li>
-            }
-        </ul>
+    <h1 class="display-4">Gyro Scope</h1>
+    <p>When the planets align!</p>
+
+    <div class="text-center">
+        <div id="entrees" class="allEntrees">
+            <h2 class="Entrees">
+                Entrees
+            </h2>
+            <hr style="border-top-color: white;" />
+            <ul>
+                @foreach (IMenuItem entree in MenuItems)
+                {
+                    <li>
+                        <p class="itemName">
+                            @entree.Name
+                        </p>
+                        <p class="itemDescription">
+                            @entree.Description
+                        </p>
+                        <p class="itemPrice">
+                            $@entree.Price
+                        </p>
+                        <p class="itemCalories">
+                            @entree.Calories
+                        </p>
+                    </li>
+                }
+            </ul>
+
+        </div>
+
+        <div id="sides" class="allSides">
+            <h3 class="Sides">
+                Sides
+            </h3>
+            <hr style="border-top-color: white;" />
+            <ul>
+                @foreach (IMenuItem sides in MenuItems)
+                {
+                    <li>
+                        <p class="itemName">
+                            @sides.Name
+                        </p>
+                        <p class="itemDescription">
+                            @sides.Description
+                        </p>
+                        <p class="itemPrice">
+                            $@sides.Price
+                        </p>
+                        <p class="itemCalories">
+                            @sides.Calories
+                        </p>
+                    </li>
+                }
+            </ul>
+        </div>
+
+        <div id="treats" class="allTreats">
+            <h4 class="Treats">
+                Treats
+            </h4>
+            <hr style="border-top-color: white;" />
+            <ul>
+                @foreach (IMenuItem treat in Menu.Treats)
+                {
+                    <li>
+                        <p class="itemName">
+                            @treat.Name
+                        </p>
+                        <p class="itemDescription">
+                            @treat.Description
+                        </p>
+                        <p class="itemPrice">
+                            $@treat.Price
+                        </p>
+                        <p class="itemCalories">
+                            @treat.Calories
+                        </p>
+                    </li>
+                }
+            </ul>
+        </div>
+
+        <div id="drinks" class="allDrinks">
+            <h5 class="Drinks">
+                Drinks
+            </h5>
+            <hr style="border-top-color: white;" />
+            <ul>
+                @foreach (IMenuItem drink in Menu.Drinks)
+                {
+                    <li>
+                        <p class="itemName">
+                            @drink.Name
+                        </p>
+                        <p class="itemDescription">
+                            @drink.Description
+                        </p>
+                        <p class="itemPrice">
+                            $@drink.Price
+                        </p>
+                        <p class="itemCalories">
+                            @drink.Calories
+                        </p>
+
+                    </li>
+                }
+            </ul>
+        </div>
     </div>
-
-    <div id="treats" class="allTreats">
-        <h4 class="Treats">
-            Treats
-        </h4>
-        <hr style="border-top-color: white;" />
-        <ul>
-            @foreach (IMenuItem treat in Menu.Treats)
-            {
-            <li>
-                <p class="itemName">
-                    @treat.Name
-                </p>
-                <p class="itemDescription">
-                    @treat.Description
-                </p>
-                <p class="itemPrice">
-                    $@treat.Price
-                </p>
-                <p class="itemCalories">
-                    @treat.Calories
-                </p>
-            </li>
-            }
-        </ul>
-    </div>
-
-    <div id="drinks" class="allDrinks">
-        <h5 class="Drinks">
-            Drinks
-        </h5>
-        <hr style="border-top-color: white;" />
-        <ul>
-             @foreach (IMenuItem drink in Menu.Drinks)
-             {
-            <li>
-                <p class="itemName">
-                    @drink.Name
-                </p>
-                <p class="itemDescription">
-                    @drink.Description
-                </p>
-                <p class="itemPrice">
-                    $@drink.Price
-                </p>
-                <p class="itemCalories">
-                    @drink.Calories
-                </p>
-
-            </li>
-              }
-        </ul>
-    </div>
-</div>

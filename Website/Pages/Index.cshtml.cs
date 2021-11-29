@@ -18,50 +18,42 @@ namespace Website.Pages
             _logger = logger;
         }
 
-        public void OnGet()
+        public void OnGet(string SearchTerms)
         {
-
+            this.SearchTerms = SearchTerms;
+            MenuItems = Menu.Search(SearchTerms);
         }
-
-
-        public static IEnumerable<IMenuItem> FullMenu { get { return Menu.FullMenu; } }
 
         /// <summary>
-        /// Searches movies in database
+        /// Keeps track of menu
         /// </summary>
-        /// <param name="terms">The terms to search for</param>
-        /// <returns>The results of the search</returns>
-        public static IEnumerable<IMenuItem> Search(string terms)
-        {
-            List<IMenuItem> results = new List<IMenuItem>();
+        public IEnumerable<IMenuItem> MenuItems { get; set; }
 
-            //null check
-            if (terms == null) return FullMenu;
+        public IEnumerable<IMenuItem>
 
-            //Add menu item if the name is a match
-            foreach (IMenuItem menuItem in FullMenu)
-            {
-                foreach (string term in terms.Split(' '))
-                {
-                    if (menuItem.Name != null && menuItem.Name.Contains(term))
-                    {
-                        results.Add(menuItem);
-                        break;
-                    }
-                }
+        /// <summary>
+        /// Terms to be searched
+        /// </summary>
+        public string SearchTerms { get; set; }
 
-                foreach (string term in terms.Split(' '))
-                {
-                    if (menuItem.Description != null && menuItem.Description.Contains(term))
-                    {
-                        results.Add(menuItem);
-                        break;
-                    }
-                }
-            }
+        /// <summary>
+        /// Min calories
+        /// </summary>
+        public double? CaloriesMin { get; set; }
 
-            return results;
-        }
+        /// <summary>
+        /// Max calories
+        /// </summary>
+        public double? CaloriesMax { get; set; }
 
+        /// <summary>
+        /// Min price
+        /// </summary>
+        public double? PriceMin { get; set; }
+
+        /// <summary>
+        /// Max price
+        /// </summary>
+        public double? PriceMax { get; set; }
     }
 }

@@ -110,7 +110,7 @@ namespace GyroScope.Data
         /// <summary>
         /// Gets a full menu list of all gyro scope options
         /// </summary>
-        public static IEnumerable<IMenuItem> FullMenu 
+        public static IEnumerable<IMenuItem> FullMenu
         {
             get
             {
@@ -130,5 +130,55 @@ namespace GyroScope.Data
                 return myList;
             }
         }
+
+        /// <summary>
+        /// Entire menu
+        /// </summary>
+        public static IEnumerable<IMenuItem> EntireMenu { get { return FullMenu; } }
+
+        /// <summary>
+        /// Searches movies in database
+        /// </summary>
+        /// <param name="terms">The terms to search for</param>
+        /// <returns>The results of the search</returns>
+        public static IEnumerable<IMenuItem> Search(string terms)
+        {
+            List<IMenuItem> results = new List<IMenuItem>();
+
+            //null check
+            if (terms == null) return EntireMenu;
+
+            //Add menu item if the name is a match
+            foreach (IMenuItem menuItem in EntireMenu)
+            {
+                foreach (string term in terms.Split(' '))
+                {
+                    if (menuItem.Name != null && menuItem.Name.Contains(term))
+                    {
+                        results.Add(menuItem);
+                        break;
+                    }
+                }
+
+                foreach (string term in terms.Split(' '))
+                {
+                    if (menuItem.Description != null && menuItem.Description.Contains(term))
+                    {
+                        results.Add(menuItem);
+                        break;
+                    }
+                }
+            }
+
+            return results;
+        }
     }
+
+    /*
+    public static IEnumerable<IMenuItem> FilterByCalories(IEnumerable<IMenuItem> menu, I) 
+    {
+
+    }
+    */
 }
+
