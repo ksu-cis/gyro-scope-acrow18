@@ -1,4 +1,8 @@
 ﻿using GyroScope.Data;
+using GyroScope.Data.Drinks;
+using GyroScope.Data.Entrees;
+using GyroScope.Data.Sides;
+using GyroScope.Data.Treats;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
@@ -29,7 +33,25 @@ namespace Website.Pages
         /// </summary>
         public IEnumerable<IMenuItem> MenuItems { get; set; }
 
-        public IEnumerable<IMenuItem>
+        /// <summary>
+        /// Entrees
+        /// </summary>
+        public IEnumerable<Entree> Entrees { get => MenuItems.OfType<Entree>(); }
+
+        /// <summary>
+        /// Sides
+        /// </summary>
+        public IEnumerable<Side> Sides { get => MenuItems.OfType<Side>(); }
+
+        /// <summary>
+        /// Drinks
+        /// </summary>
+        public IEnumerable<Drink> Drinks { get => MenuItems.OfType<Drink>(); }
+
+        /// <summary>
+        /// Treats
+        /// </summary>
+        public IEnumerable<Treat> Treats { get => MenuItems.OfType<Treat>(); }
 
         /// <summary>
         /// Terms to be searched

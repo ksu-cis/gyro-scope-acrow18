@@ -44,7 +44,7 @@
             </h2>
             <hr style="border-top-color: white;" />
             <ul>
-                @foreach (IMenuItem entree in MenuItems)
+                @foreach (IMenuItem entree in @Model.MenuItems)
                 {
                     <li>
                         <p class="itemName">
@@ -71,7 +71,7 @@
             </h3>
             <hr style="border-top-color: white;" />
             <ul>
-                @foreach (IMenuItem sides in MenuItems)
+                @foreach (IMenuItem sides in @Model.MenuItems)
                 {
                     <li>
                         <p class="itemName">
@@ -97,7 +97,7 @@
             </h4>
             <hr style="border-top-color: white;" />
             <ul>
-                @foreach (IMenuItem treat in Menu.Treats)
+                @foreach (IMenuItem treat in Model.MenuItems)
                 {
                     <li>
                         <p class="itemName">
@@ -123,7 +123,7 @@
             </h5>
             <hr style="border-top-color: white;" />
             <ul>
-                @foreach (IMenuItem drink in Menu.Drinks)
+                @foreach (IMenuItem drink in @Model.MenuItems)
                 {
                     <li>
                         <p class="itemName">
