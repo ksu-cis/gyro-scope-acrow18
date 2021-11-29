@@ -10,27 +10,20 @@
 
 <form id="menu">
     <div id="filters">
-        <div id="search">
-            <input type="text" name="SearchTerms" value="@Model.SearchTerms" />
+            <input type="text" name="SearchTerms" value="@Model.SearchTerms"/>
             <input type="submit" value="Search">
 
-            <h4>Calories</h4>
-            <div>
+            <h4>Calories    </h4>
                 Between
                 <input name="CaloriesMin" type="number" min="0" max="10" step="0.1" placeholder="min" value="@Model.CaloriesMin" />
                 and
                 <input name="PriceMax" type="number" min="0" max="10" step="0.1" placeholder="max" value="@Model.CaloriesMax" />
-            </div>
 
-            <h4>Price</h4>
-            <div>
+            <h4>Price    </h4>
                 Between
                 <input name="PricesMin" type="number" min="0" max="10" step="0.1" placeholder="min" value="@Model.PriceMin" />
                 and
                 <input name="PriceMax" type="number" min="0" max="10" step="0.1" placeholder="max" value="@Model.PriceMax" />
-            </div>
-
-        </div>
     </div>
 </form>
 
@@ -44,7 +37,7 @@
             </h2>
             <hr style="border-top-color: white;" />
             <ul>
-                @foreach (IMenuItem entree in @Model.MenuItems)
+                @foreach (IMenuItem entree in @Model.Entrees)
                 {
                     <li>
                         <p class="itemName">
@@ -71,7 +64,7 @@
             </h3>
             <hr style="border-top-color: white;" />
             <ul>
-                @foreach (IMenuItem sides in @Model.MenuItems)
+                @foreach (IMenuItem sides in @Model.Sides)
                 {
                     <li>
                         <p class="itemName">
@@ -97,7 +90,7 @@
             </h4>
             <hr style="border-top-color: white;" />
             <ul>
-                @foreach (IMenuItem treat in Model.MenuItems)
+                @foreach (IMenuItem treat in @Model.Treats)
                 {
                     <li>
                         <p class="itemName">
@@ -123,7 +116,7 @@
             </h5>
             <hr style="border-top-color: white;" />
             <ul>
-                @foreach (IMenuItem drink in @Model.MenuItems)
+                @foreach (IMenuItem drink in @Model.Drinks)
                 {
                     <li>
                         <p class="itemName">

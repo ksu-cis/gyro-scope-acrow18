@@ -90,7 +90,13 @@ head
     background-color: #000000;
 }
 
-
+form h4 
+{
+    text-align: left;
+    font-style: oblique;
+    font-weight: bold;
+    display: inline;
+}
 
 .about, .privacy 
 {
