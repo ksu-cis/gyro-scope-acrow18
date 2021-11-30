@@ -35,25 +35,25 @@ namespace Website.Pages
             this.IsTreat = IsTreat;
             MenuItems = Menu.Search(SearchTerms);
 
-            //needs fixed
-            if (IsEntree == true) 
+            
+            if (IsEntree == false) 
             {
-                MenuItems = MenuItems.Where(Item => Item is Entree);
+                MenuItems = MenuItems.Where(Item => !(Item is Entree));
             }
 
-            if (IsSide == true)
+            if (IsSide == false)
             {
-                MenuItems = MenuItems.Where(Item => Item is Side);
+                MenuItems = MenuItems.Where(Item => !(Item is Side));
             }
 
-            if (IsDrink == true)
+            if (IsDrink == false)
             {
-                MenuItems = MenuItems.Where(Item => Item is Drink);
+                MenuItems = MenuItems.Where(Item => !(Item is Drink));
             }
 
-            if (IsTreat == true)
+            if (IsTreat == false)
             {
-                MenuItems = MenuItems.Where(Item => Item is Treat);
+                MenuItems = MenuItems.Where(Item => !(Item is Treat));
             }
         }
 
@@ -85,22 +85,22 @@ namespace Website.Pages
         /// <summary>
         /// Determines whether is entree
         /// </summary>
-        public bool IsEntree { get; set; }
+        public bool IsEntree { get => IsEntree; set => value = IsEntree; }
 
         /// <summary>
         /// Determines whether is side
         /// </summary>
-        public bool IsSide { get; set; }
+        public bool IsSide { get => IsSide; set => value = IsSide; }
 
         /// <summary>
         /// Determines whether is drink
         /// </summary>
-        public bool IsDrink { get; set; }
+        public bool IsDrink { get => IsDrink; set => value = IsDrink; }
 
         /// <summary>
         /// Determines whether is treat
         /// </summary>
-        public bool IsTreat { get; set; }
+        public bool IsTreat { get => IsTreat; set => value = IsTreat; }
 
         /// <summary>
         /// Terms to be searched

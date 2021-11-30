@@ -16,17 +16,17 @@
 
         <h4>Entree</h4>
             <label>
-                <input type="checkbox" id="@Model.IsEntree" name="entrees" value="@Model.IsEntree" checked="@Model.Entrees" />
+                <input type="checkbox" name="entrees" asp-for="IsEntree" checked="@Model.Entrees"/>
             </label>
 
         <h4>Side</h4>
             <label>
-                <input type="checkbox" id="@Model.IsSide" name="entrees" value="@Model.IsSide" checked="@Model.Sides" />
+                <input type="checkbox" name="entrees" asp-for="IsSide" checked="@Model.Sides"/>
             </label>
 
         <h4>Drink</h4>
             <label>
-                <input type="checkbox" id="@Model.IsDrink" name="entrees" value="@Model.IsDrink" checked="@Model.Drinks" />
+                <input type="checkbox" name="entrees" asp-for="IsDrink" checked="@Model.Drinks"/>
             </label>
 
         <h2></h2>
