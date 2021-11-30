@@ -13,45 +13,34 @@
         <input type="text" name="SearchTerms" value="@Model.SearchTerms" />
         <input type="submit" value="Search">
 
+
         <h4>Entree</h4>
-        @foreach (IMenuItem entree in Menu.Entrees)
-        {
             <label>
-                <input type="checkbox" name="entrees" value="@entree" checked="@Model.Entrees.Contains(entree)" />
-                @entree
+                <input type="checkbox" id="@Model.IsEntree" name="entrees" value="@Model.IsEntree" checked="@Model.Entrees" />
             </label>
-        }
 
         <h4>Side</h4>
-        @foreach (IMenuItem side in Menu.Sides)
-        {
             <label>
-                <input type="checkbox" name="entrees" value="@side" checked="@Model.Sides.Contains(side)" />
-                @side
+                <input type="checkbox" id="@Model.IsSide" name="entrees" value="@Model.IsSide" checked="@Model.Sides" />
             </label>
-        }
 
         <h4>Drink</h4>
-        @foreach (IMenuItem drink in Menu.Drinks)
-        {
             <label>
-                <input type="checkbox" name="entrees" value="@drink" checked="@Model.Drinks.Contains(drink)" />
-                @drink
+                <input type="checkbox" id="@Model.IsDrink" name="entrees" value="@Model.IsDrink" checked="@Model.Drinks" />
             </label>
-        }
 
         <h2></h2>
         <h4>Calories    </h4>
         Between
-        <input name="CalorieMin" type="number" min="0" max="10" step="0.1" placeholder="min" value="@Model.CalorieMin" />
+        <input name="CalorieMin" type="number" min="0" max="800" step="0.1" placeholder="min" value="@Model.CalorieMin" />
         and
-        <input name="CalorieMax" type="number" min="0" max="10" step="0.1" placeholder="max" value="@Model.CalorieMax" />
+        <input name="CalorieMax" type="number" min="0" max="800" step="0.1" placeholder="max" value="@Model.CalorieMax" />
 
         <h4>Price    </h4>
         Between
-        <input name="PriceMin" type="number" min="0" max="10" step="0.1" placeholder="min" value="@Model.PriceMin" />
+        <input name="PriceMin" type="number" min="0" max="7.00" step="0.1" placeholder="min" value="@Model.PriceMin" />
         and
-        <input name="PriceMax" type="number" min="0" max="10" step="0.1" placeholder="max" value="@Model.PriceMax" />
+        <input name="PriceMax" type="number" min="0" max="7.00" step="0.1" placeholder="max" value="@Model.PriceMax" />
 
     </div>
 </form>

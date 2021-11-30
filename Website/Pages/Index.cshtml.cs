@@ -22,14 +22,39 @@ namespace Website.Pages
             _logger = logger;
         }
 
-        public void OnGet(string SearchTerms, double? CalorieMax, double? CalorieMin, double? PriceMax, double? PriceMin)
+        public void OnGet(string SearchTerms, double? CalorieMax, double? CalorieMin, decimal? PriceMax, decimal? PriceMin, bool IsEntree, bool IsSide, bool isDrink, bool IsTreat)
         {
             this.SearchTerms = SearchTerms;
             this.CalorieMax = CalorieMax;
             this.CalorieMin = CalorieMin;
             this.PriceMax = PriceMax;
             this.PriceMin = PriceMin;
+            this.IsEntree = IsEntree;
+            this.IsSide = IsSide;
+            this.IsDrink = IsDrink;
+            this.IsTreat = IsTreat;
             MenuItems = Menu.Search(SearchTerms);
+
+            //needs fixed
+            if (IsEntree == true) 
+            {
+                MenuItems = MenuItems.Where(Item => Item is Entree);
+            }
+
+            if (IsSide == true)
+            {
+                MenuItems = MenuItems.Where(Item => Item is Side);
+            }
+
+            if (IsDrink == true)
+            {
+                MenuItems = MenuItems.Where(Item => Item is Drink);
+            }
+
+            if (IsTreat == true)
+            {
+                MenuItems = MenuItems.Where(Item => Item is Treat);
+            }
         }
 
         /// <summary>
@@ -58,6 +83,26 @@ namespace Website.Pages
         public IEnumerable<Treat> Treats { get => MenuItems.OfType<Treat>(); }
 
         /// <summary>
+        /// Determines whether is entree
+        /// </summary>
+        public bool IsEntree { get; set; }
+
+        /// <summary>
+        /// Determines whether is side
+        /// </summary>
+        public bool IsSide { get; set; }
+
+        /// <summary>
+        /// Determines whether is drink
+        /// </summary>
+        public bool IsDrink { get; set; }
+
+        /// <summary>
+        /// Determines whether is treat
+        /// </summary>
+        public bool IsTreat { get; set; }
+
+        /// <summary>
         /// Terms to be searched
         /// </summary>
         public string SearchTerms { get; set; }
@@ -75,11 +120,11 @@ namespace Website.Pages
         /// <summary>
         /// Min price
         /// </summary>
-        public double? PriceMin { get; set; }
+        public decimal? PriceMin { get; set; }
 
         /// <summary>
         /// Max price
         /// </summary>
-        public double? PriceMax { get; set; }
+        public decimal? PriceMax { get; set; }
     }
 }

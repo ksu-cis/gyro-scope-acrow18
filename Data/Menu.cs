@@ -172,121 +172,120 @@ namespace GyroScope.Data
 
             return results;
         }
+
+        /// <summary>
+        /// Filters by calories
+        /// </summary>
+        /// <param name="menu">Entire menu</param>
+        /// <param name="min">Min calories</param>
+        /// <param name="max">Max calories</param>
+        /// <returns></returns>
+        public static IEnumerable<IMenuItem> FilterByCalories(IEnumerable<IMenuItem> menu, double? min, double? max)
+        {
+            if (min == null && max == null)
+            {
+                return menu;
+            }
+
+            var results = new List<IMenuItem>();
+
+            // only a maximum specified
+            if (min == null)
+            {
+                foreach (IMenuItem menuItem in menu)
+                {
+                    if (menuItem.Calories <= max)
+                    {
+                        results.Add(menuItem);
+                    }
+                }
+
+                return results;
+            }
+
+            // only a minimum specified
+            if (max == null)
+            {
+                foreach (IMenuItem menuItem in menu)
+                {
+                    if (menuItem.Calories >= min)
+                    {
+                        results.Add(menuItem);
+                    }
+                }
+
+                return results;
+            }
+
+            // Both minimum and maximum specified
+            foreach (IMenuItem menuItem in menu)
+            {
+                if (menuItem.Calories >= min && menuItem.Calories <= max)
+                {
+                    results.Add(menuItem);
+                }
+            }
+
+            return results;
+        }
+
+
+        /// <summary>
+        /// Filters by Price
+        /// </summary>
+        /// <param name="menu">Entire menu</param>
+        /// <param name="min">Min price</param>
+        /// <param name="max">Max price</param>
+        /// <returns></returns>
+        public static IEnumerable<IMenuItem> FilterByPrice(IEnumerable<IMenuItem> menu, decimal? min, decimal? max)
+        {
+            if (min == null && max == null)
+            {
+                return menu;
+            }
+
+            var results = new List<IMenuItem>();
+
+            // only a maximum specified
+            if (min == null)
+            {
+                foreach (IMenuItem menuItem in menu)
+                {
+                    if (menuItem.Price <= max)
+                    {
+                        results.Add(menuItem);
+                    }
+                }
+
+                return results;
+            }
+
+            // only a minimum specified
+            if (max == null)
+            {
+                foreach (IMenuItem menuItem in menu)
+                {
+                    if (menuItem.Price >= min)
+                    {
+                        results.Add(menuItem);
+                    }
+                }
+
+                return results;
+            }
+
+            // Both minimum and maximum specified
+            foreach (IMenuItem menuItem in menu)
+            {
+                if (menuItem.Price >= min && menuItem.Price <= max)
+                {
+                    results.Add(menuItem);
+                }
+            }
+
+            return results;
+        }
     }
-
-    /*
-    /// <summary>
-    /// Filters by calories
-    /// </summary>
-    /// <param name="menu">Entire menu</param>
-    /// <param name="min">Min calories</param>
-    /// <param name="max">Max calories</param>
-    /// <returns></returns>
-    public static IEnumerable<IMenuItem> FilterByCalories(IEnumerable<IMenuItem> menu, double? min, double? max)
-    {
-        if (min == null && max == null)
-        {
-            return menu;
-        }
-
-        var results = new List<IMenuItem>();
-
-        // only a maximum specified
-        if (min == null)
-        {
-            foreach (IMenuItem menuItem in menu)
-            {
-                if (menuItem.Calories <= max)
-                {
-                    results.Add(menuItem);
-                }
-            }
-
-            return results;
-        }
-
-        // only a minimum specified
-        if (max == null)
-        {
-            foreach (IMenuItem menuItem in menu)
-            {
-                if (menuItem.Calories >= min)
-                {
-                    results.Add(menuItem);
-                }
-            }
-
-            return results;
-        }
-
-        // Both minimum and maximum specified
-        foreach (IMenuItem menuItem in menu)
-        {
-            if (menuItem.Calories >= min && menuItem.Calories <= max)
-            {
-                results.Add(menuItem);
-            }
-        }
-
-        return results;
-    }
-
-
-    /// <summary>
-    /// Filters by Price
-    /// </summary>
-    /// <param name="menu">Entire menu</param>
-    /// <param name="min">Min price</param>
-    /// <param name="max">Max price</param>
-    /// <returns></returns>
-    public static IEnumerable<IMenuItem> FilterByPrice(IEnumerable<IMenuItem> menu, decimal? min, decimal? max)
-    {
-        if (min == null && max == null)
-        { 
-            return menu;
-        }
-
-        var results = new List<IMenuItem>();
-
-        // only a maximum specified
-        if (min == null)
-        {
-            foreach (IMenuItem menuItem in menu)
-            {
-                if (menuItem.Price <= max)
-                {
-                    results.Add(menuItem);
-                }
-            }
-
-            return results;
-        }
-
-        // only a minimum specified
-        if (max == null)
-        {
-            foreach (IMenuItem menuItem in menu)
-            {
-                if (menuItem.Price >= min)
-                {
-                    results.Add(menuItem);
-                }
-            }
-
-            return results;
-        }
-
-        // Both minimum and maximum specified
-        foreach (IMenuItem menuItem in menu)
-        {
-            if (menuItem.Price >= min && menuItem.Price <= max)
-            {
-                results.Add(menuItem);
-            }
-        }
-
-        return results;
-    }
-    */
+    
 }
 
