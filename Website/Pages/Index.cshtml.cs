@@ -35,7 +35,6 @@ namespace Website.Pages
             this.IsTreat = IsTreat;
             MenuItems = Menu.Search(SearchTerms);
 
-            
             if (IsEntree == false) 
             {
                 MenuItems = MenuItems.Where(Item => !(Item is Entree));
@@ -55,6 +54,58 @@ namespace Website.Pages
             {
                 MenuItems = MenuItems.Where(Item => !(Item is Treat));
             }
+
+            if (PriceMin == null && PriceMax != null)
+            {
+                MenuItems = MenuItems.Where(item =>
+                    item.Price != null &&
+                    item.Price <= PriceMax
+                    );
+            }
+
+            if (PriceMax == null && PriceMin != null)
+            {
+                MenuItems = MenuItems.Where(item =>
+                    item.Price != null &&
+                    item.Price >= PriceMin
+                    );
+            }
+
+            if (PriceMin != null && PriceMax != null)
+            {
+                MenuItems = MenuItems.Where(item =>
+                    item.Price != null &&
+                    item.Price <= PriceMax && item.Price >= PriceMin
+                    );
+            }
+
+            if (CalorieMin == null && CalorieMax != null)
+            {
+                MenuItems = MenuItems.Where(item =>
+                    item.Calories != null &&
+                    item.Calories <= CalorieMax
+                    );
+            }
+
+            if (CalorieMin != null && CalorieMax == null)
+            {
+                MenuItems = MenuItems.Where(item =>
+                    item.Calories != null &&
+                    item.Calories >= CalorieMin
+                    );
+            }
+
+            if (CalorieMin != null && CalorieMax != null)
+            {
+                MenuItems = MenuItems.Where(item =>
+                    item.Calories != null &&
+                    item.Calories <= CalorieMax && item.Calories >= CalorieMin
+                    );
+            }
+
+            MenuItems = Menu.FilterByCalories(MenuItems, CalorieMin, CalorieMax);
+            MenuItems = Menu.FilterByPrice(MenuItems, PriceMin, PriceMax);
+
         }
 
         /// <summary>
