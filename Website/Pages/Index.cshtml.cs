@@ -22,17 +22,18 @@ namespace Website.Pages
             _logger = logger;
         }
 
-        public void OnGet(string SearchTerms, double? CalorieMax, double? CalorieMin, decimal? PriceMax, decimal? PriceMin, bool IsEntree, bool IsSide, bool isDrink, bool IsTreat)
+        public void OnGet(string SearchTerms, double? CalorieMax, double? CalorieMin, decimal? PriceMax, decimal? PriceMin, bool entrees, bool sides, bool drinks, bool treats)
         {
             this.SearchTerms = SearchTerms;
             this.CalorieMax = CalorieMax;
             this.CalorieMin = CalorieMin;
             this.PriceMax = PriceMax;
             this.PriceMin = PriceMin;
-            this.IsEntree = IsEntree;
-            this.IsSide = IsSide;
-            this.IsDrink = IsDrink;
-            this.IsTreat = IsTreat;
+            this.IsEntree = entrees;
+            this.IsSide = sides;
+            this.IsDrink = drinks;
+            this.IsTreat = treats;
+
             MenuItems = Menu.Search(SearchTerms);
 
             if (IsEntree == false) 
@@ -58,7 +59,7 @@ namespace Website.Pages
             if (PriceMin == null && PriceMax != null)
             {
                 MenuItems = MenuItems.Where(item =>
-                    item.Price != null &&
+                    item.Price != 0 &&
                     item.Price <= PriceMax
                     );
             }
@@ -66,7 +67,7 @@ namespace Website.Pages
             if (PriceMax == null && PriceMin != null)
             {
                 MenuItems = MenuItems.Where(item =>
-                    item.Price != null &&
+                    item.Price != 0 &&
                     item.Price >= PriceMin
                     );
             }
@@ -74,7 +75,7 @@ namespace Website.Pages
             if (PriceMin != null && PriceMax != null)
             {
                 MenuItems = MenuItems.Where(item =>
-                    item.Price != null &&
+                    item.Price != 0 &&
                     item.Price <= PriceMax && item.Price >= PriceMin
                     );
             }
@@ -82,7 +83,7 @@ namespace Website.Pages
             if (CalorieMin == null && CalorieMax != null)
             {
                 MenuItems = MenuItems.Where(item =>
-                    item.Calories != null &&
+                    item.Calories != 0 &&
                     item.Calories <= CalorieMax
                     );
             }
@@ -90,7 +91,7 @@ namespace Website.Pages
             if (CalorieMin != null && CalorieMax == null)
             {
                 MenuItems = MenuItems.Where(item =>
-                    item.Calories != null &&
+                    item.Calories != 0 &&
                     item.Calories >= CalorieMin
                     );
             }
@@ -98,7 +99,7 @@ namespace Website.Pages
             if (CalorieMin != null && CalorieMax != null)
             {
                 MenuItems = MenuItems.Where(item =>
-                    item.Calories != null &&
+                    item.Calories != 0 &&
                     item.Calories <= CalorieMax && item.Calories >= CalorieMin
                     );
             }
@@ -134,24 +135,45 @@ namespace Website.Pages
         public IEnumerable<Treat> Treats { get => MenuItems.OfType<Treat>(); }
 
         /// <summary>
+        /// backing field for IsEntree
+        /// </summary>
+        private bool isentree = true;
+
+        /// <summary>
         /// Determines whether is entree
         /// </summary>
-        public bool IsEntree { get => IsEntree; set => value = IsEntree; }
+        public bool IsEntree { get => isentree; set => isentree = value; }
+
+
+        /// <summary>
+        /// backing field for IsEntree
+        /// </summary>
+        private bool isside = true;
 
         /// <summary>
         /// Determines whether is side
         /// </summary>
-        public bool IsSide { get => IsSide; set => value = IsSide; }
+        public bool IsSide { get => isside; set => isside = value; }
+
+        /// <summary>
+        /// backing field for IsEntree
+        /// </summary>
+        private bool isdrink = true;
 
         /// <summary>
         /// Determines whether is drink
         /// </summary>
-        public bool IsDrink { get => IsDrink; set => value = IsDrink; }
+        public bool IsDrink { get => isdrink; set => isdrink = value; }
+
+        /// <summary>
+        /// backing field for IsEntree
+        /// </summary>
+        private bool istreat = true;
 
         /// <summary>
         /// Determines whether is treat
         /// </summary>
-        public bool IsTreat { get => IsTreat; set => value = IsTreat; }
+        public bool IsTreat { get => istreat; set => istreat = value; }
 
         /// <summary>
         /// Terms to be searched

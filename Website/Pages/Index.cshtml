@@ -16,17 +16,17 @@
 
         <h4>Entree</h4>
             <label>
-                <input type="checkbox" name="entrees" asp-for="IsEntree" checked="@Model.Entrees"/>
+                <input type="checkbox" name="entrees" asp-for="IsEntree" checked="@Model.IsEntree"/>
             </label>
 
         <h4>Side</h4>
             <label>
-                <input type="checkbox" name="entrees" asp-for="IsSide" checked="@Model.Sides"/>
+                <input type="checkbox" name="sides" asp-for="IsSide" checked="@Model.IsSide"/>
             </label>
 
         <h4>Drink</h4>
             <label>
-                <input type="checkbox" name="entrees" asp-for="IsDrink" checked="@Model.Drinks"/>
+                <input type="checkbox" name="drinks" asp-for="IsDrink" checked="@Model.IsDrink"/>
             </label>
 
         <h2></h2>
@@ -41,7 +41,6 @@
         <input name="PriceMin" type="number" min="0" max="7.00" step="0.1" placeholder="min" value="@Model.PriceMin" />
         and
         <input name="PriceMax" type="number" min="0" max="7.00" step="0.1" placeholder="max" value="@Model.PriceMax" />
-
     </div>
 </form>
 
