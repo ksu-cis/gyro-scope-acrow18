@@ -174,6 +174,7 @@ namespace GyroScope.Data
         }
     }
 
+    /*
     /// <summary>
     /// Filters by calories
     /// </summary>
@@ -232,11 +233,11 @@ namespace GyroScope.Data
 
 
     /// <summary>
-    /// Filters by calories
+    /// Filters by Price
     /// </summary>
     /// <param name="menu">Entire menu</param>
-    /// <param name="min">Min calories</param>
-    /// <param name="max">Max calories</param>
+    /// <param name="min">Min price</param>
+    /// <param name="max">Max price</param>
     /// <returns></returns>
     public static IEnumerable<IMenuItem> FilterByPrice(IEnumerable<IMenuItem> menu, decimal? min, decimal? max)
     {
@@ -286,5 +287,6 @@ namespace GyroScope.Data
 
         return results;
     }
+    */
 }
 
