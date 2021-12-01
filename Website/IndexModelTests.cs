@@ -18,6 +18,7 @@ namespace Website
     /// </summary>
     public class IndexModelTests
     {
+        
         /// <summary>
         /// Logger for tests
         /// </summary>
@@ -110,6 +111,7 @@ namespace Website
                 item => Assert.IsType<AquariusIce>(item),
                 item => Assert.IsType<CancerHalvaCake>(item));
         }
+        
 
     }
 }

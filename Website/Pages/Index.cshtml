@@ -15,19 +15,23 @@
 
 
         <h4>Entree</h4>
-            <label>
-                <input type="checkbox" name="entrees" asp-for="IsEntree" checked="@Model.IsEntree"/>
-            </label>
+        <label>
+            <input type="checkbox" name="entrees" value="true" checked="@Model.IsEntree" />
+        </label>
 
         <h4>Side</h4>
-            <label>
-                <input type="checkbox" name="sides" asp-for="IsSide" checked="@Model.IsSide"/>
-            </label>
-
+        <label>
+            <input type="checkbox" name="sides" value="true" checked="@Model.IsSide" />
+        </label>
+        <h4>Treats</h4>
+        <label>
+            <input type="checkbox" name="treats" value="true" checked="@Model.IsTreat" />
+        </label>
         <h4>Drink</h4>
-            <label>
-                <input type="checkbox" name="drinks" asp-for="IsDrink" checked="@Model.IsDrink"/>
-            </label>
+        <label>
+            <input type="checkbox" name="drinks" value="true" checked="@Model.IsDrink" />
+        </label>
+
 
         <h2></h2>
         <h4>Calories    </h4>

@@ -55,24 +55,32 @@ namespace Website.Pages
 
             MenuItems = Menu.Search(SearchTerms);
 
-            if (IsEntree == false) 
+            if (IsEntree || IsSide || IsTreat || IsDrink) 
             {
-                MenuItems = MenuItems.Where(Item => !(Item is Entree));
-            }
+                MenuItems = MenuItems.Where(item =>
+                {
+                    if (IsEntree && item is Entree)
+                    {
+                        return true;
+                    }
 
-            if (IsSide == false)
-            {
-                MenuItems = MenuItems.Where(Item => !(Item is Side));
-            }
+                    if (IsSide && item is Side)
+                    {
+                        return true;
+                    }
 
-            if (IsDrink == false)
-            {
-                MenuItems = MenuItems.Where(Item => !(Item is Drink));
-            }
+                    if (IsTreat && item is Treat)
+                    {
+                        return true;
+                    }
 
-            if (IsTreat == false)
-            {
-                MenuItems = MenuItems.Where(Item => !(Item is Treat));
+                    if (IsDrink && item is Drink)
+                    {
+                        return true;
+                    }
+
+                    return false;
+                });
             }
 
             if (PriceMin == null && PriceMax != null)
