@@ -63,11 +63,11 @@ namespace Website
         public void ItemsShouldHoldEntreeWhenBoolIsTrue()
         {
             IndexModel IM = new IndexModel(_logger);
-            IM.OnGet("", 0, 1000, 0, 8.00M, true, false, false, false);
+            IM.OnGet(null, null, null, null, null, true, false, false, false);
             Assert.Collection<IMenuItem>(IM.MenuItems,
+                item => Assert.IsType<VirgoClassicGyro>(item),
                 item => Assert.IsType<LeoLambGyro>(item),
                 item => Assert.IsType<ScorpioSpicyGyro>(item),
-                item => Assert.IsType<VirgoClassicGyro>(item),
                 item => Assert.IsType<PiscesFishDish>(item));
         }
 
@@ -78,7 +78,7 @@ namespace Website
         public void ItemsShouldHoldSideWhenBoolIsTrue()
         {
             IndexModel IM = new IndexModel(_logger);
-            IM.OnGet("", 0, 1000, 0, 8.00M, false, true, false, false);
+            IM.OnGet(null, null, null, null, null, false, true, false, false);
             Assert.Collection<IMenuItem>(IM.MenuItems,
                 item => Assert.IsType<AriesFries>(item),
                 item => Assert.IsType<GeminiStuffedGrapeLeaves>(item),
@@ -93,10 +93,10 @@ namespace Website
         public void ItemsShouldHoldDrinkWhenBoolIsTrue()
         {
             IndexModel IM = new IndexModel(_logger);
-            IM.OnGet("", 0, 1000, 0, 8.00M, false, false, true, false);
+            IM.OnGet(null, null, null, null, null, false, false, true, false);
             Assert.Collection<IMenuItem>(IM.MenuItems,
-                item => Assert.IsType<LibraLibation>(item),
-                item => Assert.IsType<CapricornMountainTea>(item));
+                item => Assert.IsType<CapricornMountainTea>(item),
+                item => Assert.IsType<LibraLibation>(item));
         }
 
         /// <summary>
@@ -106,12 +106,10 @@ namespace Website
         public void ItemsShouldHoldTreatsWhenBoolIsTrue()
         {
             IndexModel IM = new IndexModel(_logger);
-            IM.OnGet("", 0, 1000, 0, 8.00M, false, false, true, false);
+            IM.OnGet(null, null, null, null, null, false, false, false, true);
             Assert.Collection<IMenuItem>(IM.MenuItems,
-                item => Assert.IsType<AquariusIce>(item),
-                item => Assert.IsType<CancerHalvaCake>(item));
+                item => Assert.IsType<CancerHalvaCake>(item),
+                item => Assert.IsType<AquariusIce>(item));
         }
-        
-
     }
 }

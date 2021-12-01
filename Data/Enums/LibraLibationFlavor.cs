@@ -17,6 +17,11 @@ namespace GyroScope.Data.Enums
     public enum LibraLibationFlavor
     {
         /// <summary>
+        /// PinkLemonade
+        /// </summary>
+        PinkLemonada,
+
+        /// <summary>
         /// Orangeade
         /// </summary>
         Orangeade,
@@ -30,11 +35,5 @@ namespace GyroScope.Data.Enums
         /// Biral
         /// </summary>
         Biral,
-
-        /// <summary>
-        /// PinkLemonade
-        /// </summary>
-        PinkLemonada,
-
     }
 }

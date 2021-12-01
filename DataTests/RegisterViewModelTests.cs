@@ -26,7 +26,7 @@ namespace GyroScope.DataTests
             order.Add(new VirgoClassicGyro());
             var rVM = new RegisterViewModel(order);
             rVM.CustomerHundreds = 1;
-            Assert.Equal(rVM.ChangeOwed, rVM.Total - rVM.Customer);
+            Assert.Equal(rVM.ChangeOwed, rVM.Customer - rVM.Total);
         }
 
 
@@ -42,7 +42,7 @@ namespace GyroScope.DataTests
             order.Add(new VirgoClassicGyro());
             var rVM = new RegisterViewModel(order);
             rVM.CustomerHundreds = 1;
-            Assert.Equal(rVM.AmountDue, rVM.Total - rVM.Customer);
+            Assert.Equal(rVM.AmountDue, rVM.Customer - rVM.Total);
         }
 
         
@@ -97,9 +97,9 @@ namespace GyroScope.DataTests
         /// <param name="drawerTens">Tens in drawer remaining</param>
         [Theory]
         [InlineData(1, 4, 10)]
-        [InlineData(2, 3, 10)]
-        [InlineData(3, 4, 9)]
-        [InlineData(4, 4, 9)]
+        [InlineData(2, 4, 10)]
+        [InlineData(3, 4, 10)]
+        [InlineData(4, 4, 10)]
         [InlineData(5, 4, 10)]
         public void MoneyShouldBeRemovedFromCashRegister(int customerBills, int drawerFives, int drawerTens) 
         {
@@ -107,7 +107,7 @@ namespace GyroScope.DataTests
             order.Add(new VirgoClassicGyro());
             var rVM = new RegisterViewModel(order);
             rVM.CustomerFives = customerBills;
-            Assert.Equal(drawerFives, rVM.CashDrawerTwos);
+            Assert.Equal(drawerFives, rVM.CashDrawerFives);
             Assert.Equal(drawerTens, rVM.CashDrawerTens);
 
         }

@@ -164,7 +164,7 @@ namespace GyroScope.DataTests
             var libraLibation = new LibraLibation();
 
             //A quick hack to avoid not changing size when setting to default size
-            if (flavor == LibraLibationFlavor.Orangeade)
+            if (flavor == LibraLibationFlavor.PinkLemonada)
             {
                 libraLibation.Flavor = LibraLibationFlavor.SourCherry;
             }
