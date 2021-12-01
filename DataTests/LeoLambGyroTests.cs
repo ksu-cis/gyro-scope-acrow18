@@ -35,6 +35,16 @@ namespace GyroScope.DataTests
         }
 
         /// <summary>
+        /// Checks to make sure description matches
+        /// </summary>
+        [Fact]
+        public void CheckDescription()
+        {
+            var leoLambGyro = new LeoLambGyro();
+            Assert.Equal("A fresh take on the gyro - seasoned doner lamb, fresh sliced tomato, diced onion, steamed eggplant, and shredded lettuce, smothered in mint chutney and served in a pita.", leoLambGyro.Description);
+        }
+
+        /// <summary>
         /// Checks price of gyro
         /// </summary>
         [Fact]

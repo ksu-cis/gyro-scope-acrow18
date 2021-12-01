@@ -35,6 +35,16 @@ namespace GyroScope.DataTests
         }
 
         /// <summary>
+        /// Checks to make sure description matches
+        /// </summary>
+        [Fact]
+        public void CheckDescription()
+        {
+            var virgoClassicGyro = new VirgoClassicGyro();
+            Assert.Equal("The classic American gyro - seasoned doner pork, fresh sliced tomato, diced onion, shredded lettuce, and tzatziki sauce, wrapped in a warm flaky pita.", virgoClassicGyro.Description);
+        }
+
+        /// <summary>
         /// Checks price of gyro
         /// </summary>
         [Fact]

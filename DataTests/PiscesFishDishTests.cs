@@ -26,6 +26,16 @@ namespace GyroScope.DataTests
         }
 
         /// <summary>
+        /// Checks to make sure description matches
+        /// </summary>
+        [Fact]
+        public void CheckDescription()
+        {
+            var piscesFishDish = new PiscesFishDish();
+            Assert.Equal("Halibut baked with onions and tomatoes in a red wine sauce.", piscesFishDish.Description);
+        }
+
+        /// <summary>
         /// Checks calories of fish dish
         /// </summary>
         [Fact]

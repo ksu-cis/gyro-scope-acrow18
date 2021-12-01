@@ -21,6 +21,16 @@ namespace GyroScope.DataTests
         }
 
         /// <summary>
+        /// Checks to make sure description matches
+        /// </summary>
+        [Fact]
+        public void CheckDescription()
+        {
+            var ice = new AquariusIce();
+            Assert.Equal("Italian flavored ices, the coolest treat you can eat with a spoon!", ice.Description);
+        }
+
+        /// <summary>
         /// Checks that the <paramref name="flavor"/> can be set
         /// </summary>
         /// <param name="flavor">The flavor to use</param>

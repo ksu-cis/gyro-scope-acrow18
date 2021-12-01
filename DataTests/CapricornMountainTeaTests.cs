@@ -33,6 +33,16 @@ namespace GyroScope.DataTests
         }
 
         /// <summary>
+        /// Checks to make sure description matches
+        /// </summary>
+        [Fact]
+        public void CheckDescription()
+        {
+            var capricornMountainTea = new CapricornMountainTea();
+            Assert.Equal("Tea brewed from the ironwort plant, a traditional herbal health enhancer.", capricornMountainTea.Description);
+        }
+
+        /// <summary>
         /// Calories with/without honey
         /// </summary>
         /// <param name="honey">Honey</param>

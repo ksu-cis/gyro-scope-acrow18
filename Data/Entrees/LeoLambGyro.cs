@@ -103,8 +103,8 @@ namespace GyroScope.Data.Entrees
         /// <summary>
         /// backing field for description
         /// </summary>
-        public string _description = "A fresh take on the gyro - seasoned doner lamb, fresh sliced tomato, diced onion, steamed eggplant, " +
-            "and shredded lettuce, smothered in mint chutney and served in pita";
+        public string _description = "A fresh take on the gyro - seasoned doner lamb, fresh sliced tomato," +
+            " diced onion, steamed eggplant, and shredded lettuce, smothered in mint chutney and served in a pita.";
 
         /// <summary>
         /// Description of Leo Lamb Gyro

@@ -26,6 +26,16 @@ namespace GyroScope.DataTests
         }
 
         /// <summary>
+        /// Checks to make sure description matches
+        /// </summary>
+        [Fact]
+        public void CheckDescription()
+        {
+            var taurusTabuleh = new TaurusTabuleh();
+            Assert.Equal("A bulgar salad rife with fresh herbs and lemon.", taurusTabuleh.Description);
+        }
+
+        /// <summary>
         /// Checks that the <paramref name="size"/> can be set
         /// </summary>
         /// <param name="size">The Size to use</param>

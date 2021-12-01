@@ -171,7 +171,7 @@ namespace GyroScope.Data.Drinks
         /// <summary>
         /// backing field for description
         /// </summary>
-        public string _description = "Real imported sparkling or still Greek sodas in variety of flavors.";
+        public string _description = "Real imported sparkling or still Greek sodas in a variety of flavors.";
 
         /// <summary>
         /// Description of Libra Libation

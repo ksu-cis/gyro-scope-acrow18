@@ -25,6 +25,15 @@ namespace GyroScope.DataTests
             Assert.Equal(3.00M, cancerHelvahCake.Price);
         }
 
+        /// <summary>
+        /// Checks to make sure description matches
+        /// </summary>
+        [Fact]
+        public void CheckDescription()
+        {
+            var cancerHelvahCake = new CancerHalvaCake();
+            Assert.Equal("A gluten-free cake made from sesame seeds.", cancerHelvahCake.Description);
+        }
 
         /// <summary>
         /// Checks calories for Cancer Helvah Cake

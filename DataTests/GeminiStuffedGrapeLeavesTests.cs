@@ -21,6 +21,16 @@ namespace GyroScope.DataTests
         }
 
         /// <summary>
+        /// Checks to make sure description matches
+        /// </summary>
+        [Fact]
+        public void CheckDescription()
+        {
+            var geminiStuffedGrapeLeaves = new GeminiStuffedGrapeLeaves();
+            Assert.Equal("Grape leaves stuffed with spiced meat and rice.", geminiStuffedGrapeLeaves.Description);
+        }
+
+        /// <summary>
         /// Checks that the <paramref name="size"/> can be set
         /// </summary>
         /// <param name="size">The Size to use</param>

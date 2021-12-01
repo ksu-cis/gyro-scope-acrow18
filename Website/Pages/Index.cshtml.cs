@@ -15,13 +15,32 @@ namespace Website.Pages
 {
     public class IndexModel : PageModel
     {
+        /// <summary>
+        /// Used to log infomation
+        /// </summary>
         private readonly ILogger<IndexModel> _logger;
 
+        /// <summary>
+        /// Default constructor
+        /// </summary>
+        /// <param name="logger">Used to log information</param>
         public IndexModel(ILogger<IndexModel> logger)
         {
             _logger = logger;
         }
 
+        /// <summary>
+        /// On get method
+        /// </summary>
+        /// <param name="SearchTerms">Search terms</param>
+        /// <param name="CalorieMax">Max calories</param>
+        /// <param name="CalorieMin">Min calories</param>
+        /// <param name="PriceMax">Max price</param>
+        /// <param name="PriceMin">Min price</param>
+        /// <param name="entrees">Entrees</param>
+        /// <param name="sides">Sides</param>
+        /// <param name="drinks">Drinks</param>
+        /// <param name="treats">Treats</param>
         public void OnGet(string SearchTerms, double? CalorieMax, double? CalorieMin, decimal? PriceMax, decimal? PriceMin, bool entrees, bool sides, bool drinks, bool treats)
         {
             this.SearchTerms = SearchTerms;

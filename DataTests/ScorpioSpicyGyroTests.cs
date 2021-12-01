@@ -35,6 +35,17 @@ namespace GyroScope.DataTests
         }
 
         /// <summary>
+        /// Checks to make sure description matches
+        /// </summary>
+        [Fact]
+        public void CheckDescription()
+        {
+            var spicyScorpioGyro = new ScorpioSpicyGyro();
+
+            Assert.Equal("A gyro with a spicy twist - seasoned doner chicken, steamed peppers, chopped onions, and shredded lettuce topped with hot wing sauce and wrapped in a warm pita.", spicyScorpioGyro.Description);
+        }
+
+        /// <summary>
         /// Checks price of gyro
         /// </summary>
         [Fact]

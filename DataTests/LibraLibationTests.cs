@@ -26,6 +26,17 @@ namespace GyroScope.DataTests
         }
 
         /// <summary>
+        /// Checks to make sure description matches
+        /// </summary>
+        [Fact]
+        public void CheckDescription()
+        {
+            var libraLibation = new LibraLibation();
+
+            Assert.Equal("Real imported sparkling or still Greek sodas in a variety of flavors.", libraLibation.Description);
+        }
+
+        /// <summary>
         /// Checks that the <paramref name="sparkling"/> can be set
         /// </summary>
         /// <param name="sparkling">Sparkling</param>

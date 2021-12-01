@@ -103,7 +103,7 @@ namespace GyroScope.Data.Drinks
         /// <summary>
         /// backing field for description
         /// </summary>
-        public string _description = "Tea brewed from the ironwart plant, a traditional herbal health enhancer.";
+        public string _description = "Tea brewed from the ironwort plant, a traditional herbal health enhancer.";
 
         /// <summary>
         /// Description of Capricorn Mountain Tea
