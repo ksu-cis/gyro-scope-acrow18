@@ -98,9 +98,9 @@ namespace GyroScope.DataTests
         [Theory]
         [InlineData(1, 4, 10)]
         [InlineData(2, 4, 10)]
-        [InlineData(3, 4, 10)]
-        [InlineData(4, 4, 10)]
-        [InlineData(5, 4, 10)]
+        [InlineData(3, 3, 10)]
+        [InlineData(4, 4, 9)]
+        [InlineData(5, 3, 9)]
         public void MoneyShouldBeRemovedFromCashRegister(int customerBills, int drawerFives, int drawerTens) 
         {
             var order = new Order();
