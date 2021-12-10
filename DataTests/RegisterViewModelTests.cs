@@ -41,7 +41,7 @@ namespace GyroScope.DataTests
             order.Add(new VirgoClassicGyro());
             order.Add(new VirgoClassicGyro());
             var rVM = new RegisterViewModel(order);
-            rVM.CustomerHundreds = 1;
+            rVM.CustomerTwenties = 1;
             Assert.Equal(rVM.AmountDue, rVM.Customer - rVM.Total);
         }
 
